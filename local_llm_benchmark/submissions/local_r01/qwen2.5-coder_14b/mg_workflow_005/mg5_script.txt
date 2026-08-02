@@ -1,0 +1,28 @@
+```madgraph
+import os
+
+# Change to desired directory and create output directory if it doesn't exi[3D[K
+exist
+output_dir = 'TTbar_P8_Delphes'
+os.makedirs(output_dir, exist_ok=True)
+change dir %s
+
+# Define the process
+generate p p > t t~
+
+# Set the collision energy
+set ebeam1 6500 GeV
+set ebeam2 6500 GeV
+
+# Configure Pythia8 showering and Delphes detector simulation
+set shower=pythia8
+set detector=delphes
+set madspin=false
+
+# Define the number of events and random seed
+set nevents 10000
+set iseed 42
+
+# Run the process
+launch
+```

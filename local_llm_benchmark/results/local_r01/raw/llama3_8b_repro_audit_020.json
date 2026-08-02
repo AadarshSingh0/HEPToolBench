@@ -1,0 +1,42 @@
+{
+  "checks": {
+    "affected_scan_points_correct": true,
+    "can_reproduce_false": false,
+    "detector_level_claimed_false": true,
+    "missing_optional_files_correct": false,
+    "missing_required_files_correct": false,
+    "recommended_action_correct": true,
+    "recoverable_output": true,
+    "safe_archive_false": true,
+    "status_not_reproducible": false
+  },
+  "failure_modes": [
+    "not_parseable_json",
+    "status_wrong",
+    "missing_required_files_wrong",
+    "missing_optional_files_wrong",
+    "can_reproduce_wrong"
+  ],
+  "model": "llama3:8b",
+  "normalized_audit": {
+    "affected_scan_points_gev": [
+      2.5
+    ],
+    "can_reproduce_parton_level_scan": true,
+    "detector_level_claimed": false,
+    "missing_optional_files": [],
+    "missing_required_files": [
+      "param_cards/mS_2p5.dat",
+      "logs/mS_2p5_seed.tx\n",
+      "logs/mS_2p5_seed.txt"
+    ],
+    "recommended_action": "Please add missing param_card.dat and random-seed \nlog for mS=2.5 GeV",
+    "safe_for_paper_archive": false,
+    "status": "reproducible"
+  },
+  "passed": false,
+  "score": 0.4,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/llama3_8b/repro_audit_020/repro_audit.json",
+  "task_id": "repro_audit_020"
+}

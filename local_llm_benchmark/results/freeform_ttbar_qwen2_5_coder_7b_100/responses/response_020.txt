@@ -1,0 +1,6 @@
+```
+import model SM
+generate p p > t t~
+output ttbar_run
+launch
+```

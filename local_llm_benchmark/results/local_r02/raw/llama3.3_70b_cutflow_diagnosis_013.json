@@ -1,0 +1,39 @@
+{
+  "checks": {
+    "dominant_loss_cut_correct": false,
+    "final_background_correct": true,
+    "final_signal_correct": true,
+    "loss_fraction_correct": false,
+    "parseable_json": true,
+    "recommended_action_mentions_statistics": true,
+    "s_over_sqrt_b_correct": false,
+    "statistically_unusable": true,
+    "status_low_statistics": true,
+    "step_efficiency_correct": false,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_markdown_fence",
+    "wrong_dominant_signal_loss_cut",
+    "wrong_loss_fraction",
+    "wrong_s_over_sqrt_b",
+    "wrong_step_efficiency"
+  ],
+  "model": "llama3.3:70b",
+  "normalized_summary": {
+    "dominant_signal_loss_cut": "At least two b-tagged jets",
+    "dominant_signal_loss_fraction": 0.790323,
+    "dominant_signal_loss_step_efficiency": 0.209677,
+    "final_background_events": 120,
+    "final_signal_events": 48,
+    "recommended_action": "Increase statistics to reach a final signal yield  of at least 100 events.",
+    "s_over_sqrt_b": 4.47,
+    "statistically_usable": false,
+    "status": "low_statistics"
+  },
+  "passed": false,
+  "score": 0.48,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r02_clean/submissions/llama3.3_70b/cutflow_diagnosis_013/cutflow_diagnosis.json",
+  "task_id": "cutflow_diagnosis_013"
+}

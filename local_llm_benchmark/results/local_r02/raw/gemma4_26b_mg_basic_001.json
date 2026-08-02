@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "correct_process": false,
+    "defines_proton": true,
+    "ebeam1_6500": false,
+    "ebeam2_6500": false,
+    "has_launch": true,
+    "has_output": true,
+    "imports_sm": true,
+    "no_interactive_prompt": true,
+    "no_long_explanation": false,
+    "no_markdown_fence": false,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true
+  },
+  "failure_modes": [
+    "includes_explanation_not_file_only",
+    "includes_markdown_fence",
+    "missing_generate_keyword",
+    "missing_or_wrong_process",
+    "wrong_or_missing_beam_energy"
+  ],
+  "model": "gemma4:26b",
+  "passed": false,
+  "score": 0.4,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r02_clean/submissions/gemma4_26b/mg_basic_001/proc_card.dat",
+  "task_id": "mg_basic_001"
+}

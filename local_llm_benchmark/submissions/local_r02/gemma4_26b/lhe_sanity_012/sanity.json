@@ -1,0 +1,88 @@
+Thinking...
+*   Input: `lhe_sanity_report.txt` containing information about a particle-[9D[K
+particle-physics run.
+    *   Goal: Generate a JSON object validating if the generated LHE file i[1D[K
+is usable for the requested run.
+    *   Constraints: Return *only* JSON. No markdown, no explanation.
+
+    *   Requested Process: `p p > h j`
+    *   Requested Event Count: `10000`
+    *   LHE File path (expected): `Events/run_03/unweighted_events.lhe.gz`
+
+    *   `process`: `p p > h j`
+    *   `requested_events`: `10000`
+    *   `expected_event_file`: `Events/run_03/unweighted_events.lhe.gz`
+    *   `file_exists`: `yes`
+    *   `event_file`: `Events/run_03/unweighted_events.lhe.gz`
+    *   `process_from_header`: `p p > h j`
+    *   `cross_section_pb`: `2.345`
+    *   `cross_section_uncertainty_pb`: `0.012`
+    *   `events_scanned`: `9820`
+    *   `negative_weight_events`: `0`
+    *   `scan_status`: `completed`
+    *   Validation note: "The LHE file exists and the process matches the r[1D[K
+request, but the number of scanned events is smaller than the requested num[3D[K
+number of events."
+
+    *   `status`: Since `9820 < 10000`, it's `"incomplete"`.
+    *   `process`: `"p p > h j"` (from LHE header).
+    *   `process_correct`: `true` (matches requested process).
+    *   `event_file`: `"Events/run_03/unweighted_events.lhe.gz"`.
+    *   `file_present`: `true`.
+    *   `requested_events`: `10000`.
+    *   `observed_events`: `9820`.
+    *   `event_count_matches`: `false`.
+    *   `missing_events`: `10000 - 9820 = 180`.
+    *   `cross_section_pb`: `2.345`.
+    *   `cross_section_uncertainty_pb`: `0.012`.
+    *   `negative_weight_events`: `0`.
+    *   `negative_weight_fraction`: `0/9820 = 0.0`.
+    *   `failure_stage`: `"event_count_validation"` (because events don't m[1D[K
+match).
+    *   `recommended_action`: `"Generate more events to meet the requested [K
+count."`
+
+    ```json
+    {
+      "status": "incomplete",
+      "process": "p p > h j",
+      "process_correct": true,
+      "event_file": "Events/run_03/unweighted_events.lhe.gz",
+      "file_present": true,
+      "requested_events": 10000,
+      "observed_events": 9820,
+      "event_count_matches": false,
+      "missing_events": 180,
+      "cross_section_pb": 2.345,
+      "cross_section_uncertainty_pb": 0.012,
+      "negative_weight_events": 0,
+      "negative_weight_fraction": 0.0,
+      "failure_stage": "event_count_validation",
+      "recommended_action": "Generate more events to meet the requested cou[3D[K
+count."
+    }
+    ```
+
+    *   Check keys against requirements.
+    *   Verify `status` is correct based on math.
+    *   Ensure no markdown or extra text.
+...done thinking.
+
+{
+  "status": "incomplete",
+  "process": "p p > h j",
+  "process_correct": true,
+  "event_file": "Events/run_03/unweighted_events.lhe.gz",
+  "file_present": true,
+  "requested_events": 10000,
+  "observed_events": 9820,
+  "event_count_matches": false,
+  "missing_events": 180,
+  "cross_section_pb": 2.345,
+  "cross_section_uncertainty_pb": 0.012,
+  "negative_weight_events": 0,
+  "negative_weight_fraction": 0.0,
+  "failure_stage": "event_count_validation",
+  "recommended_action": "Generate the remaining events to reach the request[7D[K
+requested count."
+}

@@ -1,0 +1,17 @@
+```bash
+# Create a new model based on the Standard Model
+model SM
+
+# Generate a process for ttbar production at 13 TeV
+generate p p > t~ t QCD=off
+
+# Disable top decays
+set decay t to g h
+set decay t~ to g h
+
+# Initialize the run with default parameters
+output ttbar_run -f
+
+# Run MadGraph
+launch
+```

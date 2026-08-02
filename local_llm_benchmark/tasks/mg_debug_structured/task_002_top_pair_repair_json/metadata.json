@@ -1,0 +1,24 @@
+{
+  "task_id": "mg_debug_structured_002",
+  "title": "Structured repair of a broken top-pair MadGraph card",
+  "category": "mg_debug_structured",
+  "level": "L3",
+  "mode": "structured_debug_repair_patch_v12",
+  "tools": [
+    "madgraph"
+  ],
+  "timeout_seconds": 300,
+  "requires_execution": false,
+  "expected_artifacts": [
+    "repair.json"
+  ],
+  "physics_tags": [
+    "sm",
+    "top_pair",
+    "pp_collision",
+    "repair",
+    "structured"
+  ],
+  "description": "Structured debugging task asking for a minimal repair patch, not a full proc_card. The schema has placeholders only.",
+  "version_note": "v1.2 calibration: replaced full-card repair with minimal patch scoring to avoid over-penalizing correct diagnoses for formatting/full-card issues."
+}

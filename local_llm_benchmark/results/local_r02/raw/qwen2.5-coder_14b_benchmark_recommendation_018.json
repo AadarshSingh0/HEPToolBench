@@ -1,0 +1,48 @@
+{
+  "checks": {
+    "benchmark_cross_section_correct": false,
+    "benchmark_mass_correct": false,
+    "monotonic_decreasing_correct": true,
+    "next_action_correct": false,
+    "point_counts_correct": true,
+    "recoverable_output": true,
+    "safe_to_make_final_plot": true,
+    "scan_parameter_correct": true,
+    "selection_rule_correct": true,
+    "status_complete": true,
+    "usable_masses_correct": true
+  },
+  "failure_modes": [
+    "not_parseable_json",
+    "benchmark_mass_wrong",
+    "benchmark_cross_section_wrong",
+    "next_action_incomplete"
+  ],
+  "model": "qwen2.5-coder:14b",
+  "normalized_recommendation": {
+    "benchmark_cross_section_pb": 5.0,
+    "benchmark_mass_gev": 2.0,
+    "failed_points": 0.0,
+    "missing_points": 0.0,
+    "monotonic_decreasing_cross_section": true,
+    "next_action": "Perform follow-up detector-level simulation using the ben\nbenchmark mass of 2.0 GeV.",
+    "safe_to_make_final_plot": true,
+    "scan_parameter": "ms",
+    "selection_rule": "Use only successful scan points. Do not choose endpoin\nendpoint masses unless no successful interior point exists. Among successfu\nsuccessful interior points, choose the point with the largest cross section\nsection.",
+    "status": "complete",
+    "successful_points": 5.0,
+    "total_points": 5.0,
+    "usable_masses_gev": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ]
+  },
+  "passed": false,
+  "score": 0.65,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r02_clean/submissions/qwen2.5-coder_14b/benchmark_recommendation_018/recommendation.json",
+  "task_id": "benchmark_recommendation_018"
+}

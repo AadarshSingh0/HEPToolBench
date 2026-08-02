@@ -1,0 +1,107 @@
+Thinking...
+*   Requirement 1: Exactly 1 isolated charged lepton (electron or muon).
+    *   Requirement 2: At least 4 reconstructed jets.
+    *   Requirement 3: At least 2 b-tagged jets.
+    *   Requirement 4: Missing transverse energy (MET) > 30 GeV.
+
+    *   `Electrons`: `selected_isolated_count: 1`
+    *   `Muons`: `selected_isolated_count: 0`
+        *   Total leptons = 1 + 0 = 1. (Matches "exactly 1")
+    *   `Jets`: `selected_count: 4`. (Matches "at least 4")
+    *   `BTaggedJets`: `selected_count: 1`. (Fails "at least 2")
+    *   `MissingET`: `met_GeV: 52.4`. (Matches "> 30 GeV")
+
+    *   `status`: "invalid" (because b-tag requirement fails)
+    *   `selected_leptons`: 1
+    *   `electron_count`: 1
+    *   `muon_count`: 0
+    *   `jet_count`: 4
+    *   `b_tagged_jet_count`: 1
+    *   `missing_et_gev`: 52.4
+    *   `lepton_requirement_passed`: true
+    *   `jet_requirement_passed`: true
+    *   `b_tag_requirement_passed`: false
+    *   `met_requirement_passed`: true
+    *   `missing_or_failed_requirements`: ["at least 2 b-tagged jets"]
+    *   `failure_stage`: "object_selection"
+    *   `recommended_action`: "do not use this event for the signal region [K
+because it fails the b-tagged jet requirement"
+
+    *   Check `selected_leptons`: 1 (correct)
+    *   Check `electron_count`: 1 (correct)
+    *   Check `muon_count`: 0 (correct)
+    *   Check `jet_count`: 4 (correct)
+    *   Check `b_tagged_jet_count`: 1 (correct)
+    *   Check `missing_et_gev`: 52.4 (correct)
+    *   Check Boolean flags: true, true, false, true (correct)
+    *   Check failure list and recommended action (correct)
+
+    The prompt asks for *only* the JSON object. No markdown fences or expla[5D[K
+explanation.
+
+    Wait, looking at the `status` definition: "Use status: 'valid' only if [K
+all requested object requirements pass." - In this case, it's invalid.
+    "Do not include explanations or markdown fences." -> This is an importa[7D[K
+important constraint for the final output format.
+
+    Let's verify values again from input:
+    Electrons: 1 isolated. Muons: 0. Total leptons = 1. (Requirement met)
+    Jets: count 4. (Requirement met: >= 4)
+    B-tagged jets: count 1. (Requirement failed: >= 2)
+    MET: 52.4 GeV. (Requirement met: > 30)
+
+    JSON fields:
+    "status": "invalid",
+    "selected_leptons": 1,
+    "electron_count": 1,
+    "muon_count": 0,
+    "jet_count": 4,
+    "b_tagged_jet_count": 1,
+    "missing_et_gev": 52.4,
+    "lepton_requirement_passed": true,
+    "jet_requirement_passed": true,
+    "b_tag_requirement_passed": false,
+    "met_requirement_passed": true,
+    "missing_or_failed_requirements": ["at least 2 b-tagged jets"],
+    "failure_stage": "object_selection",
+    "recommended_action": "do not use this event for the signal region beca[4D[K
+because it fails the b-tagged jet requirement"
+
+    Wait, I see a potential ambiguity in `jet_requirement_passed`. The prom[4D[K
+prompt asks for "at least 4 reconstructed jets". We have exactly 4. So that[4D[K
+that is true.
+    The prompt says "exactly 1 isolated charged lepton". We have 1. So that[4D[K
+that is true.
+    "at least 2 b-tagged jets". We have 1. So that is false.
+    "missing transverse energy greater than 30 GeV". We have 52.4. So that [K
+is true.
+
+    Final check of the schema:
+    `selected_leptons`: sum of isolated electrons and muons = 1.
+    Everything looks correct.
+
+    Wait, looking at the example output provided in the prompt instructions[12D[K
+instructions for a different task (or as a template), it uses `status: "inv[4D[K
+"invalid"` with the exact same failure logic. I will follow that structure [K
+exactly.
+...done thinking.
+
+{
+  "status": "invalid",
+  "selected_leptons": 1,
+  "electron_count": 1,
+  "muon_count": 0,
+  "jet_count": 4,
+  "b_tagged_jet_count": 1,
+  "missing_et_gev": 52.4,
+  "lepton_requirement_passed": true,
+  "jet_requirement_passed": true,
+  "b_tag_requirement_passed": false,
+  "met_requirement_passed": true,
+  "missing_or_failed_requirements": [
+    "at least 2 b-tagged jets"
+  ],
+  "failure_stage": "object_selection",
+  "recommended_action": "do not use this event for the signal region becaus[6D[K
+because it fails the b-tagged jet requirement"
+}

@@ -1,0 +1,5 @@
+{"error_type": "invalid_process_and_beam_syntax", "faulty_lines": ["p p > e[1D[K
+e+ e-", "set beam1 6500", "set beam2 6500"], "corrected_lines": ["generate [K
+p p > e+ e-", "set ebeam1 6500", "set ebeam2 6500"], "output_dir": "DY_ee",[8D[K
+"DY_ee", "reason": "Added generate keyword to process command and corrected[9D[K
+corrected beam energy commands from 'beam1/beam2' to 'ebeam1/ebeam2'"}

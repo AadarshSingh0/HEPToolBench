@@ -1,0 +1,4 @@
+{ "error_type": "SyntaxError", "faulty_lines": ["p p > e+ e-", "output DY_e[4D[K
+DY_ee"], "corrected_lines": ["generate p p > e+ e-, qcd, f1=e, f2=e", "set [K
+ebeam 6500"], "output_dir": "DY_ee", "reason": "\"Invalid process command; [K
+corrected with generate line and valid beam-energy settings\""}

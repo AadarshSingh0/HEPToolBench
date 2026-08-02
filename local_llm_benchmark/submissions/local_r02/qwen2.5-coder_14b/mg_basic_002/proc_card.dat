@@ -1,0 +1,13 @@
+```text
+# This is the MadGraph process card for inclusive top-pair production
+
+import model sm
+
+define p = g u c d s b u~ c~ d~ s~ b~
+define t = (t u c d s b)
+define t~ = (t~ u~ c~ d~ s~ b~)
+
+generate p p > t t~
+
+output
+```

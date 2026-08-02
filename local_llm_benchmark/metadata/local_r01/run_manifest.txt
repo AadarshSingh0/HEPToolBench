@@ -1,0 +1,15 @@
+/HEPToolBench_local_final_full28_20260711_r01
+
+export OLLAMA_HOST=http://10.42.106.85:114HEPToolBench local full-28 run
+Created: 2026-07-11T09:23:36+05:30
+Working directory: <BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01
+OLLAMA_HOST=http://10.42.106.85:11434
+
+Python:
+Python 3.12.3
+
+Ollama:
+ollama version is 0.31.1
+
+Runner SHA256:
+bc7625f67e5080c484a935ca34828e7a997cc1f438e364eb4ec6c2ba4109e02a  runners/run_ollama_task2.py

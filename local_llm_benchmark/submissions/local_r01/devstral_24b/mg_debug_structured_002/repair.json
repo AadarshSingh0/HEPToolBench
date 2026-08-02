@@ -1,0 +1,5 @@
+{"error_type":"invalid_process","faulty_lines":["p p > t tbar"],"corrected_[18D[K
+tbar"],"corrected_lines":["generate p p > t t~","set ebeam1 6500","set ebea[4D[K
+ebeam2 6500"],"output_dir":"TTbar","reason":"The process should use 'genera[7D[K
+'generate' and correct anti-top notation 't~', also beam commands need to b[1D[K
+be corrected."}

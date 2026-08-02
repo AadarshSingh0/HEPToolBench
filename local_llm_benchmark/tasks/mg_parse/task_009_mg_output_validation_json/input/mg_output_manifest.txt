@@ -1,0 +1,44 @@
+RUN MANIFEST
+============
+
+run_name: TTbar_P8_Delphes
+process: p p > t t~
+requested_events: 10000
+beam_energy_1_GeV: 6500
+beam_energy_2_GeV: 6500
+
+REQUESTED WORKFLOW
+------------------
+hard_process: MadGraph
+parton_shower: Pythia8
+detector_simulation: Delphes
+
+OUTPUT FILE CHECKS
+------------------
+[OK]      Events/run_01/unweighted_events.lhe.gz
+          stage: hard_process
+          event_count: 10000
+
+[OK]      Events/run_01/tag_1_pythia8_events.hepmc.gz
+          stage: pythia8
+          event_count: 10000
+
+[MISSING] Events/run_01/tag_1_delphes_events.root
+          stage: delphes
+          event_count: unavailable
+
+[OK]      Events/run_01/run_01_tag_1_banner.txt
+          stage: metadata
+
+LOG EXCERPT
+-----------
+INFO: Generation finished successfully.
+INFO: Wrote Events/run_01/unweighted_events.lhe.gz with 10000 events.
+INFO: Pythia8 shower completed.
+INFO: Wrote Events/run_01/tag_1_pythia8_events.hepmc.gz with 10000 events.
+ERROR: Delphes stage requested but no Delphes ROOT output was produced.
+ERROR: Expected file Events/run_01/tag_1_delphes_events.root was not found.
+
+VALIDATION QUESTION
+-------------------
+Determine whether this run is ready for detector-level analysis.

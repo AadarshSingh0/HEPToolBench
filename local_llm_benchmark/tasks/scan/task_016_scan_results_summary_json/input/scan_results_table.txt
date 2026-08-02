@@ -1,0 +1,11 @@
+Scan result table for process p p > S > e+ e- at 13 TeV pp.
+The scan parameter is mS in GeV. Each point was requested with 10000 events.
+Do not interpolate failed points. Treat a scan as complete only if every requested point succeeded.
+
+| mS [GeV] | run_directory | run_status | cross_section_pb | uncertainty_pb | generated_events |
+|----------|---------------|------------|------------------|----------------|------------------|
+| 1.0      | run_mS_1p0    | success    | 12.40            | 0.30           | 10000            |
+| 1.5      | run_mS_1p5    | success    | 8.10             | 0.20           | 10000            |
+| 2.0      | run_mS_2p0    | failed     | nan              | nan            | 0                |
+| 2.5      | run_mS_2p5    | success    | 3.20             | 0.10           | 10000            |
+| 3.0      | run_mS_3p0    | success    | 1.70             | 0.08           | 10000            |

@@ -1,0 +1,100 @@
+Thinking...
+*   Target setup:
+        - `number_of_events`: 10000
+        - `seed_fixed`: true
+        - `seed_value`: 42
+        - `isr_enabled`: true
+        - `fsr_enabled`: true
+        - `mpi_enabled`: true (Requested: enable multiparton interactions)
+        - `hadronization_enabled`: true
+        - `hepmc_output_enabled`: true
+
+    *   `Main:numberOfEvents = 10000` -> Match.
+    *   `Random:setSeed = on` and `Random:seed = 42` -> Match.
+    *   `PartonLevel:ISR = on` -> Match.
+    *   `PartonLevel:FSR = on` -> Match.
+    *   `PartonLevel:MPI = off` -> **Mismatch** (Requested "enable", found [K
+"off").
+    *   `HadronLevel:all = on` -> Match (This enables hadronization).
+    *   `Main:writeHepMC = on` -> Match.
+
+    *   `status`: "invalid"
+    *   `number_of_events`: 10000
+    *   `seed_fixed`: true
+    *   `seed_value`: 42
+    *   `isr_enabled`: true
+    *   `fsr_enabled`: true
+    *   `mpi_enabled`: false (Actual value in file)
+    *   `hadronization_enabled`: true
+    *   `hepmc_output_enabled`: true
+    *   `missing_or_wrong_settings`: ["PartonLevel:MPI = off"] or ["PartonL[9D[K
+["PartonLevel:MPI = on"]? Looking at the provided schema example, `missing_[9D[K
+`missing_or_wrong_settings` contains the setting that *should* be there or [K
+is incorrect. Wait, the example shows `"missing_or_wrong_settings": ["Parto[7D[K
+["PartonLevel:MPI = on"]` and `recommended_fix`: `"set PartonLevel:MPI = on[2D[K
+on"`.
+    *   Let's re-check the sample logic: If MPI was off but should be on, t[1D[K
+the "wrong setting" is often listed as what it currently is or what it shou[4D[K
+should be. The example says `missing_or_wrong_settings` has `"PartonLevel:M[15D[K
+`"PartonLevel:MPI = on"` while it was likely expecting that to be true? No,[3D[K
+No, usually if it's wrong, you list the target or the current state.
+    *   Wait, look at the sample JSON in the prompt again.
+        - Requested `mpi_enabled`: true (implicit based on "enable multipar[8D[K
+multiparton interactions").
+        - Example shows: `"mpi_enabled": false`, `"missing_or_wrong_setting[26D[K
+`"missing_or_wrong_settings": ["PartonLevel:MPI = on"]`. This implies that [K
+because it is currently false, the setting needed for correctness (`PartonL[9D[K
+(`PartonLevel:MPI = on`) is missing or wrong.
+    *   `failure_stage`: "parton_level" (since MPI belongs to PartonLevel).[13D[K
+PartonLevel).
+    *   `recommended_fix`: "set PartonLevel:MPI = on".
+
+    *   Events: 10000 == 10000 (OK)
+    *   Seed Fixed: `Random:setSeed = on` (OK)
+    *   Seed Value: `Random:seed = 42` (OK)
+    *   ISR: `PartonLevel:ISR = on` (OK)
+    *   FSR: `PartonLevel:FSR = on` (OK)
+    *   MPI: `PartonLevel:MPI = off` (NOT OK - requested enable/on)
+    *   Hadronization: `HadronLevel:all = on` (OK)
+    *   HepMC: `Main:writeHepMC = on` (OK)
+
+    *   Status: invalid
+    *   Events: 10000
+    *   Seed Fixed: true
+    *   Seed Value: 42
+    *   ISR: true
+    *   FSR: true
+    *   MPI: false
+    *   Hadronization: true
+    *   HepMC: true
+    *   Wrong setting: `PartonLevel:MPI = on` (following the pattern of the[3D[K
+the provided example schema)
+    *   Failure stage: `parton_level`
+    *   Fix: `set PartonLevel:MPI = on`
+
+    Wait, in the provided example JSON, the prompt says "The requested setu[4D[K
+setup is... enable multiparton interactions" but then provides an example o[1D[K
+output where `"mpi_enabled": false`. This implies that if it's *not* enable[6D[K
+enabled in the file, you set the boolean to `false` and list the desired se[2D[K
+setting in `missing_or_wrong_settings`.
+
+    Let's re-read:
+    Requested setup: enable MPI.
+    Input file: `PartonLevel:MPI = off`.
+    Result: `mpi_enabled: false`, `status: invalid`.
+...done thinking.
+
+{
+  "status": "invalid",
+  "number_of_events": 10000,
+  "seed_fixed": true,
+  "seed_value": 42,
+  "isr_enabled": true,
+  "fsr_enabled": true,
+  "mpi_enabled": false,
+  "hadronization_enabled": true,
+  "hepmc_output_enabled": true,
+  "missing_or_wrong_settings": ["PartonLevel:MPI = on"],
+  "failure_stage": "parton_level",
+  "recommended_fix": "set PartonLevel:MPI = on"
+}

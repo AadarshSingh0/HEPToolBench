@@ -1,0 +1,13 @@
+import model sm
+set beam_energy1 6500.0
+set beam_energy2 6500.0
+define p = g u c d s u~ c~ d~ s~
+generate p p > t t~
+output TTbar_P8_Delphes
+launch TTbar_P8_Delphes -f
+set nevents 10000
+set seed 42
+set pythia8_shower on
+set delphes_simulation on
+set madspin:mode off
+done

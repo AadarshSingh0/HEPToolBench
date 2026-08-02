@@ -1,0 +1,8 @@
+{
+  "status": "success",
+  "process": "p p > e+ e-",
+  "cross_section_pb": 8812.0,
+  "cross_section_uncertainty_pb": 1.9,
+  "nevents": 10000,
+  "event_file": "Events/run_01/unweighted_events.lhe.gz"
+}

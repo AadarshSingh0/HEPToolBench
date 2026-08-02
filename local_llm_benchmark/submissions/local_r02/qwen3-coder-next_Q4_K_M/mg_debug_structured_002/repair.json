@@ -1,0 +1,5 @@
+{"error_type": "syntax_error", "faulty_lines": ["p p > t tbar", "set beam1 [K
+6500", "set beam2 6500"], "corrected_lines": ["generate p p > t t~", "set e[1D[K
+ebeam1 6500", "set ebeam2 6500"], "output_dir": "TTbar", "reason": "Incorre[8D[K
+"Incorrect anti-top syntax (tbar vs t~) and beam-energy command names (beam[5D[K
+(beam1/beam2 vs ebeam1/ebeam2)"}

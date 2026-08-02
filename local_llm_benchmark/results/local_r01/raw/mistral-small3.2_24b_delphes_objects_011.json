@@ -1,0 +1,46 @@
+{
+  "checks": {
+    "b_tag_requirement_failed": true,
+    "b_tagged_jet_count_correct": true,
+    "btag_failure_reported": true,
+    "electron_count_correct": true,
+    "failure_stage_object_selection": true,
+    "jet_count_correct": true,
+    "jet_requirement_passed": true,
+    "lepton_requirement_passed": true,
+    "met_requirement_passed": true,
+    "missing_et_correct": true,
+    "muon_count_correct": true,
+    "parseable_json": true,
+    "selected_leptons_correct": true,
+    "status_invalid": true,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_markdown_fence"
+  ],
+  "model": "mistral-small3.2:24b",
+  "normalized_summary": {
+    "b_tag_requirement_passed": false,
+    "b_tagged_jet_count": 1,
+    "electron_count": 1,
+    "failure_stage": "object_selection",
+    "jet_count": 4,
+    "jet_requirement_passed": true,
+    "lepton_requirement_passed": true,
+    "met_requirement_passed": true,
+    "missing_et_gev": 52.4,
+    "missing_or_failed_requirements": [
+      "at least 2 b-tagged jets"
+    ],
+    "muon_count": 0,
+    "recommended_action": "do not use this event for the signal region becaus because it fails the b-tagged jet requirement",
+    "selected_leptons": 1,
+    "status": "invalid"
+  },
+  "passed": true,
+  "score": 0.97,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/mistral-small3.2_24b/delphes_objects_011/validation.json",
+  "task_id": "delphes_objects_011"
+}

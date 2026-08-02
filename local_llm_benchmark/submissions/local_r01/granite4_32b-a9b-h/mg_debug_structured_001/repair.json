@@ -1,0 +1,9 @@
+{
+  "error_type": "missing_process_declaration",
+  "faulty_lines": [],
+  "corrected_lines": [
+    "generate p p > e+ e- [QCD]"
+  ],
+  "output_dir": "DY_ee",
+  "reason": "Added generate line for Drell-Yan process"
+}

@@ -1,0 +1,29 @@
+```text
+# MG5_aMC@NLO process card for inclusive top pair production
+
+## Collision energy (in GeV)
+sqrt_s = 13000 
+
+## Process definition
+p p > t t~
+
+## Model information 
+model = sm
+
+## Couplings and parameters of the model can be set here.
+# No specific changes needed for this standard SM process.
+
+## Generate events at Leading Order (LO)
+# The default is to generate LO, no need to specify further unless you want[4D[K
+want NLO or higher orders.
+
+## Number of points per iteration
+# This controls integration efficiency. Default values are usually sufficie[8D[K
+sufficient.
+max_events = 1000000
+
+## Integration method and accuracy settings can be adjusted here if needed,[7D[K
+needed,
+# but the defaults typically provide good results for this process.
+
+```

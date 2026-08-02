@@ -1,0 +1,11 @@
+# MadGraph5_aMC@NLO run summary
+Run name: run_01
+Status: success
+Process: p p > e+ e-
+Collider: proton proton
+Beam energy 1: 6500 GeV
+Beam energy 2: 6500 GeV
+Events requested: 10000
+Integrated cross section: 881.2 +- 1.9 pb
+Unweighted event file: Events/run_01/unweighted_events.lhe.gz
+End of run summary

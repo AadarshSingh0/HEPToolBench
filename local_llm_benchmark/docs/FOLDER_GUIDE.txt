@@ -1,0 +1,12 @@
+# docs folder guide
+
+This folder contains human-readable documentation for HEPToolBench.
+
+Typical files:
+- how_to_test_a_model.md : quick instructions for running a model on a task.
+- task_descriptions.md : optional overview of task families.
+- model_list.md : optional list of tested models and providers.
+- reproduction_notes.md : optional notes for reproducing benchmark runs.
+
+How to use:
+Start by reading how_to_test_a_model.md. The files here are intended for users who want to understand the benchmark before reading the Python code.

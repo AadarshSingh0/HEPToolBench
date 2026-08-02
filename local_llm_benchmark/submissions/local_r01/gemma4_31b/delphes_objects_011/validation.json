@@ -1,0 +1,62 @@
+Thinking...
+*   Requested analysis selection:
+        - exactly 1 isolated charged lepton (electron or muon).
+        - at least 4 reconstructed jets.
+        - at least 2 b-tagged jets.
+        - missing transverse energy > 30 GeV.
+
+    *   Electrons (isolated): 1
+    *   Muons (isolated): 0
+    *   Jets: 4
+    *   BTaggedJets: 1
+    *   MissingET: 52.4 GeV
+
+    *   Lepton requirement: Exactly 1 isolated charged lepton? (1 electron [K
++ 0 muons = 1). **Passed**.
+    *   Jet requirement: At least 4 reconstructed jets? (4 jets). **Passed*[9D[K
+**Passed**.
+    *   B-tag requirement: At least 2 b-tagged jets? (1 b-tagged jet). **Fa[4D[K
+**Failed**.
+    *   MET requirement: MET > 30 GeV? (52.4 GeV). **Passed**.
+
+    *   `status`: "invalid" (since one failed)
+    *   `selected_leptons`: 1
+    *   `electron_count`: 1
+    *   `muon_count`: 0
+    *   `jet_count`: 4
+    *   `b_tagged_jet_count`: 1
+    *   `missing_et_gev`: 52.4
+    *   `lepton_requirement_passed`: true
+    *   `jet_requirement_passed`: true
+    *   `b_tag_requirement_passed`: false
+    *   `met_requirement_passed`: true
+    *   `missing_or_failed_requirements`: ["at least 2 b-tagged jets"]
+    *   `failure_stage`: "object_selection"
+    *   `recommended_action`: "do not use this event for the signal region [K
+because it fails the b-tagged jet requirement"
+
+    *   Check against requested schema.
+    *   Status: invalid.
+    *   Leptons: 1 (1+0). Pass.
+    *   Jets: 4. Pass.
+    *   B-tags: 1. Fail (minimum 2).
+    *   MET: 52.4. Pass (>30).
+...done thinking.
+
+{
+  "status": "invalid",
+  "selected_leptons": 1,
+  "electron_count": 1,
+  "muon_count": 0,
+  "jet_count": 4,
+  "b_tagged_jet_count": 1,
+  "missing_et_gev": 52.4,
+  "lepton_requirement_passed": true,
+  "jet_requirement_passed": true,
+  "b_tag_requirement_passed": false,
+  "met_requirement_passed": true,
+  "missing_or_failed_requirements": ["at least 2 b-tagged jets"],
+  "failure_stage": "object_selection",
+  "recommended_action": "do not use this event for the signal region becaus[6D[K
+because it fails the b-tagged jet requirement"
+}

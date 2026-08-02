@@ -1,0 +1,8 @@
+A physicist is running a parameter scan for a new scalar particle S.
+
+For this scan point, update the MadGraph param_card.dat excerpt so that:
+- scalar mass mS = 3.5 GeV
+- scalar coupling gS = 0.1
+- do not change the decay width unless explicitly requested
+
+Return a machine-readable JSON patch plan, not the full param_card.dat.

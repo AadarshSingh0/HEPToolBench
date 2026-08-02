@@ -1,0 +1,14 @@
+{
+  "task_id": "mg_basic_002",
+  "title": "Top-pair MadGraph card from free-form instruction",
+  "category": "mg_basic",
+  "level": "L2",
+  "mode": "free_form",
+  "tools": ["madgraph"],
+  "timeout_seconds": 300,
+  "requires_execution": false,
+  "expected_artifacts": ["proc_card.dat"],
+  "physics_tags": ["sm", "top_pair", "pp_collision"],
+  "description": "Generate a complete MadGraph process card for p p > t t~ at 13 TeV."
+}
+

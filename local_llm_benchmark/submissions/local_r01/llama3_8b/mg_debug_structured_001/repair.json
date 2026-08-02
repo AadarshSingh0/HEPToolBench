@@ -1,0 +1,8 @@
+{
+  "error_type": "invalid_process_command",
+  "faulty_lines": ["p p > e+ e-"],
+  "corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500", "set ebeam[5D[K
+ebeam2 6500"],
+  "output_dir": "DY_ee",
+  "reason": "\"Invalid process command, replaced with generate command\""
+}

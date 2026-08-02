@@ -1,0 +1,10 @@
+# Task: MadGraph Run Card Settings for Drell-Yan With Cuts
+
+```text
+10000 = nevents
+42 = seed
+6500 = ebeam1
+6500 = ebeam2
+20 = ptmin
+2.5 = etamax
+```

@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "cross_section_converted_to_pb": false,
+    "event_file_correct": false,
+    "input_unit_fb": false,
+    "nevents_correct": false,
+    "output_unit_pb": false,
+    "parseable_json": false,
+    "process_correct": false,
+    "status_success": false,
+    "strict_json_only": false,
+    "uncertainty_converted_to_pb": false
+  },
+  "failure_modes": [
+    "includes_explanation_not_json_only",
+    "invalid_json_substring",
+    "not_parseable_json"
+  ],
+  "model": "gemma4:26b",
+  "normalized_summary": null,
+  "passed": false,
+  "score": 0,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r03_clean/submissions/gemma4_26b/mg_parse_008/summary.json",
+  "task_id": "mg_parse_008"
+}

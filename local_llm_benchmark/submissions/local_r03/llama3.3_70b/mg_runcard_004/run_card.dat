@@ -1,0 +1,6 @@
+0 = nevents ! number of events 
+42 = iseed ! random seed 
+6500.0 = ebeam1 ! beam energy 1 
+6500.0 = ebeam2 ! beam energy 2 
+20.0 = ptlmin ! minimum charged-lepton transverse momentum 
+2.5 = etalmax ! maximum charged-lepton pseudorapidity

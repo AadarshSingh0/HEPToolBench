@@ -1,0 +1,10 @@
+# Minimal SLHA-like param_card.dat excerpt
+
+BLOCK MASS  # Mass spectrum
+   25        1.250000e+02   # h mass
+   9000001   1.000000e+00   # mS scalar mass
+
+BLOCK COUPLINGS  # model couplings
+   1         5.000000e-02   # gS scalar coupling
+
+DECAY 9000001  1.000000e-03   # width_S

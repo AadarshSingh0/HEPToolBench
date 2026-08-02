@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "cross_section_converted_to_pb": false,
+    "event_file_correct": true,
+    "input_unit_fb": true,
+    "nevents_correct": true,
+    "output_unit_pb": true,
+    "parseable_json": true,
+    "process_correct": true,
+    "status_success": true,
+    "strict_json_only": true,
+    "uncertainty_converted_to_pb": true
+  },
+  "failure_modes": [
+    "wrong_cross_section_or_unit_conversion"
+  ],
+  "model": "llama3:8b",
+  "normalized_summary": {
+    "cross_section_pb": 234.5,
+    "cross_section_uncertainty_pb": 0.012,
+    "event_file": "Events/run_02/unweighted_events.lhe.gz",
+    "input_unit": "fb",
+    "nevents": 5000,
+    "output_unit": "pb",
+    "process": "p p > h j",
+    "status": "success"
+  },
+  "passed": false,
+  "score": 0.78,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r03_clean/submissions/llama3_8b/mg_parse_008/summary.json",
+  "task_id": "mg_parse_008"
+}

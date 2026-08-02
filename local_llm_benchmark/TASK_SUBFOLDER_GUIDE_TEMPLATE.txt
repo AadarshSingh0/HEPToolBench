@@ -1,0 +1,19 @@
+# Folder guide: task subfolder
+
+Purpose:
+This folder is part of the HEPToolBench task collection. It contains files needed to define or score one benchmark task or task family.
+
+Common contents:
+- prompt.txt or task prompt files : instructions shown to the model.
+- metadata.json : task ID, expected artifact name, task family, and related information.
+- tests/score.py : scoring logic for the task.
+- README.md : optional human-readable task description.
+
+How to use:
+Do not usually run these files directly. Use a runner from the repository root.
+
+Example:
+    python runners/run_ollama_task.py --model llama3.1:8b --task mg_basic_001
+
+For scoring a saved submission:
+    python runners/evaluate_submission.py --task mg_basic_001 --submission submissions/MODEL/mg_basic_001 --output results/MODEL_mg_basic_001.json

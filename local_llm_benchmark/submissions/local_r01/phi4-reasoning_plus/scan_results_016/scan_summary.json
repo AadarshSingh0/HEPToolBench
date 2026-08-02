@@ -1,0 +1,366 @@
+We are given an instruction: "You are being tested on a particle-physics so[2D[K
+software benchmark. Return only the requested output file content." The exp[3D[K
+expected output is JSON summary with fields specified.
+
+The input file (provided in the prompt) includes scan results table with co[2D[K
+columns: mS [GeV], run_directory, run_status, cross_section_pb, uncertainty[11D[K
+uncertainty_pb, generated_events. We have 5 rows:
+
+Row1:
+mS=1.0 GeV; run_directory "run_mS_1p0"; status = success; cross_section_pb [K
+= 12.40; uncertainty_pb = 0.30; events=10000.
+Row2: mS=1.5 GeV; directory "run_mS_1p5"; status = success; cross_section_p[15D[K
+cross_section_pb = 8.10; uncertainty_pb = 0.20; events=10000.
+Row3: mS=2.0 GeV; directory "run_mS_2p0"; status = failed; cross_section_pb[16D[K
+cross_section_pb = nan; uncertainty_pb = nan; events=0.
+Row4: mS=2.5 GeV; directory "run_mS_2p5"; status = success; cross_section_p[15D[K
+cross_section_pb = 3.20; uncertainty_pb = 0.10; events=10000.
+Row5: mS=3.0 GeV; directory "run_mS_3p0"; status = success; cross_section_p[15D[K
+cross_section_pb = 1.70; uncertainty_pb = 0.08; events=10000.
+
+So, total points is number of rows? But note instruction: total_points inte[4D[K
+integer, successful_points integer, failed_points integer.
+We have total_points = 5 (since there are five rows). Successful points cou[3D[K
+count: success points: row1, row2, row4, row5 -> so count equals 4. Failed [K
+points count equals 1.
+
+Failed masses GeV: For each failed point, include the mass value? It says "[1D[K
+"failed_masses_gev": list of numbers. The failed point is at mS=2.0 GeV.
+Failed run_directories: For each failed point, list the run_directory strin[5D[K
+string. So it's ["run_mS_2p0"].
+
+Next field: max_cross_section_mass_gev: number. "Ignore failed points when [K
+finding maximum cross section." So we want to find among successful points [K
+the highest mass (maybe? Actually reading instructions: "max_cross_section_[19D[K
+"max_cross_section_mass_gev": number. But then reading instruction: "Ignore[7D[K
+"Ignore failed points when finding the maximum/minimum successful cross sec[3D[K
+section." Wait, which field is that? They specify:
+"max_cross_section_mass_gev": number,
+"min_successful_cross_section_pb": number,
+Wait re-read instructions: 
+The JSON fields include:
+{
+  "status": "complete" or "incomplete",
+  "scan_parameter": "...",
+  "total_points": integer,
+  "successful_points": integer,
+  "failed_points": integer,
+  "failed_masses_gev": [numbers],
+  "failed_run_directories": [strings],
+  "max_cross_section_mass_gev": number,
+  "max_cross_section_pb": number,
+  "min_successful_cross_section_mass_gev": number,
+  "min_successful_cross_section_pb": number,
+  "monotonic_decreasing_successful_points": true or false,
+  "rerun_required": true or false,
+  "recommended_action": "..."
+}
+
+Wait, what do fields "max_cross_section_mass_gev" and "min_successful_cross[21D[K
+"min_successful_cross_section_mass_gev" refer to? They are ambiguous. The i[1D[K
+instructions mention: "Ignore failed points when finding the maximum/minimu[14D[K
+maximum/minimum successful cross section." But then in our JSON summary, we[2D[K
+we have two fields that require numeric values:
+- max_cross_section_mass_gev: number,
+- max_cross_section_pb: number
+- min_successful_cross_section_mass_gev: number,
+- min_successful_cross_section_pb: number.
+
+I need to parse the instructions further:
+
+We have a scan result table. The table columns are "mS [GeV]", "run_directo[12D[K
+"run_directory", etc.
+"Scan parameter is mS in GeV." so that's what "scan_parameter" should be se[2D[K
+set as "mS" maybe? But it says: "The scan parameter is ..." So probably "sc[3D[K
+"scan_parameter": "mS".
+
+Now, regarding cross sections: They are given in pb units (picobarn) except[6D[K
+except for the failed one. The instruction states: "Ignore failed points wh[2D[K
+when finding maximum/minimum successful cross section." So that means we on[2D[K
+only consider successful ones for these max/min calculations.
+
+I need to determine what exactly is meant by:
+- max_cross_section_mass_gev: number, 
+- min_successful_cross_section_mass_gev: number,
+and also 
+- max_cross_section_pb, and
+- min_successful_cross_section_pb.
+But wait, maybe the meaning is: Among successful points, find the point wit[3D[K
+with maximum cross section pb value? But then what do "mass" fields refer t[1D[K
+to? The table has mS in GeV. So I suspect:
+- For the maximum cross section, we consider both mass and cross section pb[2D[K
+pb values of successful runs. And we want to output the mass associated wit[3D[K
+with that maximum cross section, which is "max_cross_section_mass_gev". Add[3D[K
+Additionally, also output the value of the max cross section pb as "max_cro[8D[K
+"max_cross_section_pb".
+Then for the minimum successful cross section: "min_successful_cross_sectio[28D[K
+"min_successful_cross_section_mass_gev" and "min_successful_cross_section_p[31D[K
+"min_successful_cross_section_pb".
+
+But then, note the wording in instructions:
+"Rule: Ignore failed points when finding maximum/minimum successful cross s[1D[K
+sections." So we only consider the runs that succeeded. And since the table[5D[K
+table is sorted by mS? But is it sorted? The table has rows with increasing[10D[K
+increasing masses (1.0, 1.5, 2.0, 2.5, 3.0). But one of them is failed.
+
+So which successful points are considered?
+Successful ones:
+Row1: mS = 1.0, cross_section_pb=12.40
+Row2: mS = 1.5, cross_section_pb=8.10
+Row4: mS = 2.5, cross_section_pb=3.20
+Row5: mS = 3.0, cross_section_pb=1.70
+
+Now for the maximum cross section (largest cross_section_pb among successfu[9D[K
+successful ones) is row1 with value 12.40 pb.
+So then "max_cross_section_mass_gev" equals mass of that point? But note: T[1D[K
+The scan parameter is mS in GeV. So maybe we output the mass corresponding [K
+to max cross-section? But instructions are ambiguous because it says "Ignor[6D[K
+"Ignore failed points when finding maximum/minimum successful cross section[7D[K
+section", not "when calculating the cross section value with respect to mS.[3D[K
+mS." 
+Wait, but there's a possibility that the intended meaning is: among the sca[3D[K
+scan results, you want:
+- The run with the maximum cross section (the highest pb value) among those[5D[K
+those that succeeded. Output its mass value as "max_cross_section_mass_gev"[28D[K
+"max_cross_section_mass_gev" and output the cross section value as "max_cro[8D[K
+"max_cross_section_pb".
+And for minimum successful cross section: find the one with the smallest cr[2D[K
+cross section among the successful ones? That would be row5 (mass 3.0, cros[4D[K
+cross section pb = 1.70). So then "min_successful_cross_section_mass_gev" e[1D[K
+equals mass 3.0 and "min_successful_cross_section_pb" equals 1.70.
+
+But wait: The instructions in JSON fields are named: "max_cross_section_mas[22D[K
+"max_cross_section_mass_gev" and "min_successful_cross_section_mass_gev". B[1D[K
+But why is it "successful" for the minimum one? The maximum cross section d[1D[K
+doesn't have that word but the min does. Actually, re-read JSON fields:
+{
+  ...
+  "max_cross_section_mass_gev": number,
+  "max_cross_section_pb": number,
+  "min_successful_cross_section_mass_gev": number,
+  "min_successful_cross_section_pb": number,
+  ...
+}
+
+So they want two different calculations: one for the maximum cross section [K
+(but maybe not necessarily successful? But then rule said ignore failed poi[3D[K
+points when finding max/ min, so all are from successful ones) but why is i[1D[K
+it worded differently? Possibly because some scans may have "failed" points[6D[K
+points and we treat them as incomplete. But here scan is incomplete if any [K
+requested point failed, so status should be "incomplete". Yes indeed, the r[1D[K
+rule says: "The scan is complete only if every requested point succeeded." [K
+So in our case there is at least one failure (mS=2.0), so overall status sh[2D[K
+should be "incomplete". And that might affect rerun_required and recommende[10D[K
+recommended_action as well.
+- "rerun_required": true or false. Rule: If scan is incomplete, then rerun [K
+is required? Possibly yes because if any point fails, then you need to reru[4D[K
+rerun the failed points. But maybe not always, but likely yes.
+- "recommended_action": probably something like "Rerun failed points" or si[2D[K
+similar.
+
+I should check the instructions for "rerun_required". The instruction state[5D[K
+states: "The scan is incomplete if any requested point failed." So that imp[3D[K
+implies status field "status": "incomplete" because there's a failure in ro[2D[K
+row3.
+Then what about "monotonic_decreasing_successful_points"? It says: "monoton[8D[K
+"monotonic decreasing if they decrease as mS increases when failed points a[1D[K
+are skipped."
+
+Now check the successful cross sections in order of increasing mass (taking[7D[K
+(taking only successful ones):
+Row1: mass=1.0, cross_section=12.40
+Row2: mass=1.5, cross_section=8.10 
+Row4: mass=2.5, cross_section=3.20 
+Row5: mass=3.0, cross_section=1.70
+
+We check if the sequence is monotonic decreasing:
+- 12.40 to 8.10: decrease (yes).
+- 8.10 to 3.20: decrease (yes).
+- 3.20 to 1.70: decrease (yes).
+
+Thus it is strictly decreasing or non-increasing? "Monotonic decreasing" me[2D[K
+means for each subsequent point, the cross section value should be less tha[3D[K
+than or equal to previous, but I think we want strictly decreasing? But ins[3D[K
+instructions say "decrease as mS increases", so likely a strict condition. [K
+In our case 12.40 > 8.10, 8.10 > 3.20, and 3.20 > 1.70, so yes it's monoton[7D[K
+monotonic decreasing.
+
+Therefore, "monotonic_decreasing_successful_points": true.
+
+Now, recommended_action: Possibly if scan is incomplete, then recommended a[1D[K
+action might be "rerun failed points" or something like that. But what does[4D[K
+does instruction specify? It says: "Treat a scan as complete only if every [K
+requested point succeeded." So in our case it's incomplete and thus we prob[4D[K
+probably need to set "rerun_required": true because there are failed points[6D[K
+points. And recommended_action maybe "re-run the failed points" (or similar[7D[K
+similar text). But instructions don't specify exactly what string should be[2D[K
+be used, so I can choose something like "rerun_failed_points".
+
+I need to check the field "scan_parameter": It says it is mS in GeV. So out[3D[K
+output: "mS [GeV]".
+
+Now check the fields:
+- status: "incomplete" because there's at least one failure.
+- scan_parameter: Should be maybe just "mS", or maybe the string "mS [GeV]"[6D[K
+[GeV]"? Possibly the field says "The scan parameter is mS in GeV." so I'll [K
+output exactly "mS (GeV)" maybe. But instructions say: Required JSON fields[6D[K
+fields: "scan_parameter": "...". So we can fill with the name of parameter,[10D[K
+parameter, e.g., "mS".
+But it might be better to use exactly what's provided in table header: "mS [K
+[GeV]".
+
+Maybe I'll output scan_parameter as "mS (GeV)" or simply "mS" because that [K
+is not clear. The instructions says: "Scan result table for process p p > S[1D[K
+S > e+ e- at 13 TeV pp.
+The scan parameter is mS in GeV." So likely I'll set "scan_parameter": "mS"[4D[K
+"mS".
+
+Now, total_points = number of rows which is 5.
+
+successful_points count = count(successful) which equals 4.
+
+failed_points count = failed count which equals 1.
+
+failed_masses_gev: list with [2.0] because row3 mS=2.0.
+failed_run_directories: list with ["run_mS_2p0"].
+
+max_cross_section_mass_gev: We need to pick the one among successful ones t[1D[K
+that has maximum cross section pb value? Which is 12.40 from row1, which co[2D[K
+corresponds to mass = 1.0 GeV. But then also "max_cross_section_pb": number[6D[K
+number = 12.40.
+But wait: The field names "max_cross_section_mass_gev" and "min_successful_[16D[K
+"min_successful_cross_section_mass_gev". But there's a slight nuance: For t[1D[K
+the maximum cross section, we are ignoring failed points as rule states, so[2D[K
+so only consider successful ones.
+
+So max cross section among success is:
+Row1: 12.40 (mass=1.0)
+Row2: 8.10 (mass=1.5) 
+Row4: 3.20 (mass=2.5)
+Row5: 1.70 (mass=3.0)
+
+So maximum cross section is row1 with value 12.40 pb and mass = 1.0.
+
+Then min_successful_cross_section_mass_gev: The minimum successful cross se[2D[K
+section among success points? But the instructions say "min_successful_cros[20D[K
+"min_successful_cross_section", but that might mean the lowest cross sectio[6D[K
+section value, which is row5 with cross section=1.70, mass=3.0.
+So then:
+"min_successful_cross_section_mass_gev": 3.0
+"min_successful_cross_section_pb": 1.70
+
+Double-check: The table order of mS in GeV is increasing, and the cross-sec[9D[K
+cross-section pb values are decreasing (except for a failed point which we [K
+ignore), so that's correct.
+
+So our output JSON should be:
+
+{
+ "status": "incomplete",
+ "scan_parameter": "mS",
+ "total_points": 5,
+ "successful_points": 4,
+ "failed_points": 1,
+ "failed_masses_gev": [2.0],
+ "failed_run_directories": ["run_mS_2p0"],
+ "max_cross_section_mass_gev": 1.0,
+ "max_cross_section_pb": 12.40,
+ "min_successful_cross_section_mass_gev": 3.0,
+ "min_successful_cross_section_pb": 1.70,
+ "monotonic_decreasing_successful_points": true,
+ "rerun_required": true, 
+ "recommended_action": "Rerun failed points."
+}
+
+But should I include a period at the end of recommended_action string? Prob[4D[K
+Probably not.
+
+The instructions specify: "Return only JSON summary." And also "Do not incl[4D[K
+include explanations."
+
+I must output exactly a JSON summary. So my answer should be a JSON object [K
+printed as text with no markdown formatting if possible, but by default out[3D[K
+output JSON object. It's not clear if the instructions require JSON pretty [K
+printing or just raw text.
+
+I must check: "Return only the final answer." Possibly I'll output it in a [K
+code block with json formatting? But instruction said: "By default, do not [K
+use Markdown formatting unless requested."
+
+The system says by default no markdown formatting. But my answer should be [K
+plain text JSON maybe?
+
+The instructions say: "Return only final answer." And also "Do not include [K
+explanations". So I'll output just the JSON summary.
+
+I must check if any rounding or exact value is required? The cross-section [K
+values are floats, so I'll output them as decimals (e.g., 12.40). But in JS[2D[K
+JSON, 12.4 would be fine but maybe we want exactly same digits as provided.[9D[K
+provided. Possibly better to use 12.4.
+
+But then note that in the input table row1: "12.40", row2: "8.10", row4: "3[2D[K
+"3.20", row5: "1.70". I'll output them with two decimal places or maybe lea[3D[K
+leave them as is? I think I should preserve same precision, e.g., 12.4 vs 1[1D[K
+12.40. But I'll do minimal formatting: 
+Maybe use 12.40 exactly if needed.
+
+Alternatively, I can output: "max_cross_section_mass_gev": 1.0 and "max_cro[8D[K
+"max_cross_section_pb": 12.40, and similarly min ones with appropriate deci[4D[K
+decimals.
+
+I think it's safe to output as numeric values. But maybe it is better to pr[2D[K
+preserve the same number of digits? Possibly no need.
+
+Maybe I'll check field: "scan_parameter" may be "mS [GeV]" but instructions[12D[K
+instructions said "The scan parameter is mS in GeV." So maybe I'll set "sca[4D[K
+"scan_parameter": "mS".
+
+I must also include "rerun_required": true and "recommended_action": "Re-ru[6D[K
+"Re-run failed points".
+
+I could use a string exactly: "Rerun the failed simulation(s)" or "Please r[1D[K
+re-run failed runs" but I'll choose "Rerun failed points."
+
+Let me check instructions: "The scan is incomplete if any requested point f[1D[K
+failed." So then yes.
+
+Now, double-check ordering for monotonic decreasing:
+We require to check that all successive differences are strictly less than [K
+the previous value. In our case, 12.40 > 8.10, 8.10 > 3.20, 3.20 > 1.70, so[2D[K
+so that's correct.
+
+I must also check if I'm allowed to output in a JSON block with proper synt[4D[K
+syntax:
+{
+   "status": "incomplete",
+   ...
+}
+
+Yes.
+
+Now I'll produce final answer as JSON summary.
+
+I'll now produce final answer as plain text JSON without markdown formattin[9D[K
+formatting. Possibly I can use triple backticks with json? The instructions[12D[K
+instructions said: "By default, do not output markdown unless requested." S[1D[K
+So I'll output a code block? The instruction says "Return only the final an[2D[K
+answer" and then "Do not include explanations."
+
+I must check if my answer should be exactly JSON text.
+
+I will now produce the final answer.{
+  "status": "incomplete",
+  "scan_parameter": "mS [GeV]",
+  "total_points": 5,
+  "successful_points": 4,
+  "failed_points": 1,
+  "failed_masses_gev": [2.0],
+  "failed_run_directories": ["run_mS_2p0"],
+  "max_cross_section_mass_gev": 1.0,
+  "max_cross_section_pb": 12.40,
+  "min_successful_cross_section_mass_gev": 3.0,
+  "min_successful_cross_section_pb": 1.70,
+  "monotonic_decreasing_successful_points": true,
+  "rerun_required": true,
+  "recommended_action": "Rerun failed points."
+}

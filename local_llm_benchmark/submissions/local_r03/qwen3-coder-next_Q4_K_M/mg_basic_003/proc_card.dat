@@ -1,0 +1,23 @@
+generate p p > h j [QCD]
+output HJ
+launch
+set ebeam1 6500
+set ebeam2 6500
+set mass 250
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+set ptj 30.0
+set drjj 0.4
+set pth 20.0
+set drlh 0.4
+set fixed_ren_scale . true.
+set fixed_fac_scale . true.
+set scale 91.1876
+set pdf lhapdf
+set nevents 10000
+set lha_pdf_id 306000
+set ptb 20.0
+set drbb 0.4
+set drlh 0.4
+set drjj 0.4
+set ptj 30.0

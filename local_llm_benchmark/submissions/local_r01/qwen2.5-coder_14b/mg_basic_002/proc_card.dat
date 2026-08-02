@@ -1,0 +1,7 @@
+```text
+import model sm
+
+define p = g u c d s u~ c~ d~ s~
+generate p p > t t~
+output top_pair_generation
+```

@@ -1,0 +1,13 @@
+{
+  "task_id": "mg_parse_007",
+  "title": "Diagnose failed MadGraph run as JSON",
+  "category": "mg_parse",
+  "level": "L2",
+  "mode": "json_extraction",
+  "tools": ["madgraph"],
+  "timeout_seconds": 180,
+  "requires_execution": false,
+  "expected_artifacts": ["diagnosis.json"],
+  "physics_tags": ["madgraph", "log_parsing", "failure_diagnosis", "debugging"],
+  "description": "Extract and classify the failure mode from a MadGraph-style failed run log."
+}

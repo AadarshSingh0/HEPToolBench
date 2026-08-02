@@ -1,0 +1,8 @@
+import model sm
+define p = g u c d s u~ c~ d~ s~
+process p p -> h jet
+output HiggsJet
+launch
+set beam1 6500
+set beam2 6500
+

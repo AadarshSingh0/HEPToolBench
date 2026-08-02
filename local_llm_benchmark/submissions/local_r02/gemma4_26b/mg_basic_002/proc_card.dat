@@ -1,0 +1,134 @@
+---
+Thinking...
+*   Task: Generate a MadGraph process card (`proc_card.dat`) for inclusive [K
+top-pair production ($p p \to t \bar{t}$).
+    *   Input Specification: `p p > t t~`.
+    *   Energy: Total $\sqrt{s} = 13$ TeV (meaning $E_{beam} = 6500$ GeV).
+    *   Constraint: Return *only* the content of `proc_card.dat`. No explan[6D[K
+explanations.
+
+    *   A standard MadGraph process card (`proc_card.dat`) typically includ[6D[K
+includes:
+        1.  The process definition (e.g., `p p > t t~`).
+        2.  Beam energy definitions (beams and their energies).
+        3.  Other parameters if necessary (but the prompt only specifies ph[2D[K
+physics and beam energy).
+
+    *   `p p > t t~` is the core instruction. Note: In MadGraph, top-antito[10D[K
+top-antitop can be written as `t t~` or `t tbar`. The user provided `t t~`.[4D[K
+t~`.
+    *   Beam 1: `p`, Energy: `6500` GeV.
+    *   Beam 2: `p`, Energy: `6500` GeV.
+
+    ```text
+    p p > t t~
+    beam 1 = p, E = 6500
+    beam 2 = p, E = 6500
+    ```
+    Wait, standard MadGraph syntax for beam energies in a `.dat` card usual[5D[K
+usually looks like:
+    `beam 1 = p, E = 6500.0` or simply defining the energy of each proton.
+
+    Let's look at how MadGraph cards are typically structured for `p p > t [K
+t~`.
+    Often it is:
+    ```text
+    p p > t t~
+    beam 1 = p, E = 6500.0
+    beam 2 = p, E = 6500.0
+    ```
+
+    Actually, let's check the specific syntax used in MadGraph5_aMC@NLO for[3D[K
+for process cards.
+    A common format is:
+    ```text
+    p p > t t~
+    beam 1 = p, E = 6lamda... (no)
+    ```
+    Actually, most people use `beam 1 = p, E = 6500.` or specify the energy[6D[K
+energy in GeV.
+
+    Looking at standard examples:
+    `p p > t t~`
+    `beam 1 = p, E = 6500.`
+    `beam 2 = p, E = 6500.`
+
+    Wait, some users just use the command `generate p p > t t~`. But in a `[1D[K
+`.dat` card (which is often used for batch processing), it's usually just t[1D[K
+the process line and beam lines.
+
+    Let's refine:
+    Line 1: `p p > t t~`
+    Line 2: `beam 1 = p, E = 6500.`
+    Line 3: `beam 2 = p, E = 6500.` (Or sometimes beam 1 and beam 2 are jus[3D[K
+just described by energy).
+
+    Let's check if there's a specific standard for the `.dat` file format. [K
+In MadGraph batch mode:
+    ```text
+    p p > t t~
+    beam 1 = p, E = 6500.
+    beam 2 = p, E = 6500.
+    ```
+
+    *   Process: `p p > t t~` (As provided).
+    *   Energy: $E_{beam} = 6500$ GeV.
+    *   No explanations.
+
+    The user said `t t~`. In MadGraph, the bar/tilde notation for antiparti[9D[K
+antiparticles is usually `tbar` or `t~`. The prompt says `p p > t t~`. I wi[2D[K
+will stick to exactly what was provided for the process definition.
+
+    Final check of requirements:
+    "Return only the completed proc_card.dat content."
+
+    ```text
+    p p > t t~
+    beam 1 = p, E = 6500.
+    beam 2 = p, E = 6500.
+    ```
+
+    Wait, sometimes it's:
+    `p p > t t~`
+    `energy = 6500.` (But this is ambiguous for two beams).
+    The beam definition `beam 1 = ...` is the most precise way to specify $[1D[K
+$E_{beam}$.
+
+    Actually, a common format for MadGraph cards used in automation:
+    ```text
+    p p > t t~
+    beam 1 = p, E = 6500.
+    beam 2 = p, E = 6500.
+    ```
+
+    Let's ensure no other parameters are needed. The prompt doesn't mention[7D[K
+mention mass or any other coupling. Standard Model is implied by `p p > t t[1D[K
+t~`.
+
+    One more check on syntax: Is it `beam 1 = p, E = 6500.` or `beam 1 = p;[2D[K
+p; energy = 6500`?
+    In MadGraph automation (like via a script), the `.dat` file usually con[3D[K
+contains the commands passed to the `generate` and `beam` functions.
+
+    Command line equivalent:
+    `generate p p > t t~`
+    `beam 1 = p, E = 6500.`
+    `beam 2 = p, E = 6500.`
+
+    The file content should be the sequence of instructions.
+
+    Final check on `t t~`:
+    User input: `p p > t t~`.
+    MadGraph recognizes `tbar` better, but if the user specifically provide[7D[K
+provided `t t~`, I'll use that as requested for the process definition part[4D[K
+part. However, `t t~` is valid syntax in MG5 (using the tilde).
+
+    Result:
+    p p > t t~
+    beam 1 = p, E = 6500.
+    beam 2 = p, E = 6500.
+...done thinking.
+
+p p > t t~
+beam 1 = p, E = 6500.
+beam 2 = p, E = 6500.

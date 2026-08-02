@@ -1,0 +1,82 @@
+Thinking...
+*   Input: `mg_output_manifest.txt` (A manifest of a particle physics simul[5D[K
+simulation run).
+    *   Task: Validate if the requested workflow (MadGraph -> Pythia8 -> De[2D[K
+Delphes) produced all expected outputs.
+    *   Requested Output: A JSON object following a specific schema.
+
+    *   `run_name`: TTbar_P8_Delphes
+    *   `process`: `p p > t t~`
+    *   `requested_events`: 10000
+    *   Workflow Requested: MadGraph, Pythia8, Delphes.
+
+    *   `Events/run_01/unweighted_events.lhe.gz`: [OK], count=10000 (Hard p[1D[K
+process - OK)
+    *   `Events/run_01/tag_1_pythia8_events.hepmc.gz`: [OK], count=10000 (P[2D[K
+(Pythia8 - OK)
+    *   `Events/run_01/tag_1_delphes_events.root`: [MISSING] (Delphes - FAI[3D[K
+FAIL)
+    *   `Events/run_01/run_01_tag_1_banner.txt`: [OK] (Metadata - OK)
+
+    *   Log confirms MadGraph and Pythia8 succeeded.
+    *   Log confirms Delphes failed: "ERROR: Expected file Events/run_01/ta[16D[K
+Events/run_01/tag_1_delphes_events.root was not found."
+
+    *   `status`: "incomplete" (Delphes is missing).
+    *   `process`: "p p > t t~"
+    *   `requested_events`: 10000
+    *   `lhe_present`: true (unweighted_events.lhe.gz exists)
+    *   `lhe_events`: 10000
+    *   `pythia8_requested`: true (parton_shower: Pythia8)
+    *   `pythia8_present`: true (tag_1_pythia8_events.hepmc.gz exists)
+    *   `pythia8_events`: 10000
+    *   `delphes_requested`: true (detector_simulation: Delphes)
+    *   `delphes_present`: false (tag_1_delphes_events.root is MISSING)
+    *   `missing_outputs`: ["Events/run_01/tag_1_delphes_events.root"]
+    *   `event_count_consistent`: true (LHE and Pythia8 both have 10000, wh[2D[K
+which matches requested).
+    *   `failure_stage`: "delphes"
+    *   `recommended_action`: "rerun Delphes or fix the Delphes card/path b[1D[K
+before treating detector-level output as available"
+
+    Check against schema:
+    ```json
+    {
+      "status": "incomplete",
+      "process": "p p > t t~",
+      "requested_events": 10000,
+      "lhe_present": true,
+      "lhe_events": 10000,
+      "pythia8_requested": true,
+      "pythia8_present": true,
+      "pythia8_events": 10000,
+      "delphes_requested": true,
+      "delphes_present": false,
+      "missing_outputs": ["Events/run_01/tag_1_delphes_events.root"],
+      "event_count_consistent": true,
+      "failure_stage": "delphes",
+      "recommended_action": "rerun Delphes or fix the Delphes card/path bef[3D[K
+before treating detector-level output as available"
+    }
+    ```
+...done thinking.
+
+```json
+{
+  "status": "incomplete",
+  "process": "p p > t t~",
+  "requested_events": 10000,
+  "lhe_present": true,
+  "lhe_events": 10000,
+  "pythia8_requested": true,
+  "pythia8_present": true,
+  "pythia8_events": 10000,
+  "delphes_requested": true,
+  "delphes_present": false,
+  "missing_outputs": ["Events/run_01/tag_1_delphes_events.root"],
+  "event_count_consistent": true,
+  "failure_stage": "delphes",
+  "recommended_action": "rerun Delphes or fix the Delphes card/path before [K
+treating detector-level output as available"
+}
+```

@@ -1,0 +1,52 @@
+Thinking...
+*   Task: Extract structured MadGraph parameters from a description.
+    *   Input process: `p p > h j`.
+    *   Energy: Total $\sqrt{s} = 13$ TeV, beam energy $E_{beam} = 6$500 Ge[2D[K
+GeV.
+    *   Output directory: `HJ`.
+    *   Number of events: 10000.
+    *   Desired Output Format: Single JSON object.
+    *   Schema requirements: `model`, `initial_state`, `final_state`, `beam[5D[K
+`beam_energy_gev`, `output_dir`, `nevents`.
+
+    *   `model`: "sm" (Standard Model).
+    *   `initial_state`: ["p", "p"] (proton-proton).
+    *   `final_state`: ["h", "j"] (Higgs + jet).
+    *   `beam_energy_gev`: 6500.
+    *   `output_dir`: "HJ".
+    *   `nevents`: 10000.
+
+    ```json
+    {
+      "model": "sm",
+      "initial_state": ["p", "p"],
+      "final_state": ["h", "j"],
+      "beam_energy_gev": 6500,
+      "output_dir": "HJ",
+      "nevents": 10000
+    }
+    ```
+
+    *   Return *only* the requested output file content.
+    *   Do not include explanations.
+    *   Do not include markdown fences (although standard practice for LLMs[4D[K
+LLMs often includes them, the instruction says "Do not include explanations[12D[K
+explanations or markdown fences"). Wait, looking at previous instructions/p[14D[K
+instructions/patterns, usually, "no markdown fences" means no ` ```json ` b[1D[K
+blocks. However, sometimes users want just the raw text. Let's double-check[12D[K
+double-check: "Return only one JSON object... Do not include explanations o[1D[K
+or markdown fences."
+
+    *Self-Correction on Markdown Fences:* The prompt explicitly says "Do no[2D[K
+not include explanations or markdown fences." This means I should output th[2D[K
+the raw JSON string without triple backticks.
+...done thinking.
+
+{
+  "model": "sm",
+  "initial_state": ["p", "p"],
+  "final_state": ["h", "j"],
+  "beam_energy_gev": 6500,
+  "output_dir": "HJ",
+  "nevents": 10000
+}

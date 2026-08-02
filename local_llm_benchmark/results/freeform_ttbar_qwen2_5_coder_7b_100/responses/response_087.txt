@@ -1,0 +1,4 @@
+generate p p > t anti-t [QCD] order: QCD
+output ttbar_run
+run card default.cmnd
+launch -f run_card.dat -n 1000 --max_events=10000 --event=events.lhe -- LesHouches.in.ttbar

@@ -1,0 +1,99 @@
+Thinking...
+*   Input: `completed_scan_with_benchmark.txt`.
+    *   Goal: Return a JSON object containing plot-ready data extracted fro[3D[K
+from the input file.
+    *   Format Requirements: No explanations, no markdown fences, just the [K
+raw JSON.
+
+    *   Scan parameter: `mS`
+    *   Mass unit: `GeV`
+    *   Cross-section unit: `pb`
+    *   Data Points (all "success"):
+        1.  $m_S = 1.0$, $\sigma = 12.40$, $\delta\sigma = 0.40$
+        2.  $m_S = 1.5$, $\sigma = 8.10$, $\delta\sigma = 0.30$ (This is th[2D[K
+the benchmark point)
+        3.  $m_S = 2.0$, $\sigma = 5.00$, $\delta\sigma = 0.20$
+        4.  $m_S = 2.5$, $\sigma = 3.20$, $\delta\sigma = 0.10$
+        5.  $m_S = 3.0$, $\sigma = 1.70$, $\delta\_sigma = 0.08$
+
+    *   `status`: "plot_ready" (since all points are successful and data ex[2D[K
+exists).
+    *   `scan_parameter`: "mS".
+    *   `x_label`: "mS [GeV]".
+    *   `y_label`: "cross section [pb]".
+    *   `x_values_gev`: `[1.0, 1.5, 2.0, 2.5, 3.0]` (in increasing order).
+    *   `y_values_pb`: `[12.4, 8.1, 5.0, 3.2, 1.7]`.
+    *   `yerr_values_pb`: `[0.4, 0.3, 0.2, 0.1, 0.08]`.
+    *   `number_of_plot_points`: 5.
+    *   `log_y`: Check condition $\max(\sigma)/\min(\sigma) > 5$.
+        *   $\max = 12.4$
+        *   $\min = 1.7$
+        *   $12.4 / 1.7 \approx 7.29$
+        *   $7.29 > 5$, so `log_y` = true.
+    *   `benchmark_marker`:
+        *   `mass_gev`: 1.5
+        *   `cross_section_pb`: 8.10
+    *   `safe_to_plot`: All intended points succeeded? Looking at the text,[5D[K
+text, there are no failed runs listed in the provided snippet (all status "[1D[K
+"success"). So `true`.
+
+    ```json
+    {
+      "status": "plot_ready",
+      "scan_parameter": "mS",
+      "x_label": "mS [GeV]",
+      "y_label": "cross section [pb]",
+      "x_values_gev": [1.0, 1.5, 2.0, 2.5, 3.0],
+      "y_values_pb": [12.4, 8.1, 5.0, 3.2, 1.7],
+      "yerr_values_pb": [0.4, 0.3, 0.2, 0.1, 0.08],
+      "number_of_plot_points": 5,
+      "log_y": true,
+      "benchmark_marker": {
+        "mass_gev": 1.5,
+        "cross_section_pb": 8.1
+      },
+      "safe_to_plot": true
+    }
+    ```
+
+    *   `status`: "plot_ready" or "not_plot_ready". Given the list is all s[1D[K
+success, it's ready.
+    *   `scan_parameter`: "mS" (from text).
+    *   `x_label`: "mS [GeV]" (from mass unit).
+    *   `y_label`: "cross section [pb]" (from cross-section unit).
+    *   `x_values_gev`: Increasing order. Correct.
+    *   `y_values_pb`: Values extracted. Correct.
+    *   `yerr_values_pb`: Uncertainties extracted. Correct.
+    *   `log_y`: $12.4/1.7 = 7.29 > 5$. True. Correct.
+    *   `benchmark_marker`: mass=1.5, cross_section=8.10. Correct.
+    *   `safe_to_plot`: All points listed are 'success'. So true.
+
+    *Note on `status` vs `safe_to_plot`: The prompt says "The final scan pl[2D[K
+plot is safe only if every intended point succeeded." Since the input shows[5D[K
+shows all 5 provided points as success, it's safe.*
+
+    Wait, let me double check $12.4 / 1.7$.
+    $1.7 \times 5 = 8.5$.
+    $12.4 > 8.5$. So yes, log_y is true.
+
+    *   Only JSON object? Yes.
+    *   No explanations? Yes.
+    *   No markdown fences? Yes.
+...done thinking.
+
+{
+  "status": "plot_ready",
+  "scan_parameter": "mS",
+  "x_label": "mS [GeV]",
+  "y_label": "cross section [pb]",
+  "x_values_gev": [1.0, 1.5, 2.0, 2.5, 3.0],
+  "y_values_pb": [12.4, 8.1, 5.0, 3.2, 1.7],
+  "yerr_values_pb": [0.4, 0.3, 0.2, 0.1, 0.08],
+  "number_of_plot_points": 5,
+  "log_y": true,
+  "benchmark_marker": {
+    "mass_gev": 1.5,
+    "cross_section_pb": 8.1
+  },
+  "safe_to_plot": true
+}

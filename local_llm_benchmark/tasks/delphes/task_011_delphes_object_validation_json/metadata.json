@@ -1,0 +1,13 @@
+{
+  "task_id": "delphes_objects_011",
+  "title": "Validate Delphes object-selection summary",
+  "category": "delphes",
+  "level": "L2",
+  "mode": "json_extraction",
+  "tools": ["delphes"],
+  "timeout_seconds": 180,
+  "requires_execution": false,
+  "expected_artifacts": ["validation.json"],
+  "physics_tags": ["delphes", "object_selection", "jets", "b_tagging", "leptons", "missing_et", "reproducibility"],
+  "description": "Inspect a Delphes-style object summary and determine whether an event satisfies lepton, jet, b-tag, and missing-energy requirements."
+}

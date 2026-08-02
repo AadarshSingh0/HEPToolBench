@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "builder_generates_valid_run_card": true,
+    "ebeam1_6500": true,
+    "ebeam2_6500": true,
+    "etal_2p5": true,
+    "iseed_42": true,
+    "nevents_10000": true,
+    "parseable_json": true,
+    "ptl_20": true,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_markdown_fence"
+  ],
+  "generated_run_card": "10000 = nevents\n42 = iseed\n6500 = ebeam1\n6500 = ebeam2\n20 = ptl\n2.5 = etal\n",
+  "model": "deepseek-r1:70b",
+  "normalized_params": {
+    "ebeam1_gev": 6500.0,
+    "ebeam2_gev": 6500.0,
+    "eta_l_max": 2.5,
+    "iseed": 42,
+    "nevents": 10000,
+    "ptl_min_gev": 20.0
+  },
+  "passed": true,
+  "score": 0.95,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/deepseek-r1_70b/mg_runcard_structured_004/params.json",
+  "task_id": "mg_runcard_structured_004"
+}

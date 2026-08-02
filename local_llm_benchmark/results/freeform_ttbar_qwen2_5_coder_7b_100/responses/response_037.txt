@@ -1,0 +1,22 @@
+```python
+import os
+
+# Create output directory if it doesn't exist
+output_dir = 'ttbar_run'
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# Command script for MadGraph5_aMC@NLO
+madgraph_script = f"""
+set energy 13000.
+generate p p > t t~ QCD=off
+output {output_dir}
+exit
+"""
+
+# Save the command script to a file
+with open(os.path.join(output_dir, 'run_card.dat'), 'w') as script_file:
+    script_file.write(madgraph_script)
+```
+
+This Python script creates a directory named `ttbar_run` if it doesn't exist and then writes the MadGraph5_aMC@NLO command script to a file named `run_card.dat` within that directory. The script sets the energy to 13 TeV, generates proton-proton collisions leading to top quark and antitop quark production without QCD interactions, and specifies the output directory as `ttbar_run`.

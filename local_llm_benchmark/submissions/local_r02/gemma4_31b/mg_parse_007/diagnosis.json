@@ -1,0 +1,49 @@
+Thinking...
+*   Role: Particle-physics software benchmark tester.
+    *   Task: Diagnose a failed MadGraph run from a log file.
+    *   Output: A single JSON object with specific keys (`status`, `process[8D[K
+`process`, `error_type`, `offending_line`, `expected_line`, `fix`).
+    *   Constraints: No explanations, no markdown fences, only the JSON con[3D[K
+content.
+
+    *   Process requested: `p p > t tbar`
+    *   Offending command: `generate p p > t tbar`
+    *   Error message: `No particle named "tbar" is defined in the current [K
+model.` / `In MadGraph antiparticles are written with a tilde.` / `For an a[1D[K
+anti-top quark, use "t~", not "tbar".`
+    *   Suggested corrected line: `generate p p > t t~`
+
+    *   `status`: "failed" (explicitly stated)
+    *   `process`: "p p > t tbar" (from the log)
+    *   `error_type`: Based on the error, it's an invalid antiparticle synt[4D[K
+syntax. Let's use `invalid_antiparticle_syntax`.
+    *   `offending_line`: "generate p p > t tbar"
+    *   `expected_line`: "generate p p > t t~"
+    *   `fix`: "replace tbar with t~ in the generate line" (derived from th[2D[K
+the error and suggestion).
+
+    ```json
+    {
+      "status": "failed",
+      "process": "p p > t tbar",
+      "error_type": "invalid_antiparticle_syntax",
+      "offending_line": "generate p p > t tbar",
+      "expected_line": "generate p p > t t~",
+      "fix": "replace tbar with t~ in the generate line"
+    }
+    ```
+
+    *   Return only requested output? Yes.
+    *   No explanations? Yes.
+    *   No markdown fences? Yes.
+    *   JSON schema followed? Yes.
+...done thinking.
+
+{
+  "status": "failed",
+  "process": "p p > t tbar",
+  "error_type": "invalid_antiparticle_syntax",
+  "offending_line": "generate p p > t tbar",
+  "expected_line": "generate p p > t t~",
+  "fix": "replace tbar with t~ in the generate line"
+}

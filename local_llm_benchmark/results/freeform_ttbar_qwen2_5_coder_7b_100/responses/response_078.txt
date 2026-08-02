@@ -1,0 +1,5 @@
+```
+generate p p > t anti-t
+output ttbar_run --filein default.cmnd=disable_decays.cmnd
+run 1000
+```

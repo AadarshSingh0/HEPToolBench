@@ -1,0 +1,8 @@
+```
+  lpp1 = 2212,
+  lpp2 = 2212,
+  ebeam1 = 6500,
+  ebeam2 = 6500,
+  nevents = 10000,
+  iseed = 42
+```

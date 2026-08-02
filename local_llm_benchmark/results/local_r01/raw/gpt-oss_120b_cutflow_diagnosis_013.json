@@ -1,0 +1,35 @@
+{
+  "checks": {
+    "dominant_loss_cut_correct": true,
+    "final_background_correct": true,
+    "final_signal_correct": true,
+    "loss_fraction_correct": true,
+    "parseable_json": true,
+    "recommended_action_mentions_statistics": true,
+    "s_over_sqrt_b_correct": true,
+    "statistically_unusable": true,
+    "status_low_statistics": true,
+    "step_efficiency_correct": true,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_explanation_not_json_only"
+  ],
+  "model": "gpt-oss:120b",
+  "normalized_summary": {
+    "dominant_signal_loss_cut": "Transverse-mass window",
+    "dominant_signal_loss_fraction": 0.9077,
+    "dominant_signal_loss_step_efficiency": 0.0923,
+    "final_background_events": 120,
+    "final_signal_events": 48,
+    "recommended_action": "Consider loosening the Transverse-mass window cut  to improve signal yield.",
+    "s_over_sqrt_b": 4.38,
+    "statistically_usable": false,
+    "status": "low_statistics"
+  },
+  "passed": true,
+  "score": 0.97,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/gpt-oss_120b/cutflow_diagnosis_013/cutflow_diagnosis.json",
+  "task_id": "cutflow_diagnosis_013"
+}

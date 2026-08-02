@@ -1,0 +1,3 @@
+```bash
+./bin/generate_events.py -f ttbar_process_card.dat --gridpack=True --output=ttbar_run
+```

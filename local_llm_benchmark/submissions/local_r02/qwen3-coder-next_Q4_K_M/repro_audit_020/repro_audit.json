@@ -1,0 +1,12 @@
+{
+  "status": "not_reproducible",
+  "detector_level_claimed": false,
+  "missing_required_files": ["cards/param_cards/mS_2p5.dat", "logs/mS_2p5_s[14D[K
+"logs/mS_2p5_seed.txt"],
+  "missing_optional_files": [],
+  "affected_scan_points_gev": [2.5],
+  "can_reproduce_parton_level_scan": false,
+  "safe_for_paper_archive": false,
+  "recommended_action": "Add missing param_card and seed log for mS=2.5 GeV[3D[K
+GeV"
+}

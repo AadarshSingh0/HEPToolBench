@@ -1,0 +1,10 @@
+```
+p p > e+ nu_e- mu- nu_mu-
+p p > e+ e-
+
+output DY_ee
+launch
+
+beamparticles = p, p
+beamenergies = 6500., 6500.
+```

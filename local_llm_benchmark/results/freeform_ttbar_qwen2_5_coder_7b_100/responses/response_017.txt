@@ -1,0 +1,21 @@
+```python
+import mg5_aMC
+
+# Initialize MadGraph
+mg5_aMC.initialize()
+
+# Set up the model
+mg5_aMC.setModel('SM')
+
+# Create a new process
+mg5_aMC.createProcess('pp > ttbar', 'ttbar_run')
+
+# Run the generation
+mg5_aMC.generateEvents(1000)
+
+# Save the events to file
+mg5_aMC.saveEvents()
+
+# Quit MadGraph
+mg5_aMC.quit()
+```

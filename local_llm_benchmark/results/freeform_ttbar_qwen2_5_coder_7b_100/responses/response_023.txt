@@ -1,0 +1,3 @@
+```bash
+./bin/generate_events.py -f 'p p > t~ t QCD:qqQCD' --events=10000 --save=ttbar_run
+```

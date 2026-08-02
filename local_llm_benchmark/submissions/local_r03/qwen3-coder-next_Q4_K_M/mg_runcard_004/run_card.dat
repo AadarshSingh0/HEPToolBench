@@ -1,0 +1,6 @@
+10000 = nevents  
+42 = iseed  
+6500.0 = beam1_energy  
+6500.0 = beam2_energy  
+20.0 = ptl_min  
+2.5 = etal_max

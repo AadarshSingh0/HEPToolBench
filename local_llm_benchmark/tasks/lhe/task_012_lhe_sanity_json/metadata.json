@@ -1,0 +1,7 @@
+{
+  "task_id": "lhe_sanity_012",
+  "category": "lhe_output_validation",
+  "mode": "json_extraction",
+  "artifact": "sanity.json",
+  "description": "Validate an LHE file scan report and detect an event-count mismatch."
+}

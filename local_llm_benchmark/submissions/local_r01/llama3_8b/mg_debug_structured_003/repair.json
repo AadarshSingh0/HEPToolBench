@@ -1,0 +1,9 @@
+{
+"error_type": "SyntaxError",
+"faulty_lines": ["process p p -> h jet"],
+"corrected_lines": ["generate p p > h j", "output HJ", "set ebeam1 6500", "[1D[K
+"set ebeam2 6500"],
+"output_dir": "HJ",
+"reason": "\"Fix for broken process command and incorrect output directory.[10D[K
+directory.\""
+}

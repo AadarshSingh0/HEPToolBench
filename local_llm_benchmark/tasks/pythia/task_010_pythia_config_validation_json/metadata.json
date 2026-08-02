@@ -1,0 +1,13 @@
+{
+  "task_id": "pythia_config_010",
+  "title": "Validate Pythia8 shower configuration",
+  "category": "pythia",
+  "level": "L2",
+  "mode": "json_extraction",
+  "tools": ["pythia8"],
+  "timeout_seconds": 180,
+  "requires_execution": false,
+  "expected_artifacts": ["validation.json"],
+  "physics_tags": ["pythia8", "parton_shower", "mpi", "isr", "fsr", "hadronization", "reproducibility"],
+  "description": "Inspect a Pythia8 command file and determine whether the requested event count, seed, shower, MPI, hadronization, and HepMC output settings are satisfied."
+}

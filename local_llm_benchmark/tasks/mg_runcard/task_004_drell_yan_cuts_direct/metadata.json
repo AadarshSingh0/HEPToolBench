@@ -1,0 +1,13 @@
+{
+  "task_id": "mg_runcard_004",
+  "title": "MadGraph run-card settings for Drell-Yan with cuts",
+  "category": "mg_runcard",
+  "level": "L2",
+  "mode": "direct",
+  "tools": ["madgraph"],
+  "timeout_seconds": 300,
+  "requires_execution": false,
+  "expected_artifacts": ["run_card.dat"],
+  "physics_tags": ["sm", "drell_yan", "run_card", "cuts", "reproducibility"],
+  "description": "Write MadGraph run-card assignment lines for event count, seed, beams, and lepton cuts."
+}

@@ -1,0 +1,73 @@
+HEPToolBench public folder guide
+================================
+
+Main folders
+------------
+
+tasks/
+  Benchmark prompts, input artifacts, metadata, and deterministic scorers.
+
+runners/
+  Low-level local/cloud model runners and submission evaluation utilities.
+
+scripts/
+  CSV consolidation and helper utilities.
+
+docs/
+  Beginner and developer documentation.
+
+runs/
+  Generated isolated benchmark invocations. Ignored by Git.
+
+results/
+  Selected tracked research outputs plus the generated cumulative
+  all_runs_long.csv, which is ignored by Git.
+
+Beginner commands
+-----------------
+
+From the repository root:
+
+  ./install.sh
+  ./run_benchmark.sh
+
+The guided benchmark runner:
+  1. detects models from `ollama list`;
+  2. lets the user choose models and task suite;
+  3. creates a timestamped run directory;
+  4. preserves raw responses and scored JSON;
+  5. updates individual_scores.csv after each evaluation;
+  6. rebuilds results/all_runs_long.csv automatically;
+  7. safely resumes interrupted runs.
+
+Noninteractive example
+----------------------
+
+  ./run_benchmark.sh \
+    --models llama3:8b qwen3:8b \
+    --suite full31 \
+    --repeats 1 \
+    --yes
+
+Remote Ollama example
+---------------------
+
+  ./run_benchmark.sh \
+    --ollama-host http://HOST:11434 \
+    --models all-installed \
+    --suite full31 \
+    --yes
+
+Single-task developer example
+-----------------------------
+
+  python3 runners/run_ollama_task.py \
+    --task mg_basic_001 \
+    --model llama3:8b \
+    --output-root /tmp/heptoolbench_single_task
+
+Safety
+------
+
+Do not commit API keys, tokens, model weights, raw local runs, private logs,
+machine-specific paths, or generated event files.

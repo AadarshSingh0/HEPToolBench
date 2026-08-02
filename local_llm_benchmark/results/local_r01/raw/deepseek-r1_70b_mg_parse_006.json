@@ -1,0 +1,10 @@
+{
+  "failure_modes": [
+    "ollama_nonzero_exit"
+  ],
+  "model": "deepseek-r1:70b",
+  "passed": false,
+  "returncode": 1,
+  "score": 0.0,
+  "task_id": "mg_parse_006"
+}

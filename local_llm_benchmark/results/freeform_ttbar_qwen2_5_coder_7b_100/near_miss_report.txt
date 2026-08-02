@@ -1,0 +1,1255 @@
+RUN 020
+rank: 2
+category: correct_process
+import_ok: True
+output_ok: True
+single_correction: False
+import model SM
+generate p p > t t~
+output ttbar_run
+launch
+======================================================================
+RUN 097
+rank: 2
+category: correct_process
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t t~
+output ttbar_run
+======================================================================
+RUN 065
+rank: 3
+category: invalid_antitop_name
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t
+output ttbar_run
+======================================================================
+RUN 093
+rank: 3
+category: invalid_antitop_name
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t
+output ttbar_run
+======================================================================
+RUN 096
+rank: 3
+category: invalid_antitop_name
+import_ok: True
+output_ok: True
+single_correction: False
+import model sm
+generate p p > t anti-t
+output ttbar_run
+quit
+======================================================================
+RUN 053
+rank: 4
+category: correct_process
+import_ok: True
+output_ok: False
+single_correction: False
+import model sm
+generate p p > t t~
+output ttbar_run -f lhe
+run 1
+======================================================================
+RUN 061
+rank: 4
+category: invalid_antitop_name
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t
+output ttbar_run
+launch
+======================================================================
+RUN 073
+rank: 4
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~
+output ttbar_run -f -a all --no-pdg-checks
+======================================================================
+RUN 006
+rank: 5
+category: invalid_antitop_name
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t anti-t
+output ttbar_run --overwrite --clean-dir --event=events.lhe --embedding -a PDGID=6 --maxjetflavor=5 --maxmultiplicity=4 --fast -l 13 TeV
+======================================================================
+RUN 012
+rank: 5
+category: invalid_antitop_name
+import_ok: True
+output_ok: True
+single_correction: False
+import model sm
+generate p p > t anti-t
+output ttbar_run
+save madgraph_config.py
+exit
+======================================================================
+RUN 009
+rank: 6
+category: invalid_antitop_name
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t
+output ttbar_run
+run default
+This script tells MadGraph5_aMC@NLO to generate events for proton-proton collisions producing a top quark and its antiparticle at 13 TeV, using the Standard Model. The `output` command specifies that the results should be saved in a directory named 'ttbar_run'. The `run default` command executes the generation with default settings.
+======================================================================
+RUN 072
+rank: 6
+category: invalid_antitop_name
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t
+output ttbar_run
+set precision:precision_mode = accurate
+run 100
+======================================================================
+RUN 078
+rank: 6
+category: invalid_antitop_name
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t anti-t
+output ttbar_run --filein default.cmnd=disable_decays.cmnd
+run 1000
+======================================================================
+RUN 013
+rank: 7
+category: invalid_antitop_name
+import_ok: True
+output_ok: False
+single_correction: False
+import model sm
+generate p p > t anti-t
+output ttbar_run -f
+run 10
+quit
+======================================================================
+RUN 016
+rank: 7
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~
+output ttbar_run -f
+add tagger QCD --renomass=13000.
+launch
+======================================================================
+RUN 090
+rank: 7
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~
+output ttbar_run -f --overwrite
+model SM
+run_card.ttbar_run
+======================================================================
+RUN 058
+rank: 8
+category: other_generate_syntax
+import_ok: True
+output_ok: True
+single_correction: False
+import model SM
+generate p p > t anti-t QCD=off QED=off
+output ttbar_run
+launch
+======================================================================
+RUN 077
+rank: 8
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t
+output ttbar_run
+======================================================================
+RUN 088
+rank: 8
+category: correct_process
+import_ok: True
+output_ok: True
+single_correction: False
+import model sm
+define p = u d s c b t
+define j = g higgsm
+generate p p > t t~
+output ttbar_run
+run
+quit
+======================================================================
+RUN 027
+rank: 9
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t [QCD]
+output ttbar_run
+exit
+======================================================================
+RUN 043
+rank: 9
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~
+output ttbar_run -f
+run 1000
+write events file=events.lhe.gz
+quit
+======================================================================
+RUN 045
+rank: 9
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t \~t [QCD]
+output ttbar_run
+run_card.dat
+======================================================================
+RUN 052
+rank: 9
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t [QCD]
+output ttbar_run
+exit
+======================================================================
+RUN 055
+rank: 9
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t \~t [QCD]
+output ttbar_run
+exit
+======================================================================
+RUN 056
+rank: 9
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~
+output ttbar_run -f lhe
+set energy 13000
+run 1
+quit
+======================================================================
+RUN 059
+rank: 9
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t
+output ttbar_run
+run
+======================================================================
+RUN 066
+rank: 9
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~
+output ttbar_run --overWrite
+model SM
+add process p p > t t~ at 13000.
+run 1000
+======================================================================
+RUN 069
+rank: 9
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t
+output ttbar_run
+launch
+======================================================================
+RUN 070
+rank: 9
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~
+output ttbar_run -f
+model SM
+process [t t~]
+run 1000
+======================================================================
+RUN 004
+rank: 10
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t~ t [QCD]
+output ttbar_run -f
+======================================================================
+RUN 025
+rank: 10
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~ -qcd
+output ttbar_run -f
+======================================================================
+RUN 029
+rank: 10
+category: other_generate_syntax
+import_ok: True
+output_ok: False
+single_correction: False
+import model sm
+generate p p > t~ t, QCD
+output ttbar_run -f
+exit
+======================================================================
+RUN 030
+rank: 10
+category: invalid_antitop_name
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t anti-t
+output ttbar_run -f
+model SM
+run_card.ttbar_run.generate_events.cmnd
+launch
+======================================================================
+RUN 041
+rank: 10
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t anti-t / q q~
+output ttbar_run --force
+======================================================================
+RUN 080
+rank: 10
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t~ t, q-qbar -> u d s c b t t~
+output ttbar_run -f --skip-if-present
+======================================================================
+RUN 003
+rank: 11
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~
+output ttbar_run -f
+model SM
+add process p p > t t~ [1e-2]
+run 1000
+save
+======================================================================
+RUN 005
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t \~t [QCD]
+output ttbar_run
+add channel -p p p > t \~t QCD
+run ttbar_run
+======================================================================
+RUN 014
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~ QCD
+output ttbar_run -f
+launch
+======================================================================
+RUN 015
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~ @nlo -a QCD
+output ttbar_run --overwrite
+run_cards/ct10_lhc_13TeV.cmnd
+======================================================================
+RUN 018
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t~ t
+output ttbar_run -f
+exit
+======================================================================
+RUN 019
+rank: 11
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+./bin/generate_events.py -f param_card.dat --events=1000000 --max-events=1000000 --output-dir=./ttbar_run --no-output-check --skip-model-validation --skip-matching --skip-ewk --skip-qcd --skip-lhef
+======================================================================
+RUN 021
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t \~t [QCD]
+output ttbar_run
+save
+exit
+======================================================================
+RUN 023
+rank: 11
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+./bin/generate_events.py -f 'p p > t~ t QCD:qqQCD' --events=10000 --save=ttbar_run
+======================================================================
+RUN 032
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t QCD=off
+output ttbar_run
+run_qcut 50
+Save this script to a file, for example `ttbar_script.sh`, and then execute it in the MadGraph5_aMC@NLO environment.
+======================================================================
+RUN 042
+rank: 11
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+./bin/generate_events.py -f ttbar.cmnd --n_events=1000 --output=ttbar_run
+======================================================================
+RUN 048
+rank: 11
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+./bin/generate_events.py -f models/StandardModel.py --proc-name pp_ttbar_nlo --output-dir ttbar_run --events=100000
+======================================================================
+RUN 062
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t, QCD
+output ttbar_run
+run_qcd.sh
+This script generates a process where a proton (p) collides with another proton (p) to produce a top quark (t) and its antiparticle (t~), along with QCD radiation. The output is saved in the directory "ttbar_run". The `run_qcd.sh` command is used to run the QCD analysis on the generated events.
+======================================================================
+RUN 063
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t~ t QCD=on QED=off
+output ttbar_run --filein card.top.input --filename Cards/param_card.dat
+exit
+======================================================================
+RUN 067
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t, QCD=QCD
+output ttbar_run
+run card ttbar.dat
+This script sets up a process where protons collide to produce a top quark and its antiparticle (t~), alongside additional QCD radiation. The output is directed into a directory named `ttbar_run`.
+======================================================================
+RUN 068
+rank: 11
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~
+output ttbar_run -f
+model SM
+add process t t~ > b b~
+save
+exit
+======================================================================
+RUN 071
+rank: 11
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+./bin/generate_events.py -f ttbar_process_card.dat --gridpack=True --output=ttbar_run
+======================================================================
+RUN 075
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t [QCD]
+output ttbar_run
+run default
+This script sets up a proton-proton collision where a top quark and its antiparticle are produced. It uses QCD for the interaction. The output is directed to the 'ttbar_run' directory, and MadGraph's default settings are applied for running the process.
+======================================================================
+RUN 082
+rank: 11
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+./bin/generate_events --feynman-rules SM_feynman_rules.frm --output-dir=ttbar_run --events=10000
+======================================================================
+RUN 087
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t [QCD] order: QCD
+output ttbar_run
+run card default.cmnd
+launch -f run_card.dat -n 1000 --max_events=10000 --event=events.lhe -- LesHouches.in.ttbar
+======================================================================
+RUN 091
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t t~ --no-loop --max-point=100000
+output ttbar_run
+launch
+quit
+======================================================================
+RUN 095
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t anti-t [QCD]
+output ttbar_run -f
+launch
+======================================================================
+RUN 098
+rank: 11
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t [QCD]
+output ttbar_run
+model StandardModel
+launch
+======================================================================
+RUN 034
+rank: 12
+category: invalid_antitop_name
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t
+output ttbar_run
+set nlo:all = on
+set process_config[1]:narrow_widths = off
+execute
+save
+exit
+======================================================================
+RUN 038
+rank: 12
+category: other_generate_syntax
+import_ok: True
+output_ok: True
+single_correction: False
+import model sm
+define p = g u c d s u~ c~ d~ s~
+generate p p > t~ t, q q~ > b b~, q~ q > b~ b
+output ttbar_run
+save
+exit
+======================================================================
+RUN 011
+rank: 13
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t
+output ttbar_run
+save run_card.dat
+launch
+quit
+======================================================================
+RUN 039
+rank: 13
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t [QCD]
+output ttbar_run
+model SM
+run_card run_card.dat
+This script generates proton-proton events with top quark and antiparticle production at 13 TeV using the Standard Model, without including top decays. The output is directed to a directory named "ttbar_run".
+======================================================================
+RUN 040
+rank: 13
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+./bin/generate_events.py -f ttbar -p pp -e 13000 -n ttbar_run --no_decay_top
+cd ttbar_run
+./bin/mg5_aMC
+======================================================================
+RUN 076
+rank: 13
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+./bin/generate_events.py -f ttbar_run --cms-energy=13000 --events=1000000 -m "tt" -a "top anti-top"
+cd ttbar_run/Events/run_01/unweighted_events.lhe
+cp unweighted_events.lhe ../
+======================================================================
+RUN 086
+rank: 13
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t
+output ttbar_run
+set group_labels 1 2
+set group_subprocesses true
+run 10
+======================================================================
+RUN 028
+rank: 14
+category: invalid_antitop_name
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t anti-t
+output ttbar_run -f -s 13000.
+reweight Pythia8
+add process p p > W+ W- off-shell
+add process p p > Z + gamma
+run
+This script sets up a MadGraph5_aMC@NLO run for top quark production, including initial state radiation (ISR) and final state radiation (FSR). The output will be stored in the "ttbar_run" directory.
+======================================================================
+RUN 010
+rank: 15
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t [QCD]
+output ttbar_run
+run default
+launch
+analyze
+exit
+======================================================================
+RUN 049
+rank: 15
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t~ t
+output ttbar_run
+model SM
+set looptime 10
+launch
+run 2
+======================================================================
+RUN 085
+rank: 15
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~ QCD
+output ttbar_run --overwrite
+set lhe_version 3
+launch
+run 100
+======================================================================
+RUN 089
+rank: 15
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~
+output ttbar_run -f Feynman
+run_card.cmnd
+set gauge_type = "unitary"
+set RenScale 13000.
+set FacScale 13000.
+set alphas_init 0.1284
+launch
+======================================================================
+RUN 092
+rank: 15
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t anti-t QCD=off model SM
+output ttbar_run -f
+launch
+run 1000
+quit
+======================================================================
+RUN 047
+rank: 16
+category: other_generate_syntax
+import_ok: True
+output_ok: False
+single_correction: False
+import model sm
+define p = g u c d s t b~
+define j = g u c d s
+generate p p > t~ t QCD=0
+output ttbar_run --overwrite
+run 1
+quit
+======================================================================
+RUN 057
+rank: 16
+category: invalid_antitop_name
+import_ok: False
+output_ok: False
+single_correction: False
+model SM
+generate p p > t anti-t
+set energy 13000
+set pdlabel lhef
+process LHEF ttbar_run/events.lhe
+run default
+output ttbar_run -f
+This script sets up the generation of a top quark and its antiparticle in proton-proton collisions at 13 TeV. It uses the Standard Model, disables decays for the top quark, and outputs the results to a directory named `ttbar_run`.
+======================================================================
+RUN 002
+rank: 17
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+model SM
+generate p p > t~ t, Z/nu nu~
+set ebeam 6500.
+AutomaticLoop = off
+AutomaticNLO = off
+output ttbar_run
+done
+======================================================================
+RUN 008
+rank: 17
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t~ t [QCD]
+output ttbar_run --path=ttbar_run --overwrite
+set process_card:top_mass 173.0
+update run_card:ee = 2.4
+update run_card:pdf = MSTW2008lo68cl
+run
+======================================================================
+RUN 054
+rank: 17
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+set energy 13000
+set lhef /path/to/your/input.lhef
+generate p p > t t~ QCD=on[number=5]
+output ttbar_run --event=ttbar_events.hep
+run MadGraph5_aMC@NLO
+Make sure to replace `/path/to/your/input.lhef` with the actual path to your input LHEF file. This script sets up a proton-proton collision at 13 TeV, generates events for top quark and anti-top quark production along with QCD radiation, and specifies that no top decays should be considered. The output is directed into the `ttbar_run` directory, containing the generated events in an HEPEVT format file named `ttbar_events.hep`.
+======================================================================
+RUN 074
+rank: 17
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~ -a QCD
+set cut_initial_state_merging 10
+run fast
+output ttbar_run --filein input_slha.txt
+launch
+quit
+======================================================================
+RUN 084
+rank: 17
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+generate p p > t t~ [QCD]
+output ttbar_run -f
+save run_card.dat
+set lhe_version 3
+launch
+exit
+======================================================================
+RUN 100
+rank: 17
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+model SM
+generate p p > t~ t QCD=off
+set decay t to g h
+set decay t~ to g h
+output ttbar_run -f
+launch
+======================================================================
+RUN 031
+rank: 18
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+madgraph5_aMC
+generate p p > t-t~ -qcd
+set output_dir ttbar_run
+save
+run 1
+quit
+======================================================================
+RUN 050
+rank: 18
+category: other_generate_syntax
+import_ok: True
+output_ok: True
+single_correction: False
+mkdir ttbar_run
+cd ttbar_run
+mg5_aMC
+import model SM
+generate p p > t~ t
+set energy 13000.
+update gauge unitarize
+fixed Order h=3 qcd=3
+output ttbar_run
+======================================================================
+RUN 079
+rank: 18
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+import madgraph.iolibs.model_reader as model_reader
+model = model_reader.read_standard_model()
+amplitude = model.get_amplitude("tt~ > t + b", loop_order=0)
+output_directory = "ttbar_run"
+amplitude.write(output_directory, format="feyn")
+amplitude.generate_events(10**4, output_file=f"{output_directory}/events.lhe", event_type="fixed scale", scale=13000)
+======================================================================
+RUN 024
+rank: 19
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t ~t [QCD]
+output ttbar_run
+launch
+set lhef:allowDifferentLHEFtoRun true
+run 10
+book 2
+analyze
+exit
+======================================================================
+RUN 035
+rank: 19
+category: other_generate_syntax
+import_ok: False
+output_ok: True
+single_correction: False
+generate p p > t anti-t [QCD]
+output ttbar_run
+set PDF:ct10_lo
+set lhe.setOutputPDF False
+launch
+run 2000
+write events
+exit
+======================================================================
+RUN 044
+rank: 19
+category: correct_process
+import_ok: False
+output_ok: False
+single_correction: False
+model SM
+generate p p > t t~
+set lhe_file true
+set automatic_ren_scale off
+set automatic_mass_scale off
+set ren_scale 13000
+set mass t 172.5
+set mass b 4.8
+output ttbar_run --overwrite
+launch
+======================================================================
+RUN 001
+rank: 20
+category: other_generate_syntax
+import_ok: True
+output_ok: True
+single_correction: False
+import model sm
+generate p p > t~ t
+output ttbar_run
+--run_card.cmnd
+set lhe_file true
+set pt_min 50
+set mmin 200
+set maxjetpt 1000
+set maxetajet 4.7
+run
+======================================================================
+RUN 017
+rank: 20
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+import mg5_aMC
+mg5_aMC.initialize()
+mg5_aMC.setModel('SM')
+mg5_aMC.createProcess('pp > ttbar', 'ttbar_run')
+mg5_aMC.generateEvents(1000)
+mg5_aMC.saveEvents()
+mg5_aMC.quit()
+======================================================================
+RUN 036
+rank: 20
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+import MadGraph5_aMCatNLO as mg5
+model = mg5.models.SM()
+mg5.generate(model, 'pp > tt~', energy=13000)
+mg5.disable_decay('t')
+mg5.disable_decay('antit')
+mg5.set_output_directory('ttbar_run')
+mg5.run()
+======================================================================
+RUN 022
+rank: 22
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+import madgraph5_aMCatNLO as mg5
+mg5.run('init', 'tt~ tt')
+mg5.run('set lhefile 13000')
+mg5.run('generate p p > t~ t, Z', n_events=10000)
+mg5.run('output ttbar_run')
+mg5.run('decay off')
+mg5.save()
+mg5.run_script()
+======================================================================
+RUN 081
+rank: 22
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+import MadGraph5_aMCatNLO
+model = MadGraph5_aMCatNLO.Model()
+model.set('StandardModel')
+process = MadGraph5_aMCatNLO.Process(model)
+process.set('p p > t anti-t', 'QCD QED')
+process.generate_events(energy=13000, decay='off')
+process.output_directory = 'ttbar_run'
+process.run()
+======================================================================
+RUN 051
+rank: 24
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+import os
+os.system("cp -r /path/to/MadGraph5_aMCatNLO /tmp/ttbar_run")
+os.chdir("/tmp/ttbar_run")
+os.system("./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=LO --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000")
+os.system("./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=NLO --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000")
+os.system("./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=NLL --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000")
+os.system("./bin/gridpack_generation.py -f 'p p > t anti-t QCD' --model=SM --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000")
+os.chdir("/tmp")
+os.system("rm -rf /tmp/ttbar_run")
+======================================================================
+RUN 060
+rank: 24
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+import madgraph
+from madgraph import *
+model = Model()
+model.load('sm')
+process = Process()
+process.add(initial_state='p p', final_state='t t~')
+generator = MG5Generator(process, model)
+generator.set_output_directory('ttbar_run')
+generator.generate_events(nevents=1000)
+======================================================================
+RUN 083
+rank: 24
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+import os
+output_dir = 'ttbar_run'
+if not os.path.exists(output_dir):
+os.makedirs(output_dir)
+command_script = f"""
+generate p p > t~ t [QCD]
+output {output_dir}
+"""
+with open(os.path.join(output_dir, 'run_card.dat'), 'w') as f:
+f.write(command_script)
+======================================================================
+RUN 026
+rank: 29
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+newmodel SM
+add particle t   6 1 1 1 -2
+add particle ta  5 1 1 0 0
+add coupling ggH ttbar
+add process g g > tta~
+define p = g u c d s b
+define j = g h w+
+define l+ = e+ mu+
+define l- = e- mu-
+generate p p > tta~, add=ggH
+output ttbar_run -f -u default
+exit
+======================================================================
+RUN 037
+rank: 30
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+import os
+output_dir = 'ttbar_run'
+if not os.path.exists(output_dir):
+os.makedirs(output_dir)
+madgraph_script = f"""
+set energy 13000.
+generate p p > t t~ QCD=off
+output {output_dir}
+exit
+"""
+with open(os.path.join(output_dir, 'run_card.dat'), 'w') as script_file:
+script_file.write(madgraph_script)
+This Python script creates a directory named `ttbar_run` if it doesn't exist and then writes the MadGraph5_aMC@NLO command script to a file named `run_card.dat` within that directory. The script sets the energy to 13 TeV, generates proton-proton collisions leading to top quark and antitop quark production without QCD interactions, and specifies the output directory as `ttbar_run`.
+======================================================================
+RUN 094
+rank: 30
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+import os
+if not os.path.exists('ttbar_run'):
+os.makedirs('ttbar_run')
+os.chdir('ttbar_run')
+command_script = """
+generate p p > t-t~ [QCD]
+output ttbar_run --filein=Cards/param_card.dat --fileout=cards/meff.input --feynman_rules=Cards/couplings.dat --new-particle=true --new-name=t --new-mass=173.0
+runfast
+plot
+"""
+with open('mg5_command_script.py', 'w') as f:
+f.write(command_script)
+This script sets up a MadGraph5_aMC@NLO run for ttbar production at 13 TeV, generates the necessary files, and runs the event generation. It assumes that the required parameter card (`param_card.dat`), coupling file (`couplings.dat`), and any other necessary configuration is already in place in the `Cards` directory. The script creates a new particle for the top quark and sets its mass to 173 GeV. The output files will be placed in the `ttbar_run` directory.
+======================================================================
+RUN 099
+rank: 30
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+import madgraph
+model = madgraph.models.stdmodel.StdModel()
+model.generate(
+'p p > t anti-t',
+output_dir='ttbar_run',
+run_mode=0,
+save=False,
+debug=False,
+auto_update=True,
+check_model=True,
+verbose=True,
+)
+======================================================================
+RUN 007
+rank: 37
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+cp /path/to/MadGraph5_aMCatNLO/initialize.sh .
+./initialize.sh ttbar
+cd ttbar
+cp /path/to/MadGraph5_aMCatNLO/models/SM/SM_v2.1.4/model.tgz models/
+tar -xzvf models/SM_v2.1.4/model.tgz -C models/
+rm models/SM_v2.1.4/model.tgz
+echo "set energy 13000." >> cards/run_card.dat
+cp /path/to/MadGraph5_aMCatNLO/models/SM/processes/ttbar/process.cfg processes/
+cp /path/to/MadGraph5_aMCatNLO/models/SM/processes/ttbar/proc_card_mg5.dat processes/
+echo "set param_card mass t 174.36" >> processes/proc_card_mg5.dat
+echo "set param_card width t 1.508e-2" >> processes/proc_card_mg5.dat
+./bin/generate_events -f
+./bin/run MadGraph5_aMCatNLO_v2.6.1/bin/madgraph.py -f run card -p cards/process_card.madspin --cluster=numpy --no-cluster-check
+mv events/ ttbar_run/
+echo "Process generated and saved in ttbar_run directory."
+======================================================================
+RUN 046
+rank: 38
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+import os
+os.system('mkdir -p ttbar_run')
+os.chdir('ttbar_run')
+command = """
+generate p p > t~ t with threshold 130
+output Ttbar
+remove sm
+add process g g > t~ t with threshold 130
+add process u ubar > t~ t with threshold 130
+add process d dbar > t~ t with threshold 130
+add process s sbar > t~ t with threshold 130
+add process c cbar > t~ t with threshold 130
+add process b bbar > t~ t with threshold 130
+launch
+"""
+with open('run_card.dat', 'w') as f:
+f.write(command)
+======================================================================
+RUN 064
+rank: 40
+category: other_generate_syntax
+import_ok: False
+output_ok: False
+single_correction: False
+import os
+output_dir = 'ttbar_run'
+if not os.path.exists(output_dir):
+os.makedirs(output_dir)
+madgraph_script = f"""
+set lhefile {output_dir}/events.lhe.gz
+set pythia8file {output_dir}/pythia_events.dat.gz
+define p = d u s c b t~ ta~
+define j = g h w+ w- z q~ u~ d~ s~ c~ b~
+generate p p > ttbar, QCD
+output {output_dir}
+set nevents 10000
+run
+quit
+"""
+with open(os.path.join(output_dir, 'mg_commands.mg5'), 'w') as f:
+f.write(madgraph_script)
+This Python script will create a directory named `ttbar_run` and write the MadGraph command script to a file within that directory. The script sets up a proton-proton collision at 13 TeV, generates events for top quark-antiquark production (without decays), and outputs the results to the specified directory.
+======================================================================
+RUN 033
+rank: 58
+category: missing_generate
+import_ok: False
+output_ok: False
+single_correction: False
+import os
+os.makedirs('ttbar_run', exist_ok=True)
+with open(os.path.join('ttbar_run', 'run_card.dat'), 'w') as f:
+f.write("""# Run card for ttbar production at 13 TeV
+pdf = CT10nlo
+ee = off
+pp = on
+e+ e- = on
+muphoton = off
+ee + ee = off
+e+ e- + Z = off
+ee + e- + Higgs = off
+ZZ = off
+WW = off
+ggH = off
+VBF = off
+ebeam1 = 6500.
+ebeam2 = 6500.
+decay top = off
+decay antitop = off
+cteq = 104
+pdf = CT10nlo
+run_mode = 3
+max_events = 10000
+""")
+print("MadGraph command script has been written to ttbar_run/run_card.dat")
+======================================================================

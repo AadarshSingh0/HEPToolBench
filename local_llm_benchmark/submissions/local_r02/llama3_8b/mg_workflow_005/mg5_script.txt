@@ -1,0 +1,11 @@
+generate p p > t t~ [QCD=3, QED=1] 
+output TTbar_P8_Delphes
+event_generator pythia6 
+pythia6_settings:seed = 42, max_events = 10000 
+beam_energies = (6500., 6500.) 
+parton_definition : {
+define p = g u c d s u~ c~ d~ s~
+} 
+shielding_enabled = F
+MadSpin = OFF
+pythia8: shower = on, hadronize = on

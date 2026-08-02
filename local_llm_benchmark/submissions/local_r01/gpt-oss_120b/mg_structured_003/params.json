@@ -1,0 +1,13 @@
+Thinking...
+The user wants a JSON object with the specified fields. Return only that JS[2D[K
+JSON, no extra text.
+...done thinking.
+
+{
+  "model": "sm",
+  "initial_state": ["p", "p"],
+  "final_state": ["h", "j"],
+  "beam_energy_gev": 6500,
+  "output_dir": "HJ",
+  "nevents": 10000
+}

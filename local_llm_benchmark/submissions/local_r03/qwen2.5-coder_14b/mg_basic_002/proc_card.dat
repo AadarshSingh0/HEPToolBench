@@ -1,0 +1,12 @@
+```text
+# MG5aMC proc card
+
+import model sm
+
+define p = g u c d s u~ c~ d~ s~
+define t = (t t~)
+
+generate p p > t t~
+
+output top_pair_sm_13TeV
+```

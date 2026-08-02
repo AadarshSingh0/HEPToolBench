@@ -1,0 +1,8 @@
+{
+  "error_type": "invalid_beam_commands",
+  "faulty_lines": ["set beam1 6500", "set beam2 6500"],
+  "corrected_lines": ["generate p p > h j", "output HJ", "set ebeam1 6500",[6D[K
+6500", "set ebeam2 6500"],
+  "output_dir": "HJ",
+  "reason": "Invalid beam commands and missing process line"
+}

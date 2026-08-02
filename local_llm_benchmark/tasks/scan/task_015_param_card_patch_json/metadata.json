@@ -1,0 +1,7 @@
+{
+  "task_id": "param_card_patch_015",
+  "category": "scan",
+  "mode": "structured",
+  "artifact": "param_patch.json",
+  "description": "Create a JSON patch plan for one param_card.dat scan point."
+}

@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "failed_mass_correct": true,
+    "failed_points_correct": true,
+    "failed_run_directory_correct": true,
+    "max_cross_section_mass_correct": true,
+    "max_cross_section_value_correct": true,
+    "min_successful_cross_section_mass_correct": true,
+    "min_successful_cross_section_value_correct": true,
+    "monotonic_decreasing_correct": true,
+    "parseable_json": true,
+    "recommended_action_mentions_rerun_failed_point": true,
+    "rerun_required_true": true,
+    "scan_parameter_correct": true,
+    "status_incomplete": true,
+    "strict_json_only": false,
+    "successful_points_correct": true,
+    "total_points_correct": true
+  },
+  "failure_modes": [
+    "includes_markdown_fence",
+    "includes_explanation_not_json_only",
+    "terminal_artifacts_removed"
+  ],
+  "model": "llama3.3:70b",
+  "normalized_summary": {
+    "failed_masses_gev": [
+      2.0
+    ],
+    "failed_points": 1,
+    "max_cross_section_mass_gev": 1.0,
+    "max_cross_section_pb": 12.4,
+    "min_successful_cross_section_mass_gev": 3.0,
+    "min_successful_cross_section_pb": 1.7,
+    "monotonic_decreasing_successful_points": true,
+    "rerun_required": true,
+    "scan_parameter": "mS",
+    "status": "incomplete",
+    "successful_points": 4,
+    "total_points": 5
+  },
+  "passed": true,
+  "score": 0.97,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r03_clean/submissions/llama3.3_70b/scan_results_016/scan_summary.json",
+  "task_id": "scan_results_016"
+}

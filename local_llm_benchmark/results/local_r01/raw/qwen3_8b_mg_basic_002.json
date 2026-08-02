@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "correct_process": false,
+    "correct_proton_definition": false,
+    "defines_proton": false,
+    "ebeam1_6500": false,
+    "ebeam2_6500": false,
+    "has_launch": false,
+    "has_output_ttbar": false,
+    "imports_sm": false,
+    "no_long_explanation": false,
+    "no_markdown_fence": true,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true
+  },
+  "failure_modes": [
+    "includes_explanation_not_file_only",
+    "missing_generate_keyword",
+    "missing_or_wrong_output",
+    "missing_or_wrong_process",
+    "wrong_or_missing_beam_energy"
+  ],
+  "model": "qwen3:8b",
+  "passed": false,
+  "score": 0.075,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/qwen3_8b/mg_basic_002/proc_card.dat",
+  "task_id": "mg_basic_002"
+}

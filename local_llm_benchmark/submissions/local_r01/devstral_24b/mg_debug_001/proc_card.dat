@@ -1,0 +1,9 @@
+```text
+import model sm
+define p = g u c d s b u~ c~ d~ s~ b~
+generate p p > e+ e-
+output DY_ee
+launch -no_numbers
+set run_card beam1 6500
+set run_card beam2 6500
+```

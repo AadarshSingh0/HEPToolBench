@@ -1,0 +1,86 @@
+Thinking...
+We need to output JSON with fields:
+
+- status: "reproducible" or "not_reproducible". Determine if all required f[1D[K
+files are present for parton-level scan. Detector-level results claimed fal[3D[K
+false, so optional cards not needed.
+
+List required items per rules:
+
+1. UFO model directory – models/ScalarUFO/ present => OK.
+2. proc_card.dat – present
+3. run_card.dat – present
+4. one param_card.dat for every intended scan mass (5 masses): we have miss[4D[K
+missing for mS_2p5.dat -> missing.
+5. one random-seed log for each intended scan mass: missing for mS_2p5_seed[11D[K
+mS_2p5_seed.txt -> missing.
+6. final scan results table – present
+7. plotting script – present
+
+Thus required files missing: param card for 2.5 GeV, seed log for 2.5 GeV.
+
+Therefore status not_reproducible.
+
+detector_level_claimed: false (from manifest)
+
+missing_required_files list: include paths of missing required files: "card[5D[K
+"cards/param_cards/mS_2p5.dat", "logs/mS_2p5_seed.txt"
+
+missing_optional_files: optional are Pythia8 and Delphes cards but not clai[4D[K
+claimed, they are optional. Since detector-level results not claimed, they'[5D[K
+they're optional; we can list them as missing? The instruction says "Pythia[7D[K
+"Pythia8 and Delphes cards are optional here because detector-level results[7D[K
+results are not claimed." So they are optional; we should list any absent o[1D[K
+optional files in missing_optional_files maybe include them: "cards/pythia8[14D[K
+"cards/pythia8.cmnd", "cards/delphes_card.dat". However, the definition of [K
+missing_optional_files likely includes optional files that are expected but[3D[K
+but missing. Since they're optional, presence is not required, but still ma[2D[K
+may be considered optional. The manifest says they are absent; we could lis[3D[K
+list them as missing_optional_files.
+
+affected_scan_points_gev: which scan points are affected by missing files? [K
+That's 2.5 GeV. So include [2.5].
+
+can_reproduce_parton_level_scan: false (since missing required files).
+
+safe_for_paper_archive: false (not all required files present).
+
+recommended_action: something like "Provide the missing param_card and seed[4D[K
+seed log for 2.5 GeV; optionally add Pythia8/Delphes cards if detector-leve[13D[K
+detector-level results become claimed."
+
+We need to output only JSON, no markdown fences.
+
+Let's construct JSON accordingly.
+
+Check types: booleans true/false.
+
+missing_required_files array of strings.
+
+missing_optional_files array of strings (list optional absent files). Might[5D[K
+Might be empty but we include them.
+
+affected_scan_points_gev as numbers? Could be list of numbers. Provide 2.5.[4D[K
+2.5.
+
+Now produce final answer.
+...done thinking.
+
+{
+  "status": "not_reproducible",
+  "detector_level_claimed": false,
+  "missing_required_files": [
+    "cards/param_cards/mS_2p5.dat",
+    "logs/mS_2p5_seed.txt"
+  ],
+  "missing_optional_files": [
+    "cards/pythia8.cmnd",
+    "cards/delphes_card.dat"
+  ],
+  "affected_scan_points_gev": [2.5],
+  "can_reproduce_parton_level_scan": false,
+  "safe_for_paper_archive": false,
+  "recommended_action": "Add the missing param_card (mS_2p5.dat) and seed l[1D[K
+log (mS_2p5_seed.txt) for the 2.5 GeV scan point. Optional: include Pythia8[7D[K
+Pythia8 and Delphes cards if future detector-level results are desired."
+}

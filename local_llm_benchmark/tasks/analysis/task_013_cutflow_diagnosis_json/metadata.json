@@ -1,0 +1,7 @@
+{
+  "task_id": "cutflow_diagnosis_013",
+  "category": "analysis",
+  "mode": "json_extraction",
+  "artifact": "cutflow_diagnosis.json",
+  "description": "Diagnose a HEP analysis cutflow, identify the largest relative signal loss, and assess final-yield usability."
+}

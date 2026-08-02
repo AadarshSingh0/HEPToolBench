@@ -1,0 +1,25 @@
+```plain
+#*****************************************************
+#*                                                 *
+#*              MadGraph5 proc card                *
+#*                                                 *
+#*****************************************************
+
+import model sm
+
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+launch --run_name=HJ
+mg5_aMC> generate p p > h j
+output HJ
+
+launch HJ
+
+#*****************************************************
+#*        run_card.dat content should be edited     *
+#*        to match the following beam energies:     *
+#*            6500 = sqrt(s)/2                       *
+#*****************************************************
+
+```

@@ -1,0 +1,12 @@
+{
+  "status": "reproducible",
+  "detector_level_claimed": false,
+  "missing_required_files": ["cards/param_cards/mS_2p5.dat", "logs/mS_2p5_s[14D[K
+"logs/mS_2p5_seed.txt"],
+  "missing_optional_files": ["cards/pythia8.cmnd", "cards/delphes_card.dat"[24D[K
+"cards/delphes_card.dat"],
+  "affected_scan_points_gev": [2.5],
+  "can_reproduce_parton_level_scan": true,
+  "safe_for_paper_archive": false,
+  "recommended_action": "Add missing param and random-seed files for mass 2[1D[K
+2.5 GeV"

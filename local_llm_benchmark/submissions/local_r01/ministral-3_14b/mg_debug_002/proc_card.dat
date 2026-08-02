@@ -1,0 +1,9 @@
+```
+import model sm
+generate p p > t t~ [QCD]
+output TTbar
+launch
+
+set beam1 6500
+set beam2 -6500
+```

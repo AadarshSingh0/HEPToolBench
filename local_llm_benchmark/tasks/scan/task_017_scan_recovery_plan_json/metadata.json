@@ -1,0 +1,7 @@
+{
+  "task_id": "scan_recovery_017",
+  "title": "Plan reruns for an incomplete parameter scan",
+  "category": "scan",
+  "output_artifact": "recovery_plan.json",
+  "description": "Read an intended scan grid and a job-output manifest, identify completed, failed, and missing scan points, and return a JSON rerun plan."
+}

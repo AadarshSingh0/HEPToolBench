@@ -1,0 +1,31 @@
+```text
+import model/smodel-sm-ckm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+generate p p > h j / (h > b b~) / (j > g g)
+output HJ
+launch --cluster=0 --child=0 --multicore=1
+set lhapdf 263000
+set pdflib LO*PDFLIB=LHAPDF6:pdfset=NNPDF31_nlo_as_0118_luxqed
+set ignore_six_flavor_couplings
+set maxerror 5e-4
+set nevents 100000
+set ebeam1 6500
+set ebeam2 6500
+set spinmode 0
+set iseed 0
+set brokenrules
+set gauge_unit unitary
+set complex_mass_scheme
+set width_options decays=auto
+set ptl 30.
+set eta 5.0
+set drjet 0.4
+set etajet 5.0
+set drcut 0.0
+set qcut 20.
+set fact 1.0
+set xqcut 1.0
+set use_lhapdf
+```

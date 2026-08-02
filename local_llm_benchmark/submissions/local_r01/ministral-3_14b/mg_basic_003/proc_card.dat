@@ -1,0 +1,20 @@
+```
+# MadGraph5_aMC@NLO process card for pp > h j at 13 TeV
+
+import model sm
+generate p p > h j [QCD]
+output HJ
+set nevents 100000
+set ebeam1 = 6500 GeV
+set ebeam2 = 6500 GeV
+set spinmode = off
+set broken_scale = 1e-3
+set broken_photon = on
+set broken_gluon = on
+
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+add process p p > h j [QCD]
+launch
+```

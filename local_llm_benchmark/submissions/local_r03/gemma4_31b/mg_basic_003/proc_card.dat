@@ -1,0 +1,31 @@
+Thinking...
+*   Task: Create a MadGraph process card (`proc_card.dat`).
+    *   Process: Standard Model Higgs plus jet production (`p p > h j`).
+    *   CM Energy: 13 TeV (Beams = 6500 GeV).
+    *   Multiparticle definitions:
+        *   `define p = g u c d s u~ c~ d~ s~`
+        *   `define j = g u c d s u~ c~ d~ s~`
+    *   Output directory: `HJ`.
+
+    *   Beam energy definition: `set beam_energy 6500` (per beam).
+    *   Multiparticle definitions: `define p = ...` and `define j = ...`.
+    *   Process command: `generate p p > h j`.
+    *   Output directory command: `output HJ`.
+
+    ```text
+    set beam_energy 6500
+    define p = g u c d s u~ c~ d~ s~
+    define j = g u c d s u~ c~ d~ s~
+    generate p p > h j
+    output HJ
+    ```
+
+    *   Return *only* the requested output file content.
+    *   No explanations.
+...done thinking.
+
+set beam_energy 6500
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+generate p p > h j
+output HJ

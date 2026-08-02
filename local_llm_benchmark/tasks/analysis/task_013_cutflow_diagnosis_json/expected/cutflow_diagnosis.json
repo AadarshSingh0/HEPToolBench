@@ -1,0 +1,11 @@
+{
+  "status": "low_statistics",
+  "final_signal_events": 48,
+  "final_background_events": 120,
+  "dominant_signal_loss_cut": "Transverse-mass window",
+  "dominant_signal_loss_step_efficiency": 0.0923,
+  "dominant_signal_loss_fraction": 0.9077,
+  "s_over_sqrt_b": 4.38,
+  "statistically_usable": false,
+  "recommended_action": "increase simulated statistics or loosen the transverse-mass window before treating the final selection as statistically usable"
+}

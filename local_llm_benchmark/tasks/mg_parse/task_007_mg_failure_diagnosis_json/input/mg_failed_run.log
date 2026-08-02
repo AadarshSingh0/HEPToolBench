@@ -1,0 +1,14 @@
+# MadGraph5_aMC@NLO failed run log
+Run name: run_01
+Status: failed
+Process requested: p p > t tbar
+Command history:
+  import model sm
+  generate p p > t tbar
+  output TTbar_bad
+
+ERROR: invalid antiparticle syntax
+Offending line: generate p p > t tbar
+Diagnostic: MadGraph uses t~ for an anti-top quark, not tbar.
+Expected line: generate p p > t t~
+Suggested fix: replace tbar with t~ in the generate line

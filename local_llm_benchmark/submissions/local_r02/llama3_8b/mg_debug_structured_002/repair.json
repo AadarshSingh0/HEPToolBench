@@ -1,0 +1,4 @@
+{ "error_type": "InvalidProcess", "faulty_lines": ["p p > t tbar"], "correc[7D[K
+"corrected_lines": ["generate p p > t~ t~", "output TTbar"], "output_dir": [K
+"TTbar", "reason": "\"Invalid top-antitop process notation; corrected to us[2D[K
+use anti-top syntax\"" }

@@ -1,0 +1,10 @@
+import model sm
+generate p p > t t~ [QCD]
+add process p p > t t~ j [QCD]
+output my_ttbar_proc
+launch
+set ebeam 6500
+set nevents 10000
+set ptj 20
+set etaj 5.0
+set cut_decays T

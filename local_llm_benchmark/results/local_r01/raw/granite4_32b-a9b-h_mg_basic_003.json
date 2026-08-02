@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "correct_jet_definition": true,
+    "correct_process": false,
+    "correct_proton_definition": true,
+    "defines_jet": true,
+    "defines_proton": true,
+    "ebeam1_6500": true,
+    "ebeam2_6500": true,
+    "has_launch": false,
+    "has_output_hj": true,
+    "imports_sm": false,
+    "no_long_explanation": false,
+    "no_markdown_fence": true,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true
+  },
+  "failure_modes": [
+    "includes_explanation_not_file_only",
+    "missing_or_wrong_process"
+  ],
+  "model": "granite4:32b-a9b-h",
+  "passed": false,
+  "score": 0.45,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/granite4_32b-a9b-h/mg_basic_003/proc_card.dat",
+  "task_id": "mg_basic_003"
+}

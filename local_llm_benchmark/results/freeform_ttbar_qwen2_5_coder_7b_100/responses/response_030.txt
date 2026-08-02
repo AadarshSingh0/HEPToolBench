@@ -1,0 +1,5 @@
+generate p p > t anti-t
+output ttbar_run -f
+model SM
+run_card.ttbar_run.generate_events.cmnd
+launch

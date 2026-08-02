@@ -1,0 +1,8 @@
+```python
+generate p p > t~ t [QCD]
+output ttbar_run
+model SM
+run_card run_card.dat
+```
+
+This script generates proton-proton events with top quark and antiparticle production at 13 TeV using the Standard Model, without including top decays. The output is directed to a directory named "ttbar_run".

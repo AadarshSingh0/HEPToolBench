@@ -1,0 +1,32 @@
+{
+  "checks": {
+    "correct_process": false,
+    "correct_proton_definition": true,
+    "defines_proton": true,
+    "ebeam1_6500": false,
+    "ebeam2_6500": false,
+    "has_launch": true,
+    "has_output_ttbar": true,
+    "imports_sm": true,
+    "no_long_explanation": false,
+    "no_markdown_fence": false,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true
+  },
+  "failure_modes": [
+    "includes_explanation_not_file_only",
+    "includes_markdown_fence",
+    "missing_generate_keyword",
+    "missing_or_wrong_process",
+    "uses_invalid_beam1_beam2_commands",
+    "uses_process_keyword",
+    "uses_tbar_instead_of_t_tilde",
+    "wrong_or_missing_beam_energy"
+  ],
+  "model": "phi4-reasoning:plus",
+  "passed": false,
+  "repair_target": "broken top-pair proc_card.dat",
+  "score": 0.4,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/phi4-reasoning_plus/mg_debug_002/proc_card.dat",
+  "task_id": "mg_debug_002"
+}

@@ -1,0 +1,13 @@
+{
+  "task_id": "mg_workflow_structured_005",
+  "title": "Structured MadGraph workflow settings with Pythia8 and Delphes",
+  "category": "mg_workflow_structured",
+  "level": "L3",
+  "mode": "structured_json",
+  "tools": ["madgraph", "pythia8", "delphes"],
+  "timeout_seconds": 300,
+  "requires_execution": false,
+  "expected_artifacts": ["params.json"],
+  "physics_tags": ["sm", "top_pair", "workflow", "pythia8", "delphes", "madspin", "structured_output"],
+  "description": "Extract structured workflow settings for p p > t t~ with Pythia8 enabled, Delphes enabled, and MadSpin disabled."
+}

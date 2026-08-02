@@ -1,0 +1,148 @@
+We are Phi and we have been given a task, the instructions says "Return onl[3D[K
+only one JSON object with this schema" and "Do not include explanations or [K
+markdown fences." The answer should be exactly a JSON object that matches p[1D[K
+provided example. Wait instructions: "Read the requested Pythia8 setup and [K
+the provided .cmnd configuration." The requested setup is:
+- generate 10000 events
+- use a fixed random seed of 42
+- enable initial-state radiation (ISR)
+- enable final-state radiation (FSR)
+- enable multiparton interactions (MPI)
+- enable hadronization
+- write HepMC output
+
+Return only one JSON object with the schema:
+
+{
+    "status": "invalid",
+    "number_of_events": 10000,
+    "seed_fixed": true,
+    "seed_value": 42,
+    "isr_enabled": true,
+    "fsr_enabled": true,
+    "mpi_enabled": false,
+    "hadronization_enabled": true,
+    "hepmc_output_enabled": true,
+    "missing_or_wrong_settings": ["PartonLevel:MPI = on"],
+    "failure_stage": "parton_level",
+    "recommended_fix": "set PartonLevel:MPI = on"
+}
+
+Rules: use status "valid" only if every requested setting is satisfied. Oth[3D[K
+Otherwise, if any requested setting missing or wrong value then status: inv[3D[K
+invalid.
+
+Now check the .cmnd file provided input file:
+
+The input file is:
+```
+! Pythia8 configuration for showering a ttbar LHE sample.
+! Requested production setup:
+! - 10000 events
+! - fixed random seed 42
+! - ISR on
+! - FSR on
+! - MPI on
+! - hadronization on
+! - HepMC output on
+
+Main:numberOfEvents = 10000
+Main:timesAllowErrors = 20
+
+Random:setSeed = on
+Random:seed = 42
+
+Beams:frameType = 4
+Beams:LHEF = Events/run_01/unweighted_events.lhe.gz
+
+PartonLevel:ISR = on
+PartonLevel:FSR = on
+PartonLevel:MPI = off
+
+HadronLevel:all = on
+
+Main:writeHepMC = on
+Main:HepMCFile = Events/run_01/tag_1_pythia8_events.hepmc
+```
+We check all requested settings:
+
+- "generate 10000 events": The input file has Main:numberOfEvents = 10000, [K
+so that's correct.
+- "use a fixed random seed of 42": the input file has Random:setSeed = on a[1D[K
+and Random:seed = 42. So it is satisfied.
+- "enable initial-state radiation": in the configuration, PartonLevel:ISR =[1D[K
+= on. That is enabled.
+- "enable final-state radiation": in configuration, PartonLevel:FSR = on. T[1D[K
+That is correct.
+- "enable multiparton interactions": requested but in input file, we see Pa[2D[K
+PartonLevel:MPI = off (so this is not enabled, missing or wrong setting).
+- "enable hadronization": check the input file - HadronLevel:all = on indic[5D[K
+indicates that hadronization is on. That is correct.
+- "write HepMC output": The input file has Main:writeHepMC = on so yes.
+
+Thus the requested settings are satisfied except for the MPI setting, which[5D[K
+which says required to be on but it's off in configuration file. So we then[4D[K
+then check instructions: if any setting is missing or wrong, status should [K
+be invalid, and must include the "missing_or_wrong_settings" array listing [K
+that the PartonLevel:MPI = on setting is missing (or set as off) so missing[7D[K
+missing/wrong. The provided schema for output has:
+
+{
+  "status": "invalid",
+  "number_of_events": 10000,
+  "seed_fixed": true,
+  "seed_value": 42,
+  "isr_enabled": true,
+  "fsr_enabled": true,
+  "mpi_enabled": false,
+  "hadronization_enabled": true,
+  "hepmc_output_enabled": true,
+  "missing_or_wrong_settings": ["PartonLevel:MPI = on"],
+  "failure_stage": "parton_level",
+  "recommended_fix": "set PartonLevel:MPI = on"
+}
+
+This is exactly the schema. Therefore we return that JSON object.
+
+I note the question said "Return only one JSON object" and "Do not include [K
+explanations."
+
+Thus I must output a single JSON object with no markdown formatting, no add[3D[K
+additional text explanation. Should be plain text.
+
+The answer should contain a JSON structure:
+
+{
+  "status": "invalid",
+  "number_of_events": 10000,
+  "seed_fixed": true,
+  "seed_value": 42,
+  "isr_enabled": true,
+  "fsr_enabled": true,
+  "mpi_enabled": false,
+  "hadronization_enabled": true,
+  "hepmc_output_enabled": true,
+  "missing_or_wrong_settings": ["PartonLevel:MPI = on"],
+  "failure_stage": "parton_level",
+  "recommended_fix": "set PartonLevel:MPI = on"
+}
+
+I must ensure that I output exactly the JSON object. I will not include any[3D[K
+any explanation text.
+
+Thus answer is final answer: The above JSON.
+
+I'll now produce final answer in plain text (no markdown formatting).{
+  "status": "invalid",
+  "number_of_events": 10000,
+  "seed_fixed": true,
+  "seed_value": 42,
+  "isr_enabled": true,
+  "fsr_enabled": true,
+  "mpi_enabled": false,
+  "hadronization_enabled": true,
+  "hepmc_output_enabled": true,
+  "missing_or_wrong_settings": ["PartonLevel:MPI = on"],
+  "failure_stage": "parton_level",
+  "recommended_fix": "set PartonLevel:MPI = on"
+}

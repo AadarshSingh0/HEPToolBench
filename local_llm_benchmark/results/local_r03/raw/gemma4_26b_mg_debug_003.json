@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "correct_jet_definition": true,
+    "correct_process": true,
+    "correct_proton_definition": true,
+    "defines_jet": true,
+    "defines_proton": true,
+    "ebeam1_6500": false,
+    "ebeam2_6500": false,
+    "has_launch": true,
+    "has_output_hj": true,
+    "imports_sm": true,
+    "no_long_explanation": true,
+    "no_markdown_fence": false,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true
+  },
+  "failure_modes": [
+    "includes_markdown_fence",
+    "uses_arrow_instead_of_madgraph_gt",
+    "uses_invalid_beam1_beam2_commands",
+    "uses_process_keyword",
+    "wrong_or_missing_beam_energy"
+  ],
+  "model": "gemma4:26b",
+  "passed": false,
+  "score": 0.45,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r03_clean/submissions/gemma4_26b/mg_debug_003/proc_card.dat",
+  "task_id": "mg_debug_003"
+}

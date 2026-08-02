@@ -1,0 +1,14 @@
+Parameter-scan request
+======================
+
+Scan parameter: mS
+Units: GeV
+Fixed coupling: gS = 0.1
+Process: p p > S > e+ e-
+Events per point: 10000
+
+The intended scan grid is inclusive:
+  mS = 1.0, 1.5, 2.0, 2.5, 3.0 GeV
+
+A final scan plot or table should only be made after every intended scan point
+has a successful output.

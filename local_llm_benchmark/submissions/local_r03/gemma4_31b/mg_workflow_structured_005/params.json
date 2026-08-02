@@ -1,0 +1,57 @@
+Thinking...
+*   Task: Extract structured workflow settings for MadGraph, Pythia8, and D[1D[K
+Delphes based on specific input parameters.
+    *   Process: inclusive top-pair production (`p p > t t~`).
+    *   Model: Standard Model (sm).
+    *   Center-of-mass energy ($\sqrt{s}$): 13 TeV $\rightarrow$ Beam energ[5D[K
+energy per beam = 6500 GeV.
+    *   Output directory: `TTbar_P8_Delphes`.
+    *   Number of events: 10,000.
+    *   Random seed: 42.
+    *   Showering: Pythia8 enabled.
+    *   Detector simulation: Delphes enabled.
+    *   MadSpin: disabled.
+
+    *   `model`: "sm"
+    *   `initial_state`: ["p", "p"] (from `p p > t t~`)
+    *   `final_state`: ["t", "t~"] (from `p p > t t~`)
+    *   `beam_energy_gev`: 6500 (provided)
+    *   `output_dir`: "TTbar_P8_Delphes" (provided)
+    *   `nevents`: 10000 (provided)
+    *   `iseed`: 42 (provided)
+    *   `shower`: "Pythia8" (enabled)
+    *   `detector`: "Delphes" (enabled)
+    *   `madspin`: "OFF" (disabled)
+
+    ```json
+    {
+      "model": "sm",
+      "initial_state": ["p", "p"],
+      "final_state": ["t", "t~"],
+      "beam_energy_gev": 6500,
+      "output_dir": "TTbar_P8_Delphes",
+      "nevents": 10000,
+      "iseed": 42,
+      "shower": "Pythia8",
+      "detector": "Delphes",
+      "madspin": "OFF"
+    }
+    ```
+
+    *   Return only the JSON object.
+    *   No explanations.
+    *   No markdown fences.
+...done thinking.
+
+{
+  "model": "sm",
+  "initial_state": ["p", "p"],
+  "final_state": ["t", "t~"],
+  "beam_energy_gev": 6500,
+  "output_dir": "TTbar_P8_Delphes",
+  "nevents": 10000,
+  "iseed": 42,
+  "shower": "Pythia8",
+  "detector": "Delphes",
+  "madspin": "OFF"
+}

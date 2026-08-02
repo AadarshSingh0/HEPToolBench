@@ -1,0 +1,14 @@
+{
+  "task_id": "mg_debug_001",
+  "title": "Repair a broken Drell-Yan MadGraph card",
+  "category": "mg_debug",
+  "level": "L3",
+  "mode": "debug_repair",
+  "tools": ["madgraph"],
+  "timeout_seconds": 300,
+  "requires_execution": false,
+  "expected_artifacts": ["proc_card.dat"],
+  "physics_tags": ["sm", "drell_yan", "pp_collision", "repair"],
+  "description": "Fix a broken MadGraph card by adding the generate keyword and correcting beam-energy commands."
+}
+

@@ -1,0 +1,14 @@
+```
+import model sm
+
+generate p p > t~ t
+output ttbar_run
+
+--run_card.cmnd
+set lhe_file true
+set pt_min 50
+set mmin 200
+set maxjetpt 1000
+set maxetajet 4.7
+run
+```

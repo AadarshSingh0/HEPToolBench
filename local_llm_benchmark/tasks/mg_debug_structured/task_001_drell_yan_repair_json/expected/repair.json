@@ -1,0 +1,16 @@
+{
+  "error_type": "madgraph_syntax_and_beam_command_repair",
+  "faulty_lines": [
+    "p p > e+ e-",
+    "beam1",
+    "beam2"
+  ],
+  "corrected_lines": [
+    "generate p p > e+ e-",
+    "set ebeam1 6500",
+    "set ebeam2 6500",
+    "output DY_ee"
+  ],
+  "output_dir": "DY_ee",
+  "reason": "The common repair is to use a generate line and valid set ebeam1/ebeam2 commands."
+}

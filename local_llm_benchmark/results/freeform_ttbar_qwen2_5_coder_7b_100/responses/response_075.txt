@@ -1,0 +1,6 @@
+```python
+generate p p > t anti-t [QCD]
+output ttbar_run
+run default
+```
+This script sets up a proton-proton collision where a top quark and its antiparticle are produced. It uses QCD for the interaction. The output is directed to the 'ttbar_run' directory, and MadGraph's default settings are applied for running the process.

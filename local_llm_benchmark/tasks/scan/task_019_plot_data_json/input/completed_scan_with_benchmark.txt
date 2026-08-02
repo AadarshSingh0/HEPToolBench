@@ -1,0 +1,20 @@
+Completed scalar-mass scan after successful reruns
+
+Scan parameter: mS
+Mass unit: GeV
+Cross-section unit: pb
+
+mS_GeV   status    cross_section_pb   stat_uncertainty_pb   run_directory
+1.0      success   12.40              0.40                  runs/mS_1p0
+1.5      success   8.10               0.30                  runs/mS_1p5
+2.0      success   5.00               0.20                  runs/mS_2p0
+2.5      success   3.20               0.10                  runs/mS_2p5
+3.0      success   1.70               0.08                  runs/mS_3p0
+
+Plot requirements:
+- Use only successful scan points.
+- Return the x values in increasing mass order.
+- Return cross sections in pb and uncertainties in pb.
+- Set log_y = true if max(cross_section_pb)/min(cross_section_pb) > 5.
+- Mark the selected benchmark point mS = 1.5 GeV, cross section = 8.10 pb.
+- The final scan plot is safe only if every intended point succeeded.

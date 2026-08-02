@@ -1,0 +1,10 @@
+# scripts folder guide
+
+Main utilities:
+- summarize_results.py : create per-model and per-task summary CSV files from result JSONs.
+- consolidate_results.py : optional richer consolidation/plotting utility.
+- audit_task_leakage.py : audit task prompts/schemas for answer leakage.
+- inspect_v12_api_setup.sh : check API-runner setup and task compilation.
+- run_v12_api_frontier_all.sh : batch runner for API frontier models listed in api_model_matrix.tsv.
+
+Run scripts from the benchmark folder unless stated otherwise.

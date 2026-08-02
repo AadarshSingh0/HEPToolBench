@@ -1,0 +1,18 @@
+```text
+import model sm
+generate p p > t t~
+
+output TTbar_P8_Delphes
+
+launch
+
+set nevents 10000
+set iseed 42
+set ebeam1 6500
+set ebeam2 6500
+set shower Pythia8
+set detector Delphes
+set madspin false
+
+run
+```

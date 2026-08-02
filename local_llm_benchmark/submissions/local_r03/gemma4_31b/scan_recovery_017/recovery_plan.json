@@ -1,0 +1,53 @@
+Thinking...
+*   Goal: Create a `recovery_plan.json` file based on the intended scan gri[3D[K
+grid and job output manifest.
+
+    *   Scan parameter: `mS` (GeV)
+    *   Intended points: `1.0, 1.5, 2.0, 2.5, 3.0` GeV
+
+    *   Point 1.0: Status = success, Outputs = cross_section.txt, events.lh[9D[K
+events.lhe.gz -> **Completed**
+    *   Point 1.5: Status = success, Outputs = cross_section.txt, events.lh[9D[K
+events.lhe.gz -> **Completed**
+    *   Point 2.0: Status = failed, Outputs = log.txt -> **Failed**
+    *   Point 2.5: Status = missing_directory, Outputs = none -> **Missing*[10D[K
+**Missing**
+    *   Point 3.0: Status = success, Outputs = cross_section.txt, events.lh[9D[K
+events.lhe.gz -> **Completed**
+
+    *   `status`: "incomplete" (since some points failed/missing)
+    *   `scan_parameter`: "mS"
+    *   `total_intended_points`: 5
+    *   `completed_points_gev`: [1.0, 1.5, 3.0]
+    *   `failed_points_gev`: [2.0]
+    *   `missing_points_gev`: [2.5]
+    *   `points_to_rerun_gev`: [2.0, 2.5]
+    *   `number_of_reruns`: 2
+    *   `rerun_run_directories`: ["run_mS_2p0", "run_mS_2p5"]
+    *   `safe_to_make_final_plot`: false (not all points completed successf[8D[K
+successfully)
+    *   `recommended_action`: "Rerun failed and missing points"
+
+    *   `completed_points_gev`: 1.0, 1.5, 3.0 (all match the success + outp[4D[K
+outputs criteria). Correct.
+    *   `failed_points_gev`: 2.0. Correct.
+    *   `missing_points_gev`: 2.5. Correct.
+    *   `points_to_rerun_gev`: [2.0, 2.5]. Correct.
+    *   `number_of_reruns`: 2. Correct.
+    *   `safe_to_make_final_plot`: false. Correct.
+...done thinking.
+
+{
+  "status": "incomplete",
+  "scan_parameter": "mS",
+  "total_intended_points": 5,
+  "completed_points_gev": [1.0, 1.5, 3.0],
+  "failed_points_gev": [2.0],
+  "missing_points_gev": [2.5],
+  "points_to_rerun_gev": [2.0, 2.5],
+  "number_of_reruns": 2,
+  "rerun_run_directories": ["run_mS_2p0", "run_mS_2p5"],
+  "safe_to_make_final_plot": false,
+  "recommended_action": "Rerun failed and missing points to complete the sc[2D[K
+scan grid."
+}

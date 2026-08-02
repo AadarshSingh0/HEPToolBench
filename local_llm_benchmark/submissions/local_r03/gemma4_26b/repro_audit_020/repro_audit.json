@@ -1,0 +1,100 @@
+Thinking...
+*   Goal: Create a JSON reproducibility audit from `analysis_package_manife[24D[K
+`analysis_package_manifest.txt`.
+    *   Input: A text file listing files, statuses (present/missing), and s[1D[K
+scan parameters.
+    *   Output constraints: Only JSON, no explanations, no markdown fences.[7D[K
+fences.
+
+    *   Intended scan masses: 1.0, 1.5, 2.0, 2.5, 3.0 GeV.
+    *   Detector-level results claimed: `false`.
+    *   Reproducibility rules (Parton-level):
+        1.  UFO model directory (Required).
+        2.  `proc_card.dat` (Required).
+        3.  `run_card.dat` (Required).
+        4.  One `param_card.dat` for every mass (Required).
+        5.  One random-seed log for every mass (Required).
+        6.  Final scan results table (Required).
+        7.  Plotting script (Required).
+    *   Optional files: Pythia8 and Delphes cards (only if detector-level c[1D[K
+claimed is false). Since `detector_level_claimed` is `false`, these are opt[3D[K
+optional.
+
+    *   Masses: 1.0, 1.5, 2.0, 2.5, 3.0.
+    *   UFO model (`models/ScalarUFO/`): present.
+    *   `proc_card.dat`: present.
+    *   `run_card.dat`: present.
+    *   Param cards:
+        - 1.0: `mS_1p0.dat` (present)
+        - 1.5: `mS_1p5.dat` (present)
+        - 2.0: `mS_2p0.dat` (present)
+        - 2.5: `mS_2p5.dat` (**missing**)
+        - 3.0: `mS_3p0.dat` (present)
+    *   Logs (seeds):
+        - 1.0: `mS_1p0_seed.txt` (present)
+        - 1.5: `mS_1p5_seed.txt` (present)
+        - 2.0: `mS_2p0_seed.txt` (present)
+        - 2.5: `mS_2p5_seed.txt` (**missing**)
+        - 3.0: `mS_3p0_seed.txt` (present)
+    *   Scan results table (`results/scan_results.csv`): present.
+    *   Plotting script (`scripts/make_scan_plot.py`): present.
+    *   Optional files:
+        - `cards/pythia8.cmnd`: absent.
+        - `cards/delphes_card.dat`: absent.
+
+    *   `status`: "not_reproducible" (because required files for 2.5 GeV ar[2D[K
+are missing).
+    *   `detector_level_claimed`: false.
+    *   `missing_required_files`: ["cards/param_cards/mS_2p5.dat", "logs/mS[8D[K
+"logs/mS_2p5_seed.txt"].
+    *   `missing_optional_files`: ["cards/pythia8.cmnd", "cards/delphes_car[18D[K
+"cards/delphes_card.dat"] (even though they are optional, the prompt asks t[1D[K
+to list them if relevant; however, usually audit tools report what is *actu[5D[K
+*actually* missing from the manifest compared to a standard expectation. Th[2D[K
+The instruction says Pythia8/Delphes cards are optional here. I will check [K
+if I should include them in `missing_optional_files`. Let's look at the pro[3D[K
+prompt: "missing_optional_files". They are absent in the text, so they belo[4D[K
+belong there).
+    *   `affected_scan_points_gev`: [2.5].
+    *   `can_reproduce_parton_level_scan`: false.
+    *   `safe_for_paper_archive`: false.
+    *   `recommended_action`: "Provide the missing parameter card and seed [K
+log for the 2.5 GeV scan point."
+
+    - status: not_reproducible (due to 2.5 GeV files)
+    - detector_level_claimed: false
+    - missing_required_files: ["cards/param_cards/mS_2p5.dat", "logs/mS_2p5[12D[K
+"logs/mS_2p5_seed.txt"]
+    - missing_optional_files: ["cards/pythia8.cmnd", "cards/delphes_card.da[22D[K
+"cards/delphes_card.dat"]
+    - affected_scan_points_gev: [2.5]
+    - can_reproduce_parton_level_scan: false
+    - safe_for_paper_archive: false
+    - recommended_action: "Add missing parameter card and seed log for the [K
+2.5 GeV mass point."
+
+    *Self-correction*: Is `mS_2p5.dat` considered a file or just a path? Th[2D[K
+The manifest says `cards/param_cards/mS_2p5.dat missing`. I'll list the pat[3D[K
+paths as they appear in the "missing" state.
+...done thinking.
+
+{
+  "status": "not_reproducible",
+  "detector_level_claimed": false,
+  "missing_required_files": [
+    "cards/param_cards/mS_2p5.dat",
+    "logs/mS_2p5_seed.txt"
+  ],
+  "missing_optional_files": [
+    "cards/pythia8.cmnd",
+    "cards/delphes_card.dat"
+  ],
+  "affected_scan_points_gev": [
+    2.5
+  ],
+  "can_reproduce_parton_level_scan": false,
+  "safe_for_paper_archive": false,
+  "recommended_action": "Add the missing parameter card and random-seed log[3D[K
+log for the 2.5 GeV scan point to ensure full parton-level reproducibility.[16D[K
+reproducibility."
+}

@@ -1,0 +1,11 @@
+{
+  "error_type": "missing_process_command",
+  "faulty_lines": [
+    "process p p -> h jet"
+  ],
+  "corrected_lines": [
+    "generate p p > h j"
+  ],
+  "output_dir": "HJ",
+  "reason": "Missing generate command and invalid process syntax"
+}

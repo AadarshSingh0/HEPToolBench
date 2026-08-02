@@ -1,0 +1,41 @@
+Thinking...
+*   Task: Extract structured MadGraph run-card settings from a provided des[3D[K
+description.
+    *   Input: Drell-Yan process (`p p > e+ e-`), center-of-mass energy (13[3D[K
+(13 TeV), event count (10,000), seed (42), beam energies (6500 GeV each), m[1D[K
+min lepton $p_T$ (20 GeV), max lepton $\eta$ (2.5).
+    *   Output: A single JSON object following a specific schema.
+    *   Constraint: No explanations, no markdown fences.
+
+    *   `nevents`: 10000
+    *   `iseed`: 42
+    *   `ebeam1_gev`: 6500
+    *   `ebeam2_gev`: 6500
+    *   `ptl_min_gev`: 20
+    *   `eta_l_max`: 2.5
+
+    ```json
+    {
+      "nevents": 10000,
+      "iseed": 42,
+      "ebeam1_gev": 6500,
+      "ebeam2_gev": 6500,
+      "ptl_min_gev": 20,
+      "eta_l_max": 2.5
+    }
+    ```
+
+    *   Only one JSON object? Yes.
+    *   Correct schema? Yes.
+    *   No explanations? Yes.
+    *   No markdown fences? Yes.
+...done thinking.
+
+{
+  "nevents": 10000,
+  "iseed": 42,
+  "ebeam1_gev": 6500,
+  "ebeam2_gev": 6500,
+  "ptl_min_gev": 20,
+  "eta_l_max": 2.5
+}

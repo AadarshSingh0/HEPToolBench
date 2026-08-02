@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "ebeam1_6500": true,
+    "ebeam2_6500": true,
+    "etal_2p5": false,
+    "has_run_card_assignments": true,
+    "iseed_42": false,
+    "nevents_10000": true,
+    "no_long_explanation": true,
+    "no_markdown_fence": true,
+    "no_process_card_commands": true,
+    "no_set_commands": true,
+    "ptl_20": false
+  },
+  "failure_modes": [
+    "wrong_or_missing_etal",
+    "wrong_or_missing_iseed",
+    "wrong_or_missing_ptl"
+  ],
+  "model": "qwen3-coder-next:Q4_K_M",
+  "parsed_assignments": {
+    "ebeam": 13000.0,
+    "ebeam1": 6500.0,
+    "ebeam2": 6500.0,
+    "etal_max": 2.5,
+    "nevents": 10000.0,
+    "ptl_min": 20.0,
+    "seed": 42.0
+  },
+  "passed": false,
+  "score": 0.6,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r02_clean/submissions/qwen3-coder-next_Q4_K_M/mg_runcard_004/run_card.dat",
+  "task_id": "mg_runcard_004"
+}

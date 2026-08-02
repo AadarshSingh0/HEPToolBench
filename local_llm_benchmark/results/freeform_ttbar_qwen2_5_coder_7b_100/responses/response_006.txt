@@ -1,0 +1,2 @@
+generate p p > t anti-t
+output ttbar_run --overwrite --clean-dir --event=events.lhe --embedding -a PDGID=6 --maxjetflavor=5 --maxmultiplicity=4 --fast -l 13 TeV

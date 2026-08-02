@@ -1,0 +1,6 @@
+{
+  "task_id": "scan_plan_014",
+  "category": "parameter_scan_planning",
+  "artifact": "scan_plan.json",
+  "description": "Extract a reproducible MadGraph parameter-scan plan from a physicist's scan request."
+}

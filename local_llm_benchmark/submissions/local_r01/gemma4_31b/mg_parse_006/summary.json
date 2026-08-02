@@ -1,0 +1,39 @@
+Thinking...
+*   Task: Extract a MadGraph Run Summary from a log file.
+    *   Input: `mg_run_summary.log`.
+    *   Output Format: JSON object with specific keys (`status`, `process`,[10D[K
+`process`, `cross_section_pb`, `cross_section_uncertainty_pb`, `nevents`, `[1D[K
+`event_file`).
+    *   Constraints: Only output the JSON, no explanations or markdown fenc[4D[K
+fences.
+
+    *   `Process`: "p p > e+ e-"
+    *   `Generation status`: "Successful" -> mapping to `"status": "success[8D[K
+"success"` (based on provided schema example).
+    *   `Cross-section`: "8.812e+02 +- 1.9 pb"
+        *   Value: $8.812 \times 10^2 = 881.2$
+        *   Uncertainty: $1.9$
+    *   `Nb_event`: "10000"
+    *   `Event file`: "Events/run_01/unweighted_events.lhe.gz"
+
+    *   `status`: "success"
+    *   `process`: "p p > e+ e-"
+    *   `cross_section_pb`: 881.2
+    *   `cross_section_uncertainty_pb`: 1.9
+    *   `nevents`: 10000
+    *   `event_file`: "Events/run_01/unweighted_events.lhe.gz"
+
+    *   JSON format? Yes.
+    *   Picobarns used? Yes (881.2 and 1.9).
+    *   Event file path preserved? Yes.
+    *   No explanations or markdown fences? Yes.
+...done thinking.
+
+{
+  "status": "success",
+  "process": "p p > e+ e-",
+  "cross_section_pb": 881.2,
+  "cross_section_uncertainty_pb": 1.9,
+  "nevents": 10000,
+  "event_file": "Events/run_01/unweighted_events.lhe.gz"
+}

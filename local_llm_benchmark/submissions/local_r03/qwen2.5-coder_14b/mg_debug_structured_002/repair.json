@@ -1,0 +1,8 @@
+{
+  "error_type": "Syntax and Configuration Error",
+  "faulty_lines": ["p p > t tbar", "set beam1 6500", "set beam2 6500"],
+  "corrected_lines": ["generate p p > t t~", "set ebeam1 6500", "set ebeam2[6D[K
+ebeam2 6500"],
+  "output_dir": "TTbar",
+  "reason": "Corrected process syntax and beam energy settings."
+}

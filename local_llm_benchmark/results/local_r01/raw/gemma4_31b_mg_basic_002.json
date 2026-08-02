@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "correct_process": true,
+    "correct_proton_definition": false,
+    "defines_proton": false,
+    "ebeam1_6500": false,
+    "ebeam2_6500": false,
+    "has_launch": false,
+    "has_output_ttbar": false,
+    "imports_sm": false,
+    "no_long_explanation": false,
+    "no_markdown_fence": false,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true
+  },
+  "failure_modes": [
+    "includes_explanation_not_file_only",
+    "includes_markdown_fence",
+    "missing_or_wrong_output",
+    "wrong_or_missing_beam_energy"
+  ],
+  "model": "gemma4:31b",
+  "passed": false,
+  "score": 0.35,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/gemma4_31b/mg_basic_002/proc_card.dat",
+  "task_id": "mg_basic_002"
+}

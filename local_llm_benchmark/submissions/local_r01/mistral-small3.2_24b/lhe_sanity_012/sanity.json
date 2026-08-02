@@ -1,0 +1,20 @@
+```json
+{
+  "status": "incomplete",
+  "process": "p p > h j",
+  "process_correct": true,
+  "event_file": "Events/run_03/unweighted_events.lhe.gz",
+  "file_present": true,
+  "requested_events": 10000,
+  "observed_events": 9820,
+  "event_count_matches": false,
+  "missing_events": 180,
+  "cross_section_pb": 2.345,
+  "cross_section_uncertainty_pb": 0.012,
+  "negative_weight_events": 0,
+  "negative_weight_fraction": 0,
+  "failure_stage": "event_count_validation",
+  "recommended_action": "Regenerate the event file to match the requested n[1D[K
+number of events."
+}
+```

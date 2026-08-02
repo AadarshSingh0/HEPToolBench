@@ -1,0 +1,37 @@
+{
+  "checks": {
+    "beam_energy_6500": true,
+    "builder_generates_valid_card": true,
+    "final_state_ee": true,
+    "initial_state_pp": true,
+    "model_sm": true,
+    "nevents_10000": true,
+    "output_dir_dy_ee": true,
+    "parseable_json": true,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_markdown_fence"
+  ],
+  "generated_proc_card": "import model sm\ndefine p = g u c d s u~ c~ d~ s~\ngenerate p p > e+ e-\noutput DY_ee\nlaunch\nset ebeam1 6500\nset ebeam2 6500\n",
+  "model": "qwen3.5:35b",
+  "normalized_params": {
+    "beam_energy_gev": 6500.0,
+    "final_state": [
+      "e+",
+      "e-"
+    ],
+    "initial_state": [
+      "p",
+      "p"
+    ],
+    "model": "sm",
+    "nevents": 10000,
+    "output_dir": "DY_ee"
+  },
+  "passed": true,
+  "score": 0.95,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/qwen3.5_35b/mg_structured_001/params.json",
+  "task_id": "mg_structured_001"
+}

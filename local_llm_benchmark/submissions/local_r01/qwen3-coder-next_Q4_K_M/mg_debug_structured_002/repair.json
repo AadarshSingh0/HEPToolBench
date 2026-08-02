@@ -1,0 +1,5 @@
+{"error_type": "invalid_process_and_beam_syntax", "faulty_lines": ["p p > t[1D[K
+t tbar", "set beam1 6500", "set beam2 6500"], "corrected_lines": ["generate[10D[K
+["generate p p > t t~", "set ebeam1 6500", "set ebeam2 6500"], "output_dir"[12D[K
+"output_dir": "TTbar", "reason": "Corrected process syntax to use t~ instea[6D[K
+instead of tbar and beam-energy commands from 'set beamX' to 'set ebeamX'"}

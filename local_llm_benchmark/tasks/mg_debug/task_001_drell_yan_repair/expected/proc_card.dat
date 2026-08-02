@@ -1,0 +1,8 @@
+import model sm
+define p = g u c d s u~ c~ d~ s~
+generate p p > e+ e-
+output DY_ee
+launch
+set ebeam1 6500
+set ebeam2 6500
+

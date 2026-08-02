@@ -1,0 +1,186 @@
+Thinking...
+*   Input: A broken MadGraph `proc_card.dat`.
+    *   Target Physics: SM Drell-Yan ($p p \to e^+ e^-$), $\sqrt{s} = 13$ T[1D[K
+TeV (so $E_{beam} = 6500$ GeV).
+    *   Output Directory: `DY_ee`.
+    *   Required Format: A single JSON object (no markdown, no explanation)[12D[K
+explanation) containing `error_type`, `faulty_lines`, `corrected_lines`, `o[2D[K
+`output_dir`, and `reason`.
+
+    ```text
+    import model sm
+    define p = g u c d s u~ c~ d~ s~
+    p p > e+ e-
+    output DY_ee
+    launch
+    set beam1 6500
+    set beam2 6500
+    ```
+
+    *   Line 3: `p p > e+ e-` is not a valid MadGraph command. It should be[2D[K
+be `generate p p > e+ e-`.
+    *   Line 6 & 7: `set beam1 6500` and `set beam2 6500` are incorrect syn[3D[K
+syntax. In MadGraph, the commands for setting beam energies are `set ebeam1[6D[K
+ebeam1 6500` and `set ebeam2 6500`.
+
+    *   `error_type`: "invalid process command and beam energy settings" (o[2D[K
+(or similar).
+    *   `faulty_lines`: ["p p > e+ e-", "set beam1 6500", "set beam2 6500"][6D[K
+6500"]
+    *   `corrected_lines`: ["generate p p > e+ e-", "set ebeam1 6500"[5D[K
+6500", "set ebeam2 6500"]
+    *   `output_dir`: "DY_ee"
+    *   `reason`: "Replaced invalid process syntax with generate and correc[6D[K
+corrected beam energy commands to use ebeam1/ebeam2."
+
+    *   Must be a single JSON object.
+    *   No Markdown (no ```json).
+    *   Double quotes for strings.
+    *   One-line `reason`.
+
+    *Wait, checking the requirements again:*
+    "If the broken input contains an invalid or missing process command, in[2D[K
+include the corrected `generate ...` line." -> Done.
+    "If the output directory is wrong or missing, include the corrected `ou[3D[K
+`output ...` line." -> It's already correct (`DY_ee`), but I should check i[1D[K
+if it needs changing. The instruction says "Use the output directory DY_ee"[6D[K
+DY_ee". In the input, it is `output DY_ee`. So that line is fine.
+    "If the broken input contains invalid beam commands or missing beam-ene[8D[K
+beam-energy settings, include corrected `set ebeam1 ...` and `set ebeam2 ..[2D[K
+...` lines." -> Done.
+
+    *Self-Correction on `faulty_lines`:* Should I include only the truly br[2D[K
+broken lines? The prompt says "Include the corrected... if relevant".
+    Line 3 is invalid. Line 6/7 are invalid.
+
+    Let's refine:
+    `error_type`: "invalid syntax"
+    `faulty_lines`: ["p p > e+ e-", "set beam1 6500", "set beam2 6500"]
+    `corrected_lines`: ["generate p p > e+ e-", "set ebeam1 6500", "set ebe[3D[K
+ebeam2 6500"]
+    `output_dir`: "DY_ee"
+    `reason`: "Corrected the process command to use 'generate' and updated [K
+beam energy settings to use 'ebeam1' and 'ebeam2'."
+
+    *Final Check of Rules:*
+    - `corrected_lines` must contain complete minimal repair patch.
+    - No Markdown.
+    - First character `{`, last char `}`.
+    - Single line JSON string for `reason`.
+    - Use `generate ...`.
+    - Use `set ebeam1 ...`.
+
+    Wait, looking at the input again:
+    `p p > e+ e-` is definitely broken. It needs `generate`.
+    `set beam1 6tan` (no, it says `6500`) -> `set beam1 6500` is wrong synt[4D[K
+syntax.
+
+    Let's double check the process: $pp \to e^+ e^-$ at 13 TeV means each b[1D[K
+beam is 6500 GeV. The input has 6500, so that energy is correct, just the c[1D[K
+command name is wrong.
+
+    `error_type`: "syntax error"
+    `faulty_lines`: ["p p > e+ e-", "set beam1 6500", "set beam2 6500"]
+    `corrected_lines`: ["generate p p > e+ e-", "set ebeam1 6500", "set ebe[3D[K
+ebeam2 6500"]
+    `output_dir`: "DY_ee"
+    `reason`: "Fixed the process generation syntax and corrected beam energ[5D[K
+energy setting commands."
+
+    One detail: The prompt says "Use MadGraph syntax with `>` rather than a[1D[K
+arrow notation". The input already uses `>`. So I keep that.
+
+    Final JSON structure check:
+    {
+      "error_type": "syntax error",
+      "faulty_lines": ["p p > e+ e-", "set beam1 6500", "set beam2 6500"],
+      "corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500", "set e[1D[K
+ebeam2 6500"],
+      "output_dir": "DY_ee",
+      "reason": "Corrected the generate command and updated beam energy set[3D[K
+settings to use ebeam1 and ebeam2."
+    }
+
+    Check for line breaks in `reason`. No.
+    Check for Markdown. No.
+
+    One more thing: The input includes:
+    `import model sm`
+    `define p = g u c d s u~ c~ d~ s~`
+    These are fine. I don't need to include them in `faulty_lines` or `corr[5D[K
+`corrected_lines` unless they are broken.
+
+    Does the instruction "If the broken input contains an invalid or missin[6D[K
+missing process command, include the corrected generate ... line" imply I s[1D[K
+should only return the part that changed? Yes, "minimal repair patch".
+
+    Wait, looking at the `faulty_lines`:
+    The input has:
+    `p p > e+ e-` -> Faulty.
+    `set beam1 6500` -> Faulty.
+    `set beam2 6500` -> Faulty.
+
+    So my JSON should be exactly:
+    {
+      "error_type": "syntax error",
+      "faulty_lines": ["p p > e+ e-", "set beam1 6500", "set beam2 6500"],
+      "corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500", "set e[1D[K
+ebeam2 6500"],
+      "output_dir": "DY_ee",
+      "reason": "Fixed the process generation syntax and corrected beam ene[3D[K
+energy setting commands."
+    }
+
+    Let me re-read: "If the broken input contains an invalid or missing pro[3D[K
+process command, include the corrected generate ... line. If the broken inp[3D[K
+input contains invalid beam commands... include corrected set ebeam1 ... an[2D[K
+and set ebeam2 ... lines." - This is consistent with my plan.
+
+    Wait, I should check if `p p > e+ e-` implies `generate`. Yes, in MadGr[5D[K
+MadGraph, it's `generate p p > e+ e-`.
+    Is there anything else?
+    $pp \to ee$ at 13 TeV. $E_{beam} = 6500$. The input has 6500 already.
+
+    One small check: In MadGraph, is it `set ebeam1` or `set beam1`? It's d[1D[K
+definitely `ebeam1`.
+    The instruction says "Do not use beam1 or beam2 as commands." -> This c[1D[K
+confirms the correction to `ebeam1`/`ebeam2`.
+
+    Final check on all constraints.
+    - No markdown fences.
+    - Single JSON object.
+    - `reason` is single line.
+    - Output dir provided: `DY_ee`. Corrected? The input says `output DY_ee[5D[K
+DY_ee`. It matches the target request. So it's not faulty.
+
+    One detail: `p p > e+ e-` -> Does the physics require $pp \to e^+ e^-$ [K
+(Drell Yan)? Yes.
+    In MadGraph, `generate p p > e+ e-` is standard for Drell Yan at LO.
+
+    What about the `define p = ...` line? It's actually fine as written in [K
+most MG5 versions to define proton constituents. I'll leave it alone.
+
+    Final Structure:
+    ```json
+    {
+      "error_type": "syntax error",
+      "faulty_lines": ["p p > e+ e-", "set beam1 6500", "set beam2 6500"],
+      "corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500", "set e[1D[K
+ebeam2 6500"],
+      "output_dir": "DY_ee",
+      "reason": "Corrected the process generation command and updated beam [K
+energy settings to use ebeam1/ebeam2."
+    }
+    ```
+    (Self-correction: ensure no backticks or anything)
+...done thinking.
+
+{
+  "error_type": "syntax error",
+  "faulty_lines": ["p p > e+ e-", "set beam1 6500", "set beam2 6500"],
+  "corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500", "set ebeam[5D[K
+ebeam2 6500"],
+  "output_dir": "DY_ee",
+  "reason": "Corrected the process generation command and updated beam ener[4D[K
+energy settings to use ebeam1/ebeam2."
+}

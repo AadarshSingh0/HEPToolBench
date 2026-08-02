@@ -1,0 +1,17 @@
+```bash
+# Create a new model if not already available
+newmodel SM
+
+# Load the standard model
+add particle t   6 1 1 1 -2
+add particle ta  5 1 1 0 0
+add coupling ggH ttbar
+add process g g > tta~
+define p = g u c d s b
+define j = g h w+
+define l+ = e+ mu+
+define l- = e- mu-
+generate p p > tta~, add=ggH
+output ttbar_run -f -u default
+exit
+```

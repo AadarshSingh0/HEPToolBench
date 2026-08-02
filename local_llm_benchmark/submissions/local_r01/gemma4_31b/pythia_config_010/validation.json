@@ -1,0 +1,65 @@
+Thinking...
+*   Requested Setup:
+        - `numberOfEvents`: 10000
+        - `random seed fixed`: true, `seed_value`: 42
+        - `ISR enabled`: true
+        - `FSR enabled`: true
+        - `MPI enabled`: true
+        - `hadronization enabled`: true
+        - `HepMC output enabled`: true
+
+    *   Provided `.cmnd` (pythia8_ttbar.cmnd):
+        - `Main:numberOfEvents = 10000` (Matches)
+        - `Random:setSeed = on`, `Random:seed = 42` (Matches)
+        - `PartonLevel:ISR = on` (Matches)
+        - `PartonLevel:FSR = on` (Matches)
+        - `PartonLevel:MPI = off` (**Mismatch**: requested 'on', provided '[1D[K
+'off')
+        - `HadronLevel:all = on` (Matches - Hadronization is enabled by thi[3D[K
+this flag in Pythia8)
+        - `Main:writeHepMC = on` (Matches)
+
+    *   `status`: "invalid"
+    *   `number_of_events`: 10000
+    *   `seed_fixed`: true
+    *   `seed_value`: 42
+    *   `isr_enabled`: true
+    *   `fsr_enabled`: true
+    *   `mpi_enabled`: false (since the file says 'off')
+    *   `hadronization_enabled`: true
+    *   `hepmc_output_enabled`: true
+    *   `missing_or_wrong_settings`: ["PartonLevel:MPI = on"]
+    *   `failure_stage`: "parton_level" (MPI is part of the parton level sh[2D[K
+shower/interaction)
+    *   `recommended_fix`: "set PartonLevel:MPI = on"
+
+    - status: invalid? Yes.
+    - number_of_events: 10000? Yes.
+    - seed_fixed: true? Yes.
+    - seed_value: 42? Yes.
+    - isr_enabled: true? Yes.
+    - fsr_enabled: true? Yes.
+    - mpi_enabled: false? Yes (it's 'off' in file).
+    - hadronization_enabled: true? Yes (`HadronLevel:all = on`).
+    - hepmc_output_enabled: true? Yes.
+    - missing_or_wrong_settings: ["PartonLevel:MPI = on"]? Yes.
+    - failure_stage: "parton_level"? Yes.
+    - recommended_fix: "set PartonLevel:MPI = on"? Yes.
+...done thinking.
+
+```json
+{
+  "status": "invalid",
+  "number_of_events": 10000,
+  "seed_fixed": true,
+  "seed_value": 42,
+  "isr_enabled": true,
+  "fsr_enabled": true,
+  "mpi_enabled": false,
+  "hadronization_enabled": true,
+  "hepmc_output_enabled": true,
+  "missing_or_wrong_settings": ["PartonLevel:MPI = on"],
+  "failure_stage": "parton_level",
+  "recommended_fix": "set PartonLevel:MPI = on"
+}
+```

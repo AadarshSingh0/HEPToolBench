@@ -1,0 +1,19 @@
+```python
+import MadGraph5_aMCatNLO as mg5
+
+# Create a new model instance using the Standard Model
+model = mg5.models.SM()
+
+# Generate processes for top quark and antiparticle production at 13 TeV
+mg5.generate(model, 'pp > tt~', energy=13000)
+
+# Disable top decays
+mg5.disable_decay('t')
+mg5.disable_decay('antit')
+
+# Set output directory
+mg5.set_output_directory('ttbar_run')
+
+# Run the generation process
+mg5.run()
+```

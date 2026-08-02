@@ -1,0 +1,35 @@
+{
+  "checks": {
+    "analysis_off": false,
+    "correct_process": true,
+    "correct_proton_definition": true,
+    "detector_delphes": true,
+    "ebeam1_6500": true,
+    "ebeam2_6500": true,
+    "has_done": false,
+    "has_launch": true,
+    "has_output": true,
+    "imports_sm": true,
+    "iseed_42": true,
+    "madspin_off": false,
+    "nevents_10000": true,
+    "no_long_explanation": true,
+    "no_markdown_fence": true,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true,
+    "shower_pythia8": true
+  },
+  "failure_modes": [
+    "missing_done",
+    "uses_set_detector_instead_of_launch_switch",
+    "uses_set_madspin_instead_of_launch_switch",
+    "uses_set_shower_instead_of_launch_switch",
+    "wrong_or_missing_analysis",
+    "wrong_or_missing_madspin"
+  ],
+  "model": "gpt-oss:120b",
+  "passed": false,
+  "score": 0.88,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/gpt-oss_120b/mg_workflow_005/mg5_script.txt",
+  "task_id": "mg_workflow_005"
+}

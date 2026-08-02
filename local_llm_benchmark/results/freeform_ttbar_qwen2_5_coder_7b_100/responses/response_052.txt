@@ -1,0 +1,5 @@
+```
+generate p p > t anti-t [QCD]
+output ttbar_run
+exit
+```

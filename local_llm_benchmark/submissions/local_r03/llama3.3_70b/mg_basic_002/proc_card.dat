@@ -1,0 +1,15 @@
+```markdown
+# *******************************
+# *                              *
+# * MadGraph5_aMC@NLO process card *
+# *                              *
+# *******************************
+#
+import model sm
+
+define p = g u c d s b u~ c~ d~ s~ b~
+define j = g u c d s b u~ c~ d~ s~ b~
+
+generate p p > t t~
+output SM_ttxsec -f
+```

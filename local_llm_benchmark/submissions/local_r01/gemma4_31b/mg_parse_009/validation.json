@@ -1,0 +1,71 @@
+Thinking...
+*   Role: Particle-physics software benchmark tester.
+    *   Task: Validate a MadGraph/Pythia/Delphes Run Output based on a mani[4D[K
+manifest file.
+    *   Input: `mg_output_manifest.txt`.
+    *   Output Format: A specific JSON object (no explanations, no markdown[8D[K
+markdown fences).
+
+    *   `run_name`: TTbar_P8_Delphes
+    *   `process`: p p > t t~
+    *   `requested_events`: 10000
+    *   Requested Workflow: MadGraph -> Pythia8 -> Delphes.
+    *   Output File Checks:
+        *   `Events/run_01/unweighted_events.lhe.gz` (hard_process): [OK], [K
+event_count: 10000.
+        *   `Events/run_01/tag_1_pythia8_events.hepmc.gz` (pythia8): [OK], [K
+event_count: 10000.
+        *   `Events/run_01/tag_1_delphes_events.root` (delphes): [MISSING],[10D[K
+[MISSING], event_count: unavailable.
+        *   `Events/run_01/run_01_tag_1_banner.txt` (metadata): [OK].
+    *   Log Excerpt confirms: MadGraph OK, Pythia8 OK, Delphes ERROR (file [K
+not found).
+
+    *   `status`: "incomplete" (since Delphes is missing).
+    *   `process`: "p p > t t~".
+    *   `requested_events`: 10000.
+    *   `lhe_present`: true.
+    *   `lhe_events`: 10000.
+    *   `pythia8_requested`: true.
+    *   `pythia8_present`: true.
+    *   `pythia8_events`: 10000.
+    *   `delphes_requested`: true.
+    *   `delphes_present`: false.
+    *   `missing_outputs`: ["Events/run_01/tag_1_delphes_events.root"].
+    *   `event_count_consistent`: true (all *present* files have 10000 even[4D[K
+events).
+    *   `failure_stage`: "delphes".
+    *   `recommended_action`: "rerun Delphes or fix the Delphes card/path b[1D[K
+before treating detector-level output as available" (following the schema e[1D[K
+example's logic for this specific missing file).
+
+    *   Status: incomplete.
+    *   Process matches input? Yes.
+    *   Requested events match input? Yes.
+    *   LHE present and count correct? Yes.
+    *   Pythia8 requested, present, and count correct? Yes.
+    *   Delphes requested but present is false? Yes.
+    *   Missing outputs list contains the correct path? Yes (`Events/run_01[15D[K
+(`Events/run_01/tag_1_delphes_events.root`).
+    *   Event count consistent? All available files (LHE, Pythia8) have 100[3D[K
+10000 events. Yes.
+    *   Failure stage: delphes.
+...done thinking.
+
+{
+  "status": "incomplete",
+  "process": "p p > t t~",
+  "requested_events": 10000,
+  "lhe_present": true,
+  "lhe_events": 10000,
+  "pythia8_requested": true,
+  "pythia8_present": true,
+  "pythia8_events": 10000,
+  "delphes_requested": true,
+  "delphes_present": false,
+  "missing_outputs": ["Events/run_01/tag_1_delphes_events.root"],
+  "event_count_consistent": true,
+  "failure_stage": "delphes",
+  "recommended_action": "rerun Delphes or fix the Delphes card/path before [K
+treating detector-level output as available"
+}

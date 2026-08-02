@@ -1,0 +1,85 @@
+Thinking...
+Okay, let's tackle this problem. The user wants a JSON summary based on the[3D[K
+the scan results provided. First, I need to parse the input table and extra[5D[K
+extract the necessary information.
+
+Looking at the required JSON fields, let's go through each one step by step[4D[K
+step.
+
+Status: The scan is incomplete if any requested point failed. In the table,[6D[K
+table, mS=2.0 failed, so status is "incomplete".
+
+Scan_parameter is mS, which is given as the parameter in the table's header[6D[K
+header.
+
+Total_points: There are 5 entries in the table, so total_points is 5.
+
+Successful_points: Count the number of successful runs. The failed one is m[1D[K
+mS=2.0, so 4 successful points.
+
+Failed_points: 1, which is the mS=2.0 entry.
+
+Failed_masses_gev: This should be a list of mS values where the run failed.[7D[K
+failed. So [2.0].
+
+Failed_run_directories: The run_directory for the failed point is "run_mS_2[9D[K
+"run_mS_2p0", so that's the entry.
+
+Max_cross_section_mass_gev: This is the mS value with the highest cross sec[3D[K
+section. Looking at successful points, 1.0 has 12.40, 1.5 has 8.10, 2.5 has[3D[K
+has 3.20, 3.0 has 1.70. So max is 1.0.
+
+Max_cross_section_pb: The corresponding cross section for mS=1.0 is 12.40.
+
+Min_successful_cross_section_mass_gev: The lowest cross section among succe[5D[K
+successful points. The smallest is 1.70 at mS=3.0, so 3.0.
+
+Min_successful_cross_section_pb: 1.70.
+
+Monotonic_decreasing_successful_points: Check if the cross sections decreas[7D[K
+decrease as mS increases, skipping failed points. The successful points are[3D[K
+are 1.0 (12.40), 1.5 (8.10), 2.5 (3.20), 3.0 (1.70). Each subsequent mS has[3D[K
+has a lower cross section. So yes, it's monotonic decreasing. So true.
+
+Rerun_required: Since there's a failed point, rerun might be needed. But th[2D[K
+the rules say to return rerun_required as true or false based on whether th[2D[K
+the scan is incomplete. Wait, the rules state that the scan is incomplete i[1D[K
+if any requested point failed. So since there's a failed point, the scan is[2D[K
+is incomplete. But the rerun_required field is a separate thing. Wait, the [K
+user's rules don't explicitly say how to determine rerun_required. But look[4D[K
+looking at the example, maybe if there are failed points, rerun_required is[2D[K
+is true. But the user's instruction says to return rerun_required as true o[1D[K
+or false. The example might imply that if there are failed points, rerun_re[8D[K
+rerun_required is true. But I need to check the rules again. The rules don'[4D[K
+don't mention rerun_required, so maybe it's up to the user's discretion. Ho[2D[K
+However, looking at the sample input, since there's a failed point, rerun_r[7D[K
+rerun_required is likely true. But maybe the user's instruction says to set[3D[K
+set rerun_required to true if there are failed points. Let me check the rul[3D[K
+rules again. The rules mention that the scan is incomplete if any requested[9D[K
+requested point failed. So the status is incomplete. But rerun_required is [K
+a separate field. The user's example might have rerun_required as true if t[1D[K
+there are failed points. So I'll set rerun_required to true.
+
+Recommended_action: Since the scan is incomplete due to a failed point, the[3D[K
+the recommended action would be to re-run the failed points. So "rerun fail[4D[K
+failed points".
+
+Now, compiling all these into the JSON structure as specified.
+...done thinking.
+
+{
+  "status": "incomplete",
+  "scan_parameter": "mS",
+  "total_points": 5,
+  "successful_points": 4,
+  "failed_points": 1,
+  "failed_masses_gev": [2.0],
+  "failed_run_directories": ["run_mS_2p0"],
+  "max_cross_section_mass_gev": 1.0,
+  "max_cross_section_pb": 12.4,
+  "min_successful_cross_section_mass_gev": 3.0,
+  "min_successful_cross_section_pb": 1.7,
+  "monotonic_decreasing_successful_points": true,
+  "rerun_required": true,
+  "recommended_action": "rerun failed points"
+}

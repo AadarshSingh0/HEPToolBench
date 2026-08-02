@@ -1,0 +1,41 @@
+Thinking...
+*   Input: MadGraph process `p p > e+ e-`, center-of-mass energy 13 TeV.
+    *   Specific parameters:
+        *   nevents: 10000
+        *   iseed: 42
+        *   ebeam1_gev: 6500
+        *   ebeam2_gev: 6500
+        *   ptl_min_gev: 20
+        *   eta_l_max: 2.5
+    *   Output Format: JSON object only, no explanations, no markdown fence[5D[K
+fences.
+
+    *   `nevents`: 10000
+    *   `iseed`: 42
+    *   `ebeam1_gev`: 6500
+    *   `ebeam2_gev`: 6500
+    *   `ptl_min_gev`: 20
+    *   `eta_l_max`: 2.5
+
+    ```json
+    {
+      "nevents": 10000,
+      "iseed": 42,
+      "ebeam1_gev": 6500,
+      "ebeam2_gev": 6500,
+      "ptl_min_gev": 20,
+      "eta_l_max": 2.5
+    }
+    ```
+
+Ensure no markdown fences or extra text.
+...done thinking.
+
+{
+  "nevents": 10000,
+  "iseed": 42,
+  "ebeam1_gev": 6500,
+  "ebeam2_gev": 6500,
+  "ptl_min_gev": 20,
+  "eta_l_max": 2.5
+}

@@ -1,0 +1,18 @@
+```json
+{
+  "status": "plot_ready",
+  "scan_parameter": "mS",
+  "x_label": "mS [GeV]",
+  "y_label": "cross section [pb]",
+  "x_values_gev": [1.0, 1.5, 2.0, 2.5, 3.0],
+  "y_values_pb": [12.40, 8.10, 5.00, 3.20, 1.70],
+  "yerr_values_pb": [0.40, 0.30, 0.20, 0.10, 0.08],
+  "number_of_plot_points": 5,
+  "log_y": true,
+  "benchmark_marker": {
+    "mass_gev": 1.5,
+    "cross_section_pb": 8.10
+  },
+  "safe_to_plot": true
+}
+```

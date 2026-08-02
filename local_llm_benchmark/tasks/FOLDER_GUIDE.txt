@@ -1,0 +1,33 @@
+# tasks folder guide
+
+This folder contains the HEPToolBench task definitions.
+
+Each task family may contain:
+- prompt or instruction files,
+- metadata files,
+- tests or scorer files,
+- expected artifact descriptions.
+
+Typical task IDs:
+- mg_basic_001
+- mg_debug_001
+- mg_structured_001
+- mg_runcard_004
+- mg_workflow_005
+- pythia_config_010
+- delphes_objects_011
+- lhe_sanity_012
+- cutflow_diagnosis_013
+- scan_plan_014
+- param_card_patch_015
+- scan_results_016
+- scan_recovery_017
+- benchmark_recommendation_018
+- plot_data_019
+- repro_audit_020
+
+How to use:
+Users normally do not run files inside this folder directly. Use a model runner with the task ID.
+
+Example:
+    python runners/run_ollama_task.py --model llama3.1:8b --task mg_basic_001

@@ -1,0 +1,4 @@
+{ "error_type": "missing_process_command", "faulty_lines": ["p p > t tbar"][6D[K
+tbar"], "corrected_lines": ["generate p p > t t~", "output TTbar"], "output[7D[K
+"output_dir": "TTbar", "reason": "\"p\" to \"t~\" in the process command an[2D[K
+and correct the process line." }

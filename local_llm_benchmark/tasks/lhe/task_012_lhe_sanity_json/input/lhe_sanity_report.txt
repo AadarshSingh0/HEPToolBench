@@ -1,0 +1,19 @@
+Requested run:
+  process: p p > h j
+  requested_events: 10000
+  expected_event_file: Events/run_03/unweighted_events.lhe.gz
+
+LHE file scan:
+  file_exists: yes
+  event_file: Events/run_03/unweighted_events.lhe.gz
+  compression: gzip
+  process_from_header: p p > h j
+  cross_section_pb: 2.345
+  cross_section_uncertainty_pb: 0.012
+  events_scanned: 9820
+  negative_weight_events: 0
+  scan_status: completed
+
+Validation note:
+  The LHE file exists and the process matches the request, but the number of
+  scanned events is smaller than the requested number of events.

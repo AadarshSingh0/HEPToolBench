@@ -1,0 +1,44 @@
+{
+  "checks": {
+    "affected_scan_points_correct": true,
+    "can_reproduce_false": true,
+    "detector_level_claimed_false": true,
+    "missing_optional_files_correct": false,
+    "missing_required_files_correct": false,
+    "recommended_action_correct": true,
+    "recoverable_output": true,
+    "safe_archive_false": true,
+    "status_not_reproducible": true
+  },
+  "failure_modes": [
+    "not_parseable_json",
+    "missing_required_files_wrong",
+    "missing_optional_files_wrong"
+  ],
+  "model": "qwen3.5:35b",
+  "normalized_audit": {
+    "affected_scan_points_gev": [
+      2.5
+    ],
+    "can_reproduce_parton_level_scan": false,
+    "detector_level_claimed": false,
+    "missing_optional_files": [
+      "cards/pythia8.cmnd",
+      "cards/delphes_card.\n",
+      "cards/delphes_card.dat"
+    ],
+    "missing_required_files": [
+      "cards/param_cards/mS_2p5.dat",
+      "logs/mS_2\n",
+      "logs/mS_2p5_seed.txt"
+    ],
+    "recommended_action": "Add missing param card and seed log for 2.5 Ge\nGeV scan point.",
+    "safe_for_paper_archive": false,
+    "status": "not_reproducible"
+  },
+  "passed": false,
+  "score": 0.65,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/qwen3.5_35b/repro_audit_020/repro_audit.json",
+  "task_id": "repro_audit_020"
+}

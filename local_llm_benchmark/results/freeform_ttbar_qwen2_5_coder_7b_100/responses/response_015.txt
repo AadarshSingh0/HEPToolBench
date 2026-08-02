@@ -1,0 +1,5 @@
+```
+generate p p > t t~ @nlo -a QCD
+output ttbar_run --overwrite
+run_cards/ct10_lhc_13TeV.cmnd
+```

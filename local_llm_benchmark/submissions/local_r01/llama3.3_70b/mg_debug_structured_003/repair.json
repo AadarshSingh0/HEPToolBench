@@ -1,0 +1,10 @@
+{
+  "error_type": "syntax and beam setting",
+  "faulty_lines": ["process p p -> h jet", "set beam1 6500", "set beam2 650[3D[K
+6500"],
+  "corrected_lines": ["generate p p > h j", "set ebeam1 6500", "set ebeam2 [K
+6500"],
+  "output_dir": "HJ",
+  "reason": "replaced 'jet' with MadGraph multiparticle label 'j', and used[4D[K
+used correct beam-energy commands"
+}

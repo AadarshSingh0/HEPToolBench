@@ -1,0 +1,22 @@
+import model sm
+
+generate p p > t t~ [QCD]
+
+output TTbar_P8_Delphes
+
+launch --round_configuration --auto_format --parallel=1 --tag=0
+
+set rwcl_seed 42
+set lpp1 6500
+set lpp2 6500
+
+set cut_decay 1
+set cut_bw 1
+
+set pdlabel "lhapdf"
+set lhaid 263000
+set lhp set
+
+define p = g u c d s u~ c~ d~ s~
+
+launch --mode=2 --tag=0

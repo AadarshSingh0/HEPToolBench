@@ -1,0 +1,125 @@
+Thinking...
+*   Input: `intended_scan_grid.txt` and `scan_job_manifest.txt`.
+    *   Task: Generate a JSON object for `recovery_plan.json`.
+    *   Output Format: Pure JSON, no markdown, no explanation.
+
+        *   Parameter: `mS` (GeV).
+        *   Grid values: 1.0, 1.5, 2.0, 2.5, 3.0 GeV.
+        *   Total intended points = 5.
+
+        *   `run_mS_1p0`: `mS = 1.0`, `status = success`, outputs: `cross_s[8D[K
+`cross_section.txt, events.lhe.gz`. (Completed)
+        *   `run_mS_1p5`: `mS = 1.5`, `status = success`, outputs: `cross_s[8D[K
+`cross_section.txt, events.lhe.gz`. (Completed)
+        *   `run_mS_2p0`: `mS = 2.0`, `status = failed`, outputs: `log.txt`[9D[K
+`log.txt`. (Failed)
+        *   `run_mS_2p5`: `mS = 2.5`, `status = missing_directory`, outputs[7D[K
+outputs: `none`. (Missing)
+        *   `run_mS_3p0`: `mS = 3.0`, `status = success`, outputs: `cross_s[8D[K
+`cross_section.txt, events.lhe.gz`. (Completed)
+
+    *   `status`: Needs an overview status. Since there are failures/missin[15D[K
+failures/missing points, "Incomplete" or "Failed" seems appropriate. Let's [K
+use "Incomplete".
+    *   `scan_parameter`: "mS"
+    *   `total_intended_points`: 5 (1.0, 1.5, 2.0, 2.5, 3.0)
+    *   `completed_points_gev`: [1.0, 1.5, 3.0]
+    *   `failed_points_gev`: [2.0]
+    *   `missing_points_gev`: [2.5]
+    *   `points_to_rerun_gev`: [2.0, 2.5] (Failed + Missing)
+    *   `number_of_reruns`: 2
+    *   `rerun_run_directories`: ["run_mS_2p0", "run_mS_2p5"] (Wait, is "ru[3D[K
+"run_mS_2p5" available for rerun? The definition says missing point has an [K
+absent run directory. I should probably check if the directory exists in th[2D[K
+the manifest... well, the manifest lists it as `missing_directory`, so I'll[4D[K
+I'll include its identifier or indicate which ones need attention). Let's u[1D[K
+use the IDs from the manifest.
+    *   `safe_to_make_full_plot`: false (Because 2.0 and 2.5 are not comple[6D[K
+completed)
+    *   `recommended_action`: "Rerun missing and failed points (2.0, 2.5 Ge[2D[K
+GeV)."
+
+    *   Definition check: `completed_points_gev`: Success + both files exis[4D[K
+exist. [1.0, 1.5, 3.0]. Correct.
+    *   Definition check: `failed_points_gev`: status = failed. [2.0]. Corr[4D[K
+Correct.
+    *   Definition check: `missing_points_gev`: status = missing_directory [K
+or absent. [2.5]. Correct.
+    *   Definition check: `points_to_rerun_gev`: Failed + Missing. [2.0, 2.[2D[K
+2.5]. Correct.
+    *   Definition check: `safe_to_make_final_plot`: True only if every poi[3D[K
+point is completed. False here. Correct.
+
+    `rerun_run_directories`: Usually, this would be the directories for the[3D[K
+the points that need to be rerun. For 2.0, it's `run_mS_2p0`. For 2.5, it's[4D[K
+it's a bit tricky as the directory is missing, but in the context of a mani[4D[K
+manifest, usually we refer to the intended name or identifier used in the s[1D[K
+system. Given the table provides "run_mS_2p5" even for missing, I'll includ[6D[K
+include both names.
+
+    `status`: "incomplete"
+    `scan_parameter`: "mS"
+    `total_intended_points`: 5
+    `completed_points_gev`: [1.0, 1.5, 3.0]
+    `failed_points_gev`: [2.0]
+    `missing_points_gev`: [2.5]
+    `points_to_rerun_gev`: [2.0, 2.5]
+    `number_of_reruns`: 2
+    `rerun_run_directories`: ["run_mS_2p0", "run_mS_2p5"]
+    `safe_to_make_final_plot`: false
+    `recommended_action`: "Rerun failed and missing scan points (2.0 GeV an[2D[K
+and 2.5 GeV)."
+
+    *Wait*, looking at `rerun_run_directories`... for a missing directory, [K
+it might not exist yet, but the manifest identifies the intended path or id[2D[K
+identifier. I will use the names provided in the `run_directory` column.
+
+    Final check of constraints:
+    - No markdown fences.
+    - No explanation.
+    - JSON only.
+
+    One detail: Should `points_to_rerun_gev` be floats? The input says 1.0,[4D[K
+1.0, 1.5, etc. Using numbers is better for JSON type consistency with the p[1D[K
+prompt description `0`.
+
+    Refining `status`: "Incomplete" or "error"? Let's go with "incomplete".[13D[K
+"incomplete".
+    Refining `recommended_action`: "Rerun points at 2.0 GeV an[2D[K
+and 2.5 GeV."
+
+    *Self-Correction on `rerun_run_directories`*: For the missing directory[9D[K
+directory (2.5), I will include its identifier from the manifest so the aut[3D[K
+automation knows which index/slot failed.
+
+    Final Structure:
+    {
+      "status": "incomplete",
+      "scan_parameter": "mS",
+      "total_intended_points": 5,
+      "completed_points_gev": [1.0, 1.5, 3.0],
+      "failed_points_gev": [2.0],
+      "missing_points_gev": [2.5],
+      "points_to_rerun_gev": [2.0, 2.5],
+      "number_of_reruns": 2,
+      "rerun_run_directories": ["run_mS_2p0", "run_mS_2p5"],
+      "safe_to_make_final_plot": false,
+      "recommended_action": "Rerun failed (2.0 GeV) and missing (2.5 GeV) p[1D[K
+points."
+    }
+...done thinking.
+
+{
+  "status": "incomplete",
+  "scan_parameter": "mS",
+  "total_intended_points": 5,
+  "completed_points_gev": [1.0, 1.5, 3.0],
+  "failed_points_gev": [2.0],
+  "missing_points_gev": [2.5],
+  "points_to_rerun_gev": [2.0, 2.5],
+  "number_of_reruns": 2,
+  "rerun_run_directories": ["run_mS_2p0", "run_mS_2p5"],
+  "safe_to_make_final_plot": false,
+  "recommended_action": "Rerun failed and missing scan points (2.0 GeV and [K
+2.5 GeV)."
+}

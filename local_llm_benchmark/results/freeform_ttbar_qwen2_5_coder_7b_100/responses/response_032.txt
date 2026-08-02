@@ -1,0 +1,6 @@
+```bash
+generate p p > t~ t QCD=off
+output ttbar_run
+run_qcut 50
+```
+Save this script to a file, for example `ttbar_script.sh`, and then execute it in the MadGraph5_aMC@NLO environment.

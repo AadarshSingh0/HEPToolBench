@@ -1,0 +1,9 @@
+```madgraph
+import model sm
+define p = u d s c b t
+define j = g higgsm
+generate p p > t t~
+output ttbar_run
+run
+quit
+```

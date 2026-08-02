@@ -1,0 +1,8 @@
+```text
+nevents = 10000
+iseed = 42
+ebeam(1) = 6500
+ebeam(2) = 6500
+ptmin(1) = 20
+etamax(1) = 2.5
+```

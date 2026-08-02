@@ -1,0 +1,18 @@
+Final scalar-mass scan after reruns
+
+Intended scan parameter: mS
+Mass unit: GeV
+Cross-section unit: pb
+
+mS_GeV   status    cross_section_pb   stat_uncertainty_pb   run_directory
+1.0      success   12.40              0.40                  runs/mS_1p0
+1.5      success   8.10               0.30                  runs/mS_1p5
+2.0      success   5.00               0.20                  runs/mS_2p0
+2.5      success   3.20               0.10                  runs/mS_2p5
+3.0      success   1.70               0.08                  runs/mS_3p0
+
+Benchmark-selection rule for follow-up detector-level simulation:
+1. Use only successful scan points.
+2. Do not choose endpoint masses unless no successful interior point exists.
+3. Among successful interior points, choose the point with the largest cross section.
+4. It is safe to make the final scan plot only if every intended scan point succeeded.

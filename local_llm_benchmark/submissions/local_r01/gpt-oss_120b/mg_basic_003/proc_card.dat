@@ -1,0 +1,55 @@
+Thinking...
+We need to produce proc_card.dat content for MadGraph: includes import mode[4D[K
+model sm, define particles, generate process, output HJ, set run parameters[10D[K
+parameters like set lhapdf? But basic proc card includes:
+
+```
+import model sm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+generate p p > h j
+output HJ
+set lhapdf_path /path/to/lhapdf   (maybe not needed)
+launch
+```
+
+Also need to set beam energy: use `set ebeam1 6500` and `set ebeam2 6500`. [K
+In MG5, you set after launch? Actually in proc_card.dat you can include:
+
+```
+output HJ
+set lhapdf_path /cvmfs/... (optional)
+launch
+set ebeam1 6500
+set ebeam2 6500
+```
+
+But typical syntax: after `launch` one enters interactive commands. In proc[4D[K
+proc_card, you can predefine with `set` before launch.
+
+Thus final content:
+
+```
+import model sm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+generate p p > h j
+output HJ
+set ebeam1 6500
+set ebeam2 6500
+launch
+```
+
+Probably also need to set `set lhapdf ...` not required.
+
+Return only that.
+...done thinking.
+
+import model sm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+generate p p > h j
+output HJ
+set ebeam1 6500
+set ebeam2 6500
+launch

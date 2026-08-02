@@ -1,0 +1,51 @@
+Thinking...
+*   Task: Write a MadGraph process card for Higgs plus jet production.
+    *   Process: `p p > h j`.
+    *   $\sqrt{s} = 13$ TeV $\rightarrow$ Beam energy = 6500 GeV per beam.
+    *   Definitions:
+        *   `define p = g u c d s u~ c~ d~ s~`
+        *   `define j = g u c d s u~ c~ d~ s~`
+    *   Output directory: `HJ`.
+    *   Constraint: Return only the `proc_card.dat` content. No explanation[11D[K
+explanations.
+
+    *   The output directory is specified via `output HJ`.
+    *   Beam energy is set via `setbeamenergy 6500`.
+    *   Particle definitions are as provided.
+    *   The process command is `generate p p > h j`.
+
+    ```text
+    from sm
+    define p = g u c d s u~ c~ d~ s~
+    define j = g u c d s u~ c~ d~ s~
+    setbeamenergy 6500
+    output HJ
+    generate p p > h j
+    ```
+
+    *   `from sm`: Need to import the Standard Model.
+    *   `define p...` and `define j...`: As requested.
+    *   `setbeamenergy 6500`: Correct for 13 TeV $\sqrt{s}$.
+    *   `output HJ`: Correct directory.
+    *   `generate p p > h j`: Correct process.
+
+    Wait, is `from sm` required? Yes, usually in MadGraph cards to specify [K
+the model.
+
+    Let's double check the exact sequence of commands typically found in a [K
+`proc_card.dat`.
+    1. Model import (`from sm`)
+    2. Definitions (`define ...`)
+    3. Beam energy (`setbeamenergy ...`)
+    4. Output directory (`output ...`)
+    5. Generation command (`generate ...`)
+
+    Check: "Return only the requested output file content."
+...done thinking.
+
+from sm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+setbeamenergy 6500
+output HJ
+generate p p > h j

@@ -1,0 +1,14 @@
+{
+  "task_id": "mg_structured_002",
+  "title": "Top-pair structured JSON extraction",
+  "category": "mg_structured",
+  "level": "L2",
+  "mode": "structured_json",
+  "tools": ["ollama", "deterministic_builder"],
+  "timeout_seconds": 300,
+  "requires_execution": false,
+  "expected_artifacts": ["params.json"],
+  "physics_tags": ["sm", "top_pair", "pp_collision"],
+  "description": "Extract structured physics parameters for p p > t t~ at 13 TeV. A deterministic builder assembles MadGraph syntax."
+}
+

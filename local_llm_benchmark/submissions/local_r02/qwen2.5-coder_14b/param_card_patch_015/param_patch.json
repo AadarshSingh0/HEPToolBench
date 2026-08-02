@@ -1,0 +1,34 @@
+```json
+{
+  "status": "valid",
+  "file_to_modify": "param_card.dat",
+  "scan_point_label": "mS_3p5_gS_0p1",
+  "updates": [
+    {
+      "block": "MASS",
+      "identifier": "9000001",
+      "parameter": "mS",
+      "old_value": 1.0,
+      "new_value": 3.5,
+      "unit": "GeV"
+    },
+    {
+      "block": "COUPLINGS",
+      "identifier": "1",
+      "parameter": "gS",
+      "old_value": 0.05,
+      "new_value": 0.1,
+      "unit": null
+    }
+  ],
+  "unchanged": [
+    {
+      "block": "DECAY",
+      "identifier": "9000001",
+      "parameter": "width_S",
+      "value": 0.001,
+      "reason": "decay width was not requested to change"
+    }
+  ]
+}
+```

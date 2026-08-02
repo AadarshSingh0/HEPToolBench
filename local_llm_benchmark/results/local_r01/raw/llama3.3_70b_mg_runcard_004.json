@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "ebeam1_6500": true,
+    "ebeam2_6500": true,
+    "etal_2p5": true,
+    "has_run_card_assignments": true,
+    "iseed_42": true,
+    "nevents_10000": true,
+    "no_long_explanation": true,
+    "no_markdown_fence": true,
+    "no_process_card_commands": true,
+    "no_set_commands": true,
+    "ptl_20": true
+  },
+  "failure_modes": [],
+  "model": "llama3.3:70b",
+  "parsed_assignments": {
+    "ebeam1": 6500.0,
+    "ebeam2": 6500.0,
+    "etal": 2.5,
+    "iseed": 42.0,
+    "nevents": 10000.0,
+    "ptl": 20.0
+  },
+  "passed": true,
+  "score": 1.0,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/llama3.3_70b/mg_runcard_004/run_card.dat",
+  "task_id": "mg_runcard_004"
+}

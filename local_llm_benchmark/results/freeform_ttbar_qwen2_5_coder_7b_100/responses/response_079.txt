@@ -1,0 +1,8 @@
+```python
+import madgraph.iolibs.model_reader as model_reader
+model = model_reader.read_standard_model()
+amplitude = model.get_amplitude("tt~ > t + b", loop_order=0)
+output_directory = "ttbar_run"
+amplitude.write(output_directory, format="feyn")
+amplitude.generate_events(10**4, output_file=f"{output_directory}/events.lhe", event_type="fixed scale", scale=13000)
+```

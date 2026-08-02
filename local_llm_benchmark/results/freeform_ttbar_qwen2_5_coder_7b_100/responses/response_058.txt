@@ -1,0 +1,8 @@
+```
+import model SM
+
+generate p p > t anti-t QCD=off QED=off
+output ttbar_run
+
+launch
+```

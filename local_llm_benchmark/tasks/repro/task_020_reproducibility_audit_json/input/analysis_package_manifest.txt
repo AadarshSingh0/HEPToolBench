@@ -1,0 +1,40 @@
+Analysis package manifest for scalar-mass scan
+
+Intended scan masses: 1.0, 1.5, 2.0, 2.5, 3.0 GeV
+Detector-level results claimed: false
+
+Reproducibility rules:
+- For a parton-level scan, the package must contain:
+  1. UFO model directory
+  2. proc_card.dat
+  3. run_card.dat
+  4. one param_card.dat for every intended scan mass
+  5. one random-seed log for every intended scan mass
+  6. final scan results table
+  7. plotting script
+- Pythia8 and Delphes cards are optional if detector-level results are not claimed.
+- The package is safe for a paper archive only if all required files are present.
+
+Files:
+models/ScalarUFO/                         present
+cards/proc_card.dat                       present
+cards/run_card.dat                        present
+
+cards/param_cards/mS_1p0.dat              present
+cards/param_cards/mS_1p5.dat              present
+cards/param_cards/mS_2p0.dat              present
+cards/param_cards/mS_2p5.dat              missing
+cards/param_cards/mS_3p0.dat              present
+
+logs/mS_1p0_seed.txt                      seed=42
+logs/mS_1p5_seed.txt                      seed=43
+logs/mS_2p0_seed.txt                      seed=44
+logs/mS_2p5_seed.txt                      missing
+logs/mS_3p0_seed.txt                      seed=46
+
+results/scan_results.csv                  present
+scripts/make_scan_plot.py                 present
+plots/scan_plot.pdf                       present
+
+cards/pythia8.cmnd                        absent
+cards/delphes_card.dat                    absent

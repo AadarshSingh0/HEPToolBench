@@ -1,0 +1,153 @@
+Thinking...
+*   Input: `analysis_package_manifest.txt`.
+    *   Goal: Return a JSON reproducibility audit.
+    *   Rules for `parton-level scan` (since `Detector-level results claime[6D[K
+claimed: false`):
+        1.  UFO model directory.
+        2.  `proc_card.dat`.
+        3.  `run_card.dat`.
+        4.  One `param_card.dat` for every intended scan mass (1.0, 1.5, 2.[2D[K
+2.0, 2.5, 3.0 GeV).
+        5.  One random-seed log for every intended scan mass.
+        6.  Final scan results table.
+        7.  Plotting script.
+    *   Optional: Pythia8 and Delphes cards (since detector-level is false)[6D[K
+false).
+    *   Safe for paper archive: only if all required files are present.
+
+    *   Intended masses: 1.0, 1.5, 2.0, 2.5, 3.0 GeV.
+    *   Detector-level results claimed: `false`.
+
+    *   `models/ScalarUFO/`: Present (Rule 1).
+    *   `cards/proc_card.dat`: Present (Rule 2).
+    *   `cards/run_card.dat`: Present (Rule 3).
+    *   `param_card.dat` check:
+        *   1.0: `mS_1p0.dat` - Present.
+        *   1.5: `mS_1p5.dat` - Present.
+        *   2.0: `mS_2p0.dat` - Present.
+        *   2.5: `mS_2p5.dat` - **Missing**.
+        *   3.0: `mS_3p0.dat` - Present.
+    *   Random-seed log check:
+        *   1.0: `mS_1p0_seed.txt` - Present.
+        *   1.5: `mS_1p5_seed.txt` - Present.
+        *   2.0: `mS_2p0_seed.txt` - Present.
+        *   2.5: `mS_2im5_seed.txt` (wait, name is `mS_2p5_seed.txt`) -> **[2D[K
+**Missing**.
+        *   3.0: `mS_3p0_seed.txt` - Present.
+    *   Final scan results table (`results/scan_results.csv`): Present (Rul[4D[K
+(Rule 6).
+    *   Plotting script (`scripts/make_scan_plot.py`): Present (Rule 7).
+    *   Pythia8 and Delphes cards: Absent, but optional.
+
+    *   `status`: "not_reproducible" (because `mS_2p5.dat` and its seed log[3D[K
+log are missing).
+    *   `detector_level_claimed`: `false`.
+    *   `missing_required_files`: `["cards/param_cards/mS_2p5.dat", "logs/m[7D[K
+"logs/mS_2p5_seed.txt"]`.
+    *   `missing_optional_files`: `[]` (Wait, Pythia8 and Delphes are absen[5D[K
+absent but they are optional. The prompt asks for missing files. Usually, i[1D[K
+if they aren't required, I shouldn't list them as "missing" in a way that i[1D[K
+implies error, but the field name is `missing_optional_files`. Let's see if[2D[K
+if any optional files were *expected*. The manifest shows they are absent. [K
+Since they are optional and not claimed to be part of the package functiona[9D[K
+functionality for this specific scan level, I will leave it empty or includ[6D[K
+include them if strictly following "absent" in text? No, usually `missing_o[10D[K
+`missing_optional_files` refers to things that should be there but aren't. [K
+However, since they are optional, their absence doesn't affect reproducibil[12D[K
+reproducibility status. I will list them if we consider "absent" as "missin[7D[K
+"missing". Let's look at the prompt: "Pythia8 and Delphes cards are optiona[7D[K
+optional here because detector-level results are not claimed." I'll leave `[1D[K
+`missing_optional_files` empty unless specifically required to identify all[3D[K
+all "absent" files. The manifest says they are "absent", implying they aren[4D[K
+aren't there). Actually, looking at standard audit logic: if a file is mark[4D[K
+marked "absent" and it's optional, it's not "missing" in the context of a r[1D[K
+requirement failure, but technically "missing" from the file list provided.[9D[K
+provided. I will stick to identifying only the broken requirements for `mis[4D[K
+`missing_required_files`.
+    *   `affected_scan_points_gev`: `[2.5]`.
+    *   `can_reproduce_parton_level_scan`: `false`.
+    *   `safe_for_paper_archive`: `false`.
+    *   `recommended_action`: "Add the missing param_card.dat and random-se[9D[K
+random-seed log for the 2.5 GeV mass point."
+
+    *Refining the list of missing required files:*
+    - `cards/param_cards/mS_2p5.dat`
+    - `logs/mS_2p5_seed.txt`
+
+    *Check scan masses again:*
+    1.0, 1.5, 2.0, 2.5, 3.0.
+    The missing one is 2.5.
+
+    *Re-evaluating `missing_optional_files`:*
+    The prompt doesn't explicitly say whether to include "absent" optional [K
+files here. However, standardly, if they are optional, their absence is not[3D[K
+not a violation of the rule. But since they are listed as "absent", I'll ch[2D[K
+check if there's any other optional file. There aren't any others mentioned[9D[K
+mentioned in rules. I will leave it empty.
+
+    *Final JSON Structure Check:*
+    `status`: "not_reproducible"
+    `detector_level_claimed`: false
+    `missing_required_files`: ["cards/param_cards/mS_2p5.dat", "logs/mS_2p5[12D[K
+"logs/mS_2p5_seed.txt"]
+    `missing_optional_files`: []
+    `affected_scan_points_gev`: [2.5]
+    `can_reproduce_parton_level_scan`: false
+    `safe_for_paper_archive`: false
+    `recommended_action`: "Provide the missing parameter card and seed log [K
+for the 2.5 GeV scan point to ensure full reproducibility of the parton-lev[10D[K
+parton-level scan."
+
+    *Double check mass names:*
+    `mS_2p5.dat` -> 2.5 GeV. Correct.
+    `mS_2p5_seed.txt` -> 2.5 GeV. Correct.
+
+    One small detail: `missing_required_files`. Should I list the paths or [K
+just names? The manifest uses paths/names. I'll use the path as provided in[2D[K
+in the text for clarity.
+
+    *Wait, checking "logs/mS_2p5_seed.txt" existence:*
+    Manifest says: `logs/mS_2p5_seed.txt missing`. Yes.
+
+    *Checking status*: Since one required file is missing, it's not reprodu[7D[K
+reproducible.
+
+    Final check on JSON fields:
+    - `status`: "not_reproducible"
+    - `detector_level_claimed`: false
+    - `missing_required_files`: ["cards/param_cards/mS_2p5.dat", "logs/mS_2[10D[K
+"logs/mS_2p5_seed.txt"]
+    - `missing_optional_files`: [] (Since they are optional, their absence [K
+doesn't constitute a "missing" file in the context of the audit's failure)
+    - `affected_scan_points_gev`: [2.5]
+    - `can_reproduce_parton_level_scan`: false
+    - `safe_for_paper_archive`: false
+    - `recommended_action`: "Include param_card.dat and the corresponding s[1D[K
+seed log for the 2.5 GeV mass point."
+
+    One more check: The prompt says "Pythia8 and Delphes cards are optional[8D[K
+optional here because detector-level results are not claimed." This confirm[7D[K
+confirms I shouldn't treat them as missing required files. Does it mean I s[1D[K
+should list them in `missing_optional_files`? Usually, an audit reports wha[3D[K
+what is *needed*. If they aren't needed, they aren't "missing".
+
+    Resulting JSON construction.
+...done thinking.
+
+{
+  "status": "not_reproducible",
+  "detector_level_claimed": false,
+  "missing_required_files": [
+    "cards/param_cards/mS_2p5.dat",
+    "logs/mS_2p5_seed.txt"
+  ],
+  "missing_optional_files": [],
+  "affected_scan_points_gev": [
+    2.5
+  ],
+  "can_reproduce_parton_level_scan": false,
+  "safe_for_paper_archive": false,
+  "recommended_action": "Provide the missing parameter card and random-seed[11D[K
+random-seed log for the 2.5 GeV mass point to complete the parton-level sca[3D[K
+scan requirements."
+}

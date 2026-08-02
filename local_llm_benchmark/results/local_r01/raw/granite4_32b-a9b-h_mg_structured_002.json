@@ -1,0 +1,35 @@
+{
+  "checks": {
+    "beam_energy_6500": true,
+    "builder_generates_valid_card": true,
+    "final_state_ttbar": true,
+    "initial_state_pp": true,
+    "model_sm": true,
+    "nevents_10000": true,
+    "output_dir_ttbar": true,
+    "parseable_json": true,
+    "strict_json_only": true
+  },
+  "failure_modes": [],
+  "generated_proc_card": "import model sm\ndefine p = g u c d s u~ c~ d~ s~\ngenerate p p > t t~\noutput TTbar\nlaunch\nset ebeam1 6500\nset ebeam2 6500\n",
+  "model": "granite4:32b-a9b-h",
+  "normalized_params": {
+    "beam_energy_gev": 6500.0,
+    "final_state": [
+      "t",
+      "t~"
+    ],
+    "initial_state": [
+      "p",
+      "p"
+    ],
+    "model": "sm",
+    "nevents": 10000,
+    "output_dir": "TTbar"
+  },
+  "passed": true,
+  "score": 1.0,
+  "strict_passed": true,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/granite4_32b-a9b-h/mg_structured_002/params.json",
+  "task_id": "mg_structured_002"
+}

@@ -1,0 +1,11 @@
+{
+  "error_type": "invalid_process_line",
+  "faulty_lines": ["process p p -> h jet", "set beam1 6500", "set beam2 650[3D[K
+6500", "output HiggsJet"],
+  "corrected_lines": ["generate p p > h j", "set ebeam1 6500", "set ebeam2 [K
+6500", "output HJ"],
+  "output_dir": "HJ",
+  "reason": "The process line and beam energy commands were corrected to ma[2D[K
+match the MadGraph syntax for Standard Model Higgs plus jet production at 1[1D[K
+13 TeV."
+}

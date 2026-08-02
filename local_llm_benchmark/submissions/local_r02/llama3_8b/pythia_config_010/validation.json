@@ -1,0 +1,14 @@
+{
+  "status": "invalid",
+  "number_of_events": 10000,
+  "seed_fixed": true,
+  "seed_value": 42,
+  "isr_enabled": true,
+  "fsr_enabled": true,
+  "mpi_enabled": false,
+  "hadronization_enabled": true,
+  "hepmc_output_enabled": true,
+  "missing_or_wrong_settings": ["PartonLevel:MPI = off"],
+  "failure_stage": "parton_level",
+  "recommended_fix": "set PartonLevel:MPI = on"
+}

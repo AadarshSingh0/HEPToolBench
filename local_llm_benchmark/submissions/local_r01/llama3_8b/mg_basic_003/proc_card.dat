@@ -1,0 +1,15 @@
+```text
+[Definition]
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+[Process]
+p p > h j
+
+[Rules]
+-@1 13.0 GeV
+-@2 13.0 GeV
+
+[Output]
+-HJ/
+```

@@ -1,0 +1,9 @@
+{
+  "error_type": "Invalid Beam Commands",
+  "faulty_lines": ["set beam1 6500", "set beam2 6500"],
+  "corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500", "set ebeam[5D[K
+ebeam2 6500"],
+  "output_dir": "DY_ee",
+  "reason": "The broken card used invalid beam commands, which were replace[7D[K
+replaced with the correct MadGraph syntax for setting beam energies."
+}

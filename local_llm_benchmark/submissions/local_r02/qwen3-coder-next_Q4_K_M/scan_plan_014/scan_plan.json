@@ -1,0 +1,31 @@
+```json
+{
+  "status": "valid",
+  "process": "generate p p > e+ e- [QCD]",
+  "scan_parameter": "mS",
+  "scan_values_gev": [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0[3D[K
+6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0],
+  "start_gev": 1.0,
+  "stop_gev": 10.0,
+  "step_gev": 0.5,
+  "inclusive_endpoints": true,
+  "number_of_points": 19,
+  "fixed_parameters": {
+    "gS": 0.1
+  },
+  "beam_energy_gev": 6500,
+  "nevents": 10000,
+  "files_to_modify": ["param_card.dat"],
+  "per_point_actions": [
+    "update parameter mS in param_card.dat",
+    "generate events",
+    "record cross section"
+  ],
+  "outputs_to_collect": [
+    "cross_section_pb",
+    "run_output_directory"
+  ],
+  "recommended_action": "Loop over mS values, update param_card.dat for eac[3D[K
+each point, run MadGraph, and collect results."
+}
+```

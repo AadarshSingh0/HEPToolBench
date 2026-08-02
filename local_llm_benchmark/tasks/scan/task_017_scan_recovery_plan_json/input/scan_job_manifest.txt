@@ -1,0 +1,10 @@
+Scan job-output manifest
+========================
+
+run_directory | mS_gev | job_status        | available_outputs                         | note
+--------------|--------|-------------------|--------------------------------------------|-------------------------------
+run_mS_1p0    | 1.0    | success           | cross_section.txt, events.lhe.gz           | cross_section_pb = 12.40
+run_mS_1p5    | 1.5    | success           | cross_section.txt, events.lhe.gz           | cross_section_pb = 8.10
+run_mS_2p0    | 2.0    | failed            | log.txt                                    | MadGraph integration failed
+run_mS_2p5    | 2.5    | missing_directory | none                                      | expected run directory absent
+run_mS_3p0    | 3.0    | success           | cross_section.txt, events.lhe.gz           | cross_section_pb = 1.70

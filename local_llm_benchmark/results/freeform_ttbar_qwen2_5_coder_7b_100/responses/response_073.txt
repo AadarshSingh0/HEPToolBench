@@ -1,0 +1,4 @@
+```python
+generate p p > t t~
+output ttbar_run -f -a all --no-pdg-checks
+```

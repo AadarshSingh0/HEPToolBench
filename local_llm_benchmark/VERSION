@@ -1,0 +1,3 @@
+HEPToolBench benchmark suite v1.2
+31 tasks = 28 de-leaked main tasks + 3 structured-debug extension tasks
+Frozen for paper evaluation.

@@ -1,0 +1,57 @@
+Thinking...
+*   Task: Diagnose a failed MadGraph run.
+    *   Input: A log file `mg_failed_run.log`.
+    *   Output format: A single JSON object with specific keys (`status`, `[1D[K
+`process`, `error_type`, `offending_line`, `expected_line`, `fix`).
+    *   Constraint: No explanations, no markdown fences, only the JSON.
+
+    *   `Run name`: run_01
+    *   `Model`: sm
+    *   `Requested process`: `p p > t tbar`
+    *   Command history highlights:
+        *   `generate p p > t tbar` (This is clearly where it failed).
+    *   Error message:
+        *   `Command "generate p/p > t tbar" failed.`
+        *   `ERROR: No particle named "tbar" is defined in the current mode[4D[K
+model. In MadGraph antiparticles are written with a tilde. For an anti-top [K
+quark, use "t~", not "tbar".`
+    *   Suggested corrected line: `generate p p > t t~`.
+
+    *   `status`: "failed" (as per instructions and log).
+    *   `process`: "p p > t tbar" (extracted from the log).
+    *   `error_type`: Looking at the error message, it's about particle nam[3D[K
+naming/syntax. The example uses `invalid_antiparticle_syntax`. Based on the[3D[K
+the text "In MadGraph antiparticles are written with a tilde", `invalid_ant[12D[K
+`invalid_antiparticle_syntax` is an appropriate name for this type of error[5D[K
+error.
+    *   `offending_line`: "generate p p > t tbar" (from command history and[3D[K
+and explicit failure message).
+    *   `expected_line`: "generate p p > t t~" (from the "Suggested correct[7D[K
+corrected process line").
+    *   `fix`: From the error text: "For an anti-top quark, use 't~', not '[1D[K
+'tbar'." or more generally, replace `tbar` with `t~`. Let's use something s[1D[K
+similar to the example provided in the task description. The instruction sa[2D[K
+says "replace tbar with t~ in the generate line".
+
+    *   `status`: "failed"
+    *   `process`: "p p > t tbar"
+    *   `error_type`: "invalid_antiparticle_syntax" (fits the pattern)
+    *   `offending_line`: "generate p p > t tbar"
+    *   `expected_line`: "generate p p > t t~"
+    *   `fix`: "replace tbar with t~ in the generate line"
+
+    *   JSON schema matched? Yes.
+    *   Only JSON object returned? Yes.
+    *   No explanations/markdown fences? Yes.
+    *   Offending line exact? Yes.
+    *   Expected line from log? Yes.
+...done thinking.
+
+{
+  "status": "failed",
+  "process": "p p > t tbar",
+  "error_type": "invalid_antiparticle_syntax",
+  "offending_line": "generate p p > t tbar",
+  "expected_line": "generate p p > t t~",
+  "fix": "replace tbar with t~ in the generate line"
+}

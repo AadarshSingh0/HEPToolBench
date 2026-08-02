@@ -1,0 +1,6 @@
+```python
+generate p p > t \~t [QCD]
+output ttbar_run
+save
+exit
+```

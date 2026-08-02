@@ -1,0 +1,7 @@
+import model sm  
+define p = g u c d s u~ c~ d~ s~  
+generate p p > t t~  
+output TTbar  
+launch  
+set beam1 6500  
+set beam2 6500

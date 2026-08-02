@@ -1,0 +1,37 @@
+{
+  "checks": {
+    "dominant_loss_cut_correct": false,
+    "final_background_correct": true,
+    "final_signal_correct": true,
+    "loss_fraction_correct": false,
+    "parseable_json": true,
+    "recommended_action_mentions_statistics": true,
+    "s_over_sqrt_b_correct": true,
+    "statistically_unusable": true,
+    "status_low_statistics": true,
+    "step_efficiency_correct": false,
+    "strict_json_only": true
+  },
+  "failure_modes": [
+    "wrong_dominant_signal_loss_cut",
+    "wrong_loss_fraction",
+    "wrong_step_efficiency"
+  ],
+  "model": "qwen3-coder-next:Q4_K_M",
+  "normalized_summary": {
+    "dominant_signal_loss_cut": "At least two b-tagged jets",
+    "dominant_signal_loss_fraction": 0.79,
+    "dominant_signal_loss_step_efficiency": 0.21,
+    "final_background_events": 120,
+    "final_signal_events": 48,
+    "recommended_action": "Increase luminosity or optimize b-tagging selectio selection",
+    "s_over_sqrt_b": 4.38,
+    "statistically_usable": false,
+    "status": "low_statistics"
+  },
+  "passed": false,
+  "score": 0.6,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r02_clean/submissions/qwen3-coder-next_Q4_K_M/cutflow_diagnosis_013/cutflow_diagnosis.json",
+  "task_id": "cutflow_diagnosis_013"
+}

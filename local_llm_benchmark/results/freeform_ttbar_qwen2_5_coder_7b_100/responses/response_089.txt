@@ -1,0 +1,10 @@
+```python
+generate p p > t t~
+output ttbar_run -f Feynman
+run_card.cmnd
+set gauge_type = "unitary"
+set RenScale 13000.
+set FacScale 13000.
+set alphas_init 0.1284
+launch
+```

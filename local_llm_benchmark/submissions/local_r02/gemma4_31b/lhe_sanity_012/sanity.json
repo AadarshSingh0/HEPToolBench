@@ -1,0 +1,73 @@
+Thinking...
+*   Input: `lhe_sanity_report.txt`
+    *   Requested Process: `p p > h j`
+    *   Requested Event Count: `10000`
+
+    *   Requested run process: `p p > h j` (Matches)
+    *   Requested events: `10000`
+    *   Expected event file: `Events/run_03/unweighted_events.lhe.gz`
+    *   File exists: `yes`
+    *   Event file path: `Events/run_03/unweighted_events.lhe.gz` (Matches)[9D[K
+(Matches)
+    *   Process from header: `p p > h j` (Matches)
+    *   Cross section pb: `2.345`
+    *   Cross section uncertainty pb: `0.012`
+    *   Events scanned: `9820` (Does not match 10000)
+    *   Negative weight events: `0`
+    *   Scan status: `completed`
+
+    *   `status`: Since observed events (9820) < requested events (10000), [K
+it is "incomplete".
+    *   `process`: `p p > h j`
+    *   `process_correct`: `true` (Matches request)
+    *   `event_file`: `Events/run_03/unweighted_events.lhe.gz`
+    *   `file_present`: `true`
+    *   `requested_events`: `10000`
+    *   `observed_events`: `9820`
+    *   `event_count_matches`: `false`
+    *   `missing_events`: $10000 - 9820 = 180$
+    *   `cross_section_pb`: `2.345`
+    *   `cross_section_uncertainty_pb`: `0.012`
+    *   `negative_weight_events`: `0`
+    *   `negative_weight_fraction`: $0 / 9820 = 0.0$
+    *   `failure_stage`: "event_count_validation" (as indicated by the vali[4D[K
+validation note)
+    *   `recommended_action`: "Rerun the simulation to reach the requested [K
+event count." (or similar short sentence).
+
+    *   status: "incomplete"
+    *   process: "p p > h j"
+    *   process_correct: true
+    *   event_file: "Events/run_03/unweighted_events.lhe.gz"
+    *   file_present: true
+    *   requested_events: 10000
+    *   observed_events: 9820
+    *   event_count_matches: false
+    *   missing_events: 180
+    *   cross_section_pb: 2.345
+    *   cross_section_uncertainty_pb: 0.012
+    *   negative_weight_events: 0
+    *   negative_weight_fraction: 0.0
+    *   failure_stage: "event_count_validation"
+    *   recommended_action: "Rerun simulation to generate the missing event[5D[K
+events."
+...done thinking.
+
+{
+  "status": "incomplete",
+  "process": "p p > h j",
+  "process_correct": true,
+  "event_file": "Events/run_03/unweighted_events.lhe.gz",
+  "file_present": true,
+  "requested_events": 10000,
+  "observed_events": 9820,
+  "event_count_matches": false,
+  "missing_events": 180,
+  "cross_section_pb": 2.345,
+  "cross_section_uncertainty_pb": 0.012,
+  "negative_weight_events": 0,
+  "negative_weight_fraction": 0.0,
+  "failure_stage": "event_count_validation",
+  "recommended_action": "Rerun the simulation to generate the missing event[5D[K
+events."
+}

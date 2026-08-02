@@ -1,0 +1,12 @@
+{
+  "status": "low_statistics",
+  "final_signal_events": 48,
+  "final_background_events": 120,
+  "dominant_signal_loss_cut": "At least two b-tagged jets",
+  "dominant_signal_loss_step_efficiency": 0.09615384615384616,
+  "dominant_signal_loss_fraction": 0.9038461538461539,
+  "s_over_sqrt_b": 4.41,
+  "statistically_usable": false,
+  "recommended_action": "Consider increasing the luminosity or improving th[2D[K
+the selection cuts"
+}

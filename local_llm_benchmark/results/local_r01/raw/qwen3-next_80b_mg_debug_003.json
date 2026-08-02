@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "correct_jet_definition": true,
+    "correct_process": true,
+    "correct_proton_definition": true,
+    "defines_jet": true,
+    "defines_proton": true,
+    "ebeam1_6500": true,
+    "ebeam2_6500": true,
+    "has_launch": true,
+    "has_output_hj": true,
+    "imports_sm": true,
+    "no_long_explanation": false,
+    "no_markdown_fence": true,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true
+  },
+  "failure_modes": [
+    "includes_explanation_not_file_only",
+    "uses_arrow_instead_of_madgraph_gt",
+    "uses_invalid_beam1_beam2_commands",
+    "uses_process_keyword"
+  ],
+  "model": "qwen3-next:80b",
+  "passed": false,
+  "score": 0.5,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/qwen3-next_80b/mg_debug_003/proc_card.dat",
+  "task_id": "mg_debug_003"
+}

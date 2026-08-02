@@ -1,0 +1,20 @@
+Validation notes for final add-on package
+
+Included:
+- Fixed Task018 scorer: benchmark_recommendation_018
+- New Task019: plot_data_019
+- New Task020: repro_audit_020
+- Updated runners/evaluate_submission.py
+- Updated runners/run_ollama_task.py
+- Added runners/run_ollama_task2.py with 17-model list
+
+Checks:
+- Task019 expected answer: score 1.0, passed true
+- Task019 markdown-wrapped valid answer: score 1.0, passed true, strict false
+- Task019 wrong log_y + wrong benchmark marker: score 0.80, passed false
+- Task020 expected answer: score 1.0, passed true
+- Task020 wrong reproducible/no-missing answer: failed
+- Weights sum to exactly 1.0 for Task019 and Task020
+- Python compile passed for Task018/019/020 scorers
+
+Task018 rescoring should be done without rerunning models.

@@ -1,0 +1,84 @@
+Thinking...
+*   Input: `analysis_package_manifest.txt`.
+    *   Output: JSON reproducibility audit with specific fields.
+    *   Constraint 1: No explanations, no markdown fences (raw JSON).
+    *   Constraint 2: Pythia8/Delphes cards are optional because detector-l[10D[K
+detector-level results = false.
+
+    *   Intended scan masses: [1.0, 1.5, 2.0, 2.5, 3.0] GeV.
+    *   Detector-level claimed: `false`.
+    *   Required for parton-level (detector=false):
+        1.  UFO model directory: `models/ScalarUFO/` (present) -> OK.
+        2.  `proc_card.dat`: `cards/proc_card.dat` (present) -> OK.
+        3.  `run_card.dat`: `cards/run_card.dat` (present) -> OK.
+        4.  `param_card.dat` for each mass:
+            *   1.0: present
+            *   1.5: present
+            *   2.0: present
+            *   2.5: missing (FAIL)
+            *   3.0: present
+        5.  Random-seed log for each mass:
+            *   1.0: seed=42 (present)
+            *   1.5: seed=43 (present)
+            *   2.0: seed=44 (present)
+            *   2.5: missing (FAIL)
+            *   3.0: seed=46 (present)
+        6.  Final results table: `results/scan_results.csv` (present) -> OK[2D[K
+OK.
+        7.  Plotting script: `scripts/make_scan_plot.py` (present) -> OK.
+
+    *   Optional files (Pythia8, Delphes): absent. Since detector-level is [K
+false, these are not required.
+
+    *   `status`: "not_reproducible" (since 2.5 GeV files are missing).
+    *   `detector_level_claimed`: `false`.
+    *   `missing_required_files`: ["cards/param_cards/mS_2p5.dat", "logs/mS[8D[K
+"logs/mS_2p5_seed.txt"].
+    *   `missing_optional_files`: ["cards/pythia8.cmnd", "cards/delphes_car[18D[K
+"cards/delphes_card.dat"] (Actually, the prompt says Pythia/Delphes are opt[3D[K
+optional; usually we list them if they are missing but not strictly require[7D[K
+required for the scan to be reproducible at parton level. However, looking [K
+at the manifest, these were explicitly marked absent).
+    *   `affected_scan_points_gev`: [2.5].
+    *   `can_reproduce_parton_level_scan`: `false`.
+    *   `safe_for_paper_archive`: `false`.
+    *   `recommended_action`: "Provide missing param card and seed log for [K
+2.5 GeV mass point."
+
+    *   `status`: "not_reproducible"
+    *   `detector_level_claimed`: false
+    *   `missing_required_files`: ["cards/param_cards/mS_2p5.dat", "logs/mS[8D[K
+"logs/mS_2p5_seed.txt"]
+    *   `missing_optional_files`: ["cards/pythia8.cmnd", "cards/delphes_car[18D[K
+"cards/delphes_card.dat"]
+    *   `affected_scan_points_gev`: [2.5]
+    *   `can_reproduce_parton_level_scan`: false
+    *   `safe_for_paper_archive`: false
+    *   `recommended_action`: "Restore missing parameter card and random-se[9D[K
+random-seed log for the 2.5 GeV scan point."
+
+    Wait, let me re-read: "Pythia8 and Delphes cards are optional here beca[4D[K
+because detector-level results are not claimed." This means their absence d[1D[K
+doesn't affect `status` or `can_reproduce`, but they can still be listed in[2D[K
+in `missing_optional_files`.
+...done thinking.
+
+{
+  "status": "not_reproducible",
+  "detector_level_claimed": false,
+  "missing_required_files": [
+    "cards/param_cards/mS_2p5.dat",
+    "logs/mS_2p5_seed.txt"
+  ],
+  "missing_optional_files": [
+    "cards/pythia8.cmnd",
+    "cards/delphes_card.dat"
+  ],
+  "affected_scan_points_gev": [
+    2.5
+  ],
+  "can_reproduce_parton_level_scan": false,
+  "safe_for_paper_archive": false,
+  "recommended_action": "Provide missing param_card and seed log for the 2.[2D[K
+2.5 GeV mass point."
+}

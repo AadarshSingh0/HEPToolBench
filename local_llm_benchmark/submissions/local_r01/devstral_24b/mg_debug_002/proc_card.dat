@@ -1,0 +1,8 @@
+```text
+import model sm
+generate p p > t t~ [QCD]
+output TTbar
+launch -p
+set ebeam1 6500
+set ebeam2 6500
+```

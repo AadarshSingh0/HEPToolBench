@@ -1,0 +1,38 @@
+{
+  "checks": {
+    "dominant_loss_cut_correct": true,
+    "final_background_correct": true,
+    "final_signal_correct": true,
+    "loss_fraction_correct": false,
+    "parseable_json": true,
+    "recommended_action_mentions_statistics": true,
+    "s_over_sqrt_b_correct": false,
+    "statistically_unusable": true,
+    "status_low_statistics": true,
+    "step_efficiency_correct": false,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_markdown_fence",
+    "wrong_loss_fraction",
+    "wrong_s_over_sqrt_b",
+    "wrong_step_efficiency"
+  ],
+  "model": "ministral-3:14b",
+  "normalized_summary": {
+    "dominant_signal_loss_cut": "Transverse-mass window",
+    "dominant_signal_loss_fraction": 0.923077,
+    "dominant_signal_loss_step_efficiency": 0.076923,
+    "final_background_events": 120,
+    "final_signal_events": 48,
+    "recommended_action": "Increase integrated luminosity or relax selection  criteria to meet statistical requirements.",
+    "s_over_sqrt_b": 4.8,
+    "statistically_usable": false,
+    "status": "low_statistics"
+  },
+  "passed": false,
+  "score": 0.64,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/ministral-3_14b/cutflow_diagnosis_013/cutflow_diagnosis.json",
+  "task_id": "cutflow_diagnosis_013"
+}

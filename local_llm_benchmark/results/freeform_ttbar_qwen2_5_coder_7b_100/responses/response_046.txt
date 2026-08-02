@@ -1,0 +1,21 @@
+```python
+import os
+
+os.system('mkdir -p ttbar_run')
+os.chdir('ttbar_run')
+
+command = """
+generate p p > t~ t with threshold 130
+output Ttbar
+remove sm
+add process g g > t~ t with threshold 130
+add process u ubar > t~ t with threshold 130
+add process d dbar > t~ t with threshold 130
+add process s sbar > t~ t with threshold 130
+add process c cbar > t~ t with threshold 130
+add process b bbar > t~ t with threshold 130
+launch
+"""
+with open('run_card.dat', 'w') as f:
+    f.write(command)
+```

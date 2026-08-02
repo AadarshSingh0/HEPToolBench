@@ -1,0 +1,18 @@
+# runners folder guide
+
+Core runners:
+- evaluate_submission.py : score one submitted artifact for one task.
+- run_ollama_task.py : run local or remote Ollama models.
+- run_gemini_task.py : run Google Gemini API models.
+- run_github_models_one_task.py : run GitHub Models API models.
+- run_mistral_task.py : run Mistral API models.
+- run_sarvam_one_task.py : run Sarvam API models.
+- structured_mg_builder.py : deterministic helper used by structured MadGraph scorers.
+
+Optional/extra provider runners:
+- run_openrouter_task.py
+- run_cerebras_task.py
+- run_aihubmix_task.py
+- run_ollama_task_cloud.py
+
+Use environment variables for API keys. Never hard-code keys.

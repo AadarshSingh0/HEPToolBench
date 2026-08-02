@@ -1,0 +1,39 @@
+DELPHES OBJECT SUMMARY
+======================
+
+sample_name: TTbar_P8_Delphes
+process: p p > t t~
+event_id: run_01:event_1842
+
+REQUESTED SIGNAL REGION
+-----------------------
+exactly_one_isolated_lepton: required
+minimum_jets: 4
+minimum_b_tagged_jets: 2
+minimum_missing_et_GeV: 30
+
+SELECTED OBJECTS
+----------------
+Electrons:
+  selected_isolated_count: 1
+  leading_pt_GeV: 48.2
+  leading_eta: -0.74
+
+Muons:
+  selected_isolated_count: 0
+
+Jets:
+  selected_count: 4
+  jet_pt_GeV: [116.5, 82.1, 51.8, 37.4]
+  jet_eta: [0.31, -1.42, 2.10, -0.66]
+
+BTaggedJets:
+  selected_count: 1
+  btagged_jet_pt_GeV: [82.1]
+
+MissingET:
+  met_GeV: 52.4
+
+VALIDATION QUESTION
+-------------------
+Determine whether this event satisfies the requested detector-level signal-region object selection.

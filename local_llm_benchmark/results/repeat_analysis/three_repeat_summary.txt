@@ -1,0 +1,33 @@
+model                                         passes          score   3/3   >=2/3   warm med      p90
+--------------------------------------------------------------------------------------------------------
+gemma4:31b                             19.00+/-1.73  0.7618+/-0.0590     17      20      10.32    23.21
+llama3.3:70b                           18.33+/-0.58  0.8000+/-0.0075     18      18       2.64     5.69
+gemma4:26b                             18.33+/-1.15  0.7398+/-0.0270     17      19       3.20     7.63
+qwen2.5-coder:14b                      15.67+/-1.53  0.7611+/-0.0150     13      17       0.84     6.65
+qwen3-coder-next:Q4_K_M                15.33+/-0.58  0.7745+/-0.0123     13      16       0.48     0.81
+llama3:8b                              12.00+/-0.00  0.6821+/-0.0047     11      12       0.33     1.54
+
+Per-repeat completion:
+r01 gemma4:31b                             28/28 passes=20 mean=0.7959
+r01 llama3.3:70b                           28/28 passes=19 mean=0.8084
+r01 gemma4:26b                             28/28 passes=19 mean=0.7659
+r01 qwen3-coder-next:Q4_K_M                28/28 passes=15 mean=0.7609
+r01 qwen2.5-coder:14b                      28/28 passes=16 mean=0.7536
+r01 llama3:8b                              28/28 passes=12 mean=0.6766
+r02 gemma4:31b                             28/28 passes=17 mean=0.6937
+r02 llama3.3:70b                           28/28 passes=18 mean=0.7977
+r02 gemma4:26b                             28/28 passes=19 mean=0.7416
+r02 qwen3-coder-next:Q4_K_M                28/28 passes=15 mean=0.7850
+r02 qwen2.5-coder:14b                      28/28 passes=14 mean=0.7512
+r02 llama3:8b                              28/28 passes=12 mean=0.6846
+r03 gemma4:31b                             28/28 passes=20 mean=0.7959
+r03 llama3.3:70b                           28/28 passes=18 mean=0.7939
+r03 gemma4:26b                             28/28 passes=17 mean=0.7120
+r03 qwen3-coder-next:Q4_K_M                28/28 passes=16 mean=0.7775
+r03 qwen2.5-coder:14b                      28/28 passes=17 mean=0.7784
+r03 llama3:8b                              28/28 passes=12 mean=0.6850
+
+Saved: compiled_results/per_repeat_model_results.csv
+Saved: compiled_results/three_repeat_model_summary.csv
+Saved: compiled_results/three_repeat_task_stability.csv
+Saved: compiled_results/all_repeat_task_runtimes.csv

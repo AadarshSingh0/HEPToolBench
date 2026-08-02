@@ -1,0 +1,18 @@
+```python
+import MadGraph5_aMCatNLO
+
+# Initialize the model
+model = MadGraph5_aMCatNLO.Model()
+model.set('StandardModel')
+
+# Define the process
+process = MadGraph5_aMCatNLO.Process(model)
+process.set('p p > t anti-t', 'QCD QED')
+
+# Set energy and include top decays
+process.generate_events(energy=13000, decay='off')
+process.output_directory = 'ttbar_run'
+
+# Run the generation
+process.run()
+```

@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "delphes_absent": false,
+    "delphes_requested": false,
+    "event_count_consistent": false,
+    "failure_stage_delphes": false,
+    "lhe_events_correct": false,
+    "lhe_present": false,
+    "missing_delphes_output": false,
+    "parseable_json": false,
+    "process_correct": false,
+    "pythia8_events_correct": false,
+    "pythia8_present": false,
+    "pythia8_requested": false,
+    "recommended_action_mentions_delphes": false,
+    "requested_events_correct": false,
+    "status_incomplete": false,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "invalid_json_substring",
+    "not_parseable_json"
+  ],
+  "model": "qwen3-next:80b",
+  "normalized_summary": null,
+  "passed": false,
+  "score": 0,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/qwen3-next_80b/mg_parse_009/validation.json",
+  "task_id": "mg_parse_009"
+}

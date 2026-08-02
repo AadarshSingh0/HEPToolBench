@@ -1,0 +1,16 @@
+{
+  "error_type": "madgraph_syntax_and_beam_command_repair",
+  "faulty_lines": [
+    "t tbar",
+    "beam1",
+    "beam2"
+  ],
+  "corrected_lines": [
+    "generate p p > t t~",
+    "set ebeam1 6500",
+    "set ebeam2 6500",
+    "output TTbar"
+  ],
+  "output_dir": "TTbar",
+  "reason": "MadGraph anti-top syntax is t~, not tbar."
+}

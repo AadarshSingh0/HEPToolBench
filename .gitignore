@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Environments and secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+venv/
+.venv/
+Mad_env/
+
+# Editors
+.vscode/
+.idea/
+*~
+*.swp
+
+# Large or generated model files
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+/ollama_models/
+/models/
+
+# Temporary benchmark outputs
+tmp/
+temp/
+cache/
+*.pid
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python caches
+
+# Machine-specific local HEP-agent paths
+local_hep_agent/configs/local_paths.json
+
+# Local HEP-agent machine configuration
+local_hep_agent/configs/local_paths.json
+local_hep_agent/configs/ollama_host
+local_hep_agent/configs/conda_root
+
+# Local HEP-agent generated outputs
+local_hep_agent/results/
+local_hep_agent/logs/
+local_hep_agent/build/
+local_hep_agent/dist/
+local_hep_agent/*.egg-info/
+local_hep_agent/.coverage
+local_hep_agent/htmlcov/
+
+# Benchmark transient runtime outputs
+local_llm_benchmark/logs/
+local_llm_benchmark/tmp/
+local_llm_benchmark/cache/
+
+# Beginner local benchmark generated outputs
+local_llm_benchmark/runs/
+local_llm_benchmark/results/all_runs_long.csv

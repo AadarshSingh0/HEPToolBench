@@ -1,0 +1,13 @@
+{
+  "task_id": "mg_parse_006",
+  "title": "Extract MadGraph run summary as JSON",
+  "category": "mg_parse",
+  "level": "L1",
+  "mode": "json_extraction",
+  "tools": ["madgraph"],
+  "timeout_seconds": 180,
+  "requires_execution": false,
+  "expected_artifacts": ["summary.json"],
+  "physics_tags": ["madgraph", "log_parsing", "cross_section", "reproducibility"],
+  "description": "Extract process, cross section, uncertainty, event count, event file, and status from a MadGraph-style run summary."
+}

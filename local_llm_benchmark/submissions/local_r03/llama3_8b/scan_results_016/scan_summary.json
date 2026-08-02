@@ -1,0 +1,17 @@
+{
+  "status": "incomplete",
+  "scan_parameter": "mS in GeV",
+  "total_points": 5,
+  "successful_points": 3,
+  "failed_points": 2,
+  "failed_masses_gev": [2.0],
+  "failed_run_directories": ["run_mS_2p0"],
+  "max_cross_section_mass_gev": 1.7,
+  "max_cross_section_pb": 1.70,
+  "min_successful_cross_section_mass_gev": 3.2,
+  "min_successful_cross_section_pb": 3.20,
+  "monotonic_decreasing_successful_points": false,
+  "rerun_required": true,
+  "recommended_action": "Rerun the failed points and recheck for monotonic [K
+decreasing successful points."
+}

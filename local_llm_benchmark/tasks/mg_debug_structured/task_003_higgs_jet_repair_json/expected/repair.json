@@ -1,0 +1,18 @@
+{
+  "error_type": "madgraph_syntax_and_beam_command_repair",
+  "faulty_lines": [
+    "process p p -> h jet",
+    "beam1",
+    "beam2",
+    "HiggsJet"
+  ],
+  "corrected_lines": [
+    "define j = g u c d s u~ c~ d~ s~",
+    "generate p p > h j",
+    "set ebeam1 6500",
+    "set ebeam2 6500",
+    "output HJ"
+  ],
+  "output_dir": "HJ",
+  "reason": "Use the MadGraph jet multiparticle label j, not the literal token jet in the process line."
+}

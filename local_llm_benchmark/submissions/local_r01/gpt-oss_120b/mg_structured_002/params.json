@@ -1,0 +1,18 @@
+Thinking...
+We need to return only the JSON object matching schema. Provide exactly tha[3D[K
+that JSON with values as given. No extra text.
+
+Check: fields: model sm, initial_state ["p","p"], final_state ["t","t~"], b[1D[K
+beam_energy_gev 6500, output_dir "TTbar", nevents 10000.
+
+Return as single JSON.
+...done thinking.
+
+{
+  "model": "sm",
+  "initial_state": ["p", "p"],
+  "final_state": ["t", "t~"],
+  "beam_energy_gev": 6500,
+  "output_dir": "TTbar",
+  "nevents": 10000
+}

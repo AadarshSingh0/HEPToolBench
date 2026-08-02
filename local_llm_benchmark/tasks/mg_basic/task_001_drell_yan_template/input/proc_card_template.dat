@@ -1,0 +1,10 @@
+import model sm
+define p = g u c d s u~ c~ d~ s~
+
+# Fill the process line below.
+
+output DY_ee
+launch
+
+# Fill the beam energies below for 13 TeV pp collisions.
+

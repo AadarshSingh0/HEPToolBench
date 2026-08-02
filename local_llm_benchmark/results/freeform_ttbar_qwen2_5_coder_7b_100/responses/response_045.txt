@@ -1,0 +1,5 @@
+```python
+generate p p > t \~t [QCD]
+output ttbar_run
+run_card.dat
+```

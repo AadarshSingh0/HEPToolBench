@@ -1,0 +1,3 @@
+```bash
+./bin/generate_events.py -f ttbar.cmnd --n_events=1000 --output=ttbar_run
+```

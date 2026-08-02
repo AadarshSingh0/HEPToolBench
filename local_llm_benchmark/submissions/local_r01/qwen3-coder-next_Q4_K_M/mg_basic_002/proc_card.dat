@@ -1,0 +1,25 @@
+generate p p > t t~ [QCD]
+output ./ttbar_prod
+launch
+
+ set ebeam 6500
+ set nevents 10000
+ set iseed 123456
+ set ptl 20
+ set etal 2.5
+ set drll 0.2
+ set mtw 80.385
+ set mb 4.92
+ set mt 172.5
+ set wtop 1.4238
+ set zmtop 172.5
+ set wttop 1.4238
+ set higgs 125.09
+ set vev 246.22
+ set gw 0.652702
+ set gzm 0.0
+ set alphaem 0.00729735
+ set sin2thetaW 0.23121
+ set couplings QCD-only
+
+done

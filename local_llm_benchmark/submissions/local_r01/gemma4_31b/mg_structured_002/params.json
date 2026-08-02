@@ -1,0 +1,40 @@
+Thinking...
+*   Goal: Extract physics intent for a MadGraph run into a specific JSON fo[2D[K
+format.
+    *   Process: Inclusive top-pair production (`p p > t t~`).
+    *   Model: Standard Model (SM).
+    *   Center-of-mass energy ($\sqrt{s}$): 13 TeV.
+    *   Beam energy ($E_{beam}$): $6500$ GeV per beam (since $\sqrt{s} = 2 [K
+\times E_{beam}$).
+    *   Constraint: Return *only* the JSON object. No explanations, no MadG[4D[K
+MadGraph card.
+
+    *   `model`: "sm"
+    *   `initial_state`: ["p", "p"]
+    *   `final_state`: ["t", "t~"]
+    *   `beam_energy_gev`: 6500
+    *   `output_dir`: "TTbar"
+    *   `nevents`: 10000
+
+    ```json
+    {
+      "model": "sm",
+      "initial_state": ["p", "p"],
+      "final_state": ["t", "t~"],
+      "beam_energy_gev": 6500,
+      "output_dir": "TTbar",
+      "nevents": 10000
+    }
+    ```
+...done thinking.
+
+```json
+{
+  "model": "sm",
+  "initial_state": ["p", "p"],
+  "final_state": ["t", "t~"],
+  "beam_energy_gev": 6500,
+  "output_dir": "TTbar",
+  "nevents": 10000
+}
+```

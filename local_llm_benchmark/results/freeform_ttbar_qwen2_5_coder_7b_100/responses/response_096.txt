@@ -1,0 +1,6 @@
+```madgraph
+import model sm
+generate p p > t anti-t
+output ttbar_run
+quit
+```

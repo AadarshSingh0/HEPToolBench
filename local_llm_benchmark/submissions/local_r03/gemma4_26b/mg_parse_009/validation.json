@@ -1,0 +1,86 @@
+Thinking...
+*   Input: `mg_output_manifest.txt`.
+    *   Workflow requested: MadGraph (hard process) -> Pythia8 (showering) [K
+-> Delphes (detector simulation).
+    *   Goal: Validate if all expected outputs are present and consistent w[1D[K
+with the requested number of events.
+
+    *   `run_name`: TTbar_P8_Delphes
+    *   `process`: `p p > t t~`
+    *   `requested_events`: 10000
+    *   Workflow: MadGraph, Pythia8, Delphes.
+
+        *   `Events/run_01/unweighted_events.lhe.gz` [OK], stage: hard_proc[9D[K
+hard_process, count: 10000. (Matches requested)
+        *   `Events/run_01/tag_1_pythia8_events.hepmc.gz` [OK], stage: pyth[4D[K
+pythia8, count: 10000. (Matches requested)
+        *   `Events/run_01/tag_1_delphes_events.root` [MISSING], stage: del[3D[K
+delphes, count: unavailable.
+        *   `Events/run_01/run_01_tag_1_banner.txt` [OK], stage: metadata.
+
+        *   MadGraph finished successfully (10000 events).
+        *   Pythia8 completed (10000 events).
+        *   Delphes error: "no Delphes ROOT output was produced", "Expected[9D[K
+"Expected file ... not found".
+
+    *   `status`: Since Delphes is missing, the status is `"incomplete"`.
+    *   `process`: `p p > t t~`.
+    *   `requested_events`: 10000.
+    *   `lhe_present`: `true` (unweighted_events.lhe.gz exists).
+    *   `lhe_events`: 10000.
+    *   `pythia8_requested`: `true`.
+    *   `pythia8_present`: `true` (tag_1_pythia8_events.hepmc.gz exists).
+    *   `pythia8_events`: 10000.
+    *   `delphes_requested`: `true`.
+    *   `delphes_present`: `false`.
+    *   `missing_outputs`: `["Events/run_01/tag_1_delphes_events.root"]`.
+    *   `event_count_consistent`: `true` (LHE and Pythia8 both have 10000).[7D[K
+10000).
+    *   `failure_stage`: `"delphes"`.
+    *   `recommended_action`: "rerun Delphes or fix the Delphes card/path b[1D[K
+before treating detector-level output as available".
+
+    *   Is `lhe_present` correct? Yes, `.lhe.gz` is [OK].
+    *   Is `pythia8_present` correct? Yes, `.hepmc.gz` is [OK].
+    *   Is `delphes_present` correct? No, it's [MISSING].
+    *   Are counts consistent? 10000 (LHE) == 10000 (Pythia8). Yes.
+    *   Missing output path: `Events/run_01/tag_1_delphes_events.root`.
+
+    ```json
+    {
+      "status": "incomplete",
+      "process": "p p > t t~",
+      "requested_events": 10000,
+      "lhe_present": true,
+      "lhe_events": 10000,
+      "pythia8_requested": true,
+      "pythia8_present": true,
+      "pythia8_events": 10000,
+      "delphes_requested": true,
+      "delphes_present": false,
+      "missing_outputs": ["Events/run_01/tag_1_delphes_events.root"],
+      "event_count_consistent": true,
+      "failure_stage": "delphes",
+      "recommended_action": "rerun Delphes or fix the Delphes card/path bef[3D[K
+before treating detector-level output as available"
+    }
+    ```
+...done thinking.
+
+{
+  "status": "incomplete",
+  "process": "p p > t t~",
+  "requested_events": 10000,
+  "lhe_present": true,
+  "lhe_events": 10000,
+  "pythia8_requested": true,
+  "pythia8_present": true,
+  "pythia8_events": 10000,
+  "delphes_requested": true,
+  "delphes_present": false,
+  "missing_outputs": ["Events/run_01/tag_1_delphes_events.root"],
+  "event_count_consistent": true,
+  "failure_stage": "delphes",
+  "recommended_action": "rerun Delphes or fix the Delphes card/path before [K
+treating detector-level output as available"
+}

@@ -1,0 +1,13 @@
+{
+  "task_id": "mg_basic_003",
+  "title": "Higgs plus jet MadGraph card from free-form instruction",
+  "category": "mg_basic",
+  "level": "L2",
+  "mode": "free_form",
+  "tools": ["madgraph"],
+  "timeout_seconds": 300,
+  "requires_execution": false,
+  "expected_artifacts": ["proc_card.dat"],
+  "physics_tags": ["sm", "higgs", "jet", "pp_collision"],
+  "description": "Generate a complete MadGraph process card for p p > h j at 13 TeV."
+}

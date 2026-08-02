@@ -1,0 +1,16 @@
+```
+# Particle Physics Benchmark Test
+#
+# proc_card.dat: Top-Pair MadGraph Card From Free-Form Instruction
+#
+
+(define-process p p > t t~
+  (init-state 1 -1)
+  (particles 3 p p~)
+  (end-state 2 0 4 6 7 8
+    ((t 1 p 1) (t 2 p 2) (~t 3 t 4))
+    )
+  )
+
+[EOF]
+```

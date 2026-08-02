@@ -1,0 +1,9 @@
+{
+  "error_type": "Invalid Beam Commands",
+  "faulty_lines": ["set beam1 6500", "set beam2 6500"],
+  "corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500", "set ebeam[5D[K
+ebeam2 6500"],
+  "output_dir": "DY_ee",
+  "reason": "Replaced invalid beam commands with correct MadGraph syntax fo[2D[K
+for beam energy settings."
+}

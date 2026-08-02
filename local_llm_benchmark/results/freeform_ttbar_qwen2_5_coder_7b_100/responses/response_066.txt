@@ -1,0 +1,7 @@
+```bash
+generate p p > t t~
+output ttbar_run --overWrite
+model SM
+add process p p > t t~ at 13000.
+run 1000
+```

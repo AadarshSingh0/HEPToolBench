@@ -1,0 +1,13 @@
+Physics scan request
+====================
+
+Use the existing MadGraph setup for the process
+
+    p p > S > e+ e-
+
+at a 13 TeV proton-proton collider. Scan the mediator mass parameter mS
+from 1.0 GeV to 10.0 GeV inclusive, in steps of 0.5 GeV. Keep the coupling
+parameter gS fixed to 0.1 for the whole scan.
+
+For each scan point, modify the model parameter card, run 10000 events, and
+collect the MadGraph cross section in pb together with the output run directory.

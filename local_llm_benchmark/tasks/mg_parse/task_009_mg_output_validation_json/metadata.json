@@ -1,0 +1,13 @@
+{
+  "task_id": "mg_parse_009",
+  "title": "Validate MadGraph/Pythia/Delphes output manifest",
+  "category": "mg_parse",
+  "level": "L2",
+  "mode": "json_extraction",
+  "tools": ["madgraph", "pythia8", "delphes"],
+  "timeout_seconds": 180,
+  "requires_execution": false,
+  "expected_artifacts": ["validation.json"],
+  "physics_tags": ["madgraph", "pythia8", "delphes", "workflow_validation", "reproducibility"],
+  "description": "Inspect a MadGraph/Pythia/Delphes run manifest and report whether all requested workflow outputs are present and event-count consistent."
+}

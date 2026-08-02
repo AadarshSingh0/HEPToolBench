@@ -1,0 +1,8 @@
+{
+"model": "sm",
+"initial_state": ["p", "p"],
+"final_state": ["e+", "e-"],
+"beam_energy_gev": 6500,
+"output_dir": "DY_ee",
+"nevents": 10000
+}

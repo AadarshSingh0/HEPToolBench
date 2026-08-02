@@ -1,0 +1,14 @@
+{
+  "task_id": "mg_structured_001",
+  "title": "Drell-Yan structured JSON extraction",
+  "category": "mg_structured",
+  "level": "L1",
+  "mode": "structured_json",
+  "tools": ["ollama", "deterministic_builder"],
+  "timeout_seconds": 300,
+  "requires_execution": false,
+  "expected_artifacts": ["params.json"],
+  "physics_tags": ["sm", "drell_yan", "pp_collision"],
+  "description": "Extract structured physics parameters for p p > e+ e- at 13 TeV. A deterministic builder assembles MadGraph syntax."
+}
+

@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Local-model wall-clock timing. The warm median excludes the first
+request for each model, which may include model-loading overhead.}
+\label{tab:local-runtime-summary}
+\begin{tabular}{lrrrrrr}
+\toprule
+Model & Timed tasks & Total [h] & Mean [min] & Median [min] &
+Warm median [min] & P90 [min] \\
+\midrule
+\texttt{llama3:8b} & 28 & 0.14 & 0.31 & 0.30 & 0.29 & 0.47 \\
+\texttt{qwen3-coder-next:Q4\_K\_M} & 28 & 0.27 & 0.57 & 0.37 & 0.36 & 0.65 \\
+\texttt{qwen2.5-coder:14b} & 28 & 0.30 & 0.64 & 0.53 & 0.51 & 1.01 \\
+\texttt{llama3.3:70b} & 28 & 1.48 & 3.18 & 2.56 & 2.48 & 5.09 \\
+\texttt{gemma4:26b} & 28 & 1.85 & 3.96 & 3.26 & 3.08 & 7.86 \\
+\texttt{gemma4:31b} & 28 & 5.69 & 12.18 & 8.69 & 8.59 & 22.64 \\
+\bottomrule
+\end{tabular}
+\end{table*}

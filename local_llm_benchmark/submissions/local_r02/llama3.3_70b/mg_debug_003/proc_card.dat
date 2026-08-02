@@ -1,0 +1,11 @@
+```text
+# MG5 proc_card.dat
+import model sm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+generate p p > h j
+output HJ
+launch
+set beam1 6500
+set beam2 6500
+```

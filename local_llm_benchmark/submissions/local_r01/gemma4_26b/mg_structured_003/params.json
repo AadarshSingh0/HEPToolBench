@@ -1,0 +1,46 @@
+Thinking...
+*   Task: Extract structured MadGraph parameters from a specific physics de[2D[K
+description.
+    *   Input Description:
+        *   Process: `p p > h j` (Higgs plus jet production).
+        *   Center-of-mass energy ($\sqrt{s}$): 13 TeV.
+        *   Beam energy ($E_{beam}$): 6500 GeV per beam.
+        *   Output directory: `HJ`.
+        *   Number of events (`nevents`): 10000.
+    *   Model (Standard Model): "sm".
+    *   Initial state: ["p", "p"].
+    *   Final state: ["h", "j"].
+    *   Constraint: Return *only* the JSON object. No explanations, no mark[4D[K
+markdown fences.
+
+    *   `model`: "sm"
+    *   `initial_state`: ["p", "p"]
+    *   `final_state`: ["h", "j"]
+    *   `beam_energy_gev`: 6500
+    *   `output_dir`: "HJ"
+    *   `nevents`: 10000
+
+    ```json
+    {
+      "model": "sm",
+      "initial_state": ["p", "p"],
+      "final_state": ["h", "j"],
+      "beam_energy_gev": 6500,
+      "output_dir": "HJ",
+      "nevents": 10000
+    }
+    ```
+
+    *   JSON schema matches? Yes.
+    *   No markdown fences? Yes.
+    *   No explanations? Yes.
+...done thinking.
+
+{
+  "model": "sm",
+  "initial_state": ["p", "p"],
+  "final_state": ["h", "j"],
+  "beam_energy_gev": 6500,
+  "output_dir": "HJ",
+  "nevents": 10000
+}

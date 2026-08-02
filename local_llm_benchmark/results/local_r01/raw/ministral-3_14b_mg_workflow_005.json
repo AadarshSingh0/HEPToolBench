@@ -1,0 +1,39 @@
+{
+  "checks": {
+    "analysis_off": false,
+    "correct_process": false,
+    "correct_proton_definition": false,
+    "detector_delphes": false,
+    "ebeam1_6500": true,
+    "ebeam2_6500": true,
+    "has_done": false,
+    "has_launch": true,
+    "has_output": false,
+    "imports_sm": true,
+    "iseed_42": false,
+    "madspin_off": false,
+    "nevents_10000": true,
+    "no_long_explanation": true,
+    "no_markdown_fence": true,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true,
+    "shower_pythia8": false
+  },
+  "failure_modes": [
+    "missing_done",
+    "missing_or_wrong_output",
+    "missing_or_wrong_process",
+    "uses_set_shower_instead_of_launch_switch",
+    "wrong_or_missing_analysis",
+    "wrong_or_missing_detector",
+    "wrong_or_missing_iseed",
+    "wrong_or_missing_madspin",
+    "wrong_or_missing_proton_definition",
+    "wrong_or_missing_shower"
+  ],
+  "model": "ministral-3:14b",
+  "passed": false,
+  "score": 0.32,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/ministral-3_14b/mg_workflow_005/mg5_script.txt",
+  "task_id": "mg_workflow_005"
+}

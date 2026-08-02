@@ -1,0 +1,7 @@
+{
+  "task_id": "repro_audit_020",
+  "name": "Reproducibility audit for a scan package",
+  "category": "reproducibility",
+  "artifact": "repro_audit.json",
+  "description": "Audit a HEP scan package manifest and identify missing required/optional files and affected scan points."
+}

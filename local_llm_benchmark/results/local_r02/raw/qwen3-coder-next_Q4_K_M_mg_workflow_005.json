@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "analysis_off": false,
+    "correct_process": true,
+    "correct_proton_definition": true,
+    "detector_delphes": true,
+    "ebeam1_6500": false,
+    "ebeam2_6500": false,
+    "has_done": false,
+    "has_launch": true,
+    "has_output": true,
+    "imports_sm": false,
+    "iseed_42": false,
+    "madspin_off": true,
+    "nevents_10000": false,
+    "no_long_explanation": true,
+    "no_markdown_fence": true,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true,
+    "shower_pythia8": true
+  },
+  "failure_modes": [
+    "missing_done",
+    "missing_import_model",
+    "wrong_or_missing_analysis",
+    "wrong_or_missing_ebeam1",
+    "wrong_or_missing_ebeam2",
+    "wrong_or_missing_iseed",
+    "wrong_or_missing_nevents"
+  ],
+  "model": "qwen3-coder-next:Q4_K_M",
+  "passed": false,
+  "score": 0.68,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r02_clean/submissions/qwen3-coder-next_Q4_K_M/mg_workflow_005/mg5_script.txt",
+  "task_id": "mg_workflow_005"
+}

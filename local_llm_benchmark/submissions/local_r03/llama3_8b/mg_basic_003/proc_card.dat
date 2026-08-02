@@ -1,0 +1,15 @@
+```
+[GenerationCard]
+particlelevel=2
+order_eta_q = -1
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+[Process]
+p p > h j
+
+[Init]
+-1 13.0   ! beam energies in GeV
+6500.    ! per beam energy in GeV
+HJ      ! output directory
+```

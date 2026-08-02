@@ -1,0 +1,14 @@
+{
+  "task_id": "mg_basic_001",
+  "title": "Drell-Yan process card from template",
+  "category": "mg_basic",
+  "level": "L1",
+  "mode": "template_fill",
+  "tools": ["madgraph"],
+  "timeout_seconds": 300,
+  "requires_execution": false,
+  "expected_artifacts": ["proc_card.dat"],
+  "physics_tags": ["sm", "drell_yan", "pp_collision"],
+  "description": "Fill a MadGraph process-card template for p p > e+ e- at 13 TeV."
+}
+

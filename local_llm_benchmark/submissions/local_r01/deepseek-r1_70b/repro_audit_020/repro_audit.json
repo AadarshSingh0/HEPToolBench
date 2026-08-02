@@ -1,0 +1,69 @@
+Thinking...
+Okay, so I need to figure out the JSON reproducibility audit based on the g[1D[K
+given analysis_package_manifest.txt. Let me start by reading through the ma[2D[K
+manifest carefully.
+
+First, the analysis is for a scalar-mass scan with intended masses at 1.0, [K
+1.5, 2.0, 2.5, and 3.0 GeV. The detector-level results are not claimed, whi[3D[K
+which means some files related to Pythia8 and Delphes are optional.
+
+Looking at the required files for a parton-level scan:
+
+1. UFO model directory: It's present under models/ScalarUFO/.
+2. proc_card.dat: Present in cards/.
+3. run_card.dat: Also present.
+4. Param_cards: Each mass point needs one. mS_2p5.dat is missing, so that's[6D[K
+that's a problem.
+5. Random-seed logs: For each mass. The log for 2.5 GeV is missing.
+6. Scan results CSV: It's present in results/.
+7. Plotting script: Present under scripts/.
+
+Pythia8 and Delphes cards are absent, but since detector-level isn't claime[6D[K
+claimed, they're optional.
+
+Now, checking the required files:
+
+- Missing param_card for 2.5 GeV.
+- Missing log file for 2.5 GeV.
+
+So, the package can't reproduce all intended scan points because 2.5 GeV is[2D[K
+is missing both a param card and a log. Therefore, the status should be "no[3D[K
+"not_reproducible".
+
+Detector_level_claimed is false as given.
+
+Missing_required_files are mS_2p5.dat and mS_2p5_seed.txt. These are requir[6D[K
+required for parton-level, so they're under missing_required.
+
+Since Pythia8 and Delphes are optional, their absence doesn't affect the au[2D[K
+audit, so missing_optional_files is empty.
+
+Affected scan points: Only 2.5 GeV is affected because that's where files a[1D[K
+are missing.
+
+Can_reproduce_parton_level_scan: No, because 2.5 GeV is missing required fi[2D[K
+files.
+
+Safe_for_paper_archive: To be safe, all required must be present. Since som[3D[K
+some are missing, it's false.
+
+Recommended_action would suggest providing the missing files and ensuring a[1D[K
+all are present.
+...done thinking.
+
+```json
+{
+  "status": "not_reproducible",
+  "detector_level_claimed": false,
+  "missing_required_files": [
+    "cards/param_cards/mS_2p5.dat",
+    "logs/mS_2p5_seed.txt"
+  ],
+  "missing_optional_files": [],
+  "affected_scan_points_gev": [2.5],
+  "can_reproduce_parton_level_scan": false,
+  "safe_for_paper_archive": false,
+  "recommended_action": "Provide missing param_card and seed log for 2.5 Ge[2D[K
+GeV mass point to ensure full reproducibility."
+}
+```

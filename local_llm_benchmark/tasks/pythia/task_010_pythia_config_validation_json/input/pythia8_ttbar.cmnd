@@ -1,0 +1,27 @@
+! Pythia8 configuration for showering a ttbar LHE sample.
+! Requested production setup:
+! - 10000 events
+! - fixed random seed 42
+! - ISR on
+! - FSR on
+! - MPI on
+! - hadronization on
+! - HepMC output on
+
+Main:numberOfEvents = 10000
+Main:timesAllowErrors = 20
+
+Random:setSeed = on
+Random:seed = 42
+
+Beams:frameType = 4
+Beams:LHEF = Events/run_01/unweighted_events.lhe.gz
+
+PartonLevel:ISR = on
+PartonLevel:FSR = on
+PartonLevel:MPI = off
+
+HadronLevel:all = on
+
+Main:writeHepMC = on
+Main:HepMCFile = Events/run_01/tag_1_pythia8_events.hepmc

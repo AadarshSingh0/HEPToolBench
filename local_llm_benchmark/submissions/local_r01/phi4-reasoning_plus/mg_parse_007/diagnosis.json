@@ -1,0 +1,69 @@
+We have been given instructions. We need to output JSON object following sc[2D[K
+schema with keys: "status", "process", "error_type", "offending_line", "exp[4D[K
+"expected_line", "fix". The value for "process" is provided in the text: pr[2D[K
+process: "p p > t tbar"? But expected line is "generate p p > t t~". Offend[6D[K
+Offending line: "generate p p > t tbar" exactly as it appears. error_type? [K
+"invalid_antiparticle_syntax", expected_line is "generate p p > t t~", fix [K
+is "replace tbar with t~ in the generate line".
+
+We are given instructions: Return only one JSON object with schema exactly [K
+given, and do not include any additional explanations or markdown formattin[9D[K
+formatting.
+
+We need to output a JSON object. However note that we must preserve offendi[7D[K
+offending_line exactly as it appears: it's "generate p p > t tbar". But wai[3D[K
+wait check in input text: Actually the log is:
+
+Command history:
+  import model sm
+  define p = g u c d s u~ c~ d~ s~
+  generate p p > t tbar
+  output TTbar
+  launch
+
+So offending_line should be "generate p p > t tbar".
+
+Expected line from suggestion: "generate p p > t t~"
+
+The error message says: "No particle named 'tbar' is defined in the current[7D[K
+current model. In MadGraph antiparticles are written with a tilde."
+
+So error_type we choose as "invalid_antiparticle_syntax"? Yes.
+
+We then fill out required JSON keys accordingly:
+{
+  "status": "failed",
+  "process": "p p > t tbar",
+  "error_type": "invalid_antiparticle_syntax",
+  "offending_line": "generate p p > t tbar",
+  "expected_line": "generate p p > t t~",
+  "fix": "replace tbar with t~ in the generate line"
+}
+
+No markdown formatting, so just plain JSON output.
+
+We need to not include any explanations. Therefore I'll produce exactly:
+
+{
+  "status": "failed",
+  "process": "p p > t tbar",
+  "error_type": "invalid_antiparticle_syntax",
+  "offending_line": "generate p p > t tbar",
+  "expected_line": "generate p p > t t~",
+  "fix": "replace tbar with t~ in the generate line"
+}
+
+I'll produce it as a single JSON object. We must return only one JSON objec[5D[K
+object, no extra text.
+
+Thus final answer is exactly the given JSON object. We need to check if any[3D[K
+any trailing whitespace? Likely not.
+
+I'll produce output.{
+  "status": "failed",
+  "process": "p p > t tbar",
+  "error_type": "invalid_antiparticle_syntax",
+  "offending_line": "generate p p > t tbar",
+  "expected_line": "generate p p > t t~",
+  "fix": "replace tbar with t~ in the generate line"
+}

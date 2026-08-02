@@ -1,0 +1,4 @@
+{"error_type": "invalid_process_and_output", "faulty_lines": ["process p p [K
+-> h jet", "output HiggsJet"], "corrected_lines": ["generate p p > h j", "o[2D[K
+"output HJ"], "output_dir": "HJ", "reason": "Replace 'h jet' with 'h j' usi[3D[K
+using MadGraph syntax '>' and correct output directory to 'HJ'}

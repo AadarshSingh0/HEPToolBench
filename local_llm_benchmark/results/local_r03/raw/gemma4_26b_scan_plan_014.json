@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "beam_energy_correct": true,
+    "collects_outputs": true,
+    "fixed_coupling_correct": true,
+    "inclusive_endpoints_true": true,
+    "modifies_param_card": true,
+    "nevents_correct": true,
+    "number_of_points_correct": true,
+    "parseable_json": true,
+    "process_correct": true,
+    "scan_parameter_correct": true,
+    "scan_values_correct": true,
+    "start_correct": true,
+    "status_valid": true,
+    "step_correct": true,
+    "stop_correct": true
+  },
+  "failure_modes": [
+    "includes_explanation_not_json_only",
+    "includes_markdown_fence",
+    "terminal_artifacts_removed"
+  ],
+  "model": "gemma4:26b",
+  "normalized_plan": {
+    "beam_energy_gev": 6500.0,
+    "nevents": 10000,
+    "number_of_points": 19,
+    "process": "p p > S > e+ e-",
+    "scan_parameter": "mS",
+    "start_gev": 1.0,
+    "status": "valid",
+    "step_gev": 0.5,
+    "stop_gev": 10.0
+  },
+  "passed": true,
+  "score": 1.0,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r03_clean/submissions/gemma4_26b/scan_plan_014/scan_plan.json",
+  "task_id": "scan_plan_014"
+}

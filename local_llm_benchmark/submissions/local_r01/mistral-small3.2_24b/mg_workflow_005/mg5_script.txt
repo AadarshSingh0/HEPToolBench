@@ -1,0 +1,5 @@
+import model sm
+generate p p > t t~
+output TTbar_P8_Delphes
+launch --tag=1_run --events=10000 --seed=42 --ewbnarrowing --pythia8 --delp[6D[K
+--delphes-card=delphes_card.tcl -c 6500:6500

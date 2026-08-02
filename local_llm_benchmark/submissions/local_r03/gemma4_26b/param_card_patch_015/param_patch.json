@@ -1,0 +1,101 @@
+Thinking...
+*   Task: Create a JSON patch plan to modify an SLHA-like `param_card.dat` [K
+file based on a `scan_point_request.txt`.
+    *   Constraint 1: Return *only* the JSON object. No explanations.
+    *   Constraint 2: Format must match the provided example structure.
+    *   Input Request (`scan_point_request.txt`):
+        *   $mS = 3.5$ GeV.
+        *   $gS = 0.1$.
+        *   Do not change decay width.
+    *   Input File (`param_card_excerpt.dat`):
+        *   `BLOCK MASS`: ID `90000/01`, Value `1.000000e+00`. (mS)
+        *   `BLOCK COUPLINGS`: ID `1`, Value `5.000000e-02`. (gS)
+        *   `DECAY 9000001`: Value `1.000000e-03`.
+
+    *   Update `mS` in `BLOCK MASS` for PDG code `9000001`: $1.0 \to 3.5$. [K
+Unit: GeV.
+    *   Update `gS` in `BLOCK COUPLINGS` entry `1`: $0.05 \to 0.1$. Unit: n[1D[K
+null.
+    *   Keep `DECAY 9000001` width as is (`1.000000e-03`).
+
+    *   `status`: "valid"
+    *   `file_to_modify`: "param_card.dat"
+    *   `scan_point_label`: Needs a name based on the context or derived fr[2D[K
+from inputs. Since none is explicitly provided in the text as a label like [K
+"mS_3p5...", I'll look at the instruction example... Wait, the example uses[4D[K
+uses `mS_3p5_gS_0p1`. Let's use that pattern if no label is provided or der[3D[K
+derive it: $mS=3.5$, $gS=0.1 \implies$ `mS_3p5_gS_0p1`.
+    *   `updates`:
+        1.  Block: "MASS", ID: "9000001", Param: "mS", Old: 1.0, New: 3.5, [K
+Unit: "GeV".
+        2.  Block: "COUPLINGS", ID: "1", Param: "gS", Old: 0.05, New: 0.1, [K
+Unit: null.
+    *   `unchanged`:
+        1.  Block: "DECAY", ID: "9000001", Param: "width_S", Value: 0.001 ([1D[K
+(or 1.0e-03), Reason: "decay width was not requested to change".
+
+    *   `mS` in `BLOCK MASS`: $1.0 \to 3.5$. Correct.
+    *   `gS` in `BLOCK COUPLINGS`: $0.05 \to 0.1$. Correct ($5.0e-2$ is $0.[3D[K
+$0.05$).
+    *   Decay width: $1.0e-3$ stays.
+
+    The example shows `"scan_point_label": "mS_3p5_gS_0p1"`. I will use thi[3D[K
+this string as it matches the requested values exactly and follows the conv[4D[K
+convention shown in the prompt's template.
+
+    *   `old_value`: $1.0$ (from `1.000000e+00`)
+    *   `new_value`: $3.5$
+    *   `identifier`: "9000001"
+    *   `parameter`: "mS"
+
+    *   `old_value`: $0.05$ (from `5.000000e-02`)
+    *   `new_value`: $0.1$
+    *   `identifier`: "1"
+    *   `parameter`: "gS"
+
+    Wait, the instructions say: "Return only a JSON object describing the p[1D[K
+patch... Do not include explanations."
+
+    Let's re-verify units for mS. The request says `3.5 GeV`. So unit is `G[2D[K
+`GeV`.
+
+    Final check on values:
+    Mass $1.0 \to 3.5$
+    Coupling $0.05 \to 0.1$
+    Decay width $0.001$ stays.
+...done thinking.
+
+```json
+{
+  "status": "valid",
+  "file_to_modify": "param_card.dat",
+  "scan_point_label": "mS_3p5_gS_0p1",
+  "updates": [
+    {
+      "block": "MASS",
+      "identifier": "9000001",
+      "parameter": "mS",
+      "old_value": 1.0,
+      "new_value": 3.5,
+      "unit": "GeV"
+    },
+    {
+      "block": "COUPLINGS",
+      "identifier": "1",
+      "parameter": "gS",
+      "old_value": 0.05,
+      "new_value": 0.1,
+      "unit": null
+    }
+  ],
+  "unchanged": [
+    {
+      "block": "DECAY",
+      "identifier": "9000001",
+      "parameter": "width_S",
+      "value": 0.001,
+      "reason": "decay width was not requested to change"
+    }
+  ]
+}
+```

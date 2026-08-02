@@ -1,0 +1,18 @@
+Analysis: semileptonic t t~ validation cutflow
+Requested interpretation: identify the largest relative loss of signal events between consecutive cuts.
+Statistical usability rule: final signal yield >= 100 events.
+
+Cutflow table:
+
+Row | Selection cut                  | Signal events | Background events
+----|--------------------------------|---------------|------------------
+0   | Generated events               | 10000         | 500000
+1   | Exactly one isolated lepton    | 6200          | 120000
+2   | At least four jets             | 3100          | 25000
+3   | At least two b-tagged jets     | 650           | 1800
+4   | Missing ET > 30 GeV            | 520           | 900
+5   | Transverse-mass window         | 48            | 120
+
+For consecutive signal yields S_prev -> S_curr:
+step_efficiency = S_curr / S_prev,
+relative_signal_loss = 1 - step_efficiency.

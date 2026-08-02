@@ -1,0 +1,7 @@
+```madgraph5_aMC@NLO
+import model sm
+generate p p > t anti-t
+output ttbar_run -f
+run 10
+quit
+```

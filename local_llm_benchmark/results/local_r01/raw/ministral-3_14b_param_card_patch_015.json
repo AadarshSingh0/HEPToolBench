@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "coupling_block_correct": true,
+    "coupling_identifier_correct": true,
+    "coupling_new_value_correct": true,
+    "coupling_old_value_correct": true,
+    "coupling_update_present": true,
+    "decay_width_not_modified": true,
+    "decay_width_unchanged_acknowledged": true,
+    "file_to_modify_param_card": true,
+    "mass_block_correct": true,
+    "mass_identifier_correct": true,
+    "mass_new_value_correct": true,
+    "mass_old_value_correct": true,
+    "mass_unit_correct": true,
+    "mass_update_present": true,
+    "parseable_json": true,
+    "scan_point_label_correct": true,
+    "status_valid": true,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_markdown_fence",
+    "includes_explanation_not_json_only"
+  ],
+  "model": "ministral-3:14b",
+  "normalized_patch": {
+    "coupling_new_value": 0.1,
+    "decay_width_not_modified": true,
+    "file_to_modify": "param_card.dat",
+    "mass_new_value": 3.5,
+    "scan_point_label": "mS_3p5_gS_0p1",
+    "status": "valid"
+  },
+  "passed": true,
+  "score": 0.97,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/ministral-3_14b/param_card_patch_015/param_patch.json",
+  "task_id": "param_card_patch_015"
+}

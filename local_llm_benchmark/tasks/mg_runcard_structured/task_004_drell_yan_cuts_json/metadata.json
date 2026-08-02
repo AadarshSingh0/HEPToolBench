@@ -1,0 +1,13 @@
+{
+  "task_id": "mg_runcard_structured_004",
+  "title": "Structured MadGraph run-card settings for Drell-Yan with cuts",
+  "category": "mg_runcard_structured",
+  "level": "L2",
+  "mode": "structured_json",
+  "tools": ["madgraph"],
+  "timeout_seconds": 300,
+  "requires_execution": false,
+  "expected_artifacts": ["params.json"],
+  "physics_tags": ["sm", "drell_yan", "run_card", "cuts", "reproducibility", "structured_output"],
+  "description": "Extract structured run-card settings for event count, seed, beams, and lepton cuts."
+}

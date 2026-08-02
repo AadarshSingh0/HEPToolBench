@@ -1,0 +1,9 @@
+```text
+import model sm
+define p = g u c d s u~ c~ d~ s~
+p p > t t~
+output TTbar
+launch
+set ebeam1 6500
+set ebeam2 6500
+```

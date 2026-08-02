@@ -1,0 +1,12 @@
+```json
+{
+  "status": "success",
+  "process": "p p > h j",
+  "cross_section_pb": 2345,
+  "cross_section_uncertainty_pb": 12,
+  "input_unit": "fb",
+  "output_unit": "pb",
+  "nevents": 5000,
+  "event_file": "Events/run_02/unweighted_events.lhe.gz"
+}
+```

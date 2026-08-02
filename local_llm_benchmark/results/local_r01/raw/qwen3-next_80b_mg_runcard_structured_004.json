@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "builder_generates_valid_run_card": false,
+    "ebeam1_6500": false,
+    "ebeam2_6500": false,
+    "etal_2p5": false,
+    "iseed_42": false,
+    "nevents_10000": false,
+    "parseable_json": false,
+    "ptl_20": false,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_explanation_not_json_only",
+    "invalid_json_substring",
+    "not_parseable_json"
+  ],
+  "generated_run_card": null,
+  "model": "qwen3-next:80b",
+  "normalized_params": null,
+  "passed": false,
+  "score": 0,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/qwen3-next_80b/mg_runcard_structured_004/params.json",
+  "task_id": "mg_runcard_structured_004"
+}

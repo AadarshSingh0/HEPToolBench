@@ -1,0 +1,19 @@
+```json
+{
+  "status": "incomplete",
+  "process": "p p > t t~",
+  "requested_events": 10000,
+  "lhe_present": true,
+  "lhe_events": 10000,
+  "pythia8_requested": true,
+  "pythia8_present": true,
+  "pythia8_events": 10000,
+  "delphes_requested": true,
+  "delphes_present": false,
+  "missing_outputs": ["Events/run_01/tag_1_delphes_events.root"],
+  "event_count_consistent": true,
+  "failure_stage": "delphes",
+  "recommended_action": "rerun Delphes or fix the Delphes card/path before [K
+treating detector-level output as available"
+}
+```

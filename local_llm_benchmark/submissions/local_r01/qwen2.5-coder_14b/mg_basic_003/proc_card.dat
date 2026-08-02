@@ -1,0 +1,14 @@
+```text
+import model sm
+
+# Define particles
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+# Process definition
+p p > h j
+
+# Kinematics
+cd HJ
+generate_events 10000
+```

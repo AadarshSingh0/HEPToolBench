@@ -1,0 +1,12 @@
+model                                      N   total h    mean m   median m   warm med     p90 m
+---------------------------------------------------------------------------------------------------
+llama3:8b                                 28      0.14      0.31       0.30       0.29      0.47
+qwen3-coder-next:Q4_K_M                   28      0.27      0.57       0.37       0.36      0.65
+qwen2.5-coder:14b                         28      0.30      0.64       0.53       0.51      1.01
+llama3.3:70b                              28      1.48      3.18       2.56       2.48      5.09
+gemma4:26b                                28      1.85      3.96       3.26       3.08      7.86
+gemma4:31b                                28      5.69     12.18       8.69       8.59     22.64
+
+Saved: compiled_results/task_runtime.csv
+Saved: compiled_results/model_runtime_summary.csv
+Saved: tables/local_runtime_summary.tex

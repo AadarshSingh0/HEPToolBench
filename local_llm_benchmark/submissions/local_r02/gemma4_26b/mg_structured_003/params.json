@@ -1,0 +1,46 @@
+Thinking...
+*   Task: Extract structured MadGraph parameters for a specific physics pro[3D[K
+process.
+    *   Process: `p p > h j` (Standard Model Higgs plus jet production).
+    *   Center-of-mass energy ($\sqrt{s}$): 13 TeV.
+    *   Beam energy ($E_{\text{beam}}$): 6500 GeV per beam (since $2 \times[6D[K
+\times 6500 = 13000$ GeV).
+    *   Output directory: `HJ`.
+    *   Number of events (`nevents`): 10000.
+    *   Model: Standard Model ("sm").
+    *   Required Output Format: Single JSON object with specific schema. No[2D[K
+No explanations, no markdown fences.
+
+    *   `model`: "sm" (Standard Model).
+    *   `initial_state`: ["p", "p"] (protons).
+    *   `final_state`: ["h", "j"] (Higgs + jet).
+    *   `beam_energy_gev`: 6500.
+    *   `output_dir`: "HJ".
+    *   `nevents`: 10000.
+
+    ```json
+    {
+      "model": "sm",
+      "initial_state": ["p", "p"],
+      "final_state": ["h", "j"],
+      "beam_energy_gev": 6500,
+      "output_dir": "HJ",
+      "nevents": 10000
+    }
+    ```
+
+    *   Only the requested output file content? Yes.
+    *   No explanations? Yes.
+    *   One JSON object? Yes.
+    *   Correct schema? Yes.
+    *   No markdown fences? Yes.
+...done thinking.
+
+{
+  "model": "sm",
+  "initial_state": ["p", "p"],
+  "final_state": ["h", "j"],
+  "beam_energy_gev": 6500,
+  "output_dir": "HJ",
+  "nevents": 10000
+}

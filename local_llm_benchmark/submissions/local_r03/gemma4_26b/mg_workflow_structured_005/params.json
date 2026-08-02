@@ -1,0 +1,112 @@
+Thinking...
+*   Task: Extract structured workflow settings for a specific particle phys[4D[K
+physics process.
+    *   Process: `p p > t t~` (inclusive top-pair production).
+    *   Model: Standard Model (`sm`).
+    *   Energy: 13 TeV total center-of-mass energy $\rightarrow$ beam energ[5D[K
+energy per proton = 6500 GeV.
+    *   Output directory: `TTbar_P8_Delphes`.
+    *   Number of events: 10000.
+    *   Random seed: 42.
+    *   Showering: Pythia8 enabled.
+    *   Detector simulation: Delphes enabled.
+    *   MadSpin: disabled (`OFF`).
+
+    *   `model`: "sm" (Standard Model).
+    *   `initial_state`: ["p", "p"] (from `p p > ...`).
+    *   `final_state`: ["t", "t~"] (from `... > t t~`). Note: the prompt us[2D[K
+uses `t t~`. Usually, in JSON arrays for physics, it's split. The schema sh[2D[K
+shows `["t", "t~"]`.
+    *   `beam_energy_gev`: 6500.
+    *   `output_dir`: "TTbar_P8_Delphes".
+    *   `nevents`: 10000.
+    *   `iseed`: 42.
+    *   `shower`: "Pythia8" (as it is enabled).
+    *   `detector`: "Delphes" (as it is enabled).
+    *   `madspin`: "OFF" (as it is disabled).
+
+    ```json
+    {
+      "model": "sm",
+      "initial_state": ["p", "p"],
+      "final_state": ["t", "t~"],
+      "beam_energy_gev": 6500,
+      "output_dir": "TTbar_P8_Delphes",
+      "nevents": 10000,
+      "iseed": 42,
+      "shower": "Pythia8",
+      "detector": "Delphes",
+      "madspin": "OFF"
+    }
+    ```
+
+    *   Only the JSON object.
+    *   No explanations.
+    *   No markdown fences (though usually requested as "Return only one JS[2D[K
+JSON object", sometimes users mean raw text or code block, but the prompt s[1D[K
+says "Do not include... markdown fences"). Wait, "Do not include... markdow[7D[K
+markdown fences". I must provide raw JSON text.
+
+    *Self-Correction on Markdown Fences:* The instruction explicitly says: [K
+"Do not include explanations or markdown fences." This means no ```json ...[3D[K
+... ``` wrapper.
+
+    Let's check the values again.
+    `p p > t t~` $\rightarrow$ initial `["p", "p"]`, final `["t", "t~"]`.
+    `sm` is provided.
+    Energy: 13 TeV total / 2 = 6500 GeV per beam. Correct.
+    Output dir: `TTbar_P8_Delphes`. Correct.
+    nevents: 10000. Correct.
+    iseed: 42. Correct.
+    shower: "Pythia8" (enabled).
+    detector: "Delphes" (enabled).
+    madspin: "OFF" (disabled).
+
+    Final JSON structure check against schema:
+    `model`: "sm" - OK.
+    `initial_state`: ["p", "m"] -> wait, input says `p p`, so `["p", "p"]`.[6D[K
+"p"]`.
+    `final_state`: `["t", "t~"]` - OK.
+    `beam_energy_gev`: 6500 - OK.
+    `output_dir`: "TTbar_P8_Delphes" - OK.
+    `nevents`: 10000 - OK.
+    `iseed`: 42 - OK.
+    `shower`: "Pythia8" - OK.
+    `detector`: "Delphes" - OK.
+    `madspin`: "OFF" - OK.
+
+    *Wait*, the prompt says `t t~`. I will use exactly that in the array el[2D[K
+elements if needed, but usually, it's a list of particles. The schema shows[5D[K
+shows `["t", "t~"]`. This implies splitting by space/symbol.
+
+    One detail: "Return only one JSON object with this schema... Do not inc[3D[K
+include explanations or markdown fences."
+
+    Final check on values:
+    `p p > t t~`
+    Initial state: `p`, `p` $\rightarrow$ `["p", "p"]`.
+    Final state: `t`, `t~` $\rightarrow$ `["t", "t~"]`.
+    Model: `sm`.
+    Energy: 6500.
+    Dir: `TTbar_P8_Delphes`.
+    Events: 10000.
+    Seed: 42.
+    Shower: `Pythia8`.
+    Detector: `Delphes`.
+    Madspin: `OFF`.
+
+    Everything matches.
+...done thinking.
+
+{
+  "model": "sm",
+  "initial_state": ["p", "p"],
+  "final_state": ["t", "t~"],
+  "beam_energy_gev": 6500,
+  "output_dir": "TTbar_P8_Delphes",
+  "nevents": 10000,
+  "iseed": 42,
+  "shower": "Pythia8",
+  "detector": "Delphes",
+  "madspin": "OFF"
+}

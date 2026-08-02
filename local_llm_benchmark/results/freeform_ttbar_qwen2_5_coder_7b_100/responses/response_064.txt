@@ -1,0 +1,28 @@
+```python
+import os
+
+# Create output directory
+output_dir = 'ttbar_run'
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# Write MadGraph commands
+madgraph_script = f"""
+set lhefile {output_dir}/events.lhe.gz
+set pythia8file {output_dir}/pythia_events.dat.gz
+define p = d u s c b t~ ta~
+define j = g h w+ w- z q~ u~ d~ s~ c~ b~
+
+generate p p > ttbar, QCD
+output {output_dir}
+set nevents 10000
+run
+quit
+"""
+
+# Save the script to a file
+with open(os.path.join(output_dir, 'mg_commands.mg5'), 'w') as f:
+    f.write(madgraph_script)
+```
+
+This Python script will create a directory named `ttbar_run` and write the MadGraph command script to a file within that directory. The script sets up a proton-proton collision at 13 TeV, generates events for top quark-antiquark production (without decays), and outputs the results to the specified directory.

@@ -1,0 +1,11 @@
+```markdown
+# mg5_proc_card.dat
+#
+import model sm
+
+define p = g u c d s b u~ c~ d~ s~ b~
+define j = g u c d s b u~ c~ d~ s~ b~
+
+generate p p > t t~
+output sm_ttbar
+```

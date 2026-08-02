@@ -1,0 +1,5 @@
+{"error_type": "invalid_process_and_output", "faulty_lines": ["process p p [K
+-> h jet", "output HiggsJet"], "corrected_lines": ["generate p p > h j", "o[2D[K
+"output HJ"], "output_dir": "HJ", "reason": "Process line uses 'jet' instea[6D[K
+instead of 'j' and arrow notation instead of '>', and output directory shou[4D[K
+should be 'HJ'; beam settings are correct at 6500 GeV each."}

@@ -1,0 +1,17 @@
+```python
+# MadGraph5_aMC@NLO
+
+import os
+
+os.system("cp -r /path/to/MadGraph5_aMCatNLO /tmp/ttbar_run")
+os.chdir("/tmp/ttbar_run")
+
+os.system("./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=LO --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000")
+os.system("./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=NLO --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000")
+os.system("./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=NLL --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000")
+
+os.system("./bin/gridpack_generation.py -f 'p p > t anti-t QCD' --model=SM --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000")
+
+os.chdir("/tmp")
+os.system("rm -rf /tmp/ttbar_run")
+```

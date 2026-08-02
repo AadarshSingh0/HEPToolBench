@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "correct_jet_definition": true,
+    "correct_process": false,
+    "correct_proton_definition": true,
+    "defines_jet": true,
+    "defines_proton": true,
+    "ebeam1_6500": false,
+    "ebeam2_6500": false,
+    "has_launch": false,
+    "has_output_hj": false,
+    "imports_sm": false,
+    "no_long_explanation": true,
+    "no_markdown_fence": false,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true
+  },
+  "failure_modes": [
+    "includes_markdown_fence",
+    "missing_generate_keyword",
+    "missing_or_wrong_output",
+    "missing_or_wrong_process",
+    "wrong_or_missing_beam_energy"
+  ],
+  "model": "llama3:8b",
+  "passed": false,
+  "score": 0.285,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/llama3_8b/mg_basic_003/proc_card.dat",
+  "task_id": "mg_basic_003"
+}

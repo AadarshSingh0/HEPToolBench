@@ -1,0 +1,14 @@
+{
+  "error_type": "invalid_process_syntax",
+  "faulty_lines": ["define p = g u c d s u~ c~ d~ s~", "p p > e+ e-"],
+  "corrected_lines": [
+    "generate p p > e+ e-",
+    "set ebeam1 = 6500",
+    "set ebeam2 = 6500"
+  ],
+  "output_dir": "DY_ee",
+  "reason": "\"define\" and custom particle notation are invalid; use 'gene[5D[K
+'generate' with standard MadGraph syntax and correct beam-energy commands."[10D[K
+commands."
+}
+```

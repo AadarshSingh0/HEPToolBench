@@ -1,0 +1,2 @@
+model,task_id,score,passed,failure_modes
+phi4-reasoning:plus,scan_plan_014,0.8,False,includes_explanation_not_json_only;terminal_artifacts_removed;wrong_or_missing_scan_values

@@ -1,0 +1,6 @@
+```
+generate p p > t t~
+output ttbar_run -f --overwrite
+model SM
+run_card.ttbar_run
+```

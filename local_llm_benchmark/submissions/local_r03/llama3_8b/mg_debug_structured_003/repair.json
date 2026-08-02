@@ -1,0 +1,10 @@
+{
+"error_type": "SyntaxError",
+"faulty_lines": ["process p p -> h jet"],
+"corrected_lines": ["generate p p > h j", "output HJ", "set ebeam1 6500 GeV[3D[K
+GeV", "set ebeam2 6500 GeV"],
+"output_dir": "HJ",
+"reason": "\"Invalid process command; replaced with generate and added MadG[4D[K
+MadGraph jet multiparticle label. Also, corrected output directory, beam-en[7D[K
+beam-energy settings.\""
+}

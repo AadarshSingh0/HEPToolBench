@@ -1,0 +1,7 @@
+{
+  "task_id": "plot_data_019",
+  "name": "Prepare plot-ready scan data",
+  "category": "scan",
+  "artifact": "plot_data.json",
+  "description": "Extract ordered plot arrays, uncertainties, log-scale decision, and benchmark marker from a completed scan table."
+}

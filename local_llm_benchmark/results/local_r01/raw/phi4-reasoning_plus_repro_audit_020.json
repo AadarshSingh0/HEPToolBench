@@ -1,0 +1,39 @@
+{
+  "checks": {
+    "affected_scan_points_correct": false,
+    "can_reproduce_false": false,
+    "detector_level_claimed_false": false,
+    "missing_optional_files_correct": false,
+    "missing_required_files_correct": false,
+    "recommended_action_correct": false,
+    "recoverable_output": true,
+    "safe_archive_false": false,
+    "status_not_reproducible": true
+  },
+  "failure_modes": [
+    "not_parseable_json",
+    "detector_level_claim_wrong",
+    "missing_required_files_wrong",
+    "missing_optional_files_wrong",
+    "affected_scan_points_wrong",
+    "can_reproduce_wrong",
+    "safe_archive_wrong",
+    "recommended_action_incomplete"
+  ],
+  "model": "phi4-reasoning:plus",
+  "normalized_audit": {
+    "affected_scan_points_gev": [],
+    "can_reproduce_parton_level_scan": true,
+    "detector_level_claimed": true,
+    "missing_optional_files": [],
+    "missing_required_files": [],
+    "recommended_action": "...",
+    "safe_for_paper_archive": true,
+    "status": "reproducible or not_reproducible"
+  },
+  "passed": false,
+  "score": 0.2,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/phi4-reasoning_plus/repro_audit_020/repro_audit.json",
+  "task_id": "repro_audit_020"
+}

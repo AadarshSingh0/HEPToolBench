@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Define particles and antiparticles
+define p = g u c d s u~ c~ d~ s~
+
+# Set random seed for reproducibility
+set nevents 10000
+set seed 42
+
+# Beam energies (for proton-proton collisions at sqrt(s) = 13 TeV)
+set LHC_mb1 6500.
+set LHC_mb2 6500.
+
+# Matrix element process and order in alpha_s
+generate p p > t t~ QED<=2 QCD=0 [QCD]
+
+# Set output directory for MadGraph5_aMC@NLO files
+output TTbar_P8_Delphes
+
+# Settings for the Pythia8 shower, matching and detector simulation with De[2D[K
+Delphes
+launch TTbar_P8_Delphes
+set automatic_width False
+set run_card dat/pythia_pp_13TeV.dat
+
+# Disable MadSpin (no decay of top quarks)
+set allow_decay False

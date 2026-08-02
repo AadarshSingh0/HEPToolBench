@@ -1,0 +1,101 @@
+run_number,file,category,antitop_token,generate_line
+1,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_001.txt,unrecognized_process_syntax,,generate p p > t~ t
+2,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_002.txt,unrecognized_process_syntax,,"generate p p > t~ t, Z/nu nu~"
+3,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_003.txt,textually_correct_antitop,t~,generate p p > t t~
+4,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_004.txt,unrecognized_process_syntax,,generate p p > t~ t [QCD]
+5,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_005.txt,other_antitop_token,\~t,generate p p > t \~t [QCD]
+6,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_006.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+7,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_007.txt,missing_generate_command,,
+8,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_008.txt,unrecognized_process_syntax,,generate p p > t~ t [QCD]
+9,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_009.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+10,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_010.txt,unrecognized_process_syntax,,generate p p > t~ t [QCD]
+11,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_011.txt,unrecognized_process_syntax,,generate p p > t~ t
+12,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_012.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+13,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_013.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+14,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_014.txt,textually_correct_antitop,t~,generate p p > t t~ QCD
+15,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_015.txt,textually_correct_antitop,t~,generate p p > t t~ @nlo -a QCD
+16,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_016.txt,textually_correct_antitop,t~,generate p p > t t~
+17,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_017.txt,missing_generate_command,,
+18,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_018.txt,unrecognized_process_syntax,,generate p p > t~ t
+19,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_019.txt,missing_generate_command,,
+20,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_020.txt,textually_correct_antitop,t~,generate p p > t t~
+21,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_021.txt,other_antitop_token,\~t,generate p p > t \~t [QCD]
+22,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_022.txt,missing_generate_command,,
+23,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_023.txt,missing_generate_command,,
+24,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_024.txt,other_antitop_token,~t,generate p p > t ~t [QCD]
+25,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_025.txt,textually_correct_antitop,t~,generate p p > t t~ -qcd
+26,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_026.txt,unrecognized_process_syntax,,"generate p p > tta~, add=ggH"
+27,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_027.txt,invalid_antitop_name,anti-t,generate p p > t anti-t [QCD]
+28,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_028.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+29,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_029.txt,unrecognized_process_syntax,,"generate p p > t~ t, QCD"
+30,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_030.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+31,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_031.txt,unrecognized_process_syntax,,generate p p > t-t~ -qcd
+32,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_032.txt,unrecognized_process_syntax,,generate p p > t~ t QCD=off
+33,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_033.txt,missing_generate_command,,
+34,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_034.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+35,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_035.txt,invalid_antitop_name,anti-t,generate p p > t anti-t [QCD]
+36,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_036.txt,missing_generate_command,,
+37,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_037.txt,textually_correct_antitop,t~,generate p p > t t~ QCD=off
+38,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_038.txt,unrecognized_process_syntax,,"generate p p > t~ t, q q~ > b b~, q~ q > b~ b"
+39,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_039.txt,unrecognized_process_syntax,,generate p p > t~ t [QCD]
+40,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_040.txt,missing_generate_command,,
+41,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_041.txt,invalid_antitop_name,anti-t,generate p p > t anti-t / q q~
+42,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_042.txt,missing_generate_command,,
+43,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_043.txt,textually_correct_antitop,t~,generate p p > t t~
+44,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_044.txt,textually_correct_antitop,t~,generate p p > t t~
+45,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_045.txt,other_antitop_token,\~t,generate p p > t \~t [QCD]
+46,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_046.txt,unrecognized_process_syntax,,generate p p > t~ t with threshold 130
+47,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_047.txt,unrecognized_process_syntax,,generate p p > t~ t QCD=0
+48,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_048.txt,missing_generate_command,,
+49,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_049.txt,unrecognized_process_syntax,,generate p p > t~ t
+50,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_050.txt,unrecognized_process_syntax,,generate p p > t~ t
+51,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_051.txt,missing_generate_command,,
+52,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_052.txt,invalid_antitop_name,anti-t,generate p p > t anti-t [QCD]
+53,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_053.txt,textually_correct_antitop,t~,generate p p > t t~
+54,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_054.txt,textually_correct_antitop,t~,generate p p > t t~ QCD=on[number=5]
+55,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_055.txt,other_antitop_token,\~t,generate p p > t \~t [QCD]
+56,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_056.txt,textually_correct_antitop,t~,generate p p > t t~
+57,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_057.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+58,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_058.txt,invalid_antitop_name,anti-t,generate p p > t anti-t QCD=off QED=off
+59,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_059.txt,unrecognized_process_syntax,,generate p p > t~ t
+60,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_060.txt,missing_generate_command,,
+61,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_061.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+62,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_062.txt,unrecognized_process_syntax,,"generate p p > t~ t, QCD"
+63,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_063.txt,unrecognized_process_syntax,,generate p p > t~ t QCD=on QED=off
+64,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_064.txt,unrecognized_process_syntax,,"generate p p > ttbar, QCD"
+65,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_065.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+66,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_066.txt,textually_correct_antitop,t~,generate p p > t t~
+67,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_067.txt,unrecognized_process_syntax,,"generate p p > t~ t, QCD=QCD"
+68,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_068.txt,textually_correct_antitop,t~,generate p p > t t~
+69,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_069.txt,unrecognized_process_syntax,,generate p p > t~ t
+70,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_070.txt,textually_correct_antitop,t~,generate p p > t t~
+71,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_071.txt,missing_generate_command,,
+72,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_072.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+73,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_073.txt,textually_correct_antitop,t~,generate p p > t t~
+74,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_074.txt,textually_correct_antitop,t~,generate p p > t t~ -a QCD
+75,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_075.txt,invalid_antitop_name,anti-t,generate p p > t anti-t [QCD]
+76,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_076.txt,missing_generate_command,,
+77,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_077.txt,unrecognized_process_syntax,,generate p p > t~ t
+78,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_078.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+79,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_079.txt,missing_generate_command,,
+80,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_080.txt,unrecognized_process_syntax,,"generate p p > t~ t, q-qbar -> u d s c b t t~"
+81,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_081.txt,missing_generate_command,,
+82,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_082.txt,missing_generate_command,,
+83,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_083.txt,unrecognized_process_syntax,,generate p p > t~ t [QCD]
+84,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_084.txt,textually_correct_antitop,t~,generate p p > t t~ [QCD]
+85,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_085.txt,textually_correct_antitop,t~,generate p p > t t~ QCD
+86,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_086.txt,unrecognized_process_syntax,,generate p p > t~ t
+87,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_087.txt,invalid_antitop_name,anti-t,generate p p > t anti-t [QCD] order: QCD
+88,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_088.txt,textually_correct_antitop,t~,generate p p > t t~
+89,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_089.txt,textually_correct_antitop,t~,generate p p > t t~
+90,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_090.txt,textually_correct_antitop,t~,generate p p > t t~
+91,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_091.txt,textually_correct_antitop,t~,generate p p > t t~ --no-loop --max-point=100000
+92,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_092.txt,invalid_antitop_name,anti-t,generate p p > t anti-t QCD=off model SM
+93,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_093.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+94,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_094.txt,unrecognized_process_syntax,,generate p p > t-t~ [QCD]
+95,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_095.txt,invalid_antitop_name,anti-t,generate p p > t anti-t [QCD]
+96,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_096.txt,invalid_antitop_name,anti-t,generate p p > t anti-t
+97,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_097.txt,textually_correct_antitop,t~,generate p p > t t~
+98,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_098.txt,unrecognized_process_syntax,,generate p p > t~ t [QCD]
+99,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_099.txt,missing_generate_command,,
+100,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_100.txt,unrecognized_process_syntax,,generate p p > t~ t QCD=off

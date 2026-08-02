@@ -1,0 +1,29 @@
+Thinking...
+Okay, let's see. The task is to diagnose a failed MadGraph run based on the[3D[K
+the provided log. I need to return a JSON object with specific fields.
+
+First, the status is always "failed" as per the schema. The process is give[4D[K
+given as "p p > t tbar", which matches the input. The error_type should be [K
+"invalid_antiparticle_syntax" because the log says "No particle named 'tbar[5D[K
+'tbar' is defined... use 't~'".
+
+The offending line is exactly "generate p p > t tbar" as in the command his[3D[K
+history. The expected line from the log's suggested corrected process is "g[2D[K
+"generate p p > t t~". The fix is to replace tbar with t~.
+
+I need to make sure all fields are correctly filled. The JSON structure mus[3D[K
+must match exactly. Let me check the schema again: status, process, error_t[7D[K
+error_type, offending_line, expected_line, fix. All present.
+
+The log says "Suggested corrected process line: generate p p > t t~", so ex[2D[K
+expected_line is that. Fix instruction is "replace tbar with t~ in the gene[4D[K
+generate line".
+
+No explanations needed, just the JSON. So the output should be a JSON objec[5D[K
+object with those values.
+...done thinking.
+
+{"status": "failed", "process": "p p > t tbar", "error_type": "invalid_anti[13D[K
+"invalid_antiparticle_syntax", "offending_line": "generate p p > t tbar", "[1D[K
+"expected_line": "generate p p > t t~", "fix": "replace tbar with t~ in the[3D[K
+the generate line"}

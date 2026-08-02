@@ -1,0 +1,8 @@
+{"status": "incomplete", "process": "p p > h j", "process_correct": true, "[1D[K
+"event_file": "Events/run_03/unweighted_events.lhe.gz", "file_present": tru[3D[K
+true, "requested_events": 10000, "observed_events": 9820, "event_count_matc[17D[K
+"event_count_matches": false, "missing_events": 180, "cross_section_pb": 2.[2D[K
+2.345, "cross_section_uncertainty_pb": 0.012, "negative_weight_events": 0, [K
+"negative_weight_fraction": 0.0, "failure_stage": "event_count_validation",[25D[K
+"event_count_validation", "recommended_action": "Generate additional events[6D[K
+events to reach the requested count of 10000"}

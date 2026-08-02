@@ -1,0 +1,7 @@
+```bash
+generate p p > t t~
+output ttbar_run -f
+model SM
+process [t t~]
+run 1000
+```

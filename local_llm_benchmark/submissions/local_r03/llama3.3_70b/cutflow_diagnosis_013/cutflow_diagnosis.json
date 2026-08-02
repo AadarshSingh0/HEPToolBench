@@ -1,0 +1,14 @@
+```json
+{
+  "status": "low_statistics",
+  "final_signal_events": 48,
+  "final_background_events": 120,
+  "dominant_signal_loss_cut": "At least two b-tagged jets",
+  "dominant_signal_loss_step_efficiency": 0.209677,
+  "dominant_signal_loss_fraction": 0.790323,
+  "s_over_sqrt_b": 4.32,
+  "statistically_usable": false,
+  "recommended_action": "Increase the statistics of the sample to achieve a[1D[K
+a final signal yield of at least 100 events."
+}
+```

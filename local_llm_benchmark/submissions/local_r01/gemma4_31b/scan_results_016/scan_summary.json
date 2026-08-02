@@ -1,0 +1,93 @@
+Thinking...
+*   Task: Parse a particle-physics scan result table and output a JSON summ[4D[K
+summary.
+    *   Required fields: `status`, `scan_parameter`, `total_points`, `succe[6D[K
+`successful_points`, `failed_points`, `failed_masses_gev`, `failed_run_dire[16D[K
+`failed_run_directories`, `max_cross_section_mass_gev`, `max_cross_section_[19D[K
+`max_cross_section_pb`, `min_successful_cross_section_mass_gev`, `min_succe[10D[K
+`min_successful_cross_section_pb`, `monotonic_decreasing_successful_points`[40D[K
+`monotonic_decreasing_successful_points`, `rerun_required`, `recommended_ac[15D[K
+`recommended_action`.
+
+    *   Process: $p p > S > e+ e-$ at 13 TeV pp.
+    *   Scan parameter: mS in GeV.
+    *   Data table:
+        *   mS=1.0, run=run_mS_1p0, status=success, cs=12.40
+        *   mS=1.5, run=run_mS_1p5, status=success, cs=8.10
+        *   mS=2.0, run=run_mS_2p0, status=failed, cs=nan
+        *   mS=2.5, run=run_mS_2p5, status=success, cs=3.20
+        *   mS=3.0, run=run_mS_3p0, status=success, cs=1.70
+
+    *   `status`: "incomplete" (since point mS=2.0 failed).
+    *   `scan_parameter`: "mS".
+    *   `total_points`: 5.
+    *   `successful_points`: 4.
+    *   `failed_points`: 1.
+    *   `failed_masses_gev`: [2.0].
+    *   `failed_run_directories`: ["run_mS_2p0"].
+    *   Successful points:
+        *   (1.0, 12.40)
+        *   (1.5, 8.10)
+        *   (2.5, 3.20)
+        *   (3.0, 1.70)
+    *   `max_cross_section_mass_gev`: 1.0 (Highest cs is 12.40).
+    *   `max_cross_section_pb`: 12.40.
+    *   `min_successful_cross_section_mass_gev`: 3.0 (Lowest successful cs [K
+is 1.70).
+    *   `min_successful_cross_section_pb`: 1.70.
+    *   `monotonic_decreasing_successful_points`: True (12.40 > 8.10 > 3.20[4D[K
+3.20 > 1.70).
+    *   `rerun_required`: True (because status is incomplete/failed points [K
+exist).
+    *   `recommended_action`: "Rerun failed point mS=2.0" or similar.
+
+    *   Check the table again.
+    *   Status: one failure at 2.0 -> `incomplete`.
+    *   Parameter: `mS`.
+    *   Total: 5. Success: 4. Failed: 1.
+    *   Failed masses: [2.0]. Run dirs: ["run_mS_2p0"].
+    *   Max cross section: (1.0, 12.40).
+    *   Min success cross section: (3.0, 1.70).
+    *   Monotonicity check: 12.40 -> 8.10 -> 3.20 -> 1.70. Yes, decreasing.[11D[K
+decreasing.
+    *   Rerun required: True.
+    *   Action: Rerun failed point(s).
+
+    ```json
+    {
+      "status": "incomplete",
+      "scan_parameter": "mS",
+      "total_points": 5,
+      "successful_points": 4,
+      "failed_points": 1,
+      "failed_masses_gev": [2.0],
+      "failed_run_directories": ["run_mS_2p0"],
+      "max_cross_section_mass_gev": 1.0,
+      "max_cross_section_pb": 12.40,
+      "min_successful_cross_section_mass_gev": 3.0,
+      "min_successful_cross_section_pb": 1.70,
+      "monotonic_decreasing_successful_points": true,
+      "rerun_required": true,
+      "recommended_action": "Rerun failed point mS=2.0"
+    }
+    ```
+...done thinking.
+
+```json
+{
+  "status": "incomplete",
+  "scan_parameter": "mS",
+  "total_points": 5,
+  "successful_points": 4,
+  "failed_points": 1,
+  "failed_masses_gev": [2.0],
+  "failed_run_directories": ["run_mS_2p0"],
+  "max_cross_section_mass_gev": 1.0,
+  "max_cross_section_pb": 12.40,
+  "min_successful_cross_section_mass_gev": 3.0,
+  "min_successful_cross_section_pb": 1.70,
+  "monotonic_decreasing_successful_points": true,
+  "rerun_required": true,
+  "recommended_action": "Rerun failed point mS=2.0"
+}
+```

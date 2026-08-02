@@ -1,0 +1,49 @@
+Thinking...
+*   Role: Particle-physics software benchmark tester.
+    *   Task: Diagnose a failed MadGraph run from a log file.
+    *   Input: `mg_failed_run.log`.
+    *   Output: A single JSON object with specific fields (`status`, `proce[6D[K
+`process`, `error_type`, `offending_line`, `expected_line`, `fix`).
+    *   Constraint: No explanations, no markdown fences, only the JSON obje[4D[K
+object.
+
+    *   Requested process: `p p > t tbar`
+    *   Offending command: `generate p p > t tbar`
+    *   Error message: `No particle named "tbar" is defined in the current [K
+model. In MadGraph antiparticles are written with a tilde. For an anti-top [K
+quark, use "t~", not "tbar".`
+    *   Suggested corrected line: `generate p p > t t~`
+
+    *   `status`: "failed"
+    *   `process`: "p p > t tbar"
+    *   `error_type`: "invalid_antiparticle_syntax" (Based on the error mes[3D[K
+message about tildes for antiparticles).
+    *   `offending_line`: "generate p p > t tbar"
+    *   `expected_line`: "generate p p > t t~"
+    *   `fix`: "replace tbar with t~ in the generate line"
+
+    ```json
+    {
+      "status": "failed",
+      "process": "p p > t tbar",
+      "error_type": "invalid_antiparticle_syntax",
+      "offending_line": "generate p p > t tbar",
+      "expected_line": "generate p p > t t~",
+      "fix": "replace tbar with t~ in the generate line"
+    }
+    ```
+
+    *   Preserve offending line? Yes (`generate p p > t tbar`).
+    *   Use expected line from log? Yes (`generate p p > t t~`).
+    *   No explanations? Yes.
+    *   No markdown fences? Yes.
+...done thinking.
+
+{
+  "status": "failed",
+  "process": "p p > t tbar",
+  "error_type": "invalid_antiparticle_syntax",
+  "offending_line": "generate p p > t tbar",
+  "expected_line": "generate p p > t t~",
+  "fix": "replace tbar with t~ in the generate line"
+}

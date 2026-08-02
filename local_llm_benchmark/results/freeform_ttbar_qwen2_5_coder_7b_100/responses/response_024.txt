@@ -1,0 +1,10 @@
+```bash
+generate p p > t ~t [QCD]
+output ttbar_run
+launch
+set lhef:allowDifferentLHEFtoRun true
+run 10
+book 2
+analyze
+exit
+```

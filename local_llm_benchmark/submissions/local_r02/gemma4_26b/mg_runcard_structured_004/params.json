@@ -1,0 +1,77 @@
+Thinking...
+*   Task: Extract structured MadGraph run-card settings from a provided des[3D[K
+description.
+    *   Input data:
+        *   Process: `p p > e+ e-`
+        *   Energy (total): 13 TeV (implied by beam energies $6500 + 6500 =[1D[K
+= 13000$ GeV).
+        *   Number of events: 10000.
+        *   Random seed: 42.
+        *   Beam energy 1: 6500 GeV.
+        *   Beam energy 2: 6500 GeV.
+        *   Min charged-lepton $p_T$: 20 GeV.
+        *   Max charged-lepton $\eta$: 2.5.
+    *   Output Format: Single JSON object with specific keys (`nevents`, `i[2D[K
+`iseed`, `ebeam1_gev`, `ebeam2_gev`, `ptl_min_gev`, `eta_l_max`).
+    *   Constraint: No explanations, no markdown fences.
+
+    *   `nevents`: 10000
+    *   `iseed`: 42
+    *   `ebeam1_gev`: 6500
+    *   `هام`: `ebeam2_gev`: 6500
+    *   `ptl_min_gev`: 20
+    *   `eta_l_max`: 2.5
+
+    ```json
+    {
+      "nevents": 10000,
+      "iseed": 42,
+      "ebeam1_gev": 6500,
+      "ebeam2_gev": 6500,
+      "ptl_min_gev": 20,
+      "eta_l_max": 2.5
+    }
+    ```
+
+    *   Return only the JSON object.
+    *   No explanations.
+    *   No markdown fences (important!).
+
+    Check values:
+    - nevents: 10000 (Correct)
+    - iseed: 42 (Correct)
+    - ebeam1_gev: 6500 (Correct)
+    - ebeam2_gev: 6500 (Correct)
+    - ptl_min_gev: 20 (Correct)
+    - eta_l_max: 2.5 (Correct)
+
+    Wait, "Do not include explanations or markdown fences."
+    So the output should be just:
+    {"nevents": 10000, "iseed": 42, "ebeam1_gev": 6500, "ebeam2_gev": 6500,[5D[K
+6500, "ptl_min_gev": 20, "eta_l_max": 2.5}
+
+    Wait, some users might expect the pretty-printed JSON but without the t[1D[K
+triple backticks. Let's provide it as a clean JSON object.
+
+    Let's re-read: "Return only one JSON object... Do not include explanati[9D[K
+explanations or markdown fences."
+
+    Final check of keys/values:
+    nevents -> 10000
+    iseed -> 42
+    ebeam1_gev -> 6500
+    ebeam2_gev -> 6500
+    ptl_min_gev -> 20
+    eta_l_max -> 2.5
+
+    Everything looks correct.
+...done thinking.
+
+{
+  "nevents": 10000,
+  "iseed": 42,
+  "ebeam1_gev": 6500,
+  "ebeam2_gev": 6500,
+  "ptl_min_gev": 20,
+  "eta_l_max": 2.5
+}

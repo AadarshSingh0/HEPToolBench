@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "cross_section_correct": true,
+    "cross_section_uncertainty_correct": true,
+    "event_count_mismatch_reported": true,
+    "event_file_correct": true,
+    "failure_stage_event_count": true,
+    "file_present": true,
+    "missing_events_correct": true,
+    "negative_weight_events_correct": true,
+    "negative_weight_fraction_correct": true,
+    "observed_events_correct": true,
+    "parseable_json": true,
+    "process_correct": true,
+    "process_flag_correct": true,
+    "recommended_action_mentions_event_count": true,
+    "requested_events_correct": true,
+    "status_incomplete": true,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_markdown_fence"
+  ],
+  "model": "gemma4:26b",
+  "normalized_summary": {
+    "cross_section_pb": 2.345,
+    "cross_section_uncertainty_pb": 0.012,
+    "event_count_matches": false,
+    "event_file": "Events/run_03/unweighted_events.lhe.gz",
+    "failure_stage": "event_count_validation",
+    "file_present": true,
+    "missing_events": 180,
+    "negative_weight_events": 0,
+    "negative_weight_fraction": 0.0,
+    "observed_events": 9820,
+    "process": "p p > h j",
+    "process_correct": true,
+    "recommended_action": "generate more events to meet the requested cou count.",
+    "requested_events": 10000,
+    "status": "incomplete"
+  },
+  "passed": true,
+  "score": 0.97,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r02_clean/submissions/gemma4_26b/lhe_sanity_012/sanity.json",
+  "task_id": "lhe_sanity_012"
+}

@@ -1,0 +1,9 @@
+```bash
+generate p p > t anti-t
+output ttbar_run
+set nlo:all = on
+set process_config[1]:narrow_widths = off
+execute
+save
+exit
+```

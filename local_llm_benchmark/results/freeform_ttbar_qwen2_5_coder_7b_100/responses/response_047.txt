@@ -1,0 +1,9 @@
+```
+import model sm
+define p = g u c d s t b~
+define j = g u c d s
+generate p p > t~ t QCD=0
+output ttbar_run --overwrite
+run 1
+quit
+```

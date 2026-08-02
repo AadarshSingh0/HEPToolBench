@@ -1,0 +1,70 @@
+Thinking...
+*   Task: Create a JSON reproducibility audit based on `analysis_package_ma[20D[K
+`analysis_package_manifest.txt`.
+    *   Output format: Only JSON, no explanations or markdown fences.
+
+    *   Intended scan masses: 1.0, 1.5, 2.0, 2.5, 3.0 GeV (Total: 5).
+    *   Detector-level results claimed: `false`.
+    *   Required files for parton-level scan:
+        1.  UFO model directory (`models/ScalarUFO/`): present.
+        2.  `proc_card.dat`: present.
+        3.  `run_card.dat`: present.
+        4.  `param_card.dat` for every mass (5 required):
+            *   mS_1p0.dat: present.
+            *   mS_1p5.dat: present.
+            *   mS_2p0.dat: present.
+            *   mS_2p5.dat: **missing**.
+            *   mS_3p0.dat: present.
+        5.  Random-seed log for every mass (5 required):
+            *   mS_1p0_seed.txt: present.
+            *   mS_1p5_seed.txt: present.
+            *   mS_2p0_seed.txt: present.
+            *   mS_2p5_seed.txt: **missing**.
+            *   mS_3p0_seed.txt: present.
+        6.  Final scan results table (`results/scan_results.csv`): present.[8D[K
+present.
+        7.  Plotting script (`scripts/make_scan_plot.py`): present.[8D[K
+present.
+
+    *   Optional files (since detector-level = false): Pythia8 and Delphes [K
+cards. Both are absent, but this is allowed.
+
+    *   `status`: `not_reproducible` (because required files for the 2.5 Ge[2D[K
+GeV mass point are missing).
+    *   `detector_level_claimed`: `false`.
+    *   `missing_required_files`: `["cards/param_cards/mS_2p5.dat", "logs/m[7D[K
+"logs/mS_2p5_seed.txt"]`.
+    *   `missing_optional_files`: `["cards/pythia8.cmnd", "cards/delphes_ca[17D[K
+"cards/delphes_card.dat"]`.
+    *   `affected_scan_points_gev`: `[2.5]`.
+    *   `can_reproduce_parton_level_scan`: `false` (cannot reproduce the fu[2D[K
+full scan).
+    *   `safe_for_paper_archive`: `false` (all required files are not prese[5D[K
+present).
+    *   `recommended_action`: "Provide missing param card and seed log for [K
+2.5 GeV mass point."
+
+    *   Is it only JSON? Yes.
+    *   Are there fences? No.
+    *   Are explanations included? No.
+...done thinking.
+
+{
+  "status": "not_reproducible",
+  "detector_level_claimed": false,
+  "missing_required_files": [
+    "cards/param_cards/mS_2p5.dat",
+    "logs/mS_2p5_seed.txt"
+  ],
+  "missing_optional_files": [
+    "cards/pythia8.cmnd",
+    "cards/delphes_card.dat"
+  ],
+  "affected_scan_points_gev": [
+    2.5
+  ],
+  "can_reproduce_parton_level_scan": false,
+  "safe_for_paper_archive": false,
+  "recommended_action": "Provide missing param card and random-seed log for[3D[K
+for the 2.5 GeV scan point."
+}

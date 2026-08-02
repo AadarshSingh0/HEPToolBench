@@ -1,0 +1,41 @@
+Thinking...
+*   Task: Extract physics intent for a MadGraph run.
+    *   Process: Drell-Yan production (`p p > e+ e-`).
+    *   CMS energy: 13 TeV (proton-proton).
+    *   Beam energy Calculation: $13 \text{ TeV} / 2 = 6.5 \text{ TeV} = 65[2D[K
+6500 \text{ GeV}$.
+    *   Desired Output: A specific JSON object following a provided schema.[7D[K
+schema.
+
+    *   `model`: "sm" (Standard Model).
+    *   `initial_state`: ["p", "p"].
+    *   `final_state`: ["e+", "e-"].
+    *   `beam_energy_gev`: 6500.
+    *   `output_dir`: "DY_ee" (based on the provided schema example, though[6D[K
+though usually derived from process).
+    *   `nevents`: 10000 (standard default or based on schema example).
+
+    ```json
+    {
+      "model": "sm",
+      "initial_state": ["p", "p"],
+      "final_state": ["e+", "e-"],
+      "beam_energy_gev": 6500,
+      "output_dir": "DY_ee",
+      "nevents": 10000
+    }
+    ```
+
+Ensure no explanations or additional text.
+...done thinking.
+
+```json
+{
+  "model": "sm",
+  "initial_state": ["p", "p"],
+  "final_state": ["e+", "e-"],
+  "beam_energy_gev": 6500,
+  "output_dir": "DY_ee",
+  "nevents": 10000
+}
+```

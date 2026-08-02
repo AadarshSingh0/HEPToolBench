@@ -1,0 +1,14 @@
+{
+  "error_type": "SyntaxError",
+  "faulty_lines": [
+    "process p p -> h jet",
+    "output HiggsJet"
+  ],
+  "corrected_lines": [
+    "generate p p > h j",
+    "output HJ"
+  ],
+  "output_dir": "HJ",
+  "reason": "Replaced 'jet' with 'j' in the process line and corrected the [K
+output directory name."
+}

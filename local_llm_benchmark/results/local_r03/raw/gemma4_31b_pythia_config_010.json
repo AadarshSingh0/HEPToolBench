@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "failure_stage_parton_level": true,
+    "fsr_enabled": true,
+    "hadronization_enabled": true,
+    "hepmc_output_enabled": true,
+    "isr_enabled": true,
+    "missing_mpi_fix_listed": true,
+    "mpi_detected_off": true,
+    "number_of_events_correct": true,
+    "parseable_json": true,
+    "recommended_fix_mentions_mpi": true,
+    "seed_fixed": true,
+    "seed_value_correct": true,
+    "status_invalid": true,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_explanation_not_json_only"
+  ],
+  "model": "gemma4:31b",
+  "normalized_summary": {
+    "failure_stage": "parton_level",
+    "fsr_enabled": true,
+    "hadronization_enabled": true,
+    "hepmc_output_enabled": true,
+    "isr_enabled": true,
+    "missing_or_wrong_settings": [
+      "PartonLevel:MPI = on"
+    ],
+    "mpi_enabled": false,
+    "number_of_events": 10000,
+    "recommended_fix": "set partonlevel:mpi = on",
+    "seed_fixed": true,
+    "seed_value": 42,
+    "status": "invalid"
+  },
+  "passed": true,
+  "score": 0.97,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r03_clean/submissions/gemma4_31b/pythia_config_010/validation.json",
+  "task_id": "pythia_config_010"
+}

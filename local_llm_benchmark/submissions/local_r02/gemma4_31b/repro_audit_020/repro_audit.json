@@ -1,0 +1,69 @@
+Thinking...
+*   Goal: Return a JSON reproducibility audit based on `analysis_package_ma[20D[K
+`analysis_package_manifest.txt`.
+    *   Output format: Only the JSON content, no explanations or markdown f[1D[K
+fences.
+
+    *   Intended scan masses: 1.0, 1.5, 2.0, 2.5, 3.0 GeV.
+    *   Detector-level results claimed: `false`.
+
+    *   Required for parton-level:
+        1.  UFO model directory (`models/ScalarUFO/`): present.
+        2.  `proc_card.dat`: present.
+        3.  `run_card.dat`: present.
+        4.  One `param_card.dat` for every mass:
+            *   1.0 GeV: present.
+            *   1.5 GeV: present.
+            *   2.0 GeV: present.
+            *   2.5 GeV: missing.
+            *   3.0 GeV: present.
+        5.  One random-seed log for every mass:
+            *   1.0 GeV: present.
+            *   1.5 GeV: present.
+            *   2.0 GeV: present.
+            *   2.5 GeV: missing.
+            *   3.0 GeV: present.
+        6.  Final scan results table (`results/scan_results.csv`): present.[8D[K
+present.
+        7.  Plotting script (`scripts/make_scan_plot.py`): present.[8D[K
+present.
+
+    *   Optional (since detector-level is false):
+        *   Pythia8 cards: absent.
+        *   Delphes cards: absent.
+
+    *   `status`: Not reproducible because files for 2.5 GeV are missing.
+    *   `detector_level_claimed`: `false`.
+    *   `missing_required_files`: ["cards/param_cards/mS_2p5.dat", "logs/mS[8D[K
+"logs/mS_2p5_seed.txt"].
+    *   `missing_optional_files`: ["cards/pythia8.cmnd", "cards/delphes_car[18D[K
+"cards/delphes_card.dat"] (The prompt says Pythia8 and Delphes cards are op[2D[K
+optional, so they go here).
+    *   `affected_scan_points_gev`: [2.5].
+    *   `can_reproduce_parton_level_scan`: `false`.
+    *   `safe_for_paper_archive`: `false`.
+    *   `recommended_action`: "Provide missing param card and seed log for [K
+2.5 GeV mass point."
+
+    *   Check constraints: No explanations, no markdown fences. Only JSON.
+...done thinking.
+
+{
+  "status": "not_reproducible",
+  "detector_level_claimed": false,
+  "missing_required_files": [
+    "cards/param_cards/mS_2p5.dat",
+    "logs/mS_2p5_seed.txt"
+  ],
+  "missing_optional_files": [
+    "cards/pythia8.cmnd",
+    "cards/delphes_card.dat"
+  ],
+  "affected_scan_points_gev": [
+    2.5
+  ],
+  "can_reproduce_parton_level_scan": false,
+  "safe_for_paper_archive": false,
+  "recommended_action": "Provide missing parameter card and seed log for th[2D[K
+the 2.5 GeV scan point."
+}

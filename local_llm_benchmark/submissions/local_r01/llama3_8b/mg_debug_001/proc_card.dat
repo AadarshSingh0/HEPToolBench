@@ -1,0 +1,9 @@
+```text
+import model sm
+define p = g u c d s u~ c~ d~ s~
+part p p > e+ e- [QCD=1]
+output DY_ee
+launch
+set beam1 :f2p 6500 GeV
+set beam2 :f2p 6500 GeV
+```

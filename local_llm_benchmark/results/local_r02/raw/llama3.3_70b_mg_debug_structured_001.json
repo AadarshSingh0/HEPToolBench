@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "beam_energy_fixed": false,
+    "correct_process_present": false,
+    "faulty_lines_identify_problem": false,
+    "has_corrected_lines": false,
+    "has_error_type": false,
+    "has_faulty_lines": false,
+    "has_reason": false,
+    "no_forbidden_syntax_in_corrections": false,
+    "output_dir_correct": false,
+    "parseable_json": false,
+    "required_corrected_line_hits": 0,
+    "strict_json_only": false
+  },
+  "corrected_lines_text": "",
+  "failure_modes": [
+    "includes_explanation_not_json_only",
+    "invalid_json_substring",
+    "not_parseable_json"
+  ],
+  "faulty_lines_text": "",
+  "model": "llama3.3:70b",
+  "passed": false,
+  "score": 0.0,
+  "submission": "/home/as/Benchmark/HEPToolBench_extension3_work/local_r02/submissions/llama3.3_70b/mg_debug_structured_001/repair.json",
+  "task_id": "mg_debug_structured_001"
+}

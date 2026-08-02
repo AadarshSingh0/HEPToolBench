@@ -1,0 +1,14 @@
+# provider<TAB>runner<TAB>model
+# Edit model IDs or comment lines according to your API access.
+gemini	runners/run_gemini_task.py	gemini-3.1-flash-lite
+gemini	runners/run_gemini_task.py	gemini-3.5-flash
+github	runners/run_github_models_one_task.py	openai/gpt-4.1
+github	runners/run_github_models_one_task.py	openai/gpt-4.1-mini
+github	runners/run_github_models_one_task.py	openai/gpt-4.1-nano
+github	runners/run_github_models_one_task.py	meta/Llama-3.3-70B-Instruct
+mistral	runners/run_mistral_task.py	mistral-large-2512
+mistral	runners/run_mistral_task.py	magistral-medium-2509
+mistral	runners/run_mistral_task.py	devstral-2512
+mistral	runners/run_mistral_task.py	codestral-2508
+mistral	runners/run_mistral_task.py	mistral-medium-2508
+sarvam	runners/run_sarvam_one_task.py	sarvam-105b

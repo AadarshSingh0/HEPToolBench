@@ -1,0 +1,6 @@
+```python
+generate p p > t \~t [QCD]
+output ttbar_run
+add channel -p p p > t \~t QCD
+run ttbar_run
+```

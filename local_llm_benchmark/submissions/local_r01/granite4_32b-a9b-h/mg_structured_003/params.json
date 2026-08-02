@@ -1,0 +1,14 @@
+{
+  "model": "sm",
+  "initial_state": [
+    "p",
+    "p"
+  ],
+  "final_state": [
+    "h",
+    "j"
+  ],
+  "beam_energy_gev": 6500,
+  "output_dir": "HJ",
+  "nevents": 10000
+}

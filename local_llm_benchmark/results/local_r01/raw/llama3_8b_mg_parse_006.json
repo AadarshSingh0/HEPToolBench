@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "cross_section_correct": false,
+    "event_file_correct": true,
+    "nevents_correct": true,
+    "parseable_json": true,
+    "process_correct": true,
+    "status_success": true,
+    "strict_json_only": true,
+    "uncertainty_correct": true
+  },
+  "failure_modes": [
+    "wrong_cross_section"
+  ],
+  "model": "llama3:8b",
+  "normalized_summary": {
+    "cross_section_pb": 8812.0,
+    "cross_section_uncertainty_pb": 1.9,
+    "event_file": "Events/run_01/unweighted_events.lhe.gz",
+    "nevents": 10000,
+    "process": "p p > e+ e-",
+    "status": "success"
+  },
+  "passed": false,
+  "score": 0.8,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/llama3_8b/mg_parse_006/summary.json",
+  "task_id": "mg_parse_006"
+}

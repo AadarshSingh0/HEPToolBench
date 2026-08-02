@@ -1,0 +1,4 @@
+{"status": "failed", "process": "p p > t tbar", "error_type": "invalid_anti[13D[K
+"invalid_antiparticle_syntax", "offending_line": "generate p p > t tbar", "[1D[K
+"expected_line": "generate p p > t t~", "fix": "replace tbar with t~ in the[3D[K
+the generate line"}

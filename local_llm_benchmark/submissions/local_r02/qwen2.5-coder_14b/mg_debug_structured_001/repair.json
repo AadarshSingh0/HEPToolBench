@@ -1,0 +1,16 @@
+{
+  "error_type": "Beam energy and generate command",
+  "faulty_lines": [
+    "p p > e+ e-",
+    "set beam1 6500",
+    "set beam2 6500"
+  ],
+  "corrected_lines": [
+    "generate p p > e+ e-",
+    "set ebeam1 6500",
+    "set ebeam2 6500"
+  ],
+  "output_dir": "DY_ee",
+  "reason": "The process line needed 'generate' instead of 'p p >', and bea[3D[K
+beam energy settings should use 'set ebeam1' and 'set ebeam2'."
+}

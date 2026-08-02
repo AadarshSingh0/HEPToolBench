@@ -1,0 +1,83 @@
+Thinking...
+We need to parse file and output JSON with fields.
+
+Data points: masses [1.0,1.5,2.0,2.5,3.0]; cross sections correspond; uncer[5D[K
+uncertainties correspond.
+
+Number of plot points = 5.
+
+log_y condition: max=12.40 min=1.70 ratio = 12.4/1.7 ≈ 7.29 >5 => true.
+
+benchmark_marker mass_gev 1.5, cross_section_pb 8.10.
+
+safe_to_plot: "The final scan plot is safe only if every intended point suc[3D[K
+succeeded." All points are success, so true.
+
+status field? required "plot_ready or not_plot_ready". Since all successful[10D[K
+successful and ready => "plot_ready".
+
+Provide JSON.
+
+Check fields:
+
+{
+"status": "...",
+"scan_parameter": "mS",
+"x_label": "mS [GeV]",
+"y_label": "cross section [pb]",
+"x_values_gev": [...],
+"y_values_pb": [...],
+"yerr_values_pb": [...],
+"number_of_plot_points": ...,
+"log_y": true/false,
+"benchmark_marker": {
+    "mass_gev": ...,
+    "cross_section_pb": ...
+},
+"safe_to_plot": true/false
+}
+
+All numbers should be numeric, not strings.
+
+Provide array values in order. Use floats with maybe one decimal as given.
+
+Let's output:
+
+{
+  "status": "plot_ready",
+  "scan_parameter": "mS",
+  "x_label": "mS [GeV]",
+  "y_label": "cross section [pb]",
+  "x_values_gev": [1.0, 1.5, 2.0, 2.5, 3.0],
+  "y_values_pb": [12.40, 8.10, 5.00, 3.20, 1.70],
+  "yerr_values_pb": [0.40, 0.30, 0.20, 0.10, 0.08],
+  "number_of_plot_points": 5,
+  "log_y": true,
+  "benchmark_marker": {
+    "mass_gev": 1.5,
+    "cross_section_pb": 8.10
+  },
+  "safe_to_plot": true
+}
+
+Make sure numeric formatting okay.
+
+Return only JSON without markdown fences.
+...done thinking.
+
+{
+  "status": "plot_ready",
+  "scan_parameter": "mS",
+  "x_label": "mS [GeV]",
+  "y_label": "cross section [pb]",
+  "x_values_gev": [1.0, 1.5, 2.0, 2.5, 3.0],
+  "y_values_pb": [12.40, 8.10, 5.00, 3.20, 1.70],
+  "yerr_values_pb": [0.40, 0.30, 0.20, 0.10, 0.08],
+  "number_of_plot_points": 5,
+  "log_y": true,
+  "benchmark_marker": {
+    "mass_gev": 1.5,
+    "cross_section_pb": 8.10
+  },
+  "safe_to_plot": true
+}

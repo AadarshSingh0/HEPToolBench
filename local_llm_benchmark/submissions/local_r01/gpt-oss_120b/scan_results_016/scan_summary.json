@@ -1,0 +1,94 @@
+Thinking...
+We need to produce JSON with required fields.
+
+First parse table:
+
+Rows:
+mS=1.0, dir run_mS_1p0, status success, cross_section_pb 12.40
+mS=1.5, dir run_mS_1p5, success, cs 8.10
+mS=2.0, dir run_mS_2p0, failed
+mS=2.5, dir run_mS_2p5, success, cs 3.20
+mS=3.0, dir run_mS_3p0, success, cs 1.70
+
+Compute total_points = number of rows requested? That's count of all points[6D[K
+points: 5.
+
+successful_points = count of successes: 4.
+
+failed_points = 1.
+
+failed_masses_gev = [2.0].
+
+failed_run_directories = ["run_mS_2p0"].
+
+max_cross_section_mass_gev and max_cross_section_pb: among successful point[5D[K
+points, find max cross-section value. Values: 12.40 at mS=1.0, 8.10 at 1.5,[4D[K
+1.5, 3.20 at 2.5, 1.70 at 3.0. Max is 12.40 at mass 1.0. So max_cross_secti[15D[K
+max_cross_section_mass_gev = 1.0, max_cross_section_pb = 12.40.
+
+min_successful_cross_section_mass_gev and min_successful_cross_section_pb: [K
+find minimum cross-section among successful points. Minimum is 1.70 at mS=3[4D[K
+mS=3.0. So mass 3.0, pb 1.70.
+
+monotonic_decreasing_successful_points: Check if cross sections decrease as[2D[K
+as mS increases when considering only successful points sorted by mS. Succe[5D[K
+Successful masses sorted: [1.0 (12.40), 1.5 (8.10), 2.5 (3.20), 3.0 (1.70)][7D[K
+(1.70)]. Sequence of cs: 12.40 -> 8.10 -> 3.20 -> 1.70, each decreasing. So[2D[K
+So true.
+
+rerun_required: Probably true if any failed points exist; maybe need to rer[3D[K
+rerun those. The spec says "rerun_required": true or false. Likely true bec[3D[K
+because there is a failed point. So true.
+
+recommended_action: Could be something like "Rerun failed points at mS=2.0"[7D[K
+mS=2.0". Must produce string. Use generic: "Rerun the failed scan point(s) [K
+at mass 2.0 GeV."
+
+status: incomplete if any requested point failed. Since one failed, status [K
+= "incomplete".
+
+Now ensure JSON numeric types as numbers (not strings). For floats, we can [K
+keep as e.g., 12.40 etc.
+
+Return only JSON content.
+
+Let's craft:
+
+{
+  "status": "incomplete",
+  "scan_parameter": "mS [GeV]",
+  "total_points": 5,
+  "successful_points": 4,
+  "failed_points": 1,
+  "failed_masses_gev": [2.0],
+  "failed_run_directories": ["run_mS_2p0"],
+  "max_cross_section_mass_gev": 1.0,
+  "max_cross_section_pb": 12.40,
+  "min_successful_cross_section_mass_gev": 3.0,
+  "min_successful_cross_section_pb": 1.70,
+  "monotonic_decreasing_successful_points": true,
+  "rerun_required": true,
+  "recommended_action": "Rerun the failed scan point(s) at mass 2.0 GeV."
+}
+
+Check format: JSON numbers fine.
+
+Return only this.
+...done thinking.
+
+{
+  "status": "incomplete",
+  "scan_parameter": "mS [GeV]",
+  "total_points": 5,
+  "successful_points": 4,
+  "failed_points": 1,
+  "failed_masses_gev": [2.0],
+  "failed_run_directories": ["run_mS_2p0"],
+  "max_cross_section_mass_gev": 1.0,
+  "max_cross_section_pb": 12.40,
+  "min_successful_cross_section_mass_gev": 3.0,
+  "min_successful_cross_section_pb": 1.70,
+  "monotonic_decreasing_successful_points": true,
+  "rerun_required": true,
+  "recommended_action": "Rerun the failed scan point(s) at mass 2.0 GeV."
+}

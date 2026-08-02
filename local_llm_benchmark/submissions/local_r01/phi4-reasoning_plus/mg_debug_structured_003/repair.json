@@ -1,0 +1,437 @@
+We are Phi. We're given a task: "You are being tested on a particle-physics[16D[K
+particle-physics software benchmark." The instructions require us to produc[6D[K
+produce a JSON object with keys "error_type", "faulty_lines", "corrected_li[13D[K
+"corrected_lines", "output_dir", and "reason". We must include only one JSO[3D[K
+JSON object and not include explanations.
+
+We are given the broken input file: "broken_proc_card.dat" containing:
+
+```
+import model sm
+define p = g u c d s u~ c~ d~ s~
+process p p -> h jet
+output HiggsJet
+launch
+set beam1 6500
+set beam2 6500
+```
+
+We need to produce a minimal patch for a broken MadGraph card that repairs [K
+the issues. Our instructions: "Return only the requested output file conten[6D[K
+content", no explanation.
+
+We have additional instructions:
+
+- The task is: Standard Model Higgs plus jet production, pp -> h j, at 13 T[1D[K
+TeV proton-proton center-of-mass energy.
+- Use the output directory `HJ`
+- Diagnose the broken card and return a minimal structured repair patch.
+
+Now what are potential issues in this card?
+
+Let's check instructions: "Return only the requested output file content" m[1D[K
+means just produce final JSON object. We must not include explanations.
+
+We have a broken input card containing:
+- Line 1: import model sm (This is presumably okay.)
+- Define line: define p = g u c d s u~ c~ d~ s~
+- Process line: process p p -> h jet
+- The Higgs particle "h" and the jet. However, note that "jet" is not valid[5D[K
+valid token in MadGraph syntax for jets; we need to use `j` label as per in[2D[K
+instructions "Use the MadGraph jet multiparticle label j".
+- So process should be: "process p p -> h j". We must replace "jet" with "j[2D[K
+"j".
+- Also, output line: output HiggsJet. But the requirement states to use out[3D[K
+output directory name "HJ", so we need to include corrected "output HJ"
+- Launch command is fine.
+- Beam energy lines are "set beam1 6500", but then instructions state that [K
+we need valid MadGraph beam-energy commands for 13 TeV collisions. Wait, ch[2D[K
+check instructions: "Use valid MadGraph beam-energy commands for 6500 GeV p[1D[K
+per beam." But note that the text says "p p -> h j at 13 TeV proton-proton [K
+center-of-mass energy" so indeed the beam energy is 6500 GeV? Actually wait[4D[K
+wait: "13 TeV collisions means each beam has ~6500 GeV"? Let me check: The [K
+given instructions mention "Use valid MadGraph beam-energy commands for 650[3D[K
+6500 GeV per beam". So maybe they want set ebeam1 and ebeam2 not beam1 and [K
+beam2. But then instructions also say "do not use beam1 or beam2 as command[7D[K
+commands." Instead we need to use "set ebeam1 ..." and "set ebeam2 ..." lin[3D[K
+lines.
+
+Wait, check: "Do not use beam1 or beam2 as commands" means that we should n[1D[K
+not have set beam1 6500. Instead must be corrected with "set ebeam1 6500", [K
+"set ebeam2 6500". But instructions also say "if the broken input contains [K
+invalid beam commands or missing beam-energy settings, include corrected li[2D[K
+lines: if the broken input contains invalid beam commands or missing beam-e[6D[K
+beam-energy settings, include corrected set ebeam1 and set ebeam2 lines." S[1D[K
+So we must correct those two lines from "set beam1 6500" to "set ebeam1 650[3D[K
+6500" and "set beam2 6500" to "set ebeam2 6500".
+
+So the required repair patch is: 
+- For process line: change "process p p -> h jet" to "process p p -> h j".
+- For output directory: change "output HiggsJet" to "output HJ". But wait, [K
+instructions say "Use the output directory HJ", so maybe we need to include[7D[K
+include the corrected command "output HJ".
+- Also for beam energies lines: change them to "set ebeam1 6500" and "set e[1D[K
+ebeam2 6500".
+
+Wait, but check input file: It contains "launch" line? That might not need [K
+repair. But instructions say "If the broken input contains an invalid or mi[2D[K
+missing process command, include corrected generate ..." but there's no gen[3D[K
+generate lines in broken card. But it instructs to use `generate` for the p[1D[K
+process line rather than arrow notation. Wait, check: "Use MadGraph syntax [K
+with '>' rather than arrow notation." Possibly means that the correct proce[5D[K
+process command should be using ">" sign between particles? Let me check Ma[2D[K
+MadGraph documentation for processes: The typical syntax might be something[9D[K
+something like "process p p > h j" where ">" is used to separate initial st[2D[K
+state and final state. But in our broken card, we see: "process p p -> h je[2D[K
+jet". We need to replace arrow with ">" symbol: "process p p > h j". Wait, [K
+but instructions say "Use MadGraph syntax with '>' rather than arrow notati[6D[K
+notation." So the process line should be replaced from "process p p -> h je[2D[K
+jet" to "process p p > h j".
+
+Wait but check instructions: "Standard Model Higgs plus jet production, pp-[3D[K
+pp->hj at 13 TeV proton-proton center-of-mass energy. Use the output direct[6D[K
+directory 'HJ'" Also "set ebeam1" and "set ebeam2", not beam1 and beam2.
+
+So our corrected_lines should include lines:
+- process p p > h j
+- output HJ
+- set ebeam1 6500
+- set ebeam2 6500
+
+But the original broken card has "process p p -> h jet" which is wrong beca[4D[K
+because we need to use ">" instead of "->", and also need to change "jet" t[1D[K
+to "j". Also, original output command line: "output HiggsJet" should be cha[3D[K
+changed to "output HJ" according to instructions.
+
+We must check the beam energy lines. They are "set beam1 6500" and "set bea[3D[K
+beam2 6500". The instructions say that if there is invalid beam commands or[2D[K
+or missing beam-energy settings, include corrected lines with ebeam1 and eb[2D[K
+ebeam2 instead of beam1/beam2. So we need to change those two lines.
+
+Also check the process line: In the broken card, the process is "p p -> h j[1D[K
+jet". But note instructions say "Use the MadGraph jet multiparticle label j[1D[K
+j, not the literal token jet" so we must use "j" instead of "jet".
+
+Thus our minimal patch: The "faulty_lines" will include faulty lines that a[1D[K
+are incorrect from broken card. Which lines? Let's determine:
+- process line is broken because it uses arrow "->" instead of ">" and uses[4D[K
+uses "jet" instead of "j". So we need to mark the entire line as faulty.
+- output directory line is broken: "output HiggsJet", but expected "output [K
+HJ"
+- beam energy lines are invalid (use beam1/beam2 commands, not ebeam1/ebeam[12D[K
+ebeam1/ebeam2). Should mark them.
+
+But instructions says "if the broken input contains an invalid or missing p[1D[K
+process command, include corrected generate ... line." But note instruction[11D[K
+instructions specify to use generate for the process command. Wait, but our[3D[K
+our card uses "process" instead of "generate". Let's check: The instruction[11D[K
+instructions say "Use `generate` for the process line." So maybe we must ch[2D[K
+change "process p p -> h jet" to "generate p p > h j"? But then that might [K
+conflict with typical syntax? Usually MadGraph uses "generate" if one wants[5D[K
+wants to generate events. However, in most examples I've seen, one uses "la[3D[K
+"launch" command after a "define", "import model", and so on. Wait, let me [K
+check the instructions carefully: It says "Use `generate` for the process l[1D[K
+line." But our card already has a "process" command. But instructions "if t[1D[K
+the broken input contains an invalid or missing process command, include th[2D[K
+the corrected generate ... line". It might mean that if you see process lin[3D[K
+line is wrong, then use generate syntax instead of process? Wait, instructi[9D[K
+instructions say: "Use `generate` for the process line." So our output shou[4D[K
+should be using a generate statement. But what's difference between "proces[7D[K
+"process" and "generate"? Possibly, in MadGraph, one has to write something[9D[K
+something like "define p = ..." then "import model sm", then "generate p p [K
+> h j" then "output HJ", etc. However the broken card uses process command [K
+not generate. But instructions say "use generate for the process line." So [K
+we need to modify that as well.
+
+Let me check instructions: It says "if the broken input contains an invalid[7D[K
+invalid or missing process command, include corrected generate ... line." T[1D[K
+The given card does have a process command but it's using arrow "->" instea[6D[K
+instead of ">" maybe. But instructions explicitly require use of generate k[1D[K
+keyword. They say "Use MadGraph syntax with '>' rather than arrow notation"[9D[K
+notation". And they also say "use 'generate' for the process line" as well.[5D[K
+well. So that means we must output a corrected line that is: "generate p p [K
+> h j" (not "process"). But wait, instructions mention: "TARGET physics req[3D[K
+request: Standard Model Higgs plus jet production, pp->hj". And then they i[1D[K
+instruct "Use generate for the process line." That implies in our patch, if[2D[K
+if we are using a process command, it must be corrected to use "generate" k[1D[K
+keyword. So I should change "process p p -> h jet" to "generate p p > h j".[3D[K
+j".
+
+Thus our minimal patch lines:
+- Faulty lines: "process p p -> h jet", "output HiggsJet", "set beam1 6500"[5D[K
+6500", "set beam2 6500".
+- Corrected lines:
+   - Instead of process, we use generate command with correct syntax: "gene[5D[K
+"generate p p > h j"
+   - Instead of output, "output HJ"
+   - For beams: "set ebeam1 6500" and "set ebeam2 6500".
+
+Thus, our patch JSON object should have keys:
+- error_type: "<short label for main error class>".
+We need to decide a label. What is the error type? The card has multiple er[2D[K
+errors: process command invalid syntax, wrong multiparticle token for jet, [K
+incorrect output directory, beam energy settings incorrect. But instruction[11D[K
+instructions say "structured repair patch" so we must list the corrections.[12D[K
+corrections.
+
+But we want minimal repair patch lines. So the corrected_lines array should[6D[K
+should include the minimal set of corrected lines that fix issues. We have [K
+four corrected lines: 
+1) "generate p p > h j"
+2) "output HJ"
+3) "set ebeam1 6500"
+4) "set ebeam2 6500"
+
+The faulty_lines array should include lines copied from broken input card? [K
+They are: 
+"process p p -> h jet", "output HiggsJet", "set beam1 6500", "set beam2 650[3D[K
+6500". But instructions specify "if the broken input contains an invalid or[2D[K
+or missing process command, include the corrected generate ... line." It al[2D[K
+also instructs to provide minimal patch. Should we list all faulty lines? P[1D[K
+Possibly yes.
+I want to check: The instructions say "complete minimal repair patch" and "[1D[K
+"include the complete minimal repair patch not only the line you think is m[1D[K
+most important." So that means if a card has multiple errors, then I must i[1D[K
+include corrected lines for each error.
+
+So we can do:
+faulty_lines = ["process p p -> h jet", "output HiggsJet", "set beam1 6500"[5D[K
+6500", "set beam2 6500"]
+corrected_lines = ["generate p p > h j", "output HJ", "set ebeam1 6500", "s[2D[K
+"set ebeam2 6500"]
+
+I must check if we need to include any additional lines? Possibly also corr[4D[K
+correct the missing or invalid commands. But instructions say "If the broke[5D[K
+broken input contains an invalid or missing process command, include correc[6D[K
+corrected generate ... line." So that's covered.
+
+Thus, the JSON object should be something like:
+
+{
+  "error_type": "<multi error: process, output and beam>",
+  "faulty_lines": ["process p p -> h jet", "output HiggsJet", "set beam1 65[2D[K
+6500", "set beam2 6500"],
+  "corrected_lines": ["generate p p > h j", "output HJ", "set ebeam1 6500",[6D[K
+6500", "set ebeam2 6500"],
+  "output_dir": "HJ",
+  "reason": "<one short sentence explaining the repair>"
+}
+
+Now what should we put in error_type field? The instructions say "short lab[3D[K
+label for the main error class". Possibly we can choose something like "syn[4D[K
+"syntax_mismatch" or "process_syntax_error", but I must check what errors e[1D[K
+exist:
+- The process command is invalid due to use of arrow and wrong token.
+- The output directory is not set correctly.
+- The beam energy settings are invalid commands.
+
+We want a short label. Possibly "multiple_errors" or "invalid_process_outpu[22D[K
+"invalid_process_output_beam" doesn't look good.
+
+Maybe we can choose error_type: "process_output_beam", but that might be am[2D[K
+ambiguous.
+
+Let's think: The card has multiple errors but maybe the primary error is th[2D[K
+the process command because everything else depends on that? But instructio[10D[K
+instructions say "if broken input contains an invalid or missing process co[2D[K
+command, include corrected generate ... line." So I could label the error a[1D[K
+as "invalid_process_syntax" because the main error was in the process comma[5D[K
+command. However, the output directory and beam energy commands are also in[2D[K
+invalid.
+
+But which one is most critical? Possibly the process command. But instructi[9D[K
+instructions want minimal repair patch for a broken Higgs-plus-jet MadGraph[8D[K
+MadGraph card. In addition, instructions say "if the broken input contains [K
+an invalid or missing process command" then include corrected generate ... [K
+line. That implies that the primary error was the wrong process command. Ho[2D[K
+However, there are multiple errors.
+
+We can choose a label like "multiple_errors", but I'd want it to be one sho[3D[K
+short string as required by schema. Possibly "syntax" might suffice? But in[2D[K
+instructions say "error_type": "<short label for the main error class>" and[3D[K
+and we need to decide what that means.
+
+Maybe use: "process_output_beam_mismatch".
+
+Alternatively, since multiple errors exist, maybe choose a short label like[4D[K
+like "multiple" but instructions require one short label. Possibly I can ch[2D[K
+choose "invalid_process", but then it doesn't mention the others.
+
+Maybe I'll check each field:
+- error_type must be a string that summarizes what was wrong.
+We have three types of issues: process command uses incorrect syntax and wr[2D[K
+wrong particle name, output directory is wrong, beam energy commands are in[2D[K
+invalid. The overall theme might be "syntax" errors. But also beam commands[8D[K
+commands errors don't fall under syntax? They are also command errors.
+
+Maybe I'll choose error_type: "process_output_beam".
+
+That seems to summarize the three issues. Alternatively, "command_errors". [K
+But instructions say "short label for the main error class." So maybe "inva[5D[K
+"invalid_commands" is generic enough. But if one line in particular is wron[4D[K
+wrong then maybe "syntax" but that's not descriptive.
+
+I think I'll choose error_type: "invalid_syntax_and_settings".
+
+But let me re-read original text: "a broken Higgs-plus-jet MadGraph card". [K
+The main errors are with the process command, output directory and beam ene[3D[K
+energy commands. Perhaps a good label is "process_output_beam".
+
+Maybe I'll say error_type = "process_command_error" because that's the one [K
+in the instructions. But then we also include the corrected lines for outpu[5D[K
+output directory and beam energy. Which one do we choose? The instructions [K
+say: "if the broken input contains an invalid or missing process command, i[1D[K
+include corrected generate ... line." That means if there is a process comm[4D[K
+command error, then it's the main error class.
+
+I think I'll label as "process_command_error" because that's the primary er[2D[K
+error from my understanding. But then the output directory is also wrong bu[2D[K
+but probably secondary? Let me re-read instructions: It says "a broken Higg[4D[K
+Higgs-plus-jet MadGraph card." That implies that there are errors in the ca[2D[K
+card. The broken card has several errors, not just one. And I must provide [K
+a structured patch. Possibly error_type should be something like "syntax" s[1D[K
+since it's multiple syntax issues.
+
+Let me check sample output: They want a JSON object. For example:
+
+{
+  "error_type": "syntax",
+  "faulty_lines": [ ... ],
+  "corrected_lines": [ ... ],
+  "output_dir": "HJ",
+  "reason": "Replaced process command arrow and particle name, updated outp[4D[K
+output directory and beam energy commands."
+}
+
+But instructions say: "Use 'generate' for the process line." That implies t[1D[K
+that in my corrected lines I must replace the word "process" with "generate[9D[K
+"generate". And also change arrow to ">".
+Thus our generate line is "generate p p > h j".
+
+Now then, what exactly are the values we put? Let's check the original brok[4D[K
+broken card: 
+- It had "process p p -> h jet" which is wrong because it uses "->" instead[7D[K
+instead of ">" and "jet" instead of "j".
+- Also, output line "output HiggsJet", but expected "output HJ"
+- And beam lines "set beam1 6500", "set beam2 6500" should be replaced by "[1D[K
+"set ebeam1 6500" and "set ebeam2 6500".
+
+Thus our patch is correct.
+
+Now for error_type, I can choose a label that covers all errors. Possibly "[1D[K
+"multiple_command_errors". But instructions say "short label", so I must pu[2D[K
+put something like "syntax" or "invalid_commands". Given the broken card ha[2D[K
+has multiple errors, perhaps the best label is "invalid_cardsyntax". Howeve[6D[K
+However, maybe I'll just call it "card_syntax_error".
+
+Alternatively, I can simply use "process_output_beam_mismatch" if that's ac[2D[K
+acceptable. But instructions say "short label for main error class." So may[3D[K
+maybe I'll put "invalid_process_settings".
+
+I want to list the errors in order:
+- The process command is wrong (should be generate, and using ">" sign).
+- The output directory is set incorrectly.
+- The beam energy settings are using wrong commands.
+
+Thus a short label could be "process_output_beam" which indicates that ther[4D[K
+there were issues with process command and output and beam energy. I'll cho[3D[K
+choose error_type = "invalid_process_output_beam".
+
+Now for the reason field, we need one short sentence explaining the repair.[7D[K
+repair. Perhaps: "Replaced incorrect process syntax, jet token, output dire[4D[K
+directory, and beam settings." That seems a bit long maybe "Fixed process, [K
+output, and beam command errors."
+
+Maybe "Corrected process syntax, changed 'jet' to 'j', updated output dir f[1D[K
+from HiggsJet to HJ, and replaced beam1/beam2 with ebeam1/ebeam2."
+
+But instructions say one short sentence. I'll put: "Replaced invalid proces[6D[K
+process arrow/particle, corrected output directory and beam energy commands[8D[K
+commands." That seems acceptable.
+
+Now for the JSON object we must output a valid JSON with no markdown format[6D[K
+formatting by default (plain text). But instructions require that answer in[2D[K
+in plain text. They said: "By default, do not reply with Markdown formattin[9D[K
+formatting unless requested."
+
+Thus I'll produce something like:
+
+{
+  "error_type": "invalid_process_output_beam",
+  "faulty_lines": [
+    "process p p -> h jet",
+    "output HiggsJet",
+    "set beam1 6500",
+    "set beam2 6500"
+  ],
+  "corrected_lines": [
+    "generate p p > h j",
+    "output HJ",
+    "set ebeam1 6500",
+    "set ebeam2 6500"
+  ],
+  "output_dir": "HJ",
+  "reason": "Replaced invalid process syntax and jet token, updated output [K
+directory, and corrected beam energy commands."
+}
+
+That should be acceptable.
+
+Double-check: The instructions specify schema keys exactly as:
+- error_type
+- faulty_lines (an array)
+- corrected_lines (an array)
+- output_dir 
+- reason
+
+Thus, my JSON must have these keys. And in each array I need to provide the[3D[K
+the lines as strings. They are plain text string.
+
+I also check that we have all corrections: Yes.
+
+I'll produce a final answer with exactly one JSON object (in code block?) B[1D[K
+But instructions say "By default do not reply with markdown unless requeste[8D[K
+requested." So I might simply output JSON in text form but without markdown[8D[K
+markdown formatting. Possibly just plain text JSON.
+
+Thus my answer should be:
+
+{
+  "error_type": "invalid_process_output_beam",
+  "faulty_lines": [
+    "process p p -> h jet",
+    "output HiggsJet",
+    "set beam1 6500",
+    "set beam2 6500"
+  ],
+  "corrected_lines": [
+    "generate p p > h j",
+    "output HJ",
+    "set ebeam1 6500",
+    "set ebeam2 6500"
+  ],
+  "output_dir": "HJ",
+  "reason": "Replaced invalid process syntax and jet token, updated output [K
+directory, and corrected beam energy commands."
+}
+
+That is our answer.
+
+I'll now produce final answer in plain text.{
+  "error_type": "invalid_process_output_beam",
+  "faulty_lines": [
+    "process p p -> h jet",
+    "output HiggsJet",
+    "set beam1 6500",
+    "set beam2 6500"
+  ],
+  "corrected_lines": [
+    "generate p p > h j",
+    "output HJ",
+    "set ebeam1 6500",
+    "set ebeam2 6500"
+  ],
+  "output_dir": "HJ",
+  "reason": "Replaced invalid process syntax and jet token, updated output [K
+directory, and corrected beam energy commands."
+}

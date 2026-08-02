@@ -1,0 +1,60 @@
+Thinking...
+We need to output JSON object according to requested schema. The requested [K
+setup includes MPI on, but the config has PartonLevel:MPI = off. So it's in[2D[K
+invalid. We must fill fields accordingly.
+
+Fields:
+status: "invalid"
+number_of_events: 10000 (from config)
+seed_fixed: true (Random:setSeed = on indicates fixed seed usage)
+seed_value: 42
+isr_enabled: true
+fsr_enabled: true
+mpi_enabled: false (since off)
+hadronization_enabled: true (HadronLevel:all = on)
+hepmc_output_enabled: true (Main:writeHepMC = on)
+
+missing_or_wrong_settings: ["PartonLevel:MPI = on"] exactly as required.
+
+failure_stage: "parton_level" (makes sense since MPI setting is part of Par[3D[K
+PartonLevel).
+
+recommended_fix: "set PartonLevel:MPI = on"
+
+Return JSON object only. Ensure correct formatting, no extra spaces? Provid[6D[K
+Provide proper JSON with double quotes.
+
+Let's produce:
+
+{
+  "status": "invalid",
+  "number_of_events": 10000,
+  "seed_fixed": true,
+  "seed_value": 42,
+  "isr_enabled": true,
+  "fsr_enabled": true,
+  "mpi_enabled": false,
+  "hadronization_enabled": true,
+  "hepmc_output_enabled": true,
+  "missing_or_wrong_settings": ["PartonLevel:MPI = on"],
+  "failure_stage": "parton_level",
+  "recommended_fix": "set PartonLevel:MPI = on"
+}
+
+That's all.
+...done thinking.
+
+{
+  "status": "invalid",
+  "number_of_events": 10000,
+  "seed_fixed": true,
+  "seed_value": 42,
+  "isr_enabled": true,
+  "fsr_enabled": true,
+  "mpi_enabled": false,
+  "hadronization_enabled": true,
+  "hepmc_output_enabled": true,
+  "missing_or_wrong_settings": ["PartonLevel:MPI = on"],
+  "failure_stage": "parton_level",
+  "recommended_fix": "set PartonLevel:MPI = on"
+}

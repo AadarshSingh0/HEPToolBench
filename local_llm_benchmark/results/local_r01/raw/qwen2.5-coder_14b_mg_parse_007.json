@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "error_type_correct": true,
+    "expected_line_correct": true,
+    "fix_correct": true,
+    "offending_line_correct": true,
+    "parseable_json": true,
+    "process_correct": true,
+    "status_failed": true,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_markdown_fence"
+  ],
+  "model": "qwen2.5-coder:14b",
+  "normalized_diagnosis": {
+    "error_type": "invalid_antiparticle_syntax",
+    "expected_line": "generate p p > t t~",
+    "fix": "replace tbar with t~ in the generate line",
+    "offending_line": "generate p p > t tbar",
+    "process": "p p > t tbar",
+    "status": "failed"
+  },
+  "passed": true,
+  "score": 0.95,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/qwen2.5-coder_14b/mg_parse_007/diagnosis.json",
+  "task_id": "mg_parse_007"
+}

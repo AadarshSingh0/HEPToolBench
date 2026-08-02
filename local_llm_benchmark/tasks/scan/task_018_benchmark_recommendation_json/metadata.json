@@ -1,0 +1,7 @@
+{
+  "task_id": "benchmark_recommendation_018",
+  "name": "Benchmark recommendation from completed parameter scan",
+  "category": "scan",
+  "artifact": "recommendation.json",
+  "description": "Choose a detector-level benchmark point from a completed mass scan using an explicit non-endpoint selection rule."
+}

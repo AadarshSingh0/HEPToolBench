@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "process": "p p > t tbar",
+  "error_type": "invalid_antiparticle_syntax",
+  "offending_line": "generate p p > t tbar",
+  "expected_line": "generate p p > t t~",
+  "fix": "replace tbar with t~ in the generate line"
+}

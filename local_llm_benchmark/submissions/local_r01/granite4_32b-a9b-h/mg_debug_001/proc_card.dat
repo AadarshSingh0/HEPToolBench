@@ -1,0 +1,11 @@
+```text
+import model sm
+define p = g u c d s b u~ c~ d~ s~ b~
+generate p p > e+ e- [QCD]
+output DY_ee
+launch
+set lhapdf MYLHAPDFSET
+set nb_events 1000
+set nevents_per_job 250
+run
+```

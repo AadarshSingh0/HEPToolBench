@@ -1,0 +1,43 @@
+Thinking...
+*   Input: A MadGraph failed run log.
+    *   Task: Extract failure diagnosis into a specific JSON format.
+    *   Constraints: Return *only* the JSON object, no explanations, no mar[3D[K
+markdown fences.
+
+    *   Process requested: `p p > t tbar`
+    *   Offending line: `generate p p > t tbar`
+    *   Error message: `No particle named "tbar" is defined in the current [K
+model.` / `In MadGraph antiparticles are written with a tilde.` / `For an a[1D[K
+anti-top quark, use "t~", not "tbar".`
+    *   Suggested corrected line: `generate p p > t t~`
+
+    *   `status`: "failed" (given in the prompt's example schema and log)
+    *   `process`: "p p > t tbar" (extracted from "Requested process")
+    *   `error_type`: "invalid_antiparticle_syntax" (deduced from the error[5D[K
+error message regarding antiparticles being written with a tilde)
+    *   `offending_line`: "generate p p > t tbar" (extracted from the log)
+    *   `expected_line`: "generate p p > t t~" (extracted from "Suggested c[1D[K
+corrected process line")
+    *   `fix`: "replace tbar with t~ in the generate line" (derived from th[2D[K
+the error message and expected line)
+
+    ```json
+    {
+      "status": "failed",
+      "process": "p p > t tbar",
+      "error_type": "invalid_antiparticle_syntax",
+      "offending_line": "generate p p > t tbar",
+      "expected_line": "generate p p > t t~",
+      "fix": "replace tbar with t~ in the generate line"
+    }
+    ```
+...done thinking.
+
+{
+  "status": "failed",
+  "process": "p p > t tbar",
+  "error_type": "invalid_antiparticle_syntax",
+  "offending_line": "generate p p > t tbar",
+  "expected_line": "generate p p > t t~",
+  "fix": "replace tbar with t~ in the generate line"
+}

@@ -1,0 +1,30 @@
+Thinking...
+We need to output JSON object as per schema. Fill fields:
+
+status: "failed"
+process: the requested process? In example they gave "p p > t tbar". Use th[2D[K
+that.
+
+error_type: "invalid_antiparticle_syntax" (as in instruction). Probably cor[3D[K
+correct.
+
+offending_line: exact line appears in log: "generate p p > t tbar"
+
+expected_line: from diagnostic message: "generate p p > t t~"
+
+fix: "replace tbar with t~ in the generate line"
+
+Make sure JSON formatting, double quotes. No extra whitespace? Just object.[7D[K
+object.
+
+Return only that.
+...done thinking.
+
+{
+  "status": "failed",
+  "process": "p p > t tbar",
+  "error_type": "invalid_antiparticle_syntax",
+  "offending_line": "generate p p > t tbar",
+  "expected_line": "generate p p > t t~",
+  "fix": "replace tbar with t~ in the generate line"
+}

@@ -1,0 +1,106 @@
+Thinking...
+*   Task: Extract data from a particle-physics scan result table into a spe[3D[K
+specific JSON format.
+    *   Input: `scan_results_table.txt`.
+    *   Required Fields: `status`, `scan_parameter`, `total_points`, `succe[6D[K
+`successful_points`, `failed_points`, `failed_masses_gev`, `failed_run_dire[16D[K
+`failed_run_directories`, `max_cross_section_mass_gev`, `max_cross_section_[19D[K
+`max_cross_section_pb`, `min_successful_cross_section_mass_gev`, `min_succe[10D[K
+`min_successful_cross_section_pb`, `monotonic_decreasing_successful_points`[40D[K
+`monotonic_decreasing_successful_points`, `rerun_required`, `recommended_ac[15D[K
+`recommended_action`.
+
+    *   Scan parameter: `mS` in GeV.
+    *   Points:
+        1.  mS = 1.0, run = run_mS_1p0, status = success, cross\_section = [K
+12.40 pb
+        2.  mS = 1.5, run = run_mS_1p5, status = success, cross\_section = [K
+8.10 pb
+        3.  mS = 2.0, run = run_mS_2p0, status = failed, cross\_section = n[1D[K
+nan
+        4.  mS = 2.5, run = run_mS_2p5, status = success, cross\_section = [K
+3.20 pb
+        5.  mS = 3.0, run = run_mS_3p0, status = success, cross\_section = [K
+1.70 pb
+
+    *   `status`: "incomplete" (because one point failed).
+    *   `scan_parameter`: "mS"
+    *   `total_points`: 5
+    *   `successful_points`: 4
+    *   `failed_points`: 1
+    *   `failed_masses_gev`: [2.0]
+    *   `failed_run_directories`: ["run_mS_2p0"]
+    *   Successful points (cross sections):
+        - mS=1.0: 12.40 pb
+        - mS=1.5: 8.10 pb
+        - mS=2.5: 3.20 pb
+        - mS=3.0: 1.70 pb
+    *   `max_cross_section_mass_gev`: 1.0 (highest cross section is 12.40)
+    *   `max_cross_section_pb`: 12.40
+    *   `min_successful_cross_section_mass_gev`: 3.0 (lowest successful cro[3D[K
+cross section is 1.70)
+    *   `min_successful_cross_section_pb`: 1.70
+    *   `monotonic_decreasing_successful_points`: true (12.40 -> 8.10 -> 3.[2D[K
+3.20 -> 1.70 as mS increases).
+    *   `rerun_required`: true (since status is incomplete/one point failed[6D[K
+failed).
+    *   `recommended_action`: "Rerun failed points" or similar. Usually, if[2D[K
+if a rerun is required, the recommended action is to redo those specific ru[2D[K
+runs.
+
+    *   Check monotonic decreasing rule: "The successful cross sections are[3D[K
+are monotonic decreasing if they decrease as mS increases when failed point[5D[K
+points are skipped."
+        - Values: 12.40 (1.0) > 8.10 (1.5) > 3.20 (2.5) > 1.70 (3.0). Yes, [K
+it is monotonic decreasing.
+    *   Check status rule: "The scan is incomplete if any requested point f[1D[K
+failed."
+        - mS=2.0 failed. Status = "incomplete".
+
+    ```json
+    {
+      "status": "incomplete",
+      "scan_parameter": "mS",
+      "total_points": 5,
+      "successful_points": 4,
+      "failed_points": 1,
+      "failed_masses_gev": [2.0],
+      "failed_run_directories": ["run_mS_2p0"],
+      "max_cross_section_mass_gev": 1.0,
+      "max_cross_section_pb": 12.40,
+      "min_successful_cross_section_mass_gev": 3.0,
+      "min_successful_cross_section_pb": 1.70,
+      "monotonic_decreasing_successful_points": true,
+      "rerun_required": true,
+      "recommended_action": "Rerun failed point mS=2.0"
+    }
+    ```
+
+    Wait, looking at the expected fields: `max_cross_section_mass_gev` refe[4D[K
+refers to the mass where the cross section is maximum. The value 12.40 occu[4D[K
+occurs at 1.0 GeV. Correct. `min_successful_cross_section_mass_gev` refers [K
+to the mass where the minimum successful cross section occurs. Value 1.70 o[1D[K
+occurs at 3.0 GeV. Correct.
+
+    Recommended action: Since a point failed and rerun is required, a stand[5D[K
+standard phrase would be "Rerun failed points".
+...done thinking.
+
+```json
+{
+  "status": "incomplete",
+  "scan_parameter": "mS",
+  "total_points": 5,
+  "successful_points": 4,
+  "failed_points": 1,
+  "failed_masses_gev": [2.0],
+  "failed_run_directories": ["run_mS_2p0"],
+  "max_cross_section_mass_gev": 1.0,
+  "max_cross_section_pb": 12.40,
+  "min_successful_cross_section_mass_gev": 3.0,
+  "min_successful_cross_section_pb": 1.70,
+  "monotonic_decreasing_successful_points": true,
+  "rerun_required": true,
+  "recommended_action": "Rerun failed point at mS=2.0 GeV"
+}
+```

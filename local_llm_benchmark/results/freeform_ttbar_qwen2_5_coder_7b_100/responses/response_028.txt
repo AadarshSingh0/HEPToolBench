@@ -1,0 +1,9 @@
+```bash
+generate p p > t anti-t
+output ttbar_run -f -s 13000.
+reweight Pythia8
+add process p p > W+ W- off-shell
+add process p p > Z + gamma
+run
+```
+This script sets up a MadGraph5_aMC@NLO run for top quark production, including initial state radiation (ISR) and final state radiation (FSR). The output will be stored in the "ttbar_run" directory.

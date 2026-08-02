@@ -1,0 +1,41 @@
+Thinking...
+*   Task: Extract physics intent for a MadGraph run as JSON.
+    *   Process: Inclusive top-pair production (`p p > t t~`).
+    *   Model: Standard Model (`sm`).
+    *   Energy: $\sqrt{s} = 13$ TeV center-of-mass energy ($\text{beam\_ene[17D[K
+($\text{beam\_energy\_gev} = 6500$).
+    *   Required JSON schema provided.
+
+    *   `model`: "sm"
+    *   `initial_state`: ["p", "p"]
+    *   `final_state`: ["t", "t~"]
+    *   `beam_energy_gev`: 6500
+    *   `output_dir`: "TTbar" (based on schema)
+    *   `nevents`: 10000 (based on schema)
+
+    ```json
+    {
+      "model": "sm",
+      "initial_state": ["p", "p"],
+      "final_state": ["t", "t~"],
+      "beam_energy_gev": 6500,
+      "output_dir": "TTbar",
+      "nevents": 10000
+    }
+    ```
+
+    *   Return only the JSON.
+    *   No explanations.
+    *   No MadGraph card.
+...done thinking.
+
+```json
+{
+  "model": "sm",
+  "initial_state": ["p", "p"],
+  "final_state": ["t", "t~"],
+  "beam_energy_gev": 6500,
+  "output_dir": "TTbar",
+  "nevents": 10000
+}
+```

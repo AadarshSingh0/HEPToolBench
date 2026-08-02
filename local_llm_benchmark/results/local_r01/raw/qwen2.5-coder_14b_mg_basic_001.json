@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "correct_process": true,
+    "defines_proton": true,
+    "ebeam1_6500": true,
+    "ebeam2_6500": true,
+    "has_launch": true,
+    "has_output": true,
+    "imports_sm": true,
+    "no_interactive_prompt": true,
+    "no_long_explanation": true,
+    "no_markdown_fence": false,
+    "no_prompt_echo": true,
+    "no_reasoning_tags": true
+  },
+  "failure_modes": [
+    "includes_markdown_fence"
+  ],
+  "model": "qwen2.5-coder:14b",
+  "passed": false,
+  "score": 0.5,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_final_full28_20260711_r01/submissions/qwen2.5-coder_14b/mg_basic_001/proc_card.dat",
+  "task_id": "mg_basic_001"
+}

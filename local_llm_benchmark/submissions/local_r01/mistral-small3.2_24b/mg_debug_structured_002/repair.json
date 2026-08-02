@@ -1,0 +1,4 @@
+{"error_type": "invalid_process_command","faulty_lines": ["define p = g u c[1D[K
+c d s u~ c~ d~ s~","p p > t tbar"],"corrected_lines": ["generate p p > t t~[2D[K
+t~","set ebeam1 6500","set ebeam2 6500"],"output_dir": "TTbar","reason": "i[2D[K
+"invalid process command and beam energy settings"}

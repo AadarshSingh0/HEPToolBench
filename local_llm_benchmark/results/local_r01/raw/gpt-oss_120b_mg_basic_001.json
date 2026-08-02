@@ -1,0 +1,10 @@
+{
+  "failure_modes": [
+    "ollama_nonzero_exit"
+  ],
+  "model": "gpt-oss:120b",
+  "passed": false,
+  "returncode": 1,
+  "score": 0.0,
+  "task_id": "mg_basic_001"
+}

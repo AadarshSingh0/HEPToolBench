@@ -1,0 +1,4 @@
+```bash
+generate p p > t t~ -qcd
+output ttbar_run -f
+```

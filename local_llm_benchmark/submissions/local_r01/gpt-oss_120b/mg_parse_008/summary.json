@@ -1,0 +1,30 @@
+Thinking...
+We need to parse and output JSON with fields as given. Compute conversion: [K
+2.345e+03 fb = 2345 fb. Convert to pb: divide by 1000 (since 1000 fb =1 pb)[3D[K
+pb) => 2.345 pb. Uncertainty: 12.0 fb -> 0.012 pb.
+
+Check formatting: cross_section_pb numeric likely with three decimal? Provi[5D[K
+Provide as 2.345, uncertainty 0.012. nevents integer 5000. event_file path [K
+exactly "Events/run_02/unweighted_events.lhe.gz". status success. process s[1D[K
+string "p p > h j". input_unit "fb", output_unit "pb".
+
+Return JSON object only.
+
+Check rounding: The conversion yields exactly those numbers given they are [K
+simple division by 1000. So fine.
+
+Thus final answer: single line? but can be pretty printed. Provide as JSON [K
+without markdown fences.
+
+...done thinking.
+
+{
+  "status": "success",
+  "process": "p p > h j",
+  "cross_section_pb": 2.345,
+  "cross_section_uncertainty_pb": 0.012,
+  "input_unit": "fb",
+  "output_unit": "pb",
+  "nevents": 5000,
+  "event_file": "Events/run_02/unweighted_events.lhe.gz"
+}

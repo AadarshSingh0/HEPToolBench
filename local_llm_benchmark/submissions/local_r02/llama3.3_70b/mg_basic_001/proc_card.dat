@@ -1,0 +1,9 @@
+```text
+import model sm
+define p = g u c d s u~ c~ d~ s~
+process p p > e+ e-
+output DY_ee
+launch
+6500.0
+6500.0
+```

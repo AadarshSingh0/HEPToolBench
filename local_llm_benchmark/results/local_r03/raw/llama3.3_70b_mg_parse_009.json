@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "delphes_absent": true,
+    "delphes_requested": true,
+    "event_count_consistent": true,
+    "failure_stage_delphes": true,
+    "lhe_events_correct": true,
+    "lhe_present": true,
+    "missing_delphes_output": true,
+    "parseable_json": true,
+    "process_correct": true,
+    "pythia8_events_correct": true,
+    "pythia8_present": true,
+    "pythia8_requested": true,
+    "recommended_action_mentions_delphes": true,
+    "requested_events_correct": true,
+    "status_incomplete": true,
+    "strict_json_only": false
+  },
+  "failure_modes": [
+    "includes_markdown_fence"
+  ],
+  "model": "llama3.3:70b",
+  "normalized_summary": {
+    "delphes_present": false,
+    "delphes_requested": true,
+    "event_count_consistent": true,
+    "failure_stage": "delphes",
+    "lhe_events": 10000,
+    "lhe_present": true,
+    "missing_outputs": [
+      "Events/run_01/tag_1_delphes_events.root"
+    ],
+    "process": "p p > t t~",
+    "pythia8_events": 10000,
+    "pythia8_present": true,
+    "pythia8_requested": true,
+    "recommended_action": "rerun delphes or fix the delphes card/path before  treating detector-level output as available",
+    "requested_events": 10000,
+    "status": "incomplete"
+  },
+  "passed": true,
+  "score": 0.97,
+  "strict_passed": false,
+  "submission": "<BENCHMARK_ROOT>/HEPToolBench_local_shortlist_full28_r03_clean/submissions/llama3.3_70b/mg_parse_009/validation.json",
+  "task_id": "mg_parse_009"
+}

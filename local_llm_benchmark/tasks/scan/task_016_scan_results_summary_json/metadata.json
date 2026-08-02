@@ -1,0 +1,7 @@
+{
+  "task_id": "scan_results_016",
+  "category": "parameter_scan",
+  "mode": "structured_json",
+  "artifact": "scan_summary.json",
+  "description": "Parse a parameter-scan result table and identify failed points and cross-section extrema."
+}

@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "beam_energy_fixed": false,
+    "correct_process_present": true,
+    "faulty_lines_identify_problem": true,
+    "has_corrected_lines": true,
+    "has_error_type": true,
+    "has_faulty_lines": true,
+    "has_reason": true,
+    "no_forbidden_syntax_in_corrections": true,
+    "output_dir_correct": true,
+    "parseable_json": true,
+    "required_corrected_line_hits": 2,
+    "strict_json_only": true
+  },
+  "corrected_lines_text": "generate p p > h j\noutput HJ",
+  "failure_modes": [
+    "missing_or_wrong_ebeam_repairs"
+  ],
+  "faulty_lines_text": "generate p p > h jet\noutput HiggsJet",
+  "model": "qwen2.5-coder:14b",
+  "passed": false,
+  "score": 0.91,
+  "submission": "/home/as/Benchmark/HEPToolBench_extension3_work/local_r03/submissions/qwen2.5-coder_14b/mg_debug_structured_003/repair.json",
+  "task_id": "mg_debug_structured_003"
+}
