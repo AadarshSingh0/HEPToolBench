@@ -48,21 +48,10 @@ Thumbs.db
 # Python caches
 
 # Machine-specific local HEP-agent paths
-local_hep_agent/configs/local_paths.json
 
 # Local HEP-agent machine configuration
-local_hep_agent/configs/local_paths.json
-local_hep_agent/configs/ollama_host
-local_hep_agent/configs/conda_root
 
 # Local HEP-agent generated outputs
-local_hep_agent/results/
-local_hep_agent/logs/
-local_hep_agent/build/
-local_hep_agent/dist/
-local_hep_agent/*.egg-info/
-local_hep_agent/.coverage
-local_hep_agent/htmlcov/
 
 # Benchmark transient runtime outputs
 local_llm_benchmark/logs/
