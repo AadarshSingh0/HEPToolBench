@@ -1,18 +1,59 @@
 # runners folder guide
 
-Core runners:
-- evaluate_submission.py : score one submitted artifact for one task.
-- run_ollama_task.py : run local or remote Ollama models.
-- run_gemini_task.py : run Google Gemini API models.
-- run_github_models_one_task.py : run GitHub Models API models.
-- run_mistral_task.py : run Mistral API models.
-- run_sarvam_one_task.py : run Sarvam API models.
-- structured_mg_builder.py : deterministic helper used by structured MadGraph scorers.
+This folder contains model execution, transport, and artifact-evaluation code.
 
-Optional/extra provider runners:
-- run_openrouter_task.py
-- run_cerebras_task.py
-- run_aihubmix_task.py
-- run_ollama_task_cloud.py
+Primary local-model path
+------------------------
 
-Use environment variables for API keys. Never hard-code keys.
+run_ollama_task.py
+  Primary task-level Ollama runner used by the current public benchmark.
+
+ollama_http_transport.py
+  Sends non-streaming `/api/generate` requests and records request/response
+  metadata used by the benchmark integrity checks.
+
+ollama_generation_settings.py
+  Parses and validates optional Ollama generation settings such as reasoning,
+  temperature, seed, and generation-token budget.
+
+io_utils.py
+  Shared runner input/output helpers.
+
+evaluate_submission.py
+  Evaluates an existing model-generated artifact with the deterministic scorer
+  for a selected benchmark task.
+
+structured_mg_builder.py
+  Deterministic helper used by structured MadGraph evaluation workflows.
+
+Provider/API runners
+--------------------
+
+- `run_gemini_task.py`
+- `run_github_models_one_task.py`
+- `run_mistral_task.py`
+- `run_sarvam_one_task.py`
+- `run_openrouter_task.py`
+- `run_cerebras_task.py`
+- `run_aihubmix_task.py`
+- `run_ollama_task_cloud.py`
+
+Additional runner
+-----------------
+
+run_ollama_task2.py
+  Additional local-runner entry point retained in the repository. The normal
+  public benchmark workflow uses `run_ollama_task.py` through the top-level
+  `run_benchmark.sh` launcher.
+
+Usage
+-----
+
+Normal users should run models from the repository root with:
+
+```text
+./run_benchmark.sh
+```
+
+Use environment variables for provider API credentials. Never hard-code or
+commit API keys or tokens.

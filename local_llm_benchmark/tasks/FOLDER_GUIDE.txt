@@ -1,33 +1,43 @@
 # tasks folder guide
 
-This folder contains the HEPToolBench task definitions.
+This folder contains the frozen HEPToolBench v1.2 task families.
 
-Each task family may contain:
-- prompt or instruction files,
-- metadata files,
-- tests or scorer files,
-- expected artifact descriptions.
+Task-family directories
+-----------------------
 
-Typical task IDs:
-- mg_basic_001
-- mg_debug_001
-- mg_structured_001
-- mg_runcard_004
-- mg_workflow_005
-- pythia_config_010
-- delphes_objects_011
-- lhe_sanity_012
-- cutflow_diagnosis_013
-- scan_plan_014
-- param_card_patch_015
-- scan_results_016
-- scan_recovery_017
-- benchmark_recommendation_018
-- plot_data_019
-- repro_audit_020
+- `analysis/`
+- `delphes/`
+- `lhe/`
+- `mg_basic/`
+- `mg_debug/`
+- `mg_debug_structured/`
+- `mg_parse/`
+- `mg_runcard/`
+- `mg_runcard_structured/`
+- `mg_structured/`
+- `mg_workflow/`
+- `mg_workflow_structured/`
+- `pythia/`
+- `repro/`
+- `scan/`
 
-How to use:
-Users normally do not run files inside this folder directly. Use a model runner with the task ID.
+Depending on the task, a task definition can contain prompts, input artifacts,
+metadata, schemas or expected-artifact descriptions, and deterministic scorer
+code.
 
-Example:
-    python runners/run_ollama_task.py --model llama3.1:8b --task mg_basic_001
+Users normally should not execute task files directly.
+
+Run a selected task through the benchmark launcher:
+
+```text
+./run_benchmark.sh --models MODEL_NAME --tasks TASK_ID --yes
+```
+
+Or, from `local_llm_benchmark/`, use the task-level runner:
+
+```text
+python3 runners/run_ollama_task.py --model MODEL_NAME --task TASK_ID
+```
+
+The frozen suite contains 28 main tasks plus 3 structured-debug extension
+tasks. See `../SUITE_SCOPE.md` for the formal suite definition.

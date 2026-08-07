@@ -65,6 +65,8 @@ Use a separately hosted Ollama service:
 
 Resume an interrupted run:
 
+A resumed run preserves the Ollama serving settings stored in its manifest. Start a new run ID to change serving settings.
+
 ```bash
 ./run_benchmark.sh --resume RUN_ID
 ```
@@ -96,14 +98,14 @@ Existing runs are not overwritten, and interrupted runs can be resumed.
 
 ```text
 local_llm_benchmark/
-├── tasks/              Benchmark task definitions
-├── scorers/            Deterministic artifact scorers
-├── runners/            Local and provider-specific runners
-├── scripts/            Evaluation and aggregation utilities
-├── tests/              Benchmark tests
-├── docs/               Usage and reproducibility documentation
-├── metadata/           Environment and run metadata
-└── results/            Curated benchmark result artifacts
+├── tasks/              Task families, prompts, inputs, and deterministic scorers
+├── runners/            Ollama and provider-specific model runners
+├── scripts/            Evaluation, auditing, and aggregation utilities
+├── tests/              Offline transport and generation-setting tests
+├── docs/               Usage, suite, and transport documentation
+├── submissions/        Runtime model artifacts; normally untracked
+├── runs/               Isolated benchmark invocations; ignored by Git
+└── results/            Curated public results and generated summaries
 ```
 
 ## Reproducibility and privacy
@@ -111,9 +113,11 @@ local_llm_benchmark/
 Generated event files, local model weights, secrets, temporary environments,
 runtime caches, and machine-local logs should not be committed.
 
-Some archived benchmark results and manifests retain historical host metadata
-as provenance. Private network addresses appearing in those frozen records are
-not public Internet endpoints.
+For the public release, retained historical result metadata has machine-specific
+absolute filesystem roots and private network addresses normalized to
+repository-relative paths or explicit placeholders. Model responses, scores,
+pass/fail values, task identifiers, timestamps, and stability statistics are
+not changed by this publication-only normalization.
 
 ## Companion software
 

@@ -24,6 +24,14 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
 from runners.run_ollama_task import TASKS, build_prompt, run_single_attempt, safe_model_name  # noqa: E402
+from runners.ollama_generation_settings import (  # noqa: E402
+    ENV_NUM_PREDICT,
+    ENV_SEED,
+    ENV_TEMPERATURE,
+    ENV_THINK,
+    normalize_ollama_generation_settings,
+    ollama_generation_setting_mismatches,
+)
 from runners.ollama_http_transport import (  # noqa: E402
     DEFAULT_NUM_CTX,
     TRANSPORT_NAME,
@@ -43,6 +51,13 @@ EXTENSION3 = [
 ]
 FULL31 = list(TASKS)
 MAIN28 = [task for task in FULL31 if task not in set(EXTENSION3)]
+
+
+def cli_option_present(option: str) -> bool:
+    return any(
+        arg == option or arg.startswith(option + "=")
+        for arg in sys.argv[1:]
+    )
 
 
 def utc_now() -> str:
@@ -635,22 +650,70 @@ def main() -> None:
         saved_ollama_settings = manifest.get(
             "ollama_generation_settings", {}
         )
+        if not isinstance(saved_ollama_settings, dict):
+            raise RuntimeError(
+                "Run manifest contains invalid ollama_generation_settings."
+            )
 
-        if isinstance(saved_ollama_settings, dict):
-            resume_environment = {
-                "think": "HEPTOOLBENCH_OLLAMA_THINK",
-                "temperature": "HEPTOOLBENCH_OLLAMA_TEMPERATURE",
-                "seed": "HEPTOOLBENCH_OLLAMA_SEED",
-                "num_predict": "HEPTOOLBENCH_OLLAMA_NUM_PREDICT",
-            }
+        resume_environment = {
+            "think": ENV_THINK,
+            "temperature": ENV_TEMPERATURE,
+            "seed": ENV_SEED,
+            "num_predict": ENV_NUM_PREDICT,
+        }
 
-            for key, env_name in resume_environment.items():
-                if env_name in os.environ:
-                    continue
+        saved_normalized = normalize_ollama_generation_settings(
+            num_ctx=num_ctx,
+            think=saved_ollama_settings.get("think", "auto"),
+            temperature=saved_ollama_settings.get("temperature", "auto"),
+            seed=saved_ollama_settings.get("seed", "auto"),
+            num_predict=saved_ollama_settings.get("num_predict", "auto"),
+        )
 
-                value = saved_ollama_settings.get(key)
-                if value is not None:
-                    os.environ[env_name] = str(value)
+        requested_normalized = normalize_ollama_generation_settings(
+            num_ctx=args.num_ctx,
+            think=os.environ.get(ENV_THINK),
+            temperature=os.environ.get(ENV_TEMPERATURE),
+            seed=os.environ.get(ENV_SEED),
+            num_predict=os.environ.get(ENV_NUM_PREDICT),
+        )
+
+        explicit_resume_settings = set()
+
+        if cli_option_present("--num-ctx"):
+            explicit_resume_settings.add("num_ctx")
+
+        for key, env_name in resume_environment.items():
+            if env_name in os.environ:
+                explicit_resume_settings.add(key)
+
+        mismatches = ollama_generation_setting_mismatches(
+            saved_normalized,
+            requested_normalized,
+            explicit_resume_settings,
+        )
+
+        if mismatches:
+            details = ", ".join(
+                f"{key}: saved={saved_value!r}, requested={requested_value!r}"
+                for key, saved_value, requested_value in mismatches
+            )
+            raise RuntimeError(
+                "Cannot change Ollama serving settings while resuming "
+                f"{run_id}: {details}. "
+                "Start a new run ID to use different serving settings."
+            )
+
+        for key, env_name in resume_environment.items():
+            value = saved_ollama_settings.get(key, "auto")
+
+            if value is None:
+                value = "auto"
+            elif isinstance(value, bool):
+                value = "true" if value else "false"
+
+            os.environ[env_name] = str(value)
+
         host = str(manifest.get("ollama_host", host)).rstrip("/")
         os.environ["OLLAMA_HOST"] = host
 

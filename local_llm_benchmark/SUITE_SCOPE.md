@@ -1,22 +1,41 @@
-# HEPToolBench suite scope
+# HEPToolBench v1.2 suite scope
 
-HEPToolBench v1.2 contains 31 tasks:
+HEPToolBench v1.2 contains 31 frozen benchmark tasks.
 
-- 28 tasks in the main benchmark suite;
-- 3 structured-debug extension tasks:
-  - mg_debug_structured_001
-  - mg_debug_structured_002
-  - mg_debug_structured_003
+## Main suite
 
-The expanded local-model evaluation contained in:
+The main benchmark suite contains 28 tasks covering HEP software workflow
+generation, structured artifacts, debugging, parsing, validation, scan
+planning, result interpretation, plotting, and reproducibility checks.
 
-- results/local_r01/
-- results/local_r02/
-- results/local_r03/
-- results/repeat_analysis/
+The launcher refers to this subset as:
 
-was conducted on the 28-task main suite.
+```text
+main28
+```
 
-Results covering the 31-task suite must explicitly include the three
-structured-debug extension tasks. Main-28 and full-31 results should not be
-combined without clearly identifying their scope.
+## Structured-debug extension
+
+Three additional structured-debug tasks extend the suite:
+
+- `mg_debug_structured_001`
+- `mg_debug_structured_002`
+- `mg_debug_structured_003`
+
+Together, the 28 main tasks and 3 extension tasks form:
+
+```text
+full31
+```
+
+## Reporting results
+
+Results obtained on `main28` and `full31` are not directly interchangeable.
+Published benchmark results should state explicitly which suite was used.
+
+When comparing deployments, the task set, repeat count, model identity,
+serving configuration, and benchmark version should be reported.
+
+For Ollama evaluations, non-default context, reasoning, temperature, seed,
+or generation-budget settings should also be reported because these settings
+can affect benchmark behavior.

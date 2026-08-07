@@ -30,9 +30,9 @@ failures.
 `freeform_ttbar_qwen2_5_coder_7b_100/` contains the preserved 100-generation
 freeform ttbar syntax experiment used for qualitative error analysis.
 
-Historical host paths and private-network addresses inside frozen provenance
-records describe the original execution environment; they are not public
-service endpoints.
+The raw model generations and scientific classification data are retained.
+Machine-specific provenance fields in the public copy are normalized as
+described below.
 
 ## Generated runs
 

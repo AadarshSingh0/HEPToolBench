@@ -1,12 +1,33 @@
 # docs folder guide
 
-This folder contains human-readable documentation for HEPToolBench.
+This folder contains the main user and reproducibility documentation for
+HEPToolBench.
 
-Typical files:
-- how_to_test_a_model.md : quick instructions for running a model on a task.
-- task_descriptions.md : optional overview of task families.
-- model_list.md : optional list of tested models and providers.
-- reproduction_notes.md : optional notes for reproducing benchmark runs.
+Files
+-----
 
-How to use:
-Start by reading how_to_test_a_model.md. The files here are intended for users who want to understand the benchmark before reading the Python code.
+how_to_test_a_model.md
+  Short task-level instructions for checking a model with HEPToolBench.
+
+RUN_LOCAL_MODELS.md
+  Complete guide for guided and noninteractive Ollama benchmark runs,
+  remote Ollama servers, generated files, resume, and generation controls.
+
+OLLAMA_HTTP_TRANSPORT.md
+  Description of the non-streaming Ollama HTTP evaluation path, recorded
+  provenance, integrity safeguards, and associated offline tests.
+
+Related documentation
+---------------------
+
+../SUITE_SCOPE.md
+  Defines the `main28` and `full31` benchmark scopes and reporting rules.
+
+../FOLDER_GUIDE.txt
+  Maps the complete benchmark directory structure.
+
+Recommended starting point
+--------------------------
+
+New users should begin with the repository root README and then read
+RUN_LOCAL_MODELS.md.

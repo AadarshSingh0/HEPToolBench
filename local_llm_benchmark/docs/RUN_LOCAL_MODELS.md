@@ -86,6 +86,8 @@ Pressing `Ctrl+C` stops safely after updating the manifest and CSV files.
 
 Already valid model-task-repeat JSON files are skipped.
 
+The saved Ollama serving configuration is authoritative during resume. Changing num_ctx, think, temperature, seed, or num_predict requires a new run ID.
+
 ## Small test before a full run
 
 ```bash

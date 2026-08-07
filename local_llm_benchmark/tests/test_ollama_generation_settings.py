@@ -8,6 +8,8 @@ from runners.ollama_generation_settings import (
     ENV_THINK,
     build_ollama_options,
     get_ollama_think,
+    normalize_ollama_generation_settings,
+    ollama_generation_setting_mismatches,
 )
 
 
@@ -88,6 +90,60 @@ class OllamaGenerationSettingsTests(unittest.TestCase):
         self.assertEqual(
             build_ollama_options(4096),
             {"num_ctx": 4096},
+        )
+
+    def test_normalized_settings_treat_equivalent_values_equally(self):
+        left = normalize_ollama_generation_settings(
+            num_ctx="4096",
+            think="FALSE",
+            temperature="0.20",
+            seed="7",
+            num_predict="2048",
+        )
+
+        right = normalize_ollama_generation_settings(
+            num_ctx=4096,
+            think=False,
+            temperature=0.2,
+            seed=7,
+            num_predict=2048,
+        )
+
+        self.assertEqual(left, right)
+
+    def test_resume_setting_mismatch_detection(self):
+        saved = normalize_ollama_generation_settings(
+            num_ctx=4096,
+            think="false",
+            temperature="0.2",
+            seed="7",
+            num_predict="2048",
+        )
+
+        requested = normalize_ollama_generation_settings(
+            num_ctx=8192,
+            think="false",
+            temperature="0.2",
+            seed="7",
+            num_predict="2048",
+        )
+
+        self.assertEqual(
+            ollama_generation_setting_mismatches(
+                saved,
+                requested,
+                {"num_ctx"},
+            ),
+            [("num_ctx", 4096, 8192)],
+        )
+
+        self.assertEqual(
+            ollama_generation_setting_mismatches(
+                saved,
+                requested,
+                {"think", "temperature", "seed", "num_predict"},
+            ),
+            [],
         )
 
     def test_invalid_think_rejected(self):

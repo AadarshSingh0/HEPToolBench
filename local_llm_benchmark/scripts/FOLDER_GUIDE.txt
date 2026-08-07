@@ -1,10 +1,33 @@
 # scripts folder guide
 
-Main utilities:
-- summarize_results.py : create per-model and per-task summary CSV files from result JSONs.
-- consolidate_results.py : optional richer consolidation/plotting utility.
-- audit_task_leakage.py : audit task prompts/schemas for answer leakage.
-- inspect_v12_api_setup.sh : check API-runner setup and task compilation.
-- run_v12_api_frontier_all.sh : batch runner for API frontier models listed in api_model_matrix.tsv.
+This folder contains benchmark aggregation, auditing, and batch-run utilities.
 
-Run scripts from the benchmark folder unless stated otherwise.
+Main utilities
+--------------
+
+build_universal_csv.py
+  Rebuilds the cumulative long-form benchmark CSV from generated run data.
+
+summarize_results.py
+  Produces per-model and per-task summaries from result artifacts.
+
+consolidate_results.py
+  Provides additional result consolidation and analysis utilities.
+
+audit_task_leakage.py
+  Audits benchmark prompts and schemas for unintended answer leakage.
+
+inspect_v12_api_setup.sh
+  Checks the API-oriented v1.2 runner configuration.
+
+run_v12_api_frontier_all.sh
+  Batch runner for configured API/frontier deployments.
+
+Usage
+-----
+
+Run these utilities from `local_llm_benchmark/` unless the script itself
+states otherwise.
+
+Ordinary local Ollama users normally do not need to invoke these files
+directly; use the top-level `run_benchmark.sh` launcher.
