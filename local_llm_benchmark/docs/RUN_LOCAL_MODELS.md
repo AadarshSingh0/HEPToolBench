@@ -9,7 +9,7 @@ For local Ollama evaluation you need:
 
 - Git
 - Bash
-- Python 3
+- Python 3.10 or newer
 - Ollama installed locally, or access to a remote Ollama server
 - At least one Ollama model for local runs
 

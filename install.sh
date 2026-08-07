@@ -35,6 +35,11 @@ command -v python3 >/dev/null 2>&1 || {
     exit 1
 }
 
+python3 -c "import sys; raise SystemExit(0 if sys.version_info >= (3, 10) else 1)" || {
+    echo "ERROR: Python 3.10 or newer is required."
+    exit 1
+}
+
 mkdir -p \
     "${ROOT}/local_llm_benchmark/runs" \
     "${ROOT}/local_llm_benchmark/results"
