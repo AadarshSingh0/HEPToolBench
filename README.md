@@ -22,6 +22,28 @@ maintained separately in the `HEPLocalAgent` repository.
 - Utilities for producing long-form CSV files, score matrices, summaries, and
   paper figures.
 
+## Prerequisites
+
+For local Ollama evaluation you need:
+
+- Git
+- Bash
+- Python 3
+- Ollama installed locally, or access to a remote Ollama server
+- At least one Ollama model for local runs
+
+The local runner uses only the Python standard library; no extra pip packages are required.
+
+On Linux, install Ollama with the official installer:
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull qwen3:8b
+ollama list
+```
+
+For macOS and Windows, use the official Ollama download page: https://ollama.com/download.
+
 ## Quick start
 
 Clone the repository and prepare the benchmark launcher:
