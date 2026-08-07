@@ -1,7 +1,7 @@
 {
   "experiment": "100 repeated freeform generations for pp to top-antitop",
   "model": "qwen2.5-coder:7b",
-  "ollama_host": "http://10.42.106.85:11434",
+  "ollama_host": "http://PRIVATE_OLLAMA_HOST:11434",
   "prompt": "Write a MadGraph5_aMC@NLO command script for proton-proton production of a top quark and its antiparticle at a 13 TeV proton-proton collider. Do not include top decays. Use the Standard Model and write the output to a directory named ttbar_run. Return only the MadGraph command script, without explanation.",
   "number_of_generations": 100,
   "interface": "freeform text",

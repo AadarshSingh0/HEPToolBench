@@ -1,7 +1,0 @@
-here are the requested output file content:
-```
-gen_particles_decay_mode = 0
-evgen_results_filename = mg12_events.dat
-nrun = 1
-random_seed = 42
-```

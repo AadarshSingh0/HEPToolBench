@@ -1,1 +1,0 @@
-bash: nvidia-smi: command not found

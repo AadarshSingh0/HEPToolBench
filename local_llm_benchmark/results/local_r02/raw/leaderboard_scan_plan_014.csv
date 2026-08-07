@@ -1,2 +1,0 @@
-model,task_id,score,passed,failure_modes
-llama3:8b,scan_plan_014,0.13,False,includes_explanation_not_json_only;terminal_artifacts_removed;wrong_number_of_scan_points;wrong_or_missing_beam_energy;wrong_or_missing_scan_values

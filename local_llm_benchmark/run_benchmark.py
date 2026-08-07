@@ -631,6 +631,26 @@ def main() -> None:
         repeats = int(manifest["repeats"])
         timeout = int(manifest["timeout_seconds"])
         num_ctx = int(manifest["num_ctx"])
+
+        saved_ollama_settings = manifest.get(
+            "ollama_generation_settings", {}
+        )
+
+        if isinstance(saved_ollama_settings, dict):
+            resume_environment = {
+                "think": "HEPTOOLBENCH_OLLAMA_THINK",
+                "temperature": "HEPTOOLBENCH_OLLAMA_TEMPERATURE",
+                "seed": "HEPTOOLBENCH_OLLAMA_SEED",
+                "num_predict": "HEPTOOLBENCH_OLLAMA_NUM_PREDICT",
+            }
+
+            for key, env_name in resume_environment.items():
+                if env_name in os.environ:
+                    continue
+
+                value = saved_ollama_settings.get(key)
+                if value is not None:
+                    os.environ[env_name] = str(value)
         host = str(manifest.get("ollama_host", host)).rstrip("/")
         os.environ["OLLAMA_HOST"] = host
 
@@ -726,11 +746,20 @@ def main() -> None:
             "ollama_transport": TRANSPORT_NAME,
             "stream": False,
             "num_ctx": num_ctx,
-            "generation_options": {
+            "ollama_generation_settings": {
                 "num_ctx": num_ctx,
-                "temperature": "model_default",
-                "seed": "unset",
-                "num_predict": "model_default",
+                "think": os.environ.get(
+                    "HEPTOOLBENCH_OLLAMA_THINK", "auto"
+                ),
+                "temperature": os.environ.get(
+                    "HEPTOOLBENCH_OLLAMA_TEMPERATURE", "auto"
+                ),
+                "seed": os.environ.get(
+                    "HEPTOOLBENCH_OLLAMA_SEED", "auto"
+                ),
+                "num_predict": os.environ.get(
+                    "HEPTOOLBENCH_OLLAMA_NUM_PREDICT", "auto"
+                ),
             },
             "evaluation_order": "model_repeat_task",
             "suite": suite_name,

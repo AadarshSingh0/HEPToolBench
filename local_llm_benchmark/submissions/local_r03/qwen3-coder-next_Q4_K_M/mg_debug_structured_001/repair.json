@@ -1,4 +1,0 @@
-{"error_type": "process_command_syntax", "faulty_lines": ["p p > e+ e-"], "[1D[K
-"corrected_lines": ["generate p p > e+ e-"], "output_dir": "DY_ee", "reason[7D[K
-"reason": "MadGraph requires the 'generate' command before the process defi[4D[K
-definition."}

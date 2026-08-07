@@ -1,7 +1,0 @@
-output_file: output.root
-number_of_events = 10000
-random_seed = 42
-beams_1_energy = 6500
-beams_2_energy = 6500
-pt_min_e = 20
-eta_max_e = 2.5

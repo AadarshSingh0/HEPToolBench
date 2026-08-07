@@ -1,8 +1,0 @@
-```
-n_events = 10000
-random_seed = 42
-beamparton_1 = 6500
-beamparton_2 = 6500
-ptmin = 20
-rapmax = 2.5
-```

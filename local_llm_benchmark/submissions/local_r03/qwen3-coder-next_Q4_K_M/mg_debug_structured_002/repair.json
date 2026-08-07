@@ -1,6 +1,0 @@
-{"error_type": "invalid_process_and_beam_syntax", "faulty_lines": ["p p > t[1D[K
-t tbar", "set beam1 6500", "set beam2 6500"], "corrected_lines": ["generate[10D[K
-["generate p p > t t~", "set ebeam1 6500", "set ebeam2 6500"], "output_dir"[12D[K
-"output_dir": "TTbar", "reason": "Process line must use MadGraph syntax wit[3D[K
-with t~ for anti-top and generate keyword; beam commands require ebeam1/ebe[10D[K
-ebeam1/ebeam2 instead of beam1/beam2"}

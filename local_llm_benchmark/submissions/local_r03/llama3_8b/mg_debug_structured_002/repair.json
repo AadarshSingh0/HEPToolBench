@@ -1,4 +1,0 @@
-{ "error_type": "Invalid process command", "faulty_lines": ["p p > t tbar"][6D[K
-tbar"], "corrected_lines": ["generate pp>t~t~", "set ebeam1 6500 GeV", "set[4D[K
-"set ebeam2 6500 GeV"], "output_dir": "TTbar", "reason": "\"Replace invalid[7D[K
-invalid process command with generate and correct beam settings.\"" }

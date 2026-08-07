@@ -1,8 +1,0 @@
-{
-"error_type": "InvalidProcess",
-"faulty_lines": ["p p > e+ e-"],
-"corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500", "set ebeam2 [K
-6500"],
-"output_dir": "DY_ee",
-"reason": "\"Corrected process line and valid beam energy commands.\""
-}

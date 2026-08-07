@@ -1,8 +1,0 @@
-{
-  "error_type": "invalid_beam_commands",
-  "faulty_lines": ["set beam1 6500", "set beam2 6500"],
-  "corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500", "set ebeam[5D[K
-ebeam2 6500"],
-  "output_dir": "DY_ee",
-  "reason": "Invalid beam commands and missing generate line"
-}

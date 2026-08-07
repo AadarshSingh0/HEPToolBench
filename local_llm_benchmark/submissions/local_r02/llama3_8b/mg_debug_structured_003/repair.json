@@ -1,8 +1,0 @@
-{
-    "error_type": "Invalid process line",
-    "faulty_lines": ["p p -> h jet"],
-    "corrected_lines": ["generate p p > h j", "process p p > h j"],
-    "output_dir": "HJ",
-    "reason": "\"Removed incorrect 'jet' label and corrected the process li[2D[K
-line.\""
-}

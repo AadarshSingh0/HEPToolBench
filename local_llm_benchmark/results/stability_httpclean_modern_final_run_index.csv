@@ -1,0 +1,11 @@
+model,source_run_id,evaluations,tasks,repeats,length_terminated_outputs,analysis_eligible
+gemma3:4b,stability12_gemma3_4b_full31_x5_20260804,155,31,5,0,True
+gemma4:26b,stability_final_gemma4_26b_full31_x5_20260806,155,31,5,23,True
+granite4:32b-a9b-h,stability12_granite4_32b_a9b_h_full31_x5_20260804,155,31,5,0,True
+llama3.3:70b,stability12_llama3_3_70b_full31_x5_20260804,155,31,5,0,True
+phi4:14b,stability_final_phi4_14b_full31_x5_20260806,155,31,5,0,True
+qwen2.5-coder:14b,stability12_qwen2_5_coder_14b_full31_x5_20260804,155,31,5,0,True
+qwen2.5-coder:7b,stability12_qwen2_5_coder_7b_full31_x5_20260804,155,31,5,0,True
+qwen3-coder-next:Q4_K_M,stability12_qwen3_coder_next_Q4_K_M_full31_x5_20260804,155,31,5,0,True
+qwen3.5:27b,stability12_qwen3_5_27b_full31_x5_20260804,155,31,5,0,True
+qwen3:8b,stability12_qwen3_8b_full31_x5_20260804,155,31,5,0,True

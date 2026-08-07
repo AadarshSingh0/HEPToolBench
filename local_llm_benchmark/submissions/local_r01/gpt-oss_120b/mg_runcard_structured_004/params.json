@@ -1,8 +1,0 @@
-Thinking...
-We need to output JSON object with those fields and values.
-
-Just the JSON.
-
-...done thinking.
-
-{"nevents":10000,"iseed":42,"ebeam1_gev":6500,"ebeam2_gev":6500,"ptl_min_ge{"nevents":10000,"iseed":42,"ebeam1_gev":6500,"ebeam2_gev":6500,"ptl_min_gev":20,"eta_l_max":2.5}

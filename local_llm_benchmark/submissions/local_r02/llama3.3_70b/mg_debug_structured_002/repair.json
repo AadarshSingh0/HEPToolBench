@@ -1,9 +1,0 @@
-{
-  "error_type": "invalid_process_command",
-  "faulty_lines": ["p p > t tbar"],
-  "corrected_lines": ["generate p p > t t~", "set ebeam1 6500", "set ebeam2[6D[K
-ebeam2 6500"],
-  "output_dir": "TTbar",
-  "reason": "Replaced 'tbar' with 't~' and added correct beam energy settin[6D[K
-settings."
-}

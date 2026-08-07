@@ -58,6 +58,22 @@ local_llm_benchmark/logs/
 local_llm_benchmark/tmp/
 local_llm_benchmark/cache/
 
-# Beginner local benchmark generated outputs
+# Benchmark generated/runtime outputs
 local_llm_benchmark/runs/
-local_llm_benchmark/results/all_runs_long.csv
+
+# Model-generated submissions are runtime data.
+local_llm_benchmark/submissions/*
+!local_llm_benchmark/submissions/README.md
+
+# Results are runtime data except for explicitly curated release artifacts.
+local_llm_benchmark/results/*
+!local_llm_benchmark/results/README.md
+
+# Curated freeform experiment.
+!local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/
+!local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/**
+
+# Canonical HTTP-clean stability release.
+!local_llm_benchmark/results/stability_httpclean_modern_final_10models_1550rows.csv
+!local_llm_benchmark/results/stability_httpclean_modern_final_run_index.csv
+!local_llm_benchmark/results/stability_httpclean_modern_final_audit.json

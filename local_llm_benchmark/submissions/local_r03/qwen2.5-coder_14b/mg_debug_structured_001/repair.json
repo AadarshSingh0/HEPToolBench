@@ -1,8 +1,0 @@
-{
-  "error_type": "Beam energy and process command",
-  "faulty_lines": ["p p > e+ e-", "set beam1 6500", "set beam2 6500"],
-  "corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500 GeV", "set e[1D[K
-ebeam2 6500 GeV"],
-  "output_dir": "DY_ee",
-  "reason": "Invalid beam commands and missing generate line."
-}

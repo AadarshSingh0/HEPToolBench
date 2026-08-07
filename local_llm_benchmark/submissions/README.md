@@ -1,8 +1,12 @@
 # Generated submissions
 
-This directory contains the model-generated artifacts scored by the
-deterministic HEPToolBench evaluators.
+This directory is reserved for model-generated artifacts produced during
+benchmark evaluation.
 
-- `local_r01/`: generated artifacts from the 17-model first run.
-- `local_r02/`: second run of the six-model shortlist.
-- `local_r03/`: third run of the six-model shortlist.
+Historical `local_r01`, `local_r02`, and `local_r03` submission trees are not
+distributed in the public benchmark repository. Those runs predate the final
+HTTP-based local evaluation workflow and are retained separately as research
+provenance.
+
+New generated submissions are runtime artifacts and should normally remain
+untracked by Git.

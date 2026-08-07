@@ -1,6 +1,0 @@
-number_of_events=10000
-random_seed=42
-beam_1_energy=6500.0
-beam_2_energy=6500.0
-min_lepton_pt=20.0
-max_lepton_eta=2.5

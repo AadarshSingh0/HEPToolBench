@@ -1,0 +1,61 @@
+{
+  "dataset": "httpclean_modern_final_202608",
+  "evaluations_per_model": 155,
+  "final_run_summaries": {
+    "gemma4:26b": {
+      "done_reason_counts": {
+        "length": 23,
+        "stop": 132
+      },
+      "length_terminated_outputs": 23,
+      "manifest_status": "completed_integrity_failed",
+      "original_audit_passed": false,
+      "run_directory": "local_llm_benchmark/runs/stability_final_gemma4_26b_full31_x5_20260806",
+      "run_id": "stability_final_gemma4_26b_full31_x5_20260806"
+    },
+    "phi4:14b": {
+      "done_reason_counts": {
+        "stop": 155
+      },
+      "length_terminated_outputs": 0,
+      "manifest_status": "completed_verified",
+      "original_audit_passed": true,
+      "run_directory": "local_llm_benchmark/runs/stability_final_phi4_14b_full31_x5_20260806",
+      "run_id": "stability_final_phi4_14b_full31_x5_20260806"
+    }
+  },
+  "index_csv": "local_llm_benchmark/results/stability_httpclean_modern_final_run_index.csv",
+  "length_terminated_outputs_by_model": {
+    "gemma4:26b": 23
+  },
+  "model_count": 10,
+  "model_counts": {
+    "gemma3:4b": 155,
+    "gemma4:26b": 155,
+    "granite4:32b-a9b-h": 155,
+    "llama3.3:70b": 155,
+    "phi4:14b": 155,
+    "qwen2.5-coder:14b": 155,
+    "qwen2.5-coder:7b": 155,
+    "qwen3-coder-next:Q4_K_M": 155,
+    "qwen3.5:27b": 155,
+    "qwen3:8b": 155
+  },
+  "models": [
+    "gemma3:4b",
+    "gemma4:26b",
+    "granite4:32b-a9b-h",
+    "llama3.3:70b",
+    "phi4:14b",
+    "qwen2.5-coder:14b",
+    "qwen2.5-coder:7b",
+    "qwen3-coder-next:Q4_K_M",
+    "qwen3.5:27b",
+    "qwen3:8b"
+  ],
+  "output_csv": "local_llm_benchmark/results/stability_httpclean_modern_final_10models_1550rows.csv",
+  "passed": true,
+  "source_policy": "Only new HTTP-clean five-repeat stability campaigns. Older subprocess and potentially contaminated stability cohorts are excluded.",
+  "total_evaluations": 1550,
+  "unique_model_task_repeat_keys": 1550
+}

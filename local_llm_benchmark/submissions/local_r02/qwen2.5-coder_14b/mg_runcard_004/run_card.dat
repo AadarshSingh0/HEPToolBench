@@ -1,8 +1,0 @@
-```text
-nevents = 10000
-iseed = 42
-ebeam1 = 6500
-ebeam2 = 6500
-cut_mins_ptl = 20
-cut_maxs_eta_l = 2.5
-```

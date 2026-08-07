@@ -1,2 +1,0 @@
-model,task_id,score,passed,failure_modes
-llama3:8b,cutflow_diagnosis_013,0.48,False,includes_explanation_not_json_only;wrong_dominant_signal_loss_cut;wrong_loss_fraction;wrong_s_over_sqrt_b;wrong_step_efficiency

@@ -1,9 +1,0 @@
-```
-generate p p > e+ e- , q qbar > e+ e-
-define p = g u c d s u~ c~ d~ s~
-output DY_ee
-launch
-set beam1 6500
-set beam2 -6500
-add process
-```

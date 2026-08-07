@@ -1,8 +1,0 @@
-```
-nevents = 10000
-iseed = 42
-ebeam1 = 6500
-ebeam2 = 6500
-ptl = 20.
-etar = 2.5
-```

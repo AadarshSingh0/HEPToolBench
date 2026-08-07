@@ -1,9 +1,0 @@
-```text
-import model sm
-define p = g u c d s u~ c~ d~ s~
-p p > e+ e- QCD=QQ
-output DY_ee
-launch
-set beam1 6500
-set beam2 6500
-```

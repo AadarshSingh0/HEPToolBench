@@ -1,9 +1,0 @@
-```text
-import model sm
-define p = p
-generate p p > e+ e-
-output DY_ee -f
-launch
-set ebeam1 6500
-set ebeam2 6500
-```

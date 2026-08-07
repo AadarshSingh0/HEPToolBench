@@ -1,5 +1,5 @@
 run,file,category,generate_line,import_model_sm_exact,output_ttbar_run_exact,line_count,extra_line_count,single_correction_response,rank,full_response,tbar_like_lines,arrow_lines,output_lines
-1,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_001.txt,other_generate_syntax,generate p p > t~ t,True,True,10,7,False,20,"import model sm
+1,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_001.txt,other_generate_syntax,generate p p > t~ t,True,True,10,7,False,20,"import model sm
 generate p p > t~ t
 output ttbar_run
 --run_card.cmnd
@@ -9,28 +9,28 @@ set mmin 200
 set maxjetpt 1000
 set maxetajet 4.7
 run",,,output ttbar_run
-2,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_002.txt,other_generate_syntax,"generate p p > t~ t, Z/nu nu~",False,True,7,5,False,17,"model SM
+2,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_002.txt,other_generate_syntax,"generate p p > t~ t, Z/nu nu~",False,True,7,5,False,17,"model SM
 generate p p > t~ t, Z/nu nu~
 set ebeam 6500.
 AutomaticLoop = off
 AutomaticNLO = off
 output ttbar_run
 done",,,output ttbar_run
-3,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_003.txt,correct_process,generate p p > t t~,False,False,6,4,False,11,"generate p p > t t~
+3,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_003.txt,correct_process,generate p p > t t~,False,False,6,4,False,11,"generate p p > t t~
 output ttbar_run -f
 model SM
 add process p p > t t~ [1e-2]
 run 1000
 save",,,output ttbar_run -f
-4,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_004.txt,other_generate_syntax,generate p p > t~ t [QCD],False,False,2,0,False,10,"generate p p > t~ t [QCD]
+4,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_004.txt,other_generate_syntax,generate p p > t~ t [QCD],False,False,2,0,False,10,"generate p p > t~ t [QCD]
 output ttbar_run -f",,,output ttbar_run -f
-5,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_005.txt,other_generate_syntax,generate p p > t \~t [QCD],False,True,4,2,False,11,"generate p p > t \~t [QCD]
+5,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_005.txt,other_generate_syntax,generate p p > t \~t [QCD],False,True,4,2,False,11,"generate p p > t \~t [QCD]
 output ttbar_run
 add channel -p p p > t \~t QCD
 run ttbar_run",,,output ttbar_run
-6,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_006.txt,invalid_antitop_name,generate p p > t anti-t,False,False,2,0,False,5,"generate p p > t anti-t
+6,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_006.txt,invalid_antitop_name,generate p p > t anti-t,False,False,2,0,False,5,"generate p p > t anti-t
 output ttbar_run --overwrite --clean-dir --event=events.lhe --embedding -a PDGID=6 --maxjetflavor=5 --maxmultiplicity=4 --fast -l 13 TeV",generate p p > t anti-t,,output ttbar_run --overwrite --clean-dir --event=events.lhe --embedding -a PDGID=6 --maxjetflavor=5 --maxmultiplicity=4 --fast -l 13 TeV
-7,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_007.txt,missing_generate,,False,False,15,15,False,37,"cp /path/to/MadGraph5_aMCatNLO/initialize.sh .
+7,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_007.txt,missing_generate,,False,False,15,15,False,37,"cp /path/to/MadGraph5_aMCatNLO/initialize.sh .
 ./initialize.sh ttbar
 cd ttbar
 cp /path/to/MadGraph5_aMCatNLO/models/SM/SM_v2.1.4/model.tgz models/
@@ -45,67 +45,67 @@ echo ""set param_card width t 1.508e-2"" >> processes/proc_card_mg5.dat
 ./bin/run MadGraph5_aMCatNLO_v2.6.1/bin/madgraph.py -f run card -p cards/process_card.madspin --cluster=numpy --no-cluster-check
 mv events/ ttbar_run/
 echo ""Process generated and saved in ttbar_run directory.""",,,
-8,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_008.txt,other_generate_syntax,generate p p > t~ t [QCD],False,False,6,4,False,17,"generate p p > t~ t [QCD]
+8,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_008.txt,other_generate_syntax,generate p p > t~ t [QCD],False,False,6,4,False,17,"generate p p > t~ t [QCD]
 output ttbar_run --path=ttbar_run --overwrite
 set process_card:top_mass 173.0
 update run_card:ee = 2.4
 update run_card:pdf = MSTW2008lo68cl
 run",,,output ttbar_run --path=ttbar_run --overwrite
-9,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_009.txt,invalid_antitop_name,generate p p > t anti-t,False,True,4,2,False,6,"generate p p > t anti-t
+9,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_009.txt,invalid_antitop_name,generate p p > t anti-t,False,True,4,2,False,6,"generate p p > t anti-t
 output ttbar_run
 run default
 This script tells MadGraph5_aMC@NLO to generate events for proton-proton collisions producing a top quark and its antiparticle at 13 TeV, using the Standard Model. The `output` command specifies that the results should be saved in a directory named 'ttbar_run'. The `run default` command executes the generation with default settings.",generate p p > t anti-t,,output ttbar_run
-10,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_010.txt,other_generate_syntax,generate p p > t~ t [QCD],False,True,6,4,False,15,"generate p p > t~ t [QCD]
+10,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_010.txt,other_generate_syntax,generate p p > t~ t [QCD],False,True,6,4,False,15,"generate p p > t~ t [QCD]
 output ttbar_run
 run default
 launch
 analyze
 exit",,,output ttbar_run
-11,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_011.txt,other_generate_syntax,generate p p > t~ t,False,True,5,3,False,13,"generate p p > t~ t
+11,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_011.txt,other_generate_syntax,generate p p > t~ t,False,True,5,3,False,13,"generate p p > t~ t
 output ttbar_run
 save run_card.dat
 launch
 quit",,,output ttbar_run
-12,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_012.txt,invalid_antitop_name,generate p p > t anti-t,True,True,5,2,False,5,"import model sm
+12,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_012.txt,invalid_antitop_name,generate p p > t anti-t,True,True,5,2,False,5,"import model sm
 generate p p > t anti-t
 output ttbar_run
 save madgraph_config.py
 exit",generate p p > t anti-t,,output ttbar_run
-13,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_013.txt,invalid_antitop_name,generate p p > t anti-t,True,False,5,2,False,7,"import model sm
+13,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_013.txt,invalid_antitop_name,generate p p > t anti-t,True,False,5,2,False,7,"import model sm
 generate p p > t anti-t
 output ttbar_run -f
 run 10
 quit",generate p p > t anti-t,,output ttbar_run -f
-14,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_014.txt,other_generate_syntax,generate p p > t t~ QCD,False,False,3,1,False,11,"generate p p > t t~ QCD
+14,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_014.txt,other_generate_syntax,generate p p > t t~ QCD,False,False,3,1,False,11,"generate p p > t t~ QCD
 output ttbar_run -f
 launch",,,output ttbar_run -f
-15,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_015.txt,other_generate_syntax,generate p p > t t~ @nlo -a QCD,False,False,3,1,False,11,"generate p p > t t~ @nlo -a QCD
+15,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_015.txt,other_generate_syntax,generate p p > t t~ @nlo -a QCD,False,False,3,1,False,11,"generate p p > t t~ @nlo -a QCD
 output ttbar_run --overwrite
 run_cards/ct10_lhc_13TeV.cmnd",,,output ttbar_run --overwrite
-16,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_016.txt,correct_process,generate p p > t t~,False,False,4,2,False,7,"generate p p > t t~
+16,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_016.txt,correct_process,generate p p > t t~,False,False,4,2,False,7,"generate p p > t t~
 output ttbar_run -f
 add tagger QCD --renomass=13000.
 launch",,,output ttbar_run -f
-17,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_017.txt,missing_generate,,False,False,7,6,False,20,"import mg5_aMC
+17,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_017.txt,missing_generate,,False,False,7,6,False,20,"import mg5_aMC
 mg5_aMC.initialize()
 mg5_aMC.setModel('SM')
 mg5_aMC.createProcess('pp > ttbar', 'ttbar_run')
 mg5_aMC.generateEvents(1000)
 mg5_aMC.saveEvents()
 mg5_aMC.quit()",,,
-18,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_018.txt,other_generate_syntax,generate p p > t~ t,False,False,3,1,False,11,"generate p p > t~ t
+18,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_018.txt,other_generate_syntax,generate p p > t~ t,False,False,3,1,False,11,"generate p p > t~ t
 output ttbar_run -f
 exit",,,output ttbar_run -f
-19,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_019.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events.py -f param_card.dat --events=1000000 --max-events=1000000 --output-dir=./ttbar_run --no-output-check --skip-model-validation --skip-matching --skip-ewk --skip-qcd --skip-lhef,,,
-20,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_020.txt,correct_process,generate p p > t t~,True,True,4,1,False,2,"import model SM
+19,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_019.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events.py -f param_card.dat --events=1000000 --max-events=1000000 --output-dir=./ttbar_run --no-output-check --skip-model-validation --skip-matching --skip-ewk --skip-qcd --skip-lhef,,,
+20,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_020.txt,correct_process,generate p p > t t~,True,True,4,1,False,2,"import model SM
 generate p p > t t~
 output ttbar_run
 launch",,,output ttbar_run
-21,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_021.txt,other_generate_syntax,generate p p > t \~t [QCD],False,True,4,2,False,11,"generate p p > t \~t [QCD]
+21,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_021.txt,other_generate_syntax,generate p p > t \~t [QCD],False,True,4,2,False,11,"generate p p > t \~t [QCD]
 output ttbar_run
 save
 exit",,,output ttbar_run
-22,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_022.txt,missing_generate,,False,False,8,7,False,22,"import madgraph5_aMCatNLO as mg5
+22,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_022.txt,missing_generate,,False,False,8,7,False,22,"import madgraph5_aMCatNLO as mg5
 mg5.run('init', 'tt~ tt')
 mg5.run('set lhefile 13000')
 mg5.run('generate p p > t~ t, Z', n_events=10000)
@@ -113,8 +113,8 @@ mg5.run('output ttbar_run')
 mg5.run('decay off')
 mg5.save()
 mg5.run_script()",,,
-23,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_023.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events.py -f 'p p > t~ t QCD:qqQCD' --events=10000 --save=ttbar_run,,,
-24,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_024.txt,other_generate_syntax,generate p p > t ~t [QCD],False,True,8,6,False,19,"generate p p > t ~t [QCD]
+23,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_023.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events.py -f 'p p > t~ t QCD:qqQCD' --events=10000 --save=ttbar_run,,,
+24,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_024.txt,other_generate_syntax,generate p p > t ~t [QCD],False,True,8,6,False,19,"generate p p > t ~t [QCD]
 output ttbar_run
 launch
 set lhef:allowDifferentLHEFtoRun true
@@ -122,9 +122,9 @@ run 10
 book 2
 analyze
 exit",,,output ttbar_run
-25,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_025.txt,other_generate_syntax,generate p p > t t~ -qcd,False,False,2,0,False,10,"generate p p > t t~ -qcd
+25,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_025.txt,other_generate_syntax,generate p p > t t~ -qcd,False,False,2,0,False,10,"generate p p > t t~ -qcd
 output ttbar_run -f",,,output ttbar_run -f
-26,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_026.txt,other_generate_syntax,"generate p p > tta~, add=ggH",False,False,12,10,False,29,"newmodel SM
+26,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_026.txt,other_generate_syntax,"generate p p > tta~, add=ggH",False,False,12,10,False,29,"newmodel SM
 add particle t   6 1 1 1 -2
 add particle ta  5 1 1 0 0
 add coupling ggH ttbar
@@ -136,36 +136,36 @@ define l- = e- mu-
 generate p p > tta~, add=ggH
 output ttbar_run -f -u default
 exit",,,output ttbar_run -f -u default
-27,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_027.txt,other_generate_syntax,generate p p > t anti-t [QCD],False,True,3,1,False,9,"generate p p > t anti-t [QCD]
+27,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_027.txt,other_generate_syntax,generate p p > t anti-t [QCD],False,True,3,1,False,9,"generate p p > t anti-t [QCD]
 output ttbar_run
 exit",generate p p > t anti-t [QCD],,output ttbar_run
-28,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_028.txt,invalid_antitop_name,generate p p > t anti-t,False,False,7,5,False,14,"generate p p > t anti-t
+28,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_028.txt,invalid_antitop_name,generate p p > t anti-t,False,False,7,5,False,14,"generate p p > t anti-t
 output ttbar_run -f -s 13000.
 reweight Pythia8
 add process p p > W+ W- off-shell
 add process p p > Z + gamma
 run
 This script sets up a MadGraph5_aMC@NLO run for top quark production, including initial state radiation (ISR) and final state radiation (FSR). The output will be stored in the ""ttbar_run"" directory.",generate p p > t anti-t,,output ttbar_run -f -s 13000.
-29,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_029.txt,other_generate_syntax,"generate p p > t~ t, QCD",True,False,4,1,False,10,"import model sm
+29,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_029.txt,other_generate_syntax,"generate p p > t~ t, QCD",True,False,4,1,False,10,"import model sm
 generate p p > t~ t, QCD
 output ttbar_run -f
 exit",,,output ttbar_run -f
-30,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_030.txt,invalid_antitop_name,generate p p > t anti-t,False,False,5,3,False,10,"generate p p > t anti-t
+30,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_030.txt,invalid_antitop_name,generate p p > t anti-t,False,False,5,3,False,10,"generate p p > t anti-t
 output ttbar_run -f
 model SM
 run_card.ttbar_run.generate_events.cmnd
 launch",generate p p > t anti-t,,output ttbar_run -f
-31,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_031.txt,other_generate_syntax,generate p p > t-t~ -qcd,False,False,6,5,False,18,"madgraph5_aMC
+31,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_031.txt,other_generate_syntax,generate p p > t-t~ -qcd,False,False,6,5,False,18,"madgraph5_aMC
 generate p p > t-t~ -qcd
 set output_dir ttbar_run
 save
 run 1
 quit",,,
-32,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_032.txt,other_generate_syntax,generate p p > t~ t QCD=off,False,True,4,2,False,11,"generate p p > t~ t QCD=off
+32,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_032.txt,other_generate_syntax,generate p p > t~ t QCD=off,False,True,4,2,False,11,"generate p p > t~ t QCD=off
 output ttbar_run
 run_qcut 50
 Save this script to a file, for example `ttbar_script.sh`, and then execute it in the MadGraph5_aMC@NLO environment.",,,output ttbar_run
-33,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_033.txt,missing_generate,,False,False,26,25,False,58,"import os
+33,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_033.txt,missing_generate,,False,False,26,25,False,58,"import os
 os.makedirs('ttbar_run', exist_ok=True)
 with open(os.path.join('ttbar_run', 'run_card.dat'), 'w') as f:
 f.write(""""""# Run card for ttbar production at 13 TeV
@@ -191,14 +191,14 @@ run_mode = 3
 max_events = 10000
 """""")
 print(""MadGraph command script has been written to ttbar_run/run_card.dat"")",decay antitop = off,,
-34,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_034.txt,invalid_antitop_name,generate p p > t anti-t,False,True,7,5,False,12,"generate p p > t anti-t
+34,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_034.txt,invalid_antitop_name,generate p p > t anti-t,False,True,7,5,False,12,"generate p p > t anti-t
 output ttbar_run
 set nlo:all = on
 set process_config[1]:narrow_widths = off
 execute
 save
 exit",generate p p > t anti-t,,output ttbar_run
-35,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_035.txt,other_generate_syntax,generate p p > t anti-t [QCD],False,True,8,6,False,19,"generate p p > t anti-t [QCD]
+35,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_035.txt,other_generate_syntax,generate p p > t anti-t [QCD],False,True,8,6,False,19,"generate p p > t anti-t [QCD]
 output ttbar_run
 set PDF:ct10_lo
 set lhe.setOutputPDF False
@@ -206,14 +206,14 @@ launch
 run 2000
 write events
 exit",generate p p > t anti-t [QCD],,output ttbar_run
-36,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_036.txt,missing_generate,,False,False,7,6,False,20,"import MadGraph5_aMCatNLO as mg5
+36,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_036.txt,missing_generate,,False,False,7,6,False,20,"import MadGraph5_aMCatNLO as mg5
 model = mg5.models.SM()
 mg5.generate(model, 'pp > tt~', energy=13000)
 mg5.disable_decay('t')
 mg5.disable_decay('antit')
 mg5.set_output_directory('ttbar_run')
 mg5.run()",,,
-37,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_037.txt,other_generate_syntax,generate p p > t t~ QCD=off,False,False,13,10,False,30,"import os
+37,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_037.txt,other_generate_syntax,generate p p > t t~ QCD=off,False,False,13,10,False,30,"import os
 output_dir = 'ttbar_run'
 if not os.path.exists(output_dir):
 os.makedirs(output_dir)
@@ -226,29 +226,29 @@ exit
 with open(os.path.join(output_dir, 'run_card.dat'), 'w') as script_file:
 script_file.write(madgraph_script)
 This Python script creates a directory named `ttbar_run` if it doesn't exist and then writes the MadGraph5_aMC@NLO command script to a file named `run_card.dat` within that directory. The script sets the energy to 13 TeV, generates proton-proton collisions leading to top quark and antitop quark production without QCD interactions, and specifies the output directory as `ttbar_run`.","This Python script creates a directory named `ttbar_run` if it doesn't exist and then writes the MadGraph5_aMC@NLO command script to a file named `run_card.dat` within that directory. The script sets the energy to 13 TeV, generates proton-proton collisions leading to top quark and antitop quark production without QCD interactions, and specifies the output directory as `ttbar_run`.",,output {output_dir}
-38,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_038.txt,other_generate_syntax,"generate p p > t~ t, q q~ > b b~, q~ q > b~ b",True,True,6,3,False,12,"import model sm
+38,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_038.txt,other_generate_syntax,"generate p p > t~ t, q q~ > b b~, q~ q > b~ b",True,True,6,3,False,12,"import model sm
 define p = g u c d s u~ c~ d~ s~
 generate p p > t~ t, q q~ > b b~, q~ q > b~ b
 output ttbar_run
 save
 exit",,,output ttbar_run
-39,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_039.txt,other_generate_syntax,generate p p > t~ t [QCD],False,True,5,3,False,13,"generate p p > t~ t [QCD]
+39,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_039.txt,other_generate_syntax,generate p p > t~ t [QCD],False,True,5,3,False,13,"generate p p > t~ t [QCD]
 output ttbar_run
 model SM
 run_card run_card.dat
 This script generates proton-proton events with top quark and antiparticle production at 13 TeV using the Standard Model, without including top decays. The output is directed to a directory named ""ttbar_run"".",,,output ttbar_run
-40,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_040.txt,missing_generate,,False,False,3,3,False,13,"./bin/generate_events.py -f ttbar -p pp -e 13000 -n ttbar_run --no_decay_top
+40,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_040.txt,missing_generate,,False,False,3,3,False,13,"./bin/generate_events.py -f ttbar -p pp -e 13000 -n ttbar_run --no_decay_top
 cd ttbar_run
 ./bin/mg5_aMC",,,
-41,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_041.txt,other_generate_syntax,generate p p > t anti-t / q q~,False,False,2,0,False,10,"generate p p > t anti-t / q q~
+41,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_041.txt,other_generate_syntax,generate p p > t anti-t / q q~,False,False,2,0,False,10,"generate p p > t anti-t / q q~
 output ttbar_run --force",generate p p > t anti-t / q q~,,output ttbar_run --force
-42,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_042.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events.py -f ttbar.cmnd --n_events=1000 --output=ttbar_run,,,
-43,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_043.txt,correct_process,generate p p > t t~,False,False,5,3,False,9,"generate p p > t t~
+42,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_042.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events.py -f ttbar.cmnd --n_events=1000 --output=ttbar_run,,,
+43,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_043.txt,correct_process,generate p p > t t~,False,False,5,3,False,9,"generate p p > t t~
 output ttbar_run -f
 run 1000
 write events file=events.lhe.gz
 quit",,,output ttbar_run -f
-44,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_044.txt,correct_process,generate p p > t t~,False,False,10,8,False,19,"model SM
+44,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_044.txt,correct_process,generate p p > t t~,False,False,10,8,False,19,"model SM
 generate p p > t t~
 set lhe_file true
 set automatic_ren_scale off
@@ -258,10 +258,10 @@ set mass t 172.5
 set mass b 4.8
 output ttbar_run --overwrite
 launch",,,output ttbar_run --overwrite
-45,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_045.txt,other_generate_syntax,generate p p > t \~t [QCD],False,True,3,1,False,9,"generate p p > t \~t [QCD]
+45,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_045.txt,other_generate_syntax,generate p p > t \~t [QCD],False,True,3,1,False,9,"generate p p > t \~t [QCD]
 output ttbar_run
 run_card.dat",,,output ttbar_run
-46,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_046.txt,other_generate_syntax,generate p p > t~ t with threshold 130,False,False,17,14,False,38,"import os
+46,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_046.txt,other_generate_syntax,generate p p > t~ t with threshold 130,False,False,17,14,False,38,"import os
 os.system('mkdir -p ttbar_run')
 os.chdir('ttbar_run')
 command = """"""
@@ -278,21 +278,21 @@ launch
 """"""
 with open('run_card.dat', 'w') as f:
 f.write(command)",,,output Ttbar
-47,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_047.txt,other_generate_syntax,generate p p > t~ t QCD=0,True,False,7,4,False,16,"import model sm
+47,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_047.txt,other_generate_syntax,generate p p > t~ t QCD=0,True,False,7,4,False,16,"import model sm
 define p = g u c d s t b~
 define j = g u c d s
 generate p p > t~ t QCD=0
 output ttbar_run --overwrite
 run 1
 quit",,,output ttbar_run --overwrite
-48,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_048.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events.py -f models/StandardModel.py --proc-name pp_ttbar_nlo --output-dir ttbar_run --events=100000,,,
-49,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_049.txt,other_generate_syntax,generate p p > t~ t,False,True,6,4,False,15,"generate p p > t~ t
+48,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_048.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events.py -f models/StandardModel.py --proc-name pp_ttbar_nlo --output-dir ttbar_run --events=100000,,,
+49,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_049.txt,other_generate_syntax,generate p p > t~ t,False,True,6,4,False,15,"generate p p > t~ t
 output ttbar_run
 model SM
 set looptime 10
 launch
 run 2",,,output ttbar_run
-50,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_050.txt,other_generate_syntax,generate p p > t~ t,True,True,9,6,False,18,"mkdir ttbar_run
+50,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_050.txt,other_generate_syntax,generate p p > t~ t,True,True,9,6,False,18,"mkdir ttbar_run
 cd ttbar_run
 mg5_aMC
 import model SM
@@ -301,7 +301,7 @@ set energy 13000.
 update gauge unitarize
 fixed Order h=3 qcd=3
 output ttbar_run",,,output ttbar_run
-51,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_051.txt,missing_generate,,False,False,9,8,False,24,"import os
+51,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_051.txt,missing_generate,,False,False,9,8,False,24,"import os
 os.system(""cp -r /path/to/MadGraph5_aMCatNLO /tmp/ttbar_run"")
 os.chdir(""/tmp/ttbar_run"")
 os.system(""./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=LO --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000"")
@@ -310,28 +310,28 @@ os.system(""./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=
 os.system(""./bin/gridpack_generation.py -f 'p p > t anti-t QCD' --model=SM --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000"")
 os.chdir(""/tmp"")
 os.system(""rm -rf /tmp/ttbar_run"")","os.system(""./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=LO --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000"") | os.system(""./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=NLO --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000"") | os.system(""./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=NLL --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000"") | os.system(""./bin/gridpack_generation.py -f 'p p > t anti-t QCD' --model=SM --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000"")","os.system(""./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=LO --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000"") | os.system(""./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=NLO --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000"") | os.system(""./bin/generate_events.py -f 'p p > t anti-t QCD' --model=SM --order=NLL --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000"") | os.system(""./bin/gridpack_generation.py -f 'p p > t anti-t QCD' --model=SM --decays='t -> b W^+; anti-t -> b W^-; W^+,W^- -> l nu; l + nu -> e- e+' --events=100000"")",
-52,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_052.txt,other_generate_syntax,generate p p > t anti-t [QCD],False,True,3,1,False,9,"generate p p > t anti-t [QCD]
+52,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_052.txt,other_generate_syntax,generate p p > t anti-t [QCD],False,True,3,1,False,9,"generate p p > t anti-t [QCD]
 output ttbar_run
 exit",generate p p > t anti-t [QCD],,output ttbar_run
-53,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_053.txt,correct_process,generate p p > t t~,True,False,4,1,False,4,"import model sm
+53,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_053.txt,correct_process,generate p p > t t~,True,False,4,1,False,4,"import model sm
 generate p p > t t~
 output ttbar_run -f lhe
 run 1",,,output ttbar_run -f lhe
-54,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_054.txt,other_generate_syntax,generate p p > t t~ QCD=on[number=5],False,False,6,4,False,17,"set energy 13000
+54,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_054.txt,other_generate_syntax,generate p p > t t~ QCD=on[number=5],False,False,6,4,False,17,"set energy 13000
 set lhef /path/to/your/input.lhef
 generate p p > t t~ QCD=on[number=5]
 output ttbar_run --event=ttbar_events.hep
 run MadGraph5_aMC@NLO
 Make sure to replace `/path/to/your/input.lhef` with the actual path to your input LHEF file. This script sets up a proton-proton collision at 13 TeV, generates events for top quark and anti-top quark production along with QCD radiation, and specifies that no top decays should be considered. The output is directed into the `ttbar_run` directory, containing the generated events in an HEPEVT format file named `ttbar_events.hep`.","Make sure to replace `/path/to/your/input.lhef` with the actual path to your input LHEF file. This script sets up a proton-proton collision at 13 TeV, generates events for top quark and anti-top quark production along with QCD radiation, and specifies that no top decays should be considered. The output is directed into the `ttbar_run` directory, containing the generated events in an HEPEVT format file named `ttbar_events.hep`.",,output ttbar_run --event=ttbar_events.hep
-55,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_055.txt,other_generate_syntax,generate p p > t \~t [QCD],False,True,3,1,False,9,"generate p p > t \~t [QCD]
+55,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_055.txt,other_generate_syntax,generate p p > t \~t [QCD],False,True,3,1,False,9,"generate p p > t \~t [QCD]
 output ttbar_run
 exit",,,output ttbar_run
-56,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_056.txt,correct_process,generate p p > t t~,False,False,5,3,False,9,"generate p p > t t~
+56,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_056.txt,correct_process,generate p p > t t~,False,False,5,3,False,9,"generate p p > t t~
 output ttbar_run -f lhe
 set energy 13000
 run 1
 quit",,,output ttbar_run -f lhe
-57,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_057.txt,invalid_antitop_name,generate p p > t anti-t,False,False,8,6,False,16,"model SM
+57,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_057.txt,invalid_antitop_name,generate p p > t anti-t,False,False,8,6,False,16,"model SM
 generate p p > t anti-t
 set energy 13000
 set pdlabel lhef
@@ -339,14 +339,14 @@ process LHEF ttbar_run/events.lhe
 run default
 output ttbar_run -f
 This script sets up the generation of a top quark and its antiparticle in proton-proton collisions at 13 TeV. It uses the Standard Model, disables decays for the top quark, and outputs the results to a directory named `ttbar_run`.",generate p p > t anti-t,,output ttbar_run -f
-58,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_058.txt,other_generate_syntax,generate p p > t anti-t QCD=off QED=off,True,True,4,1,False,8,"import model SM
+58,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_058.txt,other_generate_syntax,generate p p > t anti-t QCD=off QED=off,True,True,4,1,False,8,"import model SM
 generate p p > t anti-t QCD=off QED=off
 output ttbar_run
 launch",generate p p > t anti-t QCD=off QED=off,,output ttbar_run
-59,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_059.txt,other_generate_syntax,generate p p > t~ t,False,True,3,1,False,9,"generate p p > t~ t
+59,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_059.txt,other_generate_syntax,generate p p > t~ t,False,True,3,1,False,9,"generate p p > t~ t
 output ttbar_run
 run",,,output ttbar_run
-60,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_060.txt,missing_generate,,False,False,9,8,False,24,"import madgraph
+60,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_060.txt,missing_generate,,False,False,9,8,False,24,"import madgraph
 from madgraph import *
 model = Model()
 model.load('sm')
@@ -355,17 +355,17 @@ process.add(initial_state='p p', final_state='t t~')
 generator = MG5Generator(process, model)
 generator.set_output_directory('ttbar_run')
 generator.generate_events(nevents=1000)",,,
-61,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_061.txt,invalid_antitop_name,generate p p > t anti-t,False,True,3,1,False,4,"generate p p > t anti-t
+61,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_061.txt,invalid_antitop_name,generate p p > t anti-t,False,True,3,1,False,4,"generate p p > t anti-t
 output ttbar_run
 launch",generate p p > t anti-t,,output ttbar_run
-62,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_062.txt,other_generate_syntax,"generate p p > t~ t, QCD",False,True,4,2,False,11,"generate p p > t~ t, QCD
+62,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_062.txt,other_generate_syntax,"generate p p > t~ t, QCD",False,True,4,2,False,11,"generate p p > t~ t, QCD
 output ttbar_run
 run_qcd.sh
 This script generates a process where a proton (p) collides with another proton (p) to produce a top quark (t) and its antiparticle (t~), along with QCD radiation. The output is saved in the directory ""ttbar_run"". The `run_qcd.sh` command is used to run the QCD analysis on the generated events.",,,output ttbar_run
-63,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_063.txt,other_generate_syntax,generate p p > t~ t QCD=on QED=off,False,False,3,1,False,11,"generate p p > t~ t QCD=on QED=off
+63,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_063.txt,other_generate_syntax,generate p p > t~ t QCD=on QED=off,False,False,3,1,False,11,"generate p p > t~ t QCD=on QED=off
 output ttbar_run --filein card.top.input --filename Cards/param_card.dat
 exit",,,output ttbar_run --filein card.top.input --filename Cards/param_card.dat
-64,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_064.txt,other_generate_syntax,"generate p p > ttbar, QCD",False,False,18,15,False,40,"import os
+64,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_064.txt,other_generate_syntax,"generate p p > ttbar, QCD",False,False,18,15,False,40,"import os
 output_dir = 'ttbar_run'
 if not os.path.exists(output_dir):
 os.makedirs(output_dir)
@@ -383,65 +383,65 @@ quit
 with open(os.path.join(output_dir, 'mg_commands.mg5'), 'w') as f:
 f.write(madgraph_script)
 This Python script will create a directory named `ttbar_run` and write the MadGraph command script to a file within that directory. The script sets up a proton-proton collision at 13 TeV, generates events for top quark-antiquark production (without decays), and outputs the results to the specified directory.",,,output {output_dir}
-65,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_065.txt,invalid_antitop_name,generate p p > t anti-t,False,True,2,0,False,3,"generate p p > t anti-t
+65,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_065.txt,invalid_antitop_name,generate p p > t anti-t,False,True,2,0,False,3,"generate p p > t anti-t
 output ttbar_run",generate p p > t anti-t,,output ttbar_run
-66,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_066.txt,correct_process,generate p p > t t~,False,False,5,3,False,9,"generate p p > t t~
+66,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_066.txt,correct_process,generate p p > t t~,False,False,5,3,False,9,"generate p p > t t~
 output ttbar_run --overWrite
 model SM
 add process p p > t t~ at 13000.
 run 1000",,,output ttbar_run --overWrite
-67,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_067.txt,other_generate_syntax,"generate p p > t~ t, QCD=QCD",False,True,4,2,False,11,"generate p p > t~ t, QCD=QCD
+67,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_067.txt,other_generate_syntax,"generate p p > t~ t, QCD=QCD",False,True,4,2,False,11,"generate p p > t~ t, QCD=QCD
 output ttbar_run
 run card ttbar.dat
 This script sets up a process where protons collide to produce a top quark and its antiparticle (t~), alongside additional QCD radiation. The output is directed into a directory named `ttbar_run`.",,,output ttbar_run
-68,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_068.txt,correct_process,generate p p > t t~,False,False,6,4,False,11,"generate p p > t t~
+68,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_068.txt,correct_process,generate p p > t t~,False,False,6,4,False,11,"generate p p > t t~
 output ttbar_run -f
 model SM
 add process t t~ > b b~
 save
 exit",,,output ttbar_run -f
-69,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_069.txt,other_generate_syntax,generate p p > t~ t,False,True,3,1,False,9,"generate p p > t~ t
+69,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_069.txt,other_generate_syntax,generate p p > t~ t,False,True,3,1,False,9,"generate p p > t~ t
 output ttbar_run
 launch",,,output ttbar_run
-70,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_070.txt,correct_process,generate p p > t t~,False,False,5,3,False,9,"generate p p > t t~
+70,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_070.txt,correct_process,generate p p > t t~,False,False,5,3,False,9,"generate p p > t t~
 output ttbar_run -f
 model SM
 process [t t~]
 run 1000",,,output ttbar_run -f
-71,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_071.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events.py -f ttbar_process_card.dat --gridpack=True --output=ttbar_run,,,
-72,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_072.txt,invalid_antitop_name,generate p p > t anti-t,False,True,4,2,False,6,"generate p p > t anti-t
+71,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_071.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events.py -f ttbar_process_card.dat --gridpack=True --output=ttbar_run,,,
+72,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_072.txt,invalid_antitop_name,generate p p > t anti-t,False,True,4,2,False,6,"generate p p > t anti-t
 output ttbar_run
 set precision:precision_mode = accurate
 run 100",generate p p > t anti-t,,output ttbar_run
-73,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_073.txt,correct_process,generate p p > t t~,False,False,2,0,False,4,"generate p p > t t~
+73,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_073.txt,correct_process,generate p p > t t~,False,False,2,0,False,4,"generate p p > t t~
 output ttbar_run -f -a all --no-pdg-checks",,,output ttbar_run -f -a all --no-pdg-checks
-74,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_074.txt,other_generate_syntax,generate p p > t t~ -a QCD,False,False,6,4,False,17,"generate p p > t t~ -a QCD
+74,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_074.txt,other_generate_syntax,generate p p > t t~ -a QCD,False,False,6,4,False,17,"generate p p > t t~ -a QCD
 set cut_initial_state_merging 10
 run fast
 output ttbar_run --filein input_slha.txt
 launch
 quit",,,output ttbar_run --filein input_slha.txt
-75,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_075.txt,other_generate_syntax,generate p p > t anti-t [QCD],False,True,4,2,False,11,"generate p p > t anti-t [QCD]
+75,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_075.txt,other_generate_syntax,generate p p > t anti-t [QCD],False,True,4,2,False,11,"generate p p > t anti-t [QCD]
 output ttbar_run
 run default
 This script sets up a proton-proton collision where a top quark and its antiparticle are produced. It uses QCD for the interaction. The output is directed to the 'ttbar_run' directory, and MadGraph's default settings are applied for running the process.",generate p p > t anti-t [QCD],,output ttbar_run
-76,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_076.txt,missing_generate,,False,False,3,3,False,13,"./bin/generate_events.py -f ttbar_run --cms-energy=13000 --events=1000000 -m ""tt"" -a ""top anti-top""
+76,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_076.txt,missing_generate,,False,False,3,3,False,13,"./bin/generate_events.py -f ttbar_run --cms-energy=13000 --events=1000000 -m ""tt"" -a ""top anti-top""
 cd ttbar_run/Events/run_01/unweighted_events.lhe
 cp unweighted_events.lhe ../","./bin/generate_events.py -f ttbar_run --cms-energy=13000 --events=1000000 -m ""tt"" -a ""top anti-top""",,
-77,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_077.txt,other_generate_syntax,generate p p > t~ t,False,True,2,0,False,8,"generate p p > t~ t
+77,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_077.txt,other_generate_syntax,generate p p > t~ t,False,True,2,0,False,8,"generate p p > t~ t
 output ttbar_run",,,output ttbar_run
-78,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_078.txt,invalid_antitop_name,generate p p > t anti-t,False,False,3,1,False,6,"generate p p > t anti-t
+78,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_078.txt,invalid_antitop_name,generate p p > t anti-t,False,False,3,1,False,6,"generate p p > t anti-t
 output ttbar_run --filein default.cmnd=disable_decays.cmnd
 run 1000",generate p p > t anti-t,,output ttbar_run --filein default.cmnd=disable_decays.cmnd
-79,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_079.txt,missing_generate,,False,False,6,5,False,18,"import madgraph.iolibs.model_reader as model_reader
+79,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_079.txt,missing_generate,,False,False,6,5,False,18,"import madgraph.iolibs.model_reader as model_reader
 model = model_reader.read_standard_model()
 amplitude = model.get_amplitude(""tt~ > t + b"", loop_order=0)
 output_directory = ""ttbar_run""
 amplitude.write(output_directory, format=""feyn"")
 amplitude.generate_events(10**4, output_file=f""{output_directory}/events.lhe"", event_type=""fixed scale"", scale=13000)",,,
-80,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_080.txt,other_generate_syntax,"generate p p > t~ t, q-qbar -> u d s c b t t~",False,False,2,0,False,10,"generate p p > t~ t, q-qbar -> u d s c b t t~
+80,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_080.txt,other_generate_syntax,"generate p p > t~ t, q-qbar -> u d s c b t t~",False,False,2,0,False,10,"generate p p > t~ t, q-qbar -> u d s c b t t~
 output ttbar_run -f --skip-if-present",,"generate p p > t~ t, q-qbar -> u d s c b t t~",output ttbar_run -f --skip-if-present
-81,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_081.txt,missing_generate,,False,False,8,7,False,22,"import MadGraph5_aMCatNLO
+81,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_081.txt,missing_generate,,False,False,8,7,False,22,"import MadGraph5_aMCatNLO
 model = MadGraph5_aMCatNLO.Model()
 model.set('StandardModel')
 process = MadGraph5_aMCatNLO.Process(model)
@@ -449,8 +449,8 @@ process.set('p p > t anti-t', 'QCD QED')
 process.generate_events(energy=13000, decay='off')
 process.output_directory = 'ttbar_run'
 process.run()","process.set('p p > t anti-t', 'QCD QED')",,
-82,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_082.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events --feynman-rules SM_feynman_rules.frm --output-dir=ttbar_run --events=10000,,,
-83,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_083.txt,other_generate_syntax,generate p p > t~ t [QCD],False,False,10,7,False,24,"import os
+82,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_082.txt,missing_generate,,False,False,1,1,False,11,./bin/generate_events --feynman-rules SM_feynman_rules.frm --output-dir=ttbar_run --events=10000,,,
+83,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_083.txt,other_generate_syntax,generate p p > t~ t [QCD],False,False,10,7,False,24,"import os
 output_dir = 'ttbar_run'
 if not os.path.exists(output_dir):
 os.makedirs(output_dir)
@@ -460,34 +460,34 @@ output {output_dir}
 """"""
 with open(os.path.join(output_dir, 'run_card.dat'), 'w') as f:
 f.write(command_script)",,,output {output_dir}
-84,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_084.txt,other_generate_syntax,generate p p > t t~ [QCD],False,False,6,4,False,17,"generate p p > t t~ [QCD]
+84,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_084.txt,other_generate_syntax,generate p p > t t~ [QCD],False,False,6,4,False,17,"generate p p > t t~ [QCD]
 output ttbar_run -f
 save run_card.dat
 set lhe_version 3
 launch
 exit",,,output ttbar_run -f
-85,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_085.txt,other_generate_syntax,generate p p > t t~ QCD,False,False,5,3,False,15,"generate p p > t t~ QCD
+85,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_085.txt,other_generate_syntax,generate p p > t t~ QCD,False,False,5,3,False,15,"generate p p > t t~ QCD
 output ttbar_run --overwrite
 set lhe_version 3
 launch
 run 100",,,output ttbar_run --overwrite
-86,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_086.txt,other_generate_syntax,generate p p > t~ t,False,True,5,3,False,13,"generate p p > t~ t
+86,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_086.txt,other_generate_syntax,generate p p > t~ t,False,True,5,3,False,13,"generate p p > t~ t
 output ttbar_run
 set group_labels 1 2
 set group_subprocesses true
 run 10",,,output ttbar_run
-87,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_087.txt,other_generate_syntax,generate p p > t anti-t [QCD] order: QCD,False,True,4,2,False,11,"generate p p > t anti-t [QCD] order: QCD
+87,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_087.txt,other_generate_syntax,generate p p > t anti-t [QCD] order: QCD,False,True,4,2,False,11,"generate p p > t anti-t [QCD] order: QCD
 output ttbar_run
 run card default.cmnd
 launch -f run_card.dat -n 1000 --max_events=10000 --event=events.lhe -- LesHouches.in.ttbar",generate p p > t anti-t [QCD] order: QCD,,output ttbar_run
-88,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_088.txt,correct_process,generate p p > t t~,True,True,7,4,False,8,"import model sm
+88,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_088.txt,correct_process,generate p p > t t~,True,True,7,4,False,8,"import model sm
 define p = u d s c b t
 define j = g higgsm
 generate p p > t t~
 output ttbar_run
 run
 quit",,,output ttbar_run
-89,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_089.txt,correct_process,generate p p > t t~,False,False,8,6,False,15,"generate p p > t t~
+89,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_089.txt,correct_process,generate p p > t t~,False,False,8,6,False,15,"generate p p > t t~
 output ttbar_run -f Feynman
 run_card.cmnd
 set gauge_type = ""unitary""
@@ -495,22 +495,22 @@ set RenScale 13000.
 set FacScale 13000.
 set alphas_init 0.1284
 launch",,,output ttbar_run -f Feynman
-90,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_090.txt,correct_process,generate p p > t t~,False,False,4,2,False,7,"generate p p > t t~
+90,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_090.txt,correct_process,generate p p > t t~,False,False,4,2,False,7,"generate p p > t t~
 output ttbar_run -f --overwrite
 model SM
 run_card.ttbar_run",,,output ttbar_run -f --overwrite
-91,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_091.txt,other_generate_syntax,generate p p > t t~ --no-loop --max-point=100000,False,True,4,2,False,11,"generate p p > t t~ --no-loop --max-point=100000
+91,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_091.txt,other_generate_syntax,generate p p > t t~ --no-loop --max-point=100000,False,True,4,2,False,11,"generate p p > t t~ --no-loop --max-point=100000
 output ttbar_run
 launch
 quit",,,output ttbar_run
-92,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_092.txt,other_generate_syntax,generate p p > t anti-t QCD=off model SM,False,False,5,3,False,15,"generate p p > t anti-t QCD=off model SM
+92,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_092.txt,other_generate_syntax,generate p p > t anti-t QCD=off model SM,False,False,5,3,False,15,"generate p p > t anti-t QCD=off model SM
 output ttbar_run -f
 launch
 run 1000
 quit",generate p p > t anti-t QCD=off model SM,,output ttbar_run -f
-93,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_093.txt,invalid_antitop_name,generate p p > t anti-t,False,True,2,0,False,3,"generate p p > t anti-t
+93,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_093.txt,invalid_antitop_name,generate p p > t anti-t,False,True,2,0,False,3,"generate p p > t anti-t
 output ttbar_run",generate p p > t anti-t,,output ttbar_run
-94,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_094.txt,other_generate_syntax,generate p p > t-t~ [QCD],False,False,13,10,False,30,"import os
+94,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_094.txt,other_generate_syntax,generate p p > t-t~ [QCD],False,False,13,10,False,30,"import os
 if not os.path.exists('ttbar_run'):
 os.makedirs('ttbar_run')
 os.chdir('ttbar_run')
@@ -523,20 +523,20 @@ plot
 with open('mg5_command_script.py', 'w') as f:
 f.write(command_script)
 This script sets up a MadGraph5_aMC@NLO run for ttbar production at 13 TeV, generates the necessary files, and runs the event generation. It assumes that the required parameter card (`param_card.dat`), coupling file (`couplings.dat`), and any other necessary configuration is already in place in the `Cards` directory. The script creates a new particle for the top quark and sets its mass to 173 GeV. The output files will be placed in the `ttbar_run` directory.",,,output ttbar_run --filein=Cards/param_card.dat --fileout=cards/meff.input --feynman_rules=Cards/couplings.dat --new-particle=true --new-name=t --new-mass=173.0
-95,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_095.txt,other_generate_syntax,generate p p > t anti-t [QCD],False,False,3,1,False,11,"generate p p > t anti-t [QCD]
+95,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_095.txt,other_generate_syntax,generate p p > t anti-t [QCD],False,False,3,1,False,11,"generate p p > t anti-t [QCD]
 output ttbar_run -f
 launch",generate p p > t anti-t [QCD],,output ttbar_run -f
-96,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_096.txt,invalid_antitop_name,generate p p > t anti-t,True,True,4,1,False,3,"import model sm
+96,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_096.txt,invalid_antitop_name,generate p p > t anti-t,True,True,4,1,False,3,"import model sm
 generate p p > t anti-t
 output ttbar_run
 quit",generate p p > t anti-t,,output ttbar_run
-97,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_097.txt,correct_process,generate p p > t t~,False,True,2,0,False,2,"generate p p > t t~
+97,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_097.txt,correct_process,generate p p > t t~,False,True,2,0,False,2,"generate p p > t t~
 output ttbar_run",,,output ttbar_run
-98,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_098.txt,other_generate_syntax,generate p p > t~ t [QCD],False,True,4,2,False,11,"generate p p > t~ t [QCD]
+98,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_098.txt,other_generate_syntax,generate p p > t~ t [QCD],False,True,4,2,False,11,"generate p p > t~ t [QCD]
 output ttbar_run
 model StandardModel
 launch",,,output ttbar_run
-99,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_099.txt,missing_generate,,False,False,12,11,False,30,"import madgraph
+99,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_099.txt,missing_generate,,False,False,12,11,False,30,"import madgraph
 model = madgraph.models.stdmodel.StdModel()
 model.generate(
 'p p > t anti-t',
@@ -548,7 +548,7 @@ auto_update=True,
 check_model=True,
 verbose=True,
 )","'p p > t anti-t',",,
-100,/home/as/Benchmark/HEPToolBench_GitHub/local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_100.txt,other_generate_syntax,generate p p > t~ t QCD=off,False,False,6,4,False,17,"model SM
+100,local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/responses/response_100.txt,other_generate_syntax,generate p p > t~ t QCD=off,False,False,6,4,False,17,"model SM
 generate p p > t~ t QCD=off
 set decay t to g h
 set decay t~ to g h

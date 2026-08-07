@@ -119,3 +119,65 @@ not public Internet endpoints.
 
 The deterministic local workflow agent described in the companion paper is
 distributed separately as `HEPLocalAgent`.
+
+## Ollama generation controls
+
+HEPToolBench sends local-model requests directly to Ollama through the
+non-streaming HTTP `/api/generate` endpoint. It does not capture model
+generations from `ollama run`.
+
+For a newly installed Ollama model, the normal command is:
+
+```bash
+./run_benchmark.sh \
+  --models MODEL_NAME \
+  --suite full31 \
+  --yes
+```
+
+The default serving configuration is:
+
+- `num_ctx = 4096`
+- `think = auto`
+- `temperature = auto`
+- `seed = auto`
+- `num_predict = auto`
+
+Here, `auto` means HEPToolBench does not override the corresponding
+Ollama/model default. The 4096-token context window is the explicit
+HEPToolBench default and can be changed by the user.
+
+Advanced users can override the serving configuration:
+
+```bash
+./run_benchmark.sh \
+  --models MODEL_NAME \
+  --suite full31 \
+  --num-ctx 8192 \
+  --think false \
+  --temperature 0.2 \
+  --seed 7 \
+  --num-predict 2048 \
+  --yes
+```
+
+Available controls are:
+
+- `--num-ctx N`: context window.
+- `--think VALUE`: `auto`, `true`, `false`, `low`, `medium`, `high`, or `max`.
+- `--temperature VALUE`: sampling temperature.
+- `--seed VALUE`: integer random seed.
+- `--num-predict VALUE`: maximum generation-token budget.
+
+The selected serving configuration is stored in `run_manifest.json` under
+`ollama_generation_settings`. Each attempt also stores the exact HTTP request
+and response metadata in `ollama_http_metadata.json`.
+
+If generation ends because of length, try increasing `--num-ctx` or
+`--num-predict`. If reasoning consumes the response budget, try
+`--think false` when supported. Reduce `--num-ctx` for memory pressure,
+and consider a lower `--temperature` or an explicit `--seed` when
+investigating unstable output.
+
+Generation settings affect model behavior, so non-default serving settings
+should be reported when benchmark scores are published or compared.

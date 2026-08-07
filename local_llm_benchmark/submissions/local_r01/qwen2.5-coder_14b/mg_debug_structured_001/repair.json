@@ -1,9 +1,0 @@
-{
-  "error_type": "BeamEnergyCommand",
-  "faulty_lines": ["import model sm", "define p = g u c d s u~ c~ d~ s~"],
-  "corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500 GeV", "set e[1D[K
-ebeam2 6500 GeV"],
-  "output_dir": "DY_ee",
-  "reason": "Invalid beam energy commands and missing generate process line[4D[K
-line."
-}

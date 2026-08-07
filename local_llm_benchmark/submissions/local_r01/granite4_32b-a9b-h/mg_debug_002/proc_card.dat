@@ -1,9 +1,0 @@
-```text
-import model sm
-define p = g u c d s b u~ c~ d~ s~ b~
-p p > t t~
-output TTbar
-launch
-set LHC pb=6500
-set LHC ppb=6500
-```

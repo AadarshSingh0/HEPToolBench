@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-export OLLAMA_HOST="${OLLAMA_HOST:-http://10.42.106.85:11434}"
+export OLLAMA_HOST="${OLLAMA_HOST:-http://localhost:11434}"
 
 # Large CPU/RAM models may need substantial time.
 RUNNER_TIMEOUT="${RUNNER_TIMEOUT:-21000}"

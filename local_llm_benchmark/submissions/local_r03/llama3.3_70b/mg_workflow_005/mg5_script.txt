@@ -1,6 +1,0 @@
-import model SM
-define p = g u c d s u~ c~ d~ s~
-generate p p > t t~
-output TTbar_P8_Delphes
-launch --pythia8=ON --delphes=ON -M MadSpin:off --seed=42 --nevents=10000 -[1D[K
---eb1=6500 --eb2=6500

@@ -1,9 +1,0 @@
-{
-"error_type": "invalid_beam_command",
-"faulty_lines": ["set beam1 6500", "set beam2 6500"],
-"corrected_lines": ["generate p p > e+ e-", "set ebeam1 6500", "set ebeam2 [K
-6500"],
-"output_dir": "DY_ee",
-"reason": "Beam energy commands are incorrect - should use 'ebeam' not 'bea[4D[K
-'beam'"
-}

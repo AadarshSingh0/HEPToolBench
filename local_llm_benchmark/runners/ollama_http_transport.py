@@ -20,6 +20,18 @@ from urllib.request import Request, urlopen
 
 
 TRANSPORT_NAME = "ollama_http_generate_stream_false"
+
+try:
+    from runners.ollama_generation_settings import (
+        build_ollama_options,
+        get_ollama_think,
+    )
+except ImportError:
+    from ollama_generation_settings import (
+        build_ollama_options,
+        get_ollama_think,
+    )
+
 DEFAULT_NUM_CTX = 4096
 
 
@@ -349,8 +361,12 @@ def generate(
         "model": model,
         "prompt": prompt,
         "stream": False,
-        "options": {"num_ctx": num_ctx},
+        "options": build_ollama_options(num_ctx),
     }
+
+    think = get_ollama_think()
+    if think is not None:
+        payload["think"] = think
     data, metadata = _json_request(
         host=host,
         endpoint="/api/generate",
