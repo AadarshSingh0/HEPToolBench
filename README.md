@@ -114,6 +114,17 @@ local_llm_benchmark/runs/<run_id>/summary_by_task.csv
 local_llm_benchmark/results/all_runs_long.csv
 ```
 
+### Which result file should I open?
+
+- `summary_by_model.csv` — quick overall summary for each evaluated model.
+- `individual_scores.csv` — complete task-by-task scores, pass/fail values, repeats, timing, and failure information.
+- `score_matrix.csv` — compact matrix of scores across models and tasks.
+- `summary_by_task.csv` — aggregate performance for each benchmark task.
+- `integrity_audit.json` — verifies whether the run completed cleanly; a valid completed run should report `PASS`.
+- `results/all_runs_long.csv` — cumulative long-form results across benchmark runs on that checkout.
+
+For most users, start with `summary_by_model.csv` for the overall result and `individual_scores.csv` for the detailed task-level results.
+
 Existing runs are not overwritten, and interrupted runs can be resumed.
 
 ## Repository structure
