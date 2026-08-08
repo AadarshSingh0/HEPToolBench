@@ -75,6 +75,7 @@ for arg in "$@"; do
 done
 
 PASSTHRU=()
+PASSTHRU_COUNT=0
 
 require_value() {
     local option="$1"
@@ -129,6 +130,7 @@ while (($#)); do
 
         *)
             PASSTHRU+=("$1")
+            PASSTHRU_COUNT=$((PASSTHRU_COUNT + 1))
             shift
             ;;
     esac
@@ -137,7 +139,11 @@ done
 cd "${BENCHMARK_ROOT}"
 
 set +e
-"${PYTHON}" run_benchmark.py "${PASSTHRU[@]}"
+if ((PASSTHRU_COUNT)); then
+    "${PYTHON}" run_benchmark.py "${PASSTHRU[@]}"
+else
+    "${PYTHON}" run_benchmark.py
+fi
 RC=$?
 set -e
 
