@@ -3,6 +3,19 @@
 This directory contains selected, curated result artifacts distributed with
 HEPToolBench for reproducibility.
 
+## HEPToolBench v1.2 consolidated result snapshot
+
+The consolidated result dataset is:
+
+- `heptoolbench_v1_2_42deployments_31tasks_20260804.csv`
+
+It contains one final scored record for every deployment--task pair:
+42 deployments across 31 tasks, giving 1302 evaluations. The dataset
+includes scores, pass/fail labels, runtime configurations, failure modes,
+and provenance metadata. Machine-specific paths and private Ollama host
+addresses were replaced with public placeholders. Scientific scoring and
+evaluation fields were not changed.
+
 ## HTTP-clean stability dataset
 
 The canonical stability dataset is:
