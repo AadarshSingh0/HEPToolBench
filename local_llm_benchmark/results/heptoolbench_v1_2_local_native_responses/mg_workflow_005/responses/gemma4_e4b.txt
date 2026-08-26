@@ -1,0 +1,10 @@
+mg5 --batch \
+--settings model=SM,seed=42 \
+--subprocessive-beam-energy 6500 GeV 6500 GeV \
+--output-dir TTbar_P8_Delphes \
+--n-events 10000 \
+--protons 'define p = g u c d s u~ c~ d~ s~' \
+--process 'p p > t t~' \
+--smashow --pythia=Pythia8 \
+--delphes \
+--madspin=off

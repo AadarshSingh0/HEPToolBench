@@ -1,0 +1,21 @@
+```text
+# --------------------------
+# Top-Pair Production (SM)
+# p p -> t t
+# --------------------------
+
+Model: Standard Model
+Initial State: Protons (p)
+Process ID: tt_inclusive
+Reaction: p p > t t
+
+Collision Type: pp
+Center-of-Mass Energy: 13 TeV
+Beam Energies: E1=6500 GeV, E2=6500 GeV
+
+# Note: The actual execution of this process requires defining couplings (e.g., using -qcd) 
+# and calculating necessary ME/PS matching parameters (e.g., PDF selection). 
+# This card defines the physical scope for the generation run.
+
+Process details: Inclusive top-pair production in hadronic collisions at $\sqrt{s}=13 \text{ TeV}$.
+```

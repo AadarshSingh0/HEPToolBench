@@ -1,0 +1,19 @@
+```text
+# MG5_version: 3.4.1
+# Title: Top pair production in pp collisions at 13TeV
+import model SM
+define p = p+
+define p~ = p-
+generate p p~ > t t~ 
+end
+```
+
+# MG5_version: 3.4.1
+# Title: Top pair production in pp collisions at 13TeV
+import model SM
+define p = p+ 
+define p~ = p- 
+generate p p~ > t t~
+beam p = 6500 GeV
+beam p~ = 6500 GeV
+end

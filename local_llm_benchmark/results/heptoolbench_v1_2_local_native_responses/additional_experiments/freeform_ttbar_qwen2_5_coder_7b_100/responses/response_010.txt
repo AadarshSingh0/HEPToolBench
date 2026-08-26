@@ -1,0 +1,8 @@
+```python
+generate p p > t~ t [QCD]
+output ttbar_run
+run default
+launch
+analyze
+exit
+```

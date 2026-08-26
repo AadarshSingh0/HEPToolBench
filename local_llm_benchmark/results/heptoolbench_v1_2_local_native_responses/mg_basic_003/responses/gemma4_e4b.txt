@@ -1,0 +1,17 @@
+```dat
+# Higgs Plus Jet Production
+# Process: p p -> h j
+# Center-of-mass energy per beam = 6500 GeV (13 TeV / 2)
+
+# Define generic input proton definitions for simulation purposes
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+# Process command
+pp > hj
+
+# Global parameters setting the energy scale and directory
+param(s) = 13.0 TeV
+param(beam_energy) = 6500 GeV
+output_dir = HJ
+```

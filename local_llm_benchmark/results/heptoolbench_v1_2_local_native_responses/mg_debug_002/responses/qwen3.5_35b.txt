@@ -1,0 +1,3 @@
+import model sm
+define p = g u c d s u~ c~ d~ s~ ~b b~ t~
+p p > t t~ output TTbar launch set lpp1 1 set lpp2 1 set ebeam1 6500 set ebeam2 6500

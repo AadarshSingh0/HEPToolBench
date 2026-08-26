@@ -1,0 +1,13 @@
+import model sm
+define p = g u c d s u~ c~ d~ s~
+generate p p > t t~
+output TTbar_P8_Delphes
+
+set nevents 10000
+set random_seed 42
+set ebeam1 6500.
+set ebeam2 6500.
+set shower pythia8
+set delphes_card_name DelphesCards/delphes_card.tcl
+
+launch -f

@@ -1,0 +1,3 @@
+import model SM
+set beamenergy 6500
+generate p p > t t~

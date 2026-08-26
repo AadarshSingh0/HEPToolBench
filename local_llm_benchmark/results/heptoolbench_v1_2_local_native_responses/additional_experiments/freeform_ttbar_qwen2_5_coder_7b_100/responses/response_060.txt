@@ -1,0 +1,25 @@
+```python
+import madgraph
+from madgraph import *
+
+# Create a new model
+model = Model()
+
+# Load the Standard Model
+model.load('sm')
+
+# Define the process
+process = Process()
+
+# Add the initial state particles
+process.add(initial_state='p p', final_state='t t~')
+
+# Generate events
+generator = MG5Generator(process, model)
+
+# Set the output directory
+generator.set_output_directory('ttbar_run')
+
+# Run the generation
+generator.generate_events(nevents=1000)
+```

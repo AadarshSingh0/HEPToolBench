@@ -1,0 +1,20 @@
+```plaintext
+# Create a new model
+model SM
+
+# Generate events for ttbar production at 13 TeV
+generate p p > t~ t, Z/nu nu~
+
+# Set the energy of the collision
+set ebeam 6500.
+
+# Perform automatic phase space generation
+ AutomaticLoop = off
+ AutomaticNLO = off
+
+# Output directory
+output ttbar_run
+
+# Done
+done
+```

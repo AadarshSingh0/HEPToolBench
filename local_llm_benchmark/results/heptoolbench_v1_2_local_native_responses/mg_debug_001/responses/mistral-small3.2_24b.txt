@@ -1,0 +1,8 @@
+```text
+import model sm
+generate p p > e+ e- QED=3
+output DY_ee
+launch
+set beam1 6500
+set beam2 6500
+```

@@ -1,0 +1,6 @@
+nEvents = 10000
+random_seed = 42
+beamenergy1 = 6500
+beamenergy2 = 6500
+pt_min = 20
+eta_max = 2.5

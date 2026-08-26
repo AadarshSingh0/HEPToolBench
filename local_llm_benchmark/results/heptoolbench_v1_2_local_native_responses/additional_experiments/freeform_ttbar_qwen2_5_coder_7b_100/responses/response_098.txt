@@ -1,0 +1,6 @@
+```bash
+generate p p > t~ t [QCD]
+output ttbar_run
+model StandardModel
+launch
+```

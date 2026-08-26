@@ -1,0 +1,13 @@
+```markdown
+#*************************************************************
+#*                     MadGraph5                           *
+#*                  proc_card.dat                          *
+#*************************************************************
+#
+import model sm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+generate p p > t t~
+output ttbar -f
+launch
+```

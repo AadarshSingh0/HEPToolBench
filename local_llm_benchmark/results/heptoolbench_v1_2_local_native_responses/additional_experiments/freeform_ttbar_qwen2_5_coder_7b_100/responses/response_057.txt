@@ -1,0 +1,18 @@
+```python
+# Define model and generate process
+model SM
+generate p p > t anti-t
+
+# Set energy and PDFs
+set energy 13000
+set pdlabel lhef
+process LHEF ttbar_run/events.lhe
+
+# Run generation
+run default
+
+# Extract events to output directory
+output ttbar_run -f
+```
+
+This script sets up the generation of a top quark and its antiparticle in proton-proton collisions at 13 TeV. It uses the Standard Model, disables decays for the top quark, and outputs the results to a directory named `ttbar_run`.

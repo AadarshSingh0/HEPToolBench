@@ -1,0 +1,37 @@
+```bash
+#!/bin/bash
+
+# Create a new MadGraph5_aMC@NLO project
+cp /path/to/MadGraph5_aMCatNLO/initialize.sh .
+./initialize.sh ttbar
+
+# Navigate into the project directory
+cd ttbar
+
+# Generate the model file for the Standard Model
+cp /path/to/MadGraph5_aMCatNLO/models/SM/SM_v2.1.4/model.tgz models/
+tar -xzvf models/SM_v2.1.4/model.tgz -C models/
+rm models/SM_v2.1.4/model.tgz
+
+# Modify the run_card.dat to include proton-proton collisions at 13 TeV
+echo "set energy 13000." >> cards/run_card.dat
+
+# Add top quark and antiparticle production process
+cp /path/to/MadGraph5_aMCatNLO/models/SM/processes/ttbar/process.cfg processes/
+cp /path/to/MadGraph5_aMCatNLO/models/SM/processes/ttbar/proc_card_mg5.dat processes/
+
+# Modify the proc_card_mg5.dat to include only ttbar production
+echo "set param_card mass t 174.36" >> processes/proc_card_mg5.dat
+echo "set param_card width t 1.508e-2" >> processes/proc_card_mg5.dat
+
+# Generate the process
+./bin/generate_events -f
+
+# Run shower and decay generation using Pythia8
+./bin/run MadGraph5_aMCatNLO_v2.6.1/bin/madgraph.py -f run card -p cards/process_card.madspin --cluster=numpy --no-cluster-check
+
+# Move the output to a directory named ttbar_run
+mv events/ ttbar_run/
+
+echo "Process generated and saved in ttbar_run directory."
+```

@@ -1,0 +1,28 @@
+```text
+import model sm
+define p = g u c d s b u~ c~ d~ s~ b~
+p p > e+ e- / a
+output DY_ee
+launch
+set lhcoptions allow_hadronic_photon_emission=False
+set lhcoptions allow_hadronic_photon_conversion=True
+set lhcoptions set_process_options=disable_qed_splitting
+set lhcoptions set_process_options=disable_non_resonant_diagrams
+set lhcoptions set_process_options=set_dipole_shower_off
+set lhcoptions set_process_options=set_qcd_radiation_off
+set lhcoptions set_process_options=set_qed_radiation_off
+set lhcoptions set_process_options=set_electroweak_radiation_off
+set lhcoptions set_process_options=set_hadronic_showers_off
+set lhcoptions set_process_options=set_photon_shower_off
+set lhcoptions set_process_options=set_tau_decays_off
+set lhcoptions set_process_options=set_w_decays_off
+set lhcoptions set_process_options=set_z_decays_off
+set lhcoptions set_process_options=set_higgs_decays_off
+set lhcoptions set_process_options=set_top_decays_off
+set lhcoptions set_process_options=set_b_quark_decay_off
+set lhcoptions set_process_options=set_c_quark_decay_off
+set lhcoptions set_process_options=set_s_quark_decay_off
+set lhcoptions set_process_options=set_d_quark_decay_off
+set lhcoptions set_process_options=set_u_quark_decay_off
+set lhcoptions set_process_options=set_gluon_decay_off
+```

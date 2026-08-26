@@ -1,0 +1,5 @@
+```plaintext
+generate p p > t \~t [QCD]
+output ttbar_run
+exit
+```

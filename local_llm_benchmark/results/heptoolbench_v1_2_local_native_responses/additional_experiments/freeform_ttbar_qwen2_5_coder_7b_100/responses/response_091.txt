@@ -1,0 +1,4 @@
+generate p p > t t~ --no-loop --max-point=100000
+output ttbar_run
+launch
+quit

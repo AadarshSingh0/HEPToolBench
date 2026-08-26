@@ -1,0 +1,8 @@
+```bash
+generate p p > t~ t [QCD]
+output ttbar_run --path=ttbar_run --overwrite
+set process_card:top_mass 173.0
+update run_card:ee = 2.4
+update run_card:pdf = MSTW2008lo68cl
+run
+```

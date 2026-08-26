@@ -16,6 +16,16 @@ and provenance metadata. Machine-specific paths and private Ollama host
 addresses were replaced with public placeholders. Scientific scoring and
 evaluation fields were not changed.
 
+## Canonical local native-interface responses
+
+[`heptoolbench_v1_2_local_native_responses/`](heptoolbench_v1_2_local_native_responses/)
+contains the 240 canonical raw outputs from 30 locally served deployments on
+eight native-interface tasks. It includes each task's exact model-facing
+prompt, scores, pass labels, failure modes, provenance, and checksums. A
+separately labelled 100-generation Qwen2.5-Coder 7B experiment is included for
+self-contained review but is not part of the 240-response benchmark set. API
+outputs are excluded.
+
 ## HTTP-clean stability dataset
 
 The canonical stability dataset is:

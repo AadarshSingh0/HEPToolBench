@@ -1,0 +1,1 @@
+Write a MadGraph5_aMC@NLO command script for proton-proton production of a top quark and its antiparticle at a 13 TeV proton-proton collider. Do not include top decays. Use the Standard Model and write the output to a directory named ttbar_run. Return only the MadGraph command script, without explanation.

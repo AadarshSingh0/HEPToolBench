@@ -1,0 +1,28 @@
+You are being tested on a particle-physics software benchmark.
+Return only the requested output file content. Do not include explanations.
+
+TASK INSTRUCTION:
+# Task: Repair A Broken Top-Pair MadGraph Card
+
+You are given a broken MadGraph process card for inclusive top-pair production
+
+```text
+p p > t t~
+```
+
+at a total proton-proton center-of-mass energy of 13 TeV.
+
+The card has MadGraph syntax errors. Fix the card.
+
+Return only the corrected `proc_card.dat` content. Do not include explanations.
+
+INPUT FILE: broken_proc_card.dat
+```text
+import model sm
+define p = g u c d s u~ c~ d~ s~
+p p > t tbar
+output TTbar
+launch
+set beam1 6500
+set beam2 6500
+```

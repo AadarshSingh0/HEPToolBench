@@ -1,0 +1,10 @@
+```bash
+set energy 13000
+set lhef /path/to/your/input.lhef
+
+generate p p > t t~ QCD=on[number=5]
+output ttbar_run --event=ttbar_events.hep
+run MadGraph5_aMC@NLO
+```
+
+Make sure to replace `/path/to/your/input.lhef` with the actual path to your input LHEF file. This script sets up a proton-proton collision at 13 TeV, generates events for top quark and anti-top quark production along with QCD radiation, and specifies that no top decays should be considered. The output is directed into the `ttbar_run` directory, containing the generated events in an HEPEVT format file named `ttbar_events.hep`.

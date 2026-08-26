@@ -1,0 +1,5 @@
+generate p p > t~ t
+output ttbar_run
+set group_labels 1 2
+set group_subprocesses true
+run 10

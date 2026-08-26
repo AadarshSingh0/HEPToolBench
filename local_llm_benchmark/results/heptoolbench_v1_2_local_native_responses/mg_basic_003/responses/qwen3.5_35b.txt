@@ -1,0 +1,6 @@
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+p p > h j @1
+generate p p > h j
+output HJ
+set e_beam1 6500. set e_beam2 6500.

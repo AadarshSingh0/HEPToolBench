@@ -1,0 +1,14 @@
+```text
+import model sm
+define p = g u c d s b u~ c~ d~ s~ b~
+define j = g u c d s b u~ c~ d~ s~ b~
+generate p p > e+ e-
+output DY_ee
+launch -p
+set param_scale 91.2
+set dr_scale 0.4pt
+set pdlabel LO
+set lpp 1
+set eb 6500
+set ebeam 6500
+```

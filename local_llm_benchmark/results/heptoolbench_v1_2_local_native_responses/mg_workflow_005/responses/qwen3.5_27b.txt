@@ -1,0 +1,14 @@
+import model sm
+generate p p > t t~
+output TTbar_P8_Delphes
+launch
+set lund_galileo 13000
+set nevents 10000
+set iseed 42
+set ebeam1 6500
+set ebeam2 6500
+set use_syst False
+define p = g u c d s u~ c~ d~ s~
+launch shower pythia8
+run
+exit

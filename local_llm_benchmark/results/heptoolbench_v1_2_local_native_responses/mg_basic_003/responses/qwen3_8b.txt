@@ -1,0 +1,5 @@
+process p p > h j
+beam_energy 6500 GeV
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+output HJ

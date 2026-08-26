@@ -1,0 +1,10 @@
+```python
+# Create a new process
+generate p p > t~ t
+
+# Set the output directory
+output ttbar_run
+
+# Run MadGraph
+run
+```

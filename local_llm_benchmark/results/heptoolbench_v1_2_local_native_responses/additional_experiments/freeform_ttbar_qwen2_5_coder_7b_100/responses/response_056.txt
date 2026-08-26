@@ -1,0 +1,7 @@
+```python
+generate p p > t t~
+output ttbar_run -f lhe
+set energy 13000
+run 1
+quit
+```

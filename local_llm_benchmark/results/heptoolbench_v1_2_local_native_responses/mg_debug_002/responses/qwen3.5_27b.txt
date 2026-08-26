@@ -1,0 +1,6 @@
+import model sm
+add process p p > t t~
+output TTbar
+launch
+set ebeam1 6500.0
+set ebeam2 6500.0

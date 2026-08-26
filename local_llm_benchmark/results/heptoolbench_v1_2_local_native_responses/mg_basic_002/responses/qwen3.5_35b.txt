@@ -1,0 +1,8 @@
+import model sm
+generate p p > t t~
+output TOPPAIR_SS_13TeV
+set lpp1 1
+set lpp2 1
+set ebeam1 6500
+set ebeam2 6500
+launch

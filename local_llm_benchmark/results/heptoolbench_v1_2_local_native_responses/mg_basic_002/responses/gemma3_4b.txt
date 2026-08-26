@@ -1,0 +1,26 @@
+```text
+# Template for MadGraph 5.4
+# $NSPIM=2
+# $PPPDP=2
+# $HELMSMAN=1
+# $MG5HEFT=3
+
+13 TeV p p > t t~
+   ! ckbar sbar
+   ! qqbar sbar
+   ! ckbar sqbar
+   !qqbar sqbar
+   !ckbar ssqbar
+   !qqbar ssbar
+   ! Initial(recoil='e', momentum='p', energy=6500.0, decay='t t~ ')
+   !Initial(recoil='e', momentum='p', energy=6500.0, decay='q q ~')
+   !Initial(recoil='e', momentum='p', energy=6500.0, decay='c c ~')
+   !Initial(recoil='e', momentum='p', energy=6500.0, decay='s s ~')
+   !Initial(recoil='e', momentum='p', energy=6500.0, decay='c s ~')
+   !Initial(recoil='e', momentum='p', energy=6500.0, decay='q q s ~')
+   !Initial(recoil='e', momentum='p', energy=6500.0, decay='c c s ~')
+   ! Initial(recoil='e', momentum='p', energy=6500.0, decay='s s s ~')
+   ! Initial(recoil='e', momentum='p', energy=6500.0, decay='c s s ~')
+   ! Initial(recoil='e', momentum='p', energy=6500.0, decay='q q s s ~')
+   !CKEMR 1 2 3 4 5 6 7 8 9
+```

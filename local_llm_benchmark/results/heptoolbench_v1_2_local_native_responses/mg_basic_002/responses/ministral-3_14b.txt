@@ -1,0 +1,15 @@
+```
+# MadGraph5_aMC@NLO process card for inclusive top-pair production at 13 TeV (pp -> ttbar)
+# Standard Model implementation
+
+import model sm
+generate p p > t t~ [QCD]
+add process p p > t t~ [QED]
+set ecmenergy = 6500
+set nevents = 100000
+set lhaid = -999999
+output ttbar_13TeV
+
+# Loop-induced contributions (if needed)
+# generate p p > t t~ [QCD] loop=1$1
+```

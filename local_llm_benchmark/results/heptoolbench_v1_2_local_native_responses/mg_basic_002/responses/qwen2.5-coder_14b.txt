@@ -1,0 +1,11 @@
+```text
+# This is an MadGraph process card for inclusive top-pair production in the Standard Model
+
+import model sm
+
+define p = g q g~ q~
+
+generate p p > t t~
+
+output ttpair_13TeV
+```

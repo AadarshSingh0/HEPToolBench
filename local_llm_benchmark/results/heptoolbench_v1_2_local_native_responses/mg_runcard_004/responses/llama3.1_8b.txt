@@ -1,0 +1,6 @@
+lhugenmaxevents=10000
+random_seed=42
+beamparton1 = 6500 GeV
+beamparton2 = 6500 GeV
+ptminl = 20 GeV
+etamaxl = 2.5

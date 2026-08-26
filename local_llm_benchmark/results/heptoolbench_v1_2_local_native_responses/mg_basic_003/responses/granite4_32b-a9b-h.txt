@@ -1,0 +1,8 @@
+# Process card for Standard Model Higgs plus jet production
+
+generate p p > h j [QCD]
+
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+output HJ

@@ -1,0 +1,6 @@
+nevents = 10000
+seed = 42
+ebeam1 = 6500.0
+ebeam2 = 6500.0
+ptl = 20.0
+etal = 2.5

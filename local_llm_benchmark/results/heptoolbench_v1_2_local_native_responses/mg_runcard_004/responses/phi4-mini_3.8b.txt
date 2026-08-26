@@ -1,0 +1,6 @@
+number_of_events = 10000;
+random_seed = 42;
+beam_energy1 = 6500 GeV;
+beam_energy2 = 6500 GeV;
+min_lepton_pT = 20 GeV;
+max_leptopass_eta = 2.5;

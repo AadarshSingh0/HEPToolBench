@@ -1,0 +1,8 @@
+```text
+nevents = 10000
+seed = 42
+E_beam1 = 6500
+E_beam2 = 6500
+pTmin = 20
+Eta_max_Lepton = 2.5
+```

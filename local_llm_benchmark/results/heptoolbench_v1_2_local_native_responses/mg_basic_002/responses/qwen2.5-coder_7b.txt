@@ -1,0 +1,10 @@
+```plaintext
+set energy 6500
+define p = g u c d s b ~b ~s ~c ~u ~d
+define j = g h w z t~ t
+import model sm
+generate p p > t t~
+output mytoppair
+save proc_card.dat
+exit
+```

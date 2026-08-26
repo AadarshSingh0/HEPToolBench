@@ -1,0 +1,9 @@
+```text
+import model sm
+define p = g u c d s u_bar c_bar d_bar s_bar
+generate p p > t tbar
+output TTbar
+launch
+set beam1 6500
+set beam2 6500
+```

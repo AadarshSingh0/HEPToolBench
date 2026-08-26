@@ -1,0 +1,19 @@
+import model SM
+set group_subprocesses Auto
+set ignore_six_quark_processes False
+set loop_optimized_output True
+set loop_color_flows True
+set nlo_loop_nloop 1
+set complex_mass_scheme False
+set auto_decay off
+define p = g u c d s u~ c~ d~ s~
+generate p p > t t~ [QCD]
+output TTbar_P8_Delphes
+launch TTbar_P8_Delphes
+10000
+42
+6500.0
+6500.0
+True
+True
+False

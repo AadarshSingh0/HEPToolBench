@@ -1,0 +1,14 @@
+import madgraph
+ define p = g u c d s u~ c~ d~ s~
+p p > t t~
+output -f outputcards TTbar_P8_Delphes
+set beammass 1 91.1876
+set beammass 2 91.1876
+set generation_mode Extensive
+set nloop_max 4
+set nrank_max 4
+set output -f events.lhe 10000
+set random_seed 42
+set pythia_enable_showering true
+set delphes_enable_detector_simulation true
+run

@@ -1,0 +1,8 @@
+```
+import model sm
+define p = g u c d s u~ c~ d~ s~
+generate p p > t~ t, q q~ > b b~, q~ q > b~ b
+output ttbar_run
+save
+exit
+```

@@ -1,0 +1,15 @@
+```plaintext
+# MadGraph card for Higgs Plus Jet Production
+
+import model sm
+generate p p > h j
+output HJ
+
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+set lhe_version 3
+set gauge_type Unitary
+set nevents 10000
+set automatic_non_closure False
+```

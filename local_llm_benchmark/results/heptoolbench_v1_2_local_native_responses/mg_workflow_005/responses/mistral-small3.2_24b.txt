@@ -1,0 +1,12 @@
+import model sm
+generate p p > t t~
+output TTbar_P8_Delphes
+set lhapdf 263000
+set pdflib luminosity=1
+set pdg_width t 1.549e+00
+set pdg_width t~ 1.549e+00
+set nevents 10000
+set seed 42
+set ebeam1 6500
+set ebeam2 6500
+launch --shower=Pythia8:cmd=pythia8_settings.txt --delphes_card=delphes_card.dat

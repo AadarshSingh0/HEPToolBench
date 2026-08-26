@@ -1,0 +1,9 @@
+```
+import model sm
+generate p p > t t~
+output madgraph_output
+launch -no_input_files
+set lpp 1
+set epbeh 6500
+set ecm 13000
+```

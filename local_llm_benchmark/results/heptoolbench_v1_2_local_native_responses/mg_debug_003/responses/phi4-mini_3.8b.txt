@@ -1,0 +1,16 @@
+```text
+proc card dat import model sm
+
+proc line generate p + p > HJ +
+
+proc def p = g u c d s u~ c~ d~ s~
+
+proc def j = g u c d s u~ c~ d~ s~
+
+output HiggsJet+
+
+set beam1 6500 GeV
+set beam2 6500 GeV
+
+launch+
+```

@@ -1,0 +1,6 @@
+import model sm
+p p > t t~
+output TTbar
+launch
+set ebeam1 6500
+set ebeam2 6500

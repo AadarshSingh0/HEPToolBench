@@ -1,0 +1,6 @@
+```plaintext
+generate p p > t~ t, QCD=QCD
+output ttbar_run
+run card ttbar.dat
+```
+This script sets up a process where protons collide to produce a top quark and its antiparticle (t~), alongside additional QCD radiation. The output is directed into a directory named `ttbar_run`.

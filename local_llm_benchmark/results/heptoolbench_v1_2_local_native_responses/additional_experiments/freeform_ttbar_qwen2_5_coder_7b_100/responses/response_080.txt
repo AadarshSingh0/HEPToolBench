@@ -1,0 +1,4 @@
+```python
+generate p p > t~ t, q-qbar -> u d s c b t t~
+output ttbar_run -f --skip-if-present
+```

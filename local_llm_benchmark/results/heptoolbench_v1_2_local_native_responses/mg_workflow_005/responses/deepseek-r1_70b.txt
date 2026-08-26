@@ -1,0 +1,7 @@
+```text
+define p = g u c d s u~ c~ d~ s~
+
+p p > t t~
+generate_events 10000 --beam_energy1 6500 --beam_energy2 6500 --random_seed 42 
+--output_directory TTbar_P8_Delphes --pythia8_shower=on --delphes_card=on --madspin=off
+```

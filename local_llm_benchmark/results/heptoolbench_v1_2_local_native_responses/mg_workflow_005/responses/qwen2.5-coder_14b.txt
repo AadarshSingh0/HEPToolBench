@@ -1,0 +1,32 @@
+```bash
+import os
+
+# Set the output directory
+output_directory = 'TTbar_P8_Delphes'
+os.makedirs(output_directory, exist_ok=True)
+
+# MadGraph commands
+commands = [
+    "define p = g u c d s u~ c~ d~ s~",
+    "generate p p > t t~",
+    "set ebeam1 6500.",
+    "set ebeam2 6500.",
+    "output ttbar",
+    "launch",
+    "--run_mode shower=on",
+    "--run_mode delphes=on",
+    "--run_mode madspin=off",
+    "--nevts=10000",
+    "--seed=42",
+    f"--dir={output_directory}",
+    "quit"
+]
+
+# Execute the commands
+for command in commands:
+    os.system(f"echo {command} >> mg5_script.dat")
+os.system("mg5_aMC@NLO < mg5_script.dat")
+
+# Clean up
+os.remove("mg5_script.dat")
+```

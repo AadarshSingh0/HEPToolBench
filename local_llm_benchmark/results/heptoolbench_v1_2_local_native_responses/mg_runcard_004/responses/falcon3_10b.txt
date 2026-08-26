@@ -1,0 +1,9 @@
+```text
+nevents = 10000
+xseed = 42
+com_energy = 13000
+beam_energy_1 = 6500
+beam_energy_2 = 6500
+ptmin = 20
+etamax = 2.5
+```

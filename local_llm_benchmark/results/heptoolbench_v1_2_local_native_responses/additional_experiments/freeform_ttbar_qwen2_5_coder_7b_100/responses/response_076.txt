@@ -1,0 +1,5 @@
+```bash
+./bin/generate_events.py -f ttbar_run --cms-energy=13000 --events=1000000 -m "tt" -a "top anti-top"
+cd ttbar_run/Events/run_01/unweighted_events.lhe
+cp unweighted_events.lhe ../
+```

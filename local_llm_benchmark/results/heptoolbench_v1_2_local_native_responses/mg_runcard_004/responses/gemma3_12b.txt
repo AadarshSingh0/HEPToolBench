@@ -1,0 +1,8 @@
+```text
+number_of_events = 10000
+random_seed = 42
+beampdf_beam_A = 6500.0
+beampdf_beam_B = 6500.0
+lepton_ptmin = 20.0
+lepton_eta_max = 2.5
+```

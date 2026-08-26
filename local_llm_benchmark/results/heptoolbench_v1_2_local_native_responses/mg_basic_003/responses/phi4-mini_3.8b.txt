@@ -1,0 +1,9 @@
+```text
+process p u c d s u~ g j;
+m2 = sqrt( (13000^2) - m_u*u ) # u and u~
+initialState = 13 TeV; initialLuminosity=1000 fb-1
+
+# Run the process, saving output to HJ directory.
+saveOutput true
+runHiggsPlusJet proc p u c d s u~ g j;
+```

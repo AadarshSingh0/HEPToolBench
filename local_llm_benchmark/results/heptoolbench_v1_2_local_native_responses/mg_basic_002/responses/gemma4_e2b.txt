@@ -1,0 +1,6 @@
+```text
+process: tbar
+flavor: 2
+multiplicity: 2
+p p > t t
+```

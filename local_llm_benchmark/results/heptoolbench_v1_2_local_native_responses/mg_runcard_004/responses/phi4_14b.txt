@@ -1,0 +1,16 @@
+```plaintext
+Nevents   = 10000
+Random    = 42
+Beams     = p p
+CMSenergy = 13000.
+Colix1    = 4
+Colix2    = 5
+Pmax      = 20
+```
+
+```plaintext
+# Additional settings for cuts
+
+LesMaxEta=2.5
+LepMinPt=20
+```

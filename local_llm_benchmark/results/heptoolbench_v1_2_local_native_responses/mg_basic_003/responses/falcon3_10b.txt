@@ -1,0 +1,6 @@
+```text
+process p p > h j /
+parameters p = g u c d s u~ c~ d~ s~, j = g u c d s u~ c~ d~ s~
+center_of_mass_energy = 6500 GeV
+output_directory = HJ
+```

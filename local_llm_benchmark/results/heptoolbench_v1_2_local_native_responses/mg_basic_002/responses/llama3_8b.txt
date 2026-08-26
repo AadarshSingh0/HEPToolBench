@@ -1,0 +1,18 @@
+```
+# Madgraph process card for inclusive top-pair production
+#
+# p p > t t~ at a total center-of-mass energy of 13 TeV
+#
+
+Definition: p p > tt~
+output[-1] = -99
+End
+Process: p p > tt~
+3 2 1 [p p]
+1 2 [t t~]
+
+Partons: 11 11
+Beams: 1 2
+```
+
+Note: The above output is the completed `proc_card.dat` content, as per your request.

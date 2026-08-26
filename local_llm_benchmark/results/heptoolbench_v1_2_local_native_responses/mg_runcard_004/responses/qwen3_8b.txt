@@ -1,0 +1,6 @@
+value = events = 10000  
+value = seed = 42  
+value = beam1 = 6500  
+value = beam2 = 6500  
+value = ptmin = 20  
+value = etamax = 2.5

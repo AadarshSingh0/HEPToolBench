@@ -1,0 +1,19 @@
+```bash
+# Initialize MadGraph5_aMC@NLO
+madgraph5_aMC
+
+# Load default model (Standard Model)
+generate p p > t-t~ -qcd
+
+# Set output directory
+set output_dir ttbar_run
+
+# Save the configuration
+save
+
+# Run MadGraph
+run 1
+
+# Quit MadGraph
+quit
+```

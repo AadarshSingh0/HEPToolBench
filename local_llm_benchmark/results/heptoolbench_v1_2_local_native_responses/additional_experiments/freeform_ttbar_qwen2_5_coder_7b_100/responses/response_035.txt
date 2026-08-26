@@ -1,0 +1,10 @@
+```python
+generate p p > t anti-t [QCD]
+output ttbar_run
+set PDF:ct10_lo
+set lhe.setOutputPDF False
+launch
+run 2000
+write events
+exit
+```

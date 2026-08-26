@@ -1,0 +1,8 @@
+define p = g u c d s u~ c~ d~ s~
+generate p p > t t~
+set number_events = 10000
+set seed = 42
+set beam_energy = 6500, 6500
+set output_dir = TTbar_P8_Delphes
+set pythia_shower = on
+set delphes_sim = on

@@ -1,0 +1,8 @@
+```python
+generate p p > t t~ [QCD]
+output ttbar_run -f
+save run_card.dat
+set lhe_version 3
+launch
+exit
+```

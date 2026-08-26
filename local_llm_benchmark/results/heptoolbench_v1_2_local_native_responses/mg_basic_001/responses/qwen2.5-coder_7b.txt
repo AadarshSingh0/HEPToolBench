@@ -1,0 +1,8 @@
+```plaintext
+p p > e+ e-
+output DY_ee
+launch
+
+# Fill the beam energies below for 13 TeV pp collisions.
+beam energy = 6500 GeV
+```

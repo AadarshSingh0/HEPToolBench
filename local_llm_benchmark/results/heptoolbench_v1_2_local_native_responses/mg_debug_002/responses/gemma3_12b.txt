@@ -1,0 +1,10 @@
+```text
+import model sm
+define pp = g u c d s u~ c~ d~ s~
+processes: pp > t t~
+output TTbar
+generate p p > t t~
+launch
+set beam1 6500
+set beam2 6500
+```

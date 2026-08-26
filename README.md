@@ -152,6 +152,9 @@ repository-relative paths or explicit placeholders. Model responses, scores,
 pass/fail values, task identifiers, timestamps, and stability statistics are
 not changed by this publication-only normalization.
 
+The curated [local native-response archive](local_llm_benchmark/results/heptoolbench_v1_2_local_native_responses/)
+provides the model-facing prompts, raw local outputs, provenance, and checksums.
+
 ## Companion software
 
 The deterministic local workflow agent described in the companion paper is

@@ -1,0 +1,12 @@
+import model sm
+define p = g u c d s u~ c~ d~ s~
+generate p p > t t~
+output TTbar_P8_Delphes
+launch
+set ebeam1 6500
+set ebeam2 6500
+set nevents 10000
+set iseed 42
+shower=Pythia8
+detector=Delphes
+madspin=False

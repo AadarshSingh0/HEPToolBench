@@ -1,0 +1,6 @@
+nevents = 10000  
+seed = 42  
+beamenergy1 = 6500  
+beamenergy2 = 6500  
+ptl_min = 20  
+etal_max = 2.5

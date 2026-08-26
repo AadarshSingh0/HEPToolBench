@@ -1,0 +1,5 @@
+generate p p > t anti-t QCD=off model SM
+output ttbar_run -f
+launch
+run 1000
+quit
