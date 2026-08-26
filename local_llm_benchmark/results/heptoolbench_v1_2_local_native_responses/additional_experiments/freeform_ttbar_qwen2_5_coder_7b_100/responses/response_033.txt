@@ -1,0 +1,46 @@
+```python
+import os
+
+# Create a directory for the run
+os.makedirs('ttbar_run', exist_ok=True)
+
+# Write the MadGraph command script
+with open(os.path.join('ttbar_run', 'run_card.dat'), 'w') as f:
+    f.write("""# Run card for ttbar production at 13 TeV
+
+## PDF choice
+pdf = CT10nlo
+
+## Collider type and energy
+ee = off
+pp = on
+e+ e- = on
+muphoton = off
+ee + ee = off
+e+ e- + Z = off
+ee + e- + Higgs = off
+ZZ = off
+WW = off
+ggH = off
+VBF = off
+
+## Energy definition
+ebeam1 = 6500.
+ebeam2 = 6500.
+
+# Decay options
+decay top = off
+decay antitop = off
+
+## Collider model and parameters
+cteq = 104
+pdf = CT10nlo
+
+## Additional MadGraph settings
+run_mode = 3
+max_events = 10000
+
+""")
+
+print("MadGraph command script has been written to ttbar_run/run_card.dat")
+```

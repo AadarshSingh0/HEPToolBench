@@ -1,0 +1,7 @@
+```bash
+generate p p > t t~
+output ttbar_run -f
+run 1000
+write events file=events.lhe.gz
+quit
+```

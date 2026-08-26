@@ -1,0 +1,3 @@
+set beamenergy1 6500
+set beamenergy2 6500
+add process p p > t t~

@@ -1,0 +1,43 @@
+import_model SM
+generate p p > t t~
+output TTbar_P8_Delphes
+set nevents 10000
+set seed 42
+set lpp1 6500
+set lpp2 6500
+define p = g u c d s u~ c~ d~ s~
+launch -nopythia8 -nodelphes -nomadspin
+# Note: The above commands set the environment, but to satisfy 'Pythia8 showering enabled' and 'Delphes detector simulation enabled', we must use launch with flags or set run parameters explicitly before launching. Correct sequence below for MG5_aMC v2.x+
+
+import_model SM
+generate p p > t t~
+output TTbar_P8_Delphes -f --run_card=13000 --pythia 1 --delphes 1
+set nevents 10000
+set seed 42
+# Beam energies are set in run card. Since we cannot edit file content directly, we assume default or manual entry is handled by 'launch' interactive mode if needed, but for script automation:
+# In a pure command line script without files, beam energy and flags must be passed via specific MG5 commands or the generated run_card.txt modifications are not possible in this format alone unless using the new -o syntax properly. 
+# Re-evaluating strict interpretation of "command script": The `output` command can take arguments for Pythia/Delphes if version supports, but typically flags go to `launch`.
+# Standard MG5aMC workflow:
+import_model SM
+generate p p > t t~
+set lpp1 6.5e3
+set lpp2 6.5e3
+define p = g u c d s u~ c~ d~ s~
+output TTbar_P8_Delphes -f --madspin=0
+launch
+# Since I cannot type into the interactive prompt in a script file for flags like `--delphes`, the standard way to force this is via the run_card. However, strict MG5 command scripts often use:
+set nevents 10000
+set seed 42
+set madspin False
+launch --pythia8 True --delphes True
+
+# Correction for robustness in script form matching all constraints exactly without interactive prompts if possible, but standard practice is to set variables then launch. 
+# Let's write the most canonical non-interactive MG5aMC command sequence that achieves this:
+
+import_model SM
+generate p p > t t~
+set lpp1 6500
+set lpp2 6500
+define p = g u c d s u~ c~ d~ s~
+output TTbar_P8_Delphes -f --madspin=0
+launch --nevents 10000 --seed 42 --pythia8 True --delphes True

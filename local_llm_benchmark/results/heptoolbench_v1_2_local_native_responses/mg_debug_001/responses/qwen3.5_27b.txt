@@ -1,0 +1,7 @@
+import model sm
+add process p p > e+ e- [QCD]
+output DY_ee
+launch
+set lhapdfsets_name NNPDF31_nnlo_as_0118
+set ecm 13000.
+show launch_info

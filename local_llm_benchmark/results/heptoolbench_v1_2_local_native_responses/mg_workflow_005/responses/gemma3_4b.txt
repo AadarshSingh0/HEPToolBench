@@ -1,0 +1,3 @@
+```text
+./MG5_event_gen/bin/mg5_aor lxrun -n 10000 -o TTbar_P8_Delphes -s 13000 -e 13000 -b 6500 6500 -r 42 -u python -d delphes -i "p p > t t~" -m MadSpin
+```

@@ -1,0 +1,8 @@
+# MadGraph proc_card.dat for inclusive top-pair production at 13 TeV
+model sm
+
+generate p p > t t~
+
+# Beam energies (GeV)
+set ebeam1 6500
+set ebeam2 6500

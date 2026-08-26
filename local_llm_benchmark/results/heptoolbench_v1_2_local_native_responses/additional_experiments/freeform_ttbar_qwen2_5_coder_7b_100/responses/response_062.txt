@@ -1,0 +1,7 @@
+```python
+generate p p > t~ t, QCD
+output ttbar_run
+run_qcd.sh
+```
+
+This script generates a process where a proton (p) collides with another proton (p) to produce a top quark (t) and its antiparticle (t~), along with QCD radiation. The output is saved in the directory "ttbar_run". The `run_qcd.sh` command is used to run the QCD analysis on the generated events.

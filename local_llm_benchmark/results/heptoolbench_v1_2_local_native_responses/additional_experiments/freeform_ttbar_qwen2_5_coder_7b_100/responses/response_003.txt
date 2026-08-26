@@ -1,0 +1,8 @@
+```python
+generate p p > t t~
+output ttbar_run -f
+model SM
+add process p p > t t~ [1e-2]
+run 1000
+save
+```

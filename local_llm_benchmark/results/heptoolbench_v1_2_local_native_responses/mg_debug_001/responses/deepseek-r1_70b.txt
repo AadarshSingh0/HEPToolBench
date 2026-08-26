@@ -1,0 +1,10 @@
+The issue was with the `define p` line, which incorrectly redefined the proton content. This line was unnecessary and caused syntax errors because MadGraph handles parton distribution internally.
+
+```text
+import model sm
+p p > e+ e-
+output DY_ee
+launch
+set beam1 6500
+set beam2 6500
+```

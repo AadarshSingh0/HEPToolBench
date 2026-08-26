@@ -1,0 +1,21 @@
+[GenerationParameters]
+
+generator = MadGraph5_aMC@NLO
+mxsec 1000000
+
+[RunCards]
+
+run_name   = InclusiveTTbar
+output     = inclusive_ttbar
+nevents    = -1  # all events in the process will be generated
+rmass      = 1
+
+[Process]
+
+1 2 > [t t~] , [p p]
+mass        = [t, t~] 173.0 GeV 
+beammult    = 1 1 
+
+[Rivet card]
+
+rivet_card  = /path/to/your/rivet/card

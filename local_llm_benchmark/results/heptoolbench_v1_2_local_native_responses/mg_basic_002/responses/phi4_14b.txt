@@ -1,0 +1,76 @@
+```plaintext
+block nevents 
+    100000 # number of events to be generated 
+end 
+
+block helicity 
+    0 # no helicity specification 
+end 
+
+# Model: SM  
+import model sm  
+
+# Beams: p p  
+import input parameter_card.dat  
+
+# Process: t t~  
+generate p p > t t~ ME=off FEWZ=on
+
+output Events/SM  
+```
+
+```plaintext
+Block nevents
+100000   # number of events to be generated
+
+Block susy_parameters
+    # No SUSY parameters, hence no entries here.
+
+# Model: SM  
+import model sm  
+
+# Beams: p p  
+define p = g u c d s~ u~ c~ d~ s b~ t~  
+define j = g u c d s~ u~ c~ d~ s~ b~ t~ 
+
+# Process: t t~  
+generate p p > t t~
+output LesHouchesEvents/SM_EvtGen_13TeV_TuneCUETP8M1_PSweights
+```
+
+```plaintext
+Block nevents 
+    100000 # number of events to be generated 
+end 
+
+Block SMparameters 
+    g1 0.3571429
+    g2 0.6521739
+    g3 1.200000
+    vd 246.2188
+    vu 174.1076
+    v 246.2194
+    Lambda_hh 10000.
+    mt 172.5
+end
+
+Block masses 
+    173.2106 t
+end 
+
+# Model: SM  
+import model sm  
+
+# Beams: p p  
+define p = g u c d s~ u~ c~ d~ s b~ t~ 
+define j = g u c d s~ u~ c~ d~ s~ b~ t~ 
+
+# Process: t t~  
+generate p p > t t~
+output LesHouchesEvents/SM_EvtGen_13TeV_TuneCUETP8M1_PSweights
+
+# Les Houches Event file information 
+block masses 
+  173.2106 t
+end
+```

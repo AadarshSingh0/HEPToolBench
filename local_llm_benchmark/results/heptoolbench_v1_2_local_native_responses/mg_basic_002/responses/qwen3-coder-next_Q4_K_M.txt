@@ -1,0 +1,28 @@
+import mg5amcnlo
+set group_subprocesses Auto
+set ignore_six_top decays False
+set loop_optimise True
+define p = g u c d s u~ c~ d~ s~
+define t = t
+define t~ = t~
+generate p p > t t~ [QCD]
+output my_ttbar_prod
+launch
+set ebeam 6500.0
+set lumi 140.0
+set nevents 10000
+set seed 1
+set ptj 30.0
+set etaj 5.0
+set drjj 0.4
+set ptl 20.0
+set etal 2.5
+set drlj 0.4
+set mxparton 6
+set fixed_couplings False
+set rwgt_method tree
+set mg5_sm_input alpha_em, beta_w, g_weak
+set sm_input 118.749e-3, 0.255, 0.6527
+set width_t auto
+set nevents 10000
+done

@@ -1,0 +1,11 @@
+import model sm
+define p = g u c d s u~ c~ d~ s~
+generate p p > t t~
+set ebeam1 6500 GeV
+set ebeam2 6500 GeV
+set nevents 10000
+set seed 42
+set shower engine Pythia8
+set delphes True
+set madspin off
+output TTbar_P8_Delphes

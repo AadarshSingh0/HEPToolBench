@@ -1,0 +1,5 @@
+```bash
+./bin/generate_events.py -f ttbar -p pp -e 13000 -n ttbar_run --no_decay_top
+cd ttbar_run
+./bin/mg5_aMC
+```

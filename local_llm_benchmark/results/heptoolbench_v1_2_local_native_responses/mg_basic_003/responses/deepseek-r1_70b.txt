@@ -1,0 +1,15 @@
+```text
+mg5_procescard.dat
+
+# MG5 Process Card for Higgs + Jet Production
+
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+process pp > h j
+
+beam 1: p = 6500
+beam 2: p = 6500
+
+output HJ
+```

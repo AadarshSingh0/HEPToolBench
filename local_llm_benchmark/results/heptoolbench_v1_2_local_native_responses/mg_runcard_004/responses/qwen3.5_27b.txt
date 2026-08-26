@@ -1,0 +1,6 @@
+nevents = 10000
+iseed = 42
+ebeam1 = 6500
+ebeam2 = 6500
+ptlmin = 20
+etalmax = 2.5

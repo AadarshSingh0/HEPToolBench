@@ -1,0 +1,18 @@
+```
+# MadGraph5_aMC@NLO process card for pp > h j at 13 TeV (6500 GeV beams)
+import model sm
+
+generate p p > h j
+add process p p > h g
+add process p p > h q q~ [q = u, c, d, s]
+add process p p > h q q [q = u, c, d, s]
+
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+output HJ
+set nevents 100000
+set ebeam1 = 6500 GeV
+set ebeam2 = 6500 GeV
+
+launch

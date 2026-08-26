@@ -1,0 +1,1 @@
+g u c d ~ s u~ c~ d~ s~ p + p -> t tau-bar Tau+ Tau- output TTTauTauBar launch set m_p = 125.09 set m_tau = 139.57 set m_Wt = 80.379 set m_t = 173.1 set M_Z = 91.188 GeV proc_card.dat

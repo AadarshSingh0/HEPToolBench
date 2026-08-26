@@ -1,0 +1,8 @@
+```text
+p p > e+ nu_e- nu_e+ e-
+output DY_ee
+launch
+
+generate p p > e+ e-, e+ nu_e- nu_e+
+set beams id1=2212 id2=2212 ebeam1=6500 ebeam2=6500
+```

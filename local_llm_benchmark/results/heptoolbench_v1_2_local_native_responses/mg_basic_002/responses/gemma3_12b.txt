@@ -1,0 +1,14 @@
+```madgraph
+!pythia8.5c PDF will be used to generate events
+!
+! This is a MadGraph 5 process card for t t~ production
+! with sqrt(s) = 13000 GeV, using the Standard Model
+
+<processes>
+  p p > t t~
+</processes>
+
+<production>
+  BSM_no_scale
+end
+```

@@ -1,0 +1,44 @@
+```madgraph
+import sys
+
+generate p p > t t~;
+
+settings {
+  output_directory = "TTbar_P8_Delphes";
+  number_events = 10000;
+  random_seed = 42;
+  beam_energy_1 = 6500.0;
+  beam_energy_2 = 6500.0;
+  }
+
+phasespace {
+  widths off;
+  }
+
+generator {
+  complex_scale = 13000.0;
+  }
+
+process_command {
+  add susy_default_parameters;
+  }
+
+model_output {
+  gf_model = "sm";
+  }
+
+pythia8_shower {
+  enable_pdf_retaliation = off;
+  scale_matching_scheme = "OpenLoops";
+  }
+
+delphes {
+  default_geant4_settings = true;
+}
+
+madspin {
+  disable_madspin = on;
+}
+
+definition p = g u c d s u~ c~ d~ s~;
+```

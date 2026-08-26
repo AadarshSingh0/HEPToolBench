@@ -1,0 +1,5 @@
+```bash
+generate p p > t~ t QCD=on QED=off
+output ttbar_run --filein card.top.input --filename Cards/param_card.dat
+exit
+```

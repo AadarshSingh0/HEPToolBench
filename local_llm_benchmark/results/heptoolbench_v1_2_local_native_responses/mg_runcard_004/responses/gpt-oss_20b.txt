@@ -1,0 +1,6 @@
+10000 = nevents
+42 = random_seed
+6500 = ebeam1
+6500 = ebeam2
+20 = pt_min_lepton
+2.5 = eta_max_lepton

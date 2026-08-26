@@ -1,0 +1,48 @@
+```plaintext
+import model sm
+generate p p > t t~ [QCD]
+output /home/user/TTbar_P8_Delphes
+set number of events 10000
+set parameter random seed 42
+launch
+
+import model sm
+setup p = g u c d s u~ c~ d~ s~
+add process p p > t t~ [QCD]
+generate p p > t t~ [QCD]
+output /home/user/TTbar_P8_Delphes
+set number of events 10000
+set parameter random seed 42
+set beam energy {1} 6500 GeV
+set beam energy {2} 6500 GeV
+run_card user_custom_settings.pythia8_delphes.txt
+launch
+```
+
+Note: The `user_custom_settings.pythia8_delphes.txt` file should include the necessary settings for Pythia8 and Delphes, typically configured as follows:
+
+```plaintext
+import model sm
+set parameter run_card pythia8.cmssw.config
+add process p p > t t~ [QCD]
+output_path /home/user/TTbar_P8_Delphes
+
+# Enable Pythia8 showering and Delphes simulation
+Pythia8 = 1
+Delphes_card=delphes_card.tauola.xml
+
+# Beam energies for 13 TeV collisions
+set beam energy {1} 6500 GeV
+set beam energy {2} 6500 GeV
+
+# Random seed
+set parameter random seed 42
+
+# Number of events
+set number of events 10000
+
+# Disable MadSpin
+MadSpin = False
+```
+
+This configuration ensures that the workflow runs with Pythia8 for parton showering and Delphes for detector simulation, without using MadSpin.

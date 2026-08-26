@@ -1,0 +1,21 @@
+```markdown
+# Import the Standard Model
+import model sm
+
+# Define protons as composed of quarks and gluons
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+# Define the process for Drell-Yan production
+p p > e+ e-
+
+# Specify the output
+output DY_ee
+
+# Launch the generation
+launch
+
+# Set the beam energies in GeV
+set beam1 6500
+set beam2 6500
+```

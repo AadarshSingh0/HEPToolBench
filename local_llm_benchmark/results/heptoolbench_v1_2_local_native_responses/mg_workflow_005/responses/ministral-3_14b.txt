@@ -1,0 +1,28 @@
+import model sm
+generate p p > t t~ [QCD]
+set param_card
+block BOSE
+  NQCD 2
+end block BOSE
+
+set beampartons p, p
+set nevents 10000
+set random_seed 42
+set ebeam1 6500.
+set ebeam2 6500.
+
+define p = g u c d s u~ c~ d~ s~
+
+launch
+
+import pythia8
+set shower on
+set pythia8:tau0 0.0
+set pythia8:mstp(1) 44120000
+set pythia8:mstp(61) 75350000
+
+import delphes_card
+set delphes on
+set delphes:card delphes_card.dat
+
+set madspin off

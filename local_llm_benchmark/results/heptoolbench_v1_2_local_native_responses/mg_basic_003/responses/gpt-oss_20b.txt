@@ -1,0 +1,8 @@
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+import model sm
+
+generate p p > h j
+
+output HJ

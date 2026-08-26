@@ -1,0 +1,10 @@
+```
+import model sm
+
+generate p p > e+ e- q qbar, a a
+define p = g u c d s u~ c~ d~ s~, e+, e-, nu_e, nu_e~
+output DY_ee
+launch
+set beam1 6500
+set beam2 -6500
+```

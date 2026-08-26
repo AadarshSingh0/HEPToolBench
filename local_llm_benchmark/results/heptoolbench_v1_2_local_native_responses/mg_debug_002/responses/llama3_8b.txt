@@ -1,0 +1,11 @@
+```
+import model sm
+define p = g u c d s u~ c~ d~ s~
+part t(t, m_top)
+part ~t(bart, M_Top)
+p p > t(t) ~t(bart)
+output TTbar
+launch
+set beam1 13000
+set beam2 13000
+```

@@ -1,0 +1,15 @@
+process p p > t t~
+sqrt_s = 13000
+
+cuts
+drbminj1j2 = -1
+drbj1j2 = -1
+pTj_min = 0
+etaj_max = 5
+mRapTop = 200000.0
+ptT_opa = 1000000
+dyt_top = 10000
+
+weights_groups
+weight_group_0 [no_aEflow,no_dtau_per_event,no_ifastjet,no_wta_jets,LO,runpy]
+```

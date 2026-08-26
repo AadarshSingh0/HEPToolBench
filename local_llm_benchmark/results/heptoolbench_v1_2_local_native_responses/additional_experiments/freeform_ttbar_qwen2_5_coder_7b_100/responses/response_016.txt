@@ -1,0 +1,6 @@
+```bash
+generate p p > t t~
+output ttbar_run -f
+add tagger QCD --renomass=13000.
+launch
+```

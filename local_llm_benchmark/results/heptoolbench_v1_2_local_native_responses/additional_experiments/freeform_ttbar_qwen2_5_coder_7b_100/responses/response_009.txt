@@ -1,0 +1,6 @@
+```python
+generate p p > t anti-t
+output ttbar_run
+run default
+```
+This script tells MadGraph5_aMC@NLO to generate events for proton-proton collisions producing a top quark and its antiparticle at 13 TeV, using the Standard Model. The `output` command specifies that the results should be saved in a directory named 'ttbar_run'. The `run default` command executes the generation with default settings.

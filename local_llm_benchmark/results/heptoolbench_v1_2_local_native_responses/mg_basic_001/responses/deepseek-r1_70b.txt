@@ -1,0 +1,12 @@
+```text
+import model sm
+define p = g u c d s u~ c~ d~ s~
+
+process p p > e+ e-
+output DY_ee
+launch
+
+# Beam energies for proton-proton collisions at 13 TeV (6500 GeV per beam)
+ebeam1 = 6500
+ebeam2 = 6500
+```

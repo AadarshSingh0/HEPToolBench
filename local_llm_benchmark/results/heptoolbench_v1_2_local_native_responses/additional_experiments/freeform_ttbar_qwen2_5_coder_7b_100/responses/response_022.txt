@@ -1,0 +1,22 @@
+```python
+import madgraph5_aMCatNLO as mg5
+
+# Initialize MadGraph5_aMC@NLO
+mg5.run('init', 'tt~ tt')
+
+# Set collider parameters
+mg5.run('set lhefile 13000')
+
+# Run the generation
+mg5.run('generate p p > t~ t, Z', n_events=10000)
+
+# Output directory
+mg5.run('output ttbar_run')
+
+# Skip top decays
+mg5.run('decay off')
+
+# Save and run the script
+mg5.save()
+mg5.run_script()
+```

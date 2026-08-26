@@ -1,0 +1,6 @@
+```plaintext
+import model sm
+generate p p > t t~ QED=2
+output TTPair
+launch
+```

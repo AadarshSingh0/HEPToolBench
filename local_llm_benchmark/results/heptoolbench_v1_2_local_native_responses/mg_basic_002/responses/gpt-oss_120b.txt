@@ -1,0 +1,14 @@
+# proc_card.dat for inclusive top‑pair production at 13 TeV pp collisions
+import model sm
+
+# Define proton constituents (all light quarks and gluon)
+define p = g u c d s b u~ c~ d~ s~ b~
+
+generate p p > t t~
+
+output TTbar_13TeV
+
+set ebeam1 6500
+set ebeam2 6500
+
+launch

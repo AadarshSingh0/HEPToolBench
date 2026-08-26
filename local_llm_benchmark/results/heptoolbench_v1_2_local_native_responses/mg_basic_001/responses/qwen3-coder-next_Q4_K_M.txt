@@ -1,0 +1,3 @@
+p p > e+ e-
+set eb1 6500
+set eb2 6500

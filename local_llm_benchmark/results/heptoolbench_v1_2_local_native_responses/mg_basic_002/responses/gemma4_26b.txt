@@ -1,0 +1,4 @@
+import model sm
+generate p p > t t~
+output tt_production
+set beam energy 6500

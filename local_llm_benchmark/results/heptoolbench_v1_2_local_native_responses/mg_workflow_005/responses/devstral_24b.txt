@@ -1,0 +1,6 @@
+import model sm
+
+generate p p > t t~, (p => g u c d s u~ c~ d~ s~)
+
+output TTbar_P8_Delphes
+launch --seed=42 --num_events=10000 -pythia8

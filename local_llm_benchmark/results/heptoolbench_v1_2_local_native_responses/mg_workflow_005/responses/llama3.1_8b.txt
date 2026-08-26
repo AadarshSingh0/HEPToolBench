@@ -1,0 +1,41 @@
+```python
+import random
+
+# define protons
+define p = g u c d s u~ c~ d~ s~
+
+# set process
+p p > t t~
+
+# run card settings
+output_directory = "TTbar_P8_Delphes"
+num_events = 10000
+random_seed = 42
+beam_energy_1 = 6500. GeV
+beam_energy_2 = 6500. GeV
+
+# enable Pythia8 and Delphes
+pythia8_settings = {
+    'Pythia8:MEList' : {'name': 'WeakBosonProduction'},
+    'Pythia8:Showers' : True,
+}
+
+delphes_settings = {
+    'Delphes:Detector' : 'LHEf',  # Use the LHEf detector card
+}
+
+madgraph_card_moments = {}
+madspin_enabled = False
+
+# run command
+run_process process p p > t t~ 
+              output TTbar_P8_Delphes
+              num_events 10000
+              random_seed 42
+              beam_energy_1 6500. GeV
+              beam_energy_2 6500. GeV
+              pythia8_settings pythia8_settings
+              delphes_settings delphes_settings
+              madgraph_card_moments madgraph_card_moments
+              madspin_enabled False
+```

@@ -1,0 +1,16 @@
+```
+import model sm
+
+define p = g u c d s u~ c~ d~ s~
+
+generate p p > e- e+
+output DY_ee
+
+optional p p > e+ e-
+[processes]
+DY_ee : [particles] ee
+
+launch
+set beam1 6500
+set beam2 6500
+```

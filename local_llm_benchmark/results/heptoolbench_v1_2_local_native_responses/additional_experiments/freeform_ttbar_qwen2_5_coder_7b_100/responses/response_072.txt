@@ -1,0 +1,4 @@
+generate p p > t anti-t
+output ttbar_run
+set precision:precision_mode = accurate
+run 100

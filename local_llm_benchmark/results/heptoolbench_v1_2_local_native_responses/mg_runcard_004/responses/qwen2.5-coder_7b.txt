@@ -1,0 +1,8 @@
+```text
+nevents = 10000
+random seed = 42
+beam 1 energy = 6500
+beam 2 energy = 6500
+cut_on_qcd_lorentz_invariants = 20
+cut_on_lepton_pseudorapidity = 2.5
+```

@@ -1,0 +1,11 @@
+```
+# MadGraph process card for Higgs plus jet production
+# p p > h j
+# Center-of-mass energy: 13 TeV (6500 GeV per beam)
+
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+
+generate p p > h j
+set BLM=2
+```

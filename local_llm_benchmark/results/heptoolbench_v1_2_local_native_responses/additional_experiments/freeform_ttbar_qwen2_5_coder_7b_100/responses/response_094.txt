@@ -1,0 +1,23 @@
+```python
+import os
+
+# Create the directory if it doesn't exist
+if not os.path.exists('ttbar_run'):
+    os.makedirs('ttbar_run')
+
+# Navigate to the directory
+os.chdir('ttbar_run')
+
+# Command script for MadGraph5_aMC@NLO
+command_script = """
+generate p p > t-t~ [QCD]
+output ttbar_run --filein=Cards/param_card.dat --fileout=cards/meff.input --feynman_rules=Cards/couplings.dat --new-particle=true --new-name=t --new-mass=173.0
+runfast
+plot
+"""
+# Write the command script to a file
+with open('mg5_command_script.py', 'w') as f:
+    f.write(command_script)
+```
+
+This script sets up a MadGraph5_aMC@NLO run for ttbar production at 13 TeV, generates the necessary files, and runs the event generation. It assumes that the required parameter card (`param_card.dat`), coupling file (`couplings.dat`), and any other necessary configuration is already in place in the `Cards` directory. The script creates a new particle for the top quark and sets its mass to 173 GeV. The output files will be placed in the `ttbar_run` directory.

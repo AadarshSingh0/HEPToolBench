@@ -1,0 +1,10 @@
+import model sm
+define p = g u c d s u~ c~ d~ s~
+
+generate p p > e+ e-
+add process p p > j e+ e- [QCD]
+
+output DY_ee
+launch
+6500
+6500

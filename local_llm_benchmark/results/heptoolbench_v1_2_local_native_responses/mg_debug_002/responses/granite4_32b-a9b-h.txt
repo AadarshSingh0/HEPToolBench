@@ -1,0 +1,8 @@
+```text
+import model sm
+define p = g u c d s b u~ c~ d~ s~ b~
+p p > t t~
+output TTbar
+launch
+set LHE:comEnergy 13000.
+```

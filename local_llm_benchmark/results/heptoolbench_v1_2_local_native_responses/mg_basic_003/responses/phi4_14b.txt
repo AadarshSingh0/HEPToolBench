@@ -1,0 +1,13 @@
+```plaintext
+import model sm
+
+block masses:
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~
+
+begin  process
+p p > h j 
+end process 
+
+output HJ
+```

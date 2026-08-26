@@ -1,0 +1,32 @@
+You are being tested on a particle-physics software benchmark.
+Return only the requested output file content. Do not include explanations.
+
+TASK INSTRUCTION:
+# Task: Drell-Yan Process Card From Template
+
+You are given a partially completed MadGraph process card.
+
+Fill the missing lines so that the card generates the Standard Model Drell-Yan process
+
+```text
+p p > e+ e-
+```
+
+for proton-proton collisions at a total center-of-mass energy of 13 TeV.
+
+MadGraph uses beam energies, so 13 TeV proton-proton collisions correspond to 6500 GeV per beam.
+
+Return only the completed `proc_card.dat` content. Do not include explanations.
+
+INPUT FILE: proc_card_template.dat
+```text
+import model sm
+define p = g u c d s u~ c~ d~ s~
+
+# Fill the process line below.
+
+output DY_ee
+launch
+
+# Fill the beam energies below for 13 TeV pp collisions.
+```

@@ -1,0 +1,9 @@
+import model sm
+
+define p = g u c d s b u~ c~ d~ s~ b~
+add process p p > t t~
+
+output TopPairProduction_13TeV
+
+launch
+set ecm 26000

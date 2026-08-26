@@ -1,0 +1,11 @@
+```proton
+import model SM@NLO
+define P(-938.272) m_p(p)
+define Q = W(b(8)) b(~b(5))
+P(PQ>e+ e-) DY_ee
+
+launch -- center-of-mass energy 13 TeV (equivalent to sqrt(s)=13000 GeV)
+
+set beam1 -2500
+set beam2 +2500
+```

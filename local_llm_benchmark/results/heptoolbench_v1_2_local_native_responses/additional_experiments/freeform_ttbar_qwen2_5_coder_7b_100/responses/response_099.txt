@@ -1,0 +1,15 @@
+```python
+import madgraph
+
+model = madgraph.models.stdmodel.StdModel()
+model.generate(
+    'p p > t anti-t',
+    output_dir='ttbar_run',
+    run_mode=0,
+    save=False,
+    debug=False,
+    auto_update=True,
+    check_model=True,
+    verbose=True,
+)
+```

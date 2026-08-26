@@ -1,0 +1,8 @@
+```plaintext
+generate p p > t t~ -a QCD
+set cut_initial_state_merging 10
+run fast
+output ttbar_run --filein input_slha.txt
+launch
+quit
+```

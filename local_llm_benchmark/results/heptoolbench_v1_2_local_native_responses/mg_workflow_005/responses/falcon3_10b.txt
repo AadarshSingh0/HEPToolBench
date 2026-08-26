@@ -1,0 +1,7 @@
+```bash
+generate p p > t t~ QED=2 QCD=2
+set EBEAM 6500, 6500
+output TTbar_P8_Delphes
+run
+launch --pythia8 --delphes --no-madsspin 10000 --card="randomseed 42"
+```

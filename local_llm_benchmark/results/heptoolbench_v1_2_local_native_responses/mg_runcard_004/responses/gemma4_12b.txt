@@ -1,0 +1,6 @@
+events = 10000
+seed = 42
+e1 = 6500
+e2 = 6500
+p_t_min = 20
+eta_max = 2.5

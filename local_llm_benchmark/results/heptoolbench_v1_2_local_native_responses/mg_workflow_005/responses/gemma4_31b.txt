@@ -1,0 +1,8 @@
+define p = g u c d s u~ c~ d~ s~
+generate p p > t t~
+output TTbar_P8_Delphes
+set beamenergy 1 6500
+set beamenergy 2 6500
+set nb_events 10000
+set seed 42
+launch TTbar_P8_Delphes

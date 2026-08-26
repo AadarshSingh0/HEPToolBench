@@ -1,0 +1,79 @@
+```
+[Process]
+generate = p p > h j
+beams : [p p]
+ [MandatoryArguments]
+ arguments : [h,j]
+ [Particles]
+  p =
+   [Particle]
+    id = g
+   [/Particle]
+   [Particle]
+    id = u
+   [/Particle]
+   [Particle]
+    id = c
+   [/Particle]
+   [Particle]
+    id = d
+   [/Particle]
+   [Particle]
+    id = s
+   [/Particle]
+   [Particle]
+    id = u~
+   [/Particle]
+   [Particle]
+    id = c~
+   [/Particle]
+   [Particle]
+    id = d~
+   [/Particle]
+   [Particle]
+    id = s~
+   [/Particle]
+ [/Particles]
+
+ [Particles]
+  j =
+   [Particle]
+    id = g
+   [/Particle]
+   [Particle]
+    id = u
+   [/Particle]
+   [Particle]
+    id = c
+   [/Particle]
+   [Particle]
+    id = d
+   [/Particle]
+   [Particle]
+    id = s
+   [/Particle]
+   [Particle]
+    id = u~
+   [/Particle]
+   [Particle]
+    id = c~
+   [/Particle]
+   [Particle]
+    id = d~
+   [/Particle]
+   [Particle]
+    id = s~
+   [/Particle]
+ [/Particles]
+
+[Settings]
+ewk_matching_order = 3
+output :  HJ/
+
+[lhaparams]
+alphas_mode = 4
+scan_grouped = -1
+
+[neutrinos]
+decaying = no
+```

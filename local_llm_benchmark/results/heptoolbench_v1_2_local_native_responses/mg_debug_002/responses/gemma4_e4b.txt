@@ -1,0 +1,8 @@
+```text
+import model sm
+p p > t tbar
+output TTbar
+launch
+set beam1 6500
+set beam2 6500
+```

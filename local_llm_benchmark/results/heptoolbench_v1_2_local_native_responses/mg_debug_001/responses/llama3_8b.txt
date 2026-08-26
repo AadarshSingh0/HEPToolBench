@@ -1,0 +1,13 @@
+Here is the corrected `proc_card.dat` content:
+
+```text
+import model sm
+define p = g u c d s u~ c~ d~ s~
+e+ e- > e+ e-
+output DY_ee
+launch
+set beam1 13000.
+set beam2 13000.
+```
+
+Let me know if you need anything else!

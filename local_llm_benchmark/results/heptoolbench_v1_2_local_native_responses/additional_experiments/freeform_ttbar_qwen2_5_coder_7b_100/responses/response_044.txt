@@ -1,0 +1,21 @@
+```bash
+# Create a new model card for Standard Model
+model SM
+
+# Generate process pp > t t~
+generate p p > t t~
+
+# Set energy scale and run parameters
+set lhe_file true
+set automatic_ren_scale off
+set automatic_mass_scale off
+set ren_scale 13000
+set mass t 172.5
+set mass b 4.8
+
+# Output directory and format
+output ttbar_run --overwrite
+
+# Run the generation
+launch
+```

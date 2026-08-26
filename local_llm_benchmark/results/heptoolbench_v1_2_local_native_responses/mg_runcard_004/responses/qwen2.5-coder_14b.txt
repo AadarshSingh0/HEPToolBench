@@ -1,0 +1,8 @@
+```text
+nevents 10000
+iseed 42
+beam_energy_1 6500
+beam_energy_2 6500
+cut_ptl_min 20
+cut_eta_max 2.5
+```

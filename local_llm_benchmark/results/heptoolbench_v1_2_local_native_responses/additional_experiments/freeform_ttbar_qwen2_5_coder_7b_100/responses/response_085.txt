@@ -1,0 +1,7 @@
+```
+generate p p > t t~ QCD
+output ttbar_run --overwrite
+set lhe_version 3
+launch
+run 100
+```

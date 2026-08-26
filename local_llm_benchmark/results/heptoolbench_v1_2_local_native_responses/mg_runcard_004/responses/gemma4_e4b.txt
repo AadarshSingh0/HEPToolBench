@@ -1,0 +1,6 @@
+num_events = 10000
+seed = 42
+beam_energy_1 = 6500
+beam_energy_2 = 6500
+min_lepton_pt = 20
+max_pseudorapidity = 2.5

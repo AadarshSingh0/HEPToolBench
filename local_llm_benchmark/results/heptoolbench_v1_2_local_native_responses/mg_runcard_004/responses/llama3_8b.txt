@@ -1,0 +1,6 @@
+value = 10000,            # Number of events
+random_seed = 42,
+beam_1_energy = 6500,    #
+beam_2_energy = 6500,    #
+min_lepton_pt = 20.,      # Minimum charged-lepton transverse momentum (GeV)
+max_eta_lepton = 2.5       # Maximum charged-lepton pseudorapidity

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Set output directory and number of events
+outputDir=TTbar_P8_Delphes/
+numberOfEvents=10000/
+
+cat <<EOF >$inputFileName
+p p > t t~
+define p = g u c d s u~ c~ d~ s~
+
+# Pythia options for showering enabled, Delphes simulation with MadSpin disabled.
+Pythia opts: 'all'
+Delphes opts: ''
+MadSpin opts: ''
+
+EOF
+
+cat <<END_SCRIPT >>$inputFileName
+run -n $numberOfEvents --pdf=PyTHIA8.pdf --options=-q 0,-c 1,--no-madspin \
+-t =13TeV,--ept=6500GeV,:--et=6500GeV:~+::+-o :+:+++
+outputDir=$outputDir
+EOF
+
+echo "MG5 command script created."

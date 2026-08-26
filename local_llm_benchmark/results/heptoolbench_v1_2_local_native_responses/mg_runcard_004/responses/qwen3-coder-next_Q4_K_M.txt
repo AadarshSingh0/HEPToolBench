@@ -1,0 +1,6 @@
+10000 = nevents  
+42 = seed  
+6500.0 = ebeam1  
+6500.0 = ebeam2  
+20.0 = ptl_min  
+2.5 = etal_max

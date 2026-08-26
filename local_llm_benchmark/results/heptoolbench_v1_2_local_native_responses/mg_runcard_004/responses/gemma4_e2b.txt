@@ -1,0 +1,6 @@
+number of events = 10000
+random seed = 42
+beam energy 1 = 6500
+beam energy 2 = 6500
+minimum charged-lepton transverse momentum = 20
+maximum charged-lepton pseudorapidity = 2.5

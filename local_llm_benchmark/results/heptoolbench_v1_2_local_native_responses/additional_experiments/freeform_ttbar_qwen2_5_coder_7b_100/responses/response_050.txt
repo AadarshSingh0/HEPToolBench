@@ -1,0 +1,26 @@
+```bash
+# Create a new run directory
+mkdir ttbar_run
+
+# Navigate to the run directory
+cd ttbar_run
+
+# Initialize MadGraph5_aMC@NLO
+mg5_aMC
+
+# Load Standard Model
+import model SM
+
+# Generate proton-proton -> t-t~
+generate p p > t~ t
+
+# Set energy scale
+set energy 13000.
+
+# Select default configurations and choices
+update gauge unitarize
+
+# Generate events
+fixed Order h=3 qcd=3
+output ttbar_run
+```
