@@ -69,6 +69,11 @@ local_llm_benchmark/submissions/*
 local_llm_benchmark/results/*
 !local_llm_benchmark/results/README.md
 
+# Curated HEPToolBench v1.2 consolidated data and local native responses.
+!local_llm_benchmark/results/heptoolbench_v1_2_42deployments_31tasks_20260804.csv
+!local_llm_benchmark/results/heptoolbench_v1_2_local_native_responses/
+!local_llm_benchmark/results/heptoolbench_v1_2_local_native_responses/**
+
 # Curated freeform experiment.
 !local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/
 !local_llm_benchmark/results/freeform_ttbar_qwen2_5_coder_7b_100/**
