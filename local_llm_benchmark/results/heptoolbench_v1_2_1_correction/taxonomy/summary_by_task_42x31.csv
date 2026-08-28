@@ -1,0 +1,9 @@
+task_id,outputs,mean_canonical_score,passed,physics_only,interface_only,both,ambiguous_or_unresolved,conservative_physics_only,conservative_interface_only,conservative_both,conservative_ambiguous_or_unresolved
+mg_basic_001,42,0.504761904762,6,0,19,17,0,0,34,2,0
+mg_basic_002,42,0.365476190476,4,0,0,38,0,0,27,11,0
+mg_basic_003,42,0.470952380952,6,0,13,23,0,0,34,2,0
+mg_runcard_004,42,0.344761904762,5,2,8,27,0,1,32,3,1
+mg_workflow_005,42,0.405119047619,0,1,7,34,0,0,40,1,1
+mg_debug_001,42,0.464285714286,3,0,20,19,0,0,33,6,0
+mg_debug_002,42,0.470833333333,3,0,21,18,0,0,27,12,0
+mg_debug_003,42,0.518928571429,3,1,31,7,0,0,35,3,1

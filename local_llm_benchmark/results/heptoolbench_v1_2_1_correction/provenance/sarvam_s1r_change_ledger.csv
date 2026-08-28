@@ -1,0 +1,6 @@
+deployment,task_id,old_score,new_score,old_pass,new_pass,action,artifact_sha256,origin
+Sarvam-105B,mg_workflow_005,0.42,0.46,False,False,w1_offline_rescore,8704ef6c496a09b4f8c7b405a4951e8ad78fdb7960a0cc171959d6e70be0946c,preserved_v1_2_output
+Sarvam-105B,mg_basic_002,0.0,0.075,False,False,s1r_recovered_output,95b5db72acaa0812cb9c6e22dc03d58df2446ea725ae8f6b176a5b862725a277,regenerated_2026-08-28
+Sarvam-105B,mg_runcard_004,0.0,0.72,False,False,s1r_recovered_output,d414734411cab7b950a148c2c3cfdd6ee9640e2ff7c2a0d5a07ebae006d3c077,regenerated_2026-08-28
+Sarvam-105B,benchmark_recommendation_018,0.0,0.95,False,True,s1r_recovered_output,0f1a69aab5821f2c4aaa2ea87e1ba539c8d33a885131f44b4da79450a133f328,regenerated_2026-08-28
+Sarvam-105B,mg_basic_003,0.0,0.075,False,False,s1r_recovered_output,0762ed2d0562fc5b2a212ea09a83f0ef02111c35e7297bad44e68c919172ae8a,preserved_2026-06-29_run_identical_prompt_and_scorer

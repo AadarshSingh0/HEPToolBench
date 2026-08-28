@@ -155,6 +155,8 @@ not changed by this publication-only normalization.
 The curated [local native-response archive](local_llm_benchmark/results/heptoolbench_v1_2_local_native_responses/)
 provides the model-facing prompts, raw local outputs, provenance, and checksums.
 
+The candidate [v1.2.1 correction package](local_llm_benchmark/results/heptoolbench_v1_2_1_correction/) provides the corrected 42 x 31 dataset, score-change ledger, recovered Sarvam provenance, regenerated Paper A assets, and validation evidence. The historical v1.2 tag and artifacts remain available for reproducibility.
+
 ## Companion software
 
 The deterministic local workflow agent described in the companion paper is

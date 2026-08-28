@@ -1,0 +1,61 @@
+{
+  "api": {
+    "conservative": {
+      "AMBIGUOUS_OR_UNRESOLVED": 2,
+      "BOTH_PHYSICS_AND_INTERFACE": 7,
+      "INTERFACE_ONLY": 68,
+      "PASSED": 18,
+      "PHYSICS_ONLY": 1
+    },
+    "n": 96,
+    "primary": {
+      "AMBIGUOUS_OR_UNRESOLVED": 0,
+      "BOTH_PHYSICS_AND_INTERFACE": 26,
+      "INTERFACE_ONLY": 49,
+      "PASSED": 18,
+      "PHYSICS_ONLY": 3
+    }
+  },
+  "conservative_affirmative_only": {
+    "AMBIGUOUS_OR_UNRESOLVED": 3,
+    "BOTH_PHYSICS_AND_INTERFACE": 40,
+    "INTERFACE_ONLY": 262,
+    "PASSED": 30,
+    "PHYSICS_ONLY": 1
+  },
+  "deployments": 42,
+  "failed": 306,
+  "interface_involved_failed": 302,
+  "local": {
+    "conservative": {
+      "AMBIGUOUS_OR_UNRESOLVED": 1,
+      "BOTH_PHYSICS_AND_INTERFACE": 33,
+      "INTERFACE_ONLY": 194,
+      "PASSED": 12,
+      "PHYSICS_ONLY": 0
+    },
+    "n": 240,
+    "primary": {
+      "AMBIGUOUS_OR_UNRESOLVED": 0,
+      "BOTH_PHYSICS_AND_INTERFACE": 157,
+      "INTERFACE_ONLY": 70,
+      "PASSED": 12,
+      "PHYSICS_ONLY": 1
+    }
+  },
+  "mean_score": 0.443139880952381,
+  "passes": 30,
+  "physics_involved_failed": 187,
+  "primary_observable_output": {
+    "AMBIGUOUS_OR_UNRESOLVED": 0,
+    "BOTH_PHYSICS_AND_INTERFACE": 183,
+    "INTERFACE_ONLY": 119,
+    "PASSED": 30,
+    "PHYSICS_ONLY": 4
+  },
+  "raw_available": 336,
+  "raw_missing": 0,
+  "records": 336,
+  "rows_patched_vs_v1_2": 56,
+  "tasks": 8
+}

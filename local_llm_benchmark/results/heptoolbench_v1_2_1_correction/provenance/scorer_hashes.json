@@ -1,0 +1,12 @@
+{
+  "corrected_v1_2_1_scorers": {
+    "mg_basic_002": "8791cffedbd731a61fab45cf46245485dc52b7a9fe7bfbd3807a5c60577c9a4f",
+    "mg_workflow_005": "48a59d295e5728db6589cbb8edcaf6689602d9609ffa28fc1fa88d8894fafe3c"
+  },
+  "superseded_v1_2_scorers": {
+    "mg_basic_002": "ecad56f8f7aabeda92d576d8225a84a53ca858a710355978c98a28dda8239a49",
+    "mg_workflow_005": "7a2d776eabaef9bc262c78cf2e6e9aee7a36ac7d48b2366832bc1934717cb082"
+  },
+  "policy_id": "B1_W1_S1R",
+  "note": "B1 = mg_basic_002 accepts any syntactically valid output <directory>. W1 = mg_workflow_005 does not charge the unstated analysis=OFF and done conventions. Both hashes match the approved B1_W1_S2 candidate; the scorers are unchanged by S1R."
+}

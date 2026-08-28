@@ -1,3 +1,4 @@
-HEPToolBench benchmark suite v1.2
-31 tasks = 28 de-leaked main tasks + 3 structured-debug extension tasks
-Frozen for paper evaluation.
+HEPToolBench benchmark suite v1.2.1 candidate (B1_W1_S1R)
+31 tasks = 28 main tasks + 3 structured-debug extension tasks
+Prompt-faithful scorer corrections for mg_basic_002 and mg_workflow_005;
+42 deployments x 31 tasks = 1,302 corrected records. v1.2 is preserved.

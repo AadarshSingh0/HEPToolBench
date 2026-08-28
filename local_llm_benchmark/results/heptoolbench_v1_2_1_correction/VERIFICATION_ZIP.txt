@@ -1,0 +1,24 @@
+HEPToolBench 42x31 B1_W1_S1R package verification
+======================================================================
+  [PASS] 42 deployments                                       42
+  [PASS] 41 distinct checkpoints                              41 (Llama 3.3 70B appears under two routes)
+  [PASS] 31 tasks per deployment                              min 31 max 31
+  [PASS] 1,302 records                                        1302
+  [PASS] no duplicate deployment-task keys                    0 duplicates
+  [PASS] no missing deployment-task keys                      0 missing; 31 distinct tasks
+  [PASS] 31 Sarvam records                                    31
+  [PASS] all Sarvam scores valid                              invalid: []
+  [PASS] no Sarvam HTTP-error placeholder                     zero-score rows: none
+  [PASS] 4 Sarvam records marked recovered                    ['benchmark_recommendation_018', 'mg_basic_002', 'mg_basic_003', 'mg_runcard_004']
+  [PASS] all 31 Sarvam records have genuine model output      
+  [PASS] B1 applied to mg_basic_002                           42/42 rows carry the B1 rescore
+  [PASS] W1 applied to mg_workflow_005                        42/42 rows carry the W1 rescore
+  [PASS] B1/W1 scorer hashes frozen                           match approved candidate
+  [PASS] headline matched means 0.418 vs 0.902                0.418 vs 0.902
+  [PASS] matched passes 21/210 vs 159/210                     21/210 vs 159/210
+  [PASS] 41/42 deployments improve                            41/42, 1 worse
+  [PASS] Wilcoxon W=897, p~3.2e-12                            W=897.0 p=3.183e-12
+  [PASS] taxonomy: all 336 native outputs have raw text       336/336
+  [PASS] taxonomy: no unresolved infrastructure records       0 unresolved
+======================================================================
+20/20 checks passed

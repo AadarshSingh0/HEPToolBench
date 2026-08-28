@@ -1,0 +1,108 @@
+{
+  "both_recovered": true,
+  "configuration": {
+    "endpoint": "https://api.sarvam.ai/v1/chat/completions",
+    "max_tokens": 4096,
+    "model": "sarvam-105b",
+    "reasoning_effort": "low",
+    "system_prompt": "Return only the requested output file content. Do not include explanations or markdown fences.",
+    "temperature": 0,
+    "timeout_seconds": 600
+  },
+  "created_utc": "2026-08-28T06:40:49.261012+00:00",
+  "policy": {
+    "canonical_dataset_modified": false,
+    "max_attempts_per_task": 3,
+    "reasoning_content_substituted_for_answer": false,
+    "stop_rule": "first usable message.content"
+  },
+  "purpose": "Recover mg_basic_002 and mg_runcard_004 with the original valid Sarvam configuration.",
+  "tasks": {
+    "mg_basic_002": {
+      "artifact_file": "<RECOVERY>/mg_basic_002/attempt_01/proc_card.dat",
+      "artifact_sha256": "95b5db72acaa0812cb9c6e22dc03d58df2446ea725ae8f6b176a5b862725a277",
+      "attempts": [
+        {
+          "artifact_file": "<RECOVERY>/mg_basic_002/attempt_01/proc_card.dat",
+          "artifact_sha256": "95b5db72acaa0812cb9c6e22dc03d58df2446ea725ae8f6b176a5b862725a277",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "finished_utc": "2026-08-28T06:41:39.326960+00:00",
+          "has_reasoning_content": true,
+          "http_status": 200,
+          "passed": false,
+          "provider_error": null,
+          "response_body_sha256": "91a8410037f07c97fe0a750e408f63cd6ff5cd1b9393b2374b4c6d13c1211713",
+          "score": 0.075,
+          "started_utc": "2026-08-28T06:40:49.261388+00:00",
+          "usable_content": true,
+          "usage": {
+            "completion_tokens": 2125,
+            "completion_tokens_details": null,
+            "prompt_tokens": 141,
+            "prompt_tokens_details": null,
+            "total_tokens": 2266
+          }
+        }
+      ],
+      "attempts_used": 1,
+      "passed": false,
+      "prompt_bytes": 417,
+      "prompt_sha256": "4e925975dd6a3f2569e24ace67695055065df511defe04ad68e73a3445f73d6a",
+      "recovered": true,
+      "score": 0.075
+    },
+    "mg_runcard_004": {
+      "artifact_file": "<RECOVERY>/mg_runcard_004/attempt_02/run_card_lines.dat",
+      "artifact_sha256": "d414734411cab7b950a148c2c3cfdd6ee9640e2ff7c2a0d5a07ebae006d3c077",
+      "attempts": [
+        {
+          "attempt": 1,
+          "finish_reason": "length",
+          "finished_utc": "2026-08-28T06:42:53.607036+00:00",
+          "has_reasoning_content": true,
+          "http_status": 200,
+          "provider_error": null,
+          "response_body_sha256": "57f64bc30b993b4ddd09e5688e82b638ff9891de99bc589ce24943fb6e9b88a2",
+          "started_utc": "2026-08-28T06:41:39.358901+00:00",
+          "usable_content": false,
+          "usage": {
+            "completion_tokens": 4096,
+            "completion_tokens_details": null,
+            "prompt_tokens": 246,
+            "prompt_tokens_details": null,
+            "total_tokens": 4342
+          }
+        },
+        {
+          "artifact_file": "<RECOVERY>/mg_runcard_004/attempt_02/run_card_lines.dat",
+          "artifact_sha256": "d414734411cab7b950a148c2c3cfdd6ee9640e2ff7c2a0d5a07ebae006d3c077",
+          "attempt": 2,
+          "finish_reason": "stop",
+          "finished_utc": "2026-08-28T06:43:42.539295+00:00",
+          "has_reasoning_content": true,
+          "http_status": 200,
+          "passed": false,
+          "provider_error": null,
+          "response_body_sha256": "ae6b8859c5db1a520b19cac413ca9416f97425e06627c326a73cd67890aafff8",
+          "score": 0.72,
+          "started_utc": "2026-08-28T06:43:13.608011+00:00",
+          "usable_content": true,
+          "usage": {
+            "completion_tokens": 1787,
+            "completion_tokens_details": null,
+            "prompt_tokens": 246,
+            "prompt_tokens_details": null,
+            "total_tokens": 2033
+          }
+        }
+      ],
+      "attempts_used": 2,
+      "passed": false,
+      "prompt_bytes": 672,
+      "prompt_sha256": "bf955e2707138c8e2c217bab72219b22144102804a0e49c858c9c298ea60ec4e",
+      "recovered": true,
+      "score": 0.72
+    }
+  }
+}

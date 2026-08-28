@@ -1,0 +1,370 @@
+{
+ "n_models": 42,
+ "n_tasks_main": 28,
+ "n_tasks_debug": 3,
+ "n_obs_main": 1176,
+ "n_checkpoints": 41,
+ "n_local": 30,
+ "n_api": 12,
+ "n_open": 34,
+ "n_closed": 8,
+ "n_disclosed": 34,
+ "n_moe": 7,
+ "size_min_b": 0.27,
+ "size_max_b": 675.0,
+ "n_small": 25,
+ "n_large": 9,
+ "n_undisclosed": 8,
+ "top_pass_model": "Gemini 3.1 Flash-Lite",
+ "top_pass_n": 20,
+ "top_pass_mean": 0.934,
+ "top_mean_model": "GPT-4.1",
+ "top_mean_val": 0.945,
+ "top_mean_passes": 19,
+ "best_open": "gpt-oss 120B",
+ "best_open_pass": 19,
+ "best_open_mean": 0.936,
+ "best_closed": "Gemini 3.1 Flash-Lite",
+ "best_closed_pass": 20,
+ "best_closed_mean": 0.934,
+ "best_open_ci": [
+  0.493,
+  0.821
+ ],
+ "best_closed_ci": [
+  0.529,
+  0.847
+ ],
+ "ff_mean": 0.443,
+ "ff_pass": 30,
+ "ff_n": 336,
+ "ss_mean": 0.859,
+ "ss_pass": 441,
+ "ss_n": 840,
+ "ff_pass_rate": 0.089,
+ "ss_pass_rate": 0.525,
+ "ff_small_pass": "3/200",
+ "ss_small_pass": "215/500",
+ "ff_small_mean": 0.342,
+ "ss_small_mean": 0.817,
+ "ff_large_pass": "10/72",
+ "ss_large_pass": "118/180",
+ "ff_large_mean": 0.534,
+ "ss_large_mean": 0.915,
+ "ff_undisclosed_pass": "17/64",
+ "ss_undisclosed_pass": "108/160",
+ "ff_undisclosed_mean": 0.657,
+ "ss_undisclosed_mean": 0.928,
+ "models_zero_freeform": 31,
+ "models_zero_freeform_small": 23,
+ "models_any_freeform": 11,
+ "best_freeform_model": "Gemini 3.1 Flash-Lite",
+ "best_freeform_n": 6,
+ "pair_n_models": 42,
+ "pair_free_mean": 0.418,
+ "pair_struct_mean": 0.902,
+ "pair_gain": 0.484,
+ "pair_free_pass": "21/210",
+ "pair_struct_pass": "159/210",
+ "pair_wilcoxon_p": 3.183231456205249e-12,
+ "pair_wilcoxon_W": 897.0,
+ "pair_n_improved": 41,
+ "pair_n_worse": 1,
+ "headroom_pct": 85.2,
+ "headroom_all_pct": 85.2,
+ "fmt_fail_models": [],
+ "n_fmt_fail": 0,
+ "spear_abs_rho": -0.773,
+ "spear_abs_p": 1.9219902860803668e-09,
+ "spear_norm_rho": 0.43,
+ "spear_norm_p": 0.004464451365406939,
+ "pair_small_free": 0.292,
+ "pair_small_struct": 0.853,
+ "pair_small_gain": 0.561,
+ "pair_small_free_pass": "2/125",
+ "pair_small_struct_pass": "81/125",
+ "pair_small_n": 25,
+ "pair_large_free": 0.536,
+ "pair_large_struct": 0.967,
+ "pair_large_gain": 0.431,
+ "pair_large_free_pass": "7/45",
+ "pair_large_struct_pass": "40/45",
+ "pair_large_n": 9,
+ "pair_undisclosed_free": 0.68,
+ "pair_undisclosed_struct": 0.98,
+ "pair_undisclosed_gain": 0.3,
+ "pair_undisclosed_free_pass": "12/40",
+ "pair_undisclosed_struct_pass": "38/40",
+ "pair_undisclosed_n": 8,
+ "floor_models": [
+  "Gemma 3 270M",
+  "Gemma 3 4B",
+  "Phi-4 mini 3.8B",
+  "Gemma 4 E4B",
+  "Gemma 4 E2B"
+ ],
+ "floor_gain": 0.528,
+ "mid_n": 19,
+ "mid_free": 0.329,
+ "mid_struct": 0.9,
+ "mid_gain": 0.571,
+ "mid_struct_pass": "72/95",
+ "mid_free_pass": "2/95",
+ "n_zero_to_five": 11,
+ "zero_to_five_examples": [
+  "Gemma 3 12B",
+  "DeepSeek-R1 70B",
+  "Ministral 3 14B",
+  "Phi-4 14B"
+ ],
+ "pairs_table": [
+  {
+   "pair": "Drell--Yan process",
+   "free_mean": 0.505,
+   "struct_mean": 0.901,
+   "free_pass": 6,
+   "struct_pass": 35,
+   "n": 42
+  },
+  {
+   "pair": "Top-pair process",
+   "free_mean": 0.365,
+   "struct_mean": 0.901,
+   "free_pass": 4,
+   "struct_pass": 33,
+   "n": 42
+  },
+  {
+   "pair": "Higgs+jet process",
+   "free_mean": 0.471,
+   "struct_mean": 0.93,
+   "free_pass": 6,
+   "struct_pass": 35,
+   "n": 42
+  },
+  {
+   "pair": "Run-card cuts",
+   "free_mean": 0.345,
+   "struct_mean": 0.93,
+   "free_pass": 5,
+   "struct_pass": 39,
+   "n": 42
+  },
+  {
+   "pair": "MG5+P8+Delphes workflow",
+   "free_mean": 0.405,
+   "struct_mean": 0.845,
+   "free_pass": 0,
+   "struct_pass": 17,
+   "n": 42
+  }
+ ],
+ "scale_n": 34,
+ "scale_rho": 0.737,
+ "scale_p": 6.830496172328889e-07,
+ "dbg_n_models": 42,
+ "dbg_api_mean": 0.978,
+ "dbg_local_mean": 0.832,
+ "dbg_api_pass": "30/36",
+ "dbg_local_pass": "43/90",
+ "dbg_api_zeros": 0,
+ "dbg_local_zeros": 4,
+ "dbg_api_min": 0.775,
+ "dbg_mw_deployment_p": 0.01008741055667588,
+ "dbg_struct_rho": 0.742,
+ "dbg_struct_p": 1.8599139583147212e-08,
+ "dbg_local_all_zero": 1,
+ "dbg_local_n": 30,
+ "dbg_open_api_models": [
+  "Devstral 2512",
+  "Llama 3.3 70B (API)",
+  "Mistral Large 2512",
+  "Sarvam 105B"
+ ],
+ "dbg_open_api_mean": 0.981,
+ "dbg_llama_local": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "dbg_llama_api": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "dbg_small_pass": "30/75",
+ "dbg_small_mean": 0.802,
+ "dbg_large_pass": "24/27",
+ "dbg_large_mean": 0.98,
+ "dbg_undisclosed_pass": "19/24",
+ "dbg_undisclosed_mean": 0.976,
+ "replicates": [
+  {
+   "model": "Gemma 3 4B",
+   "runs": 5,
+   "passes": [
+    3,
+    4,
+    4,
+    4,
+    5
+   ],
+   "pass_sd": 0.71,
+   "score_mean": 0.61,
+   "score_sd": 0.0093
+  },
+  {
+   "model": "Gemma 4 26B",
+   "runs": 5,
+   "passes": [
+    14,
+    15,
+    15,
+    15,
+    16
+   ],
+   "pass_sd": 0.71,
+   "score_mean": 0.741,
+   "score_sd": 0.0276
+  },
+  {
+   "model": "Granite 4 32B-A9B",
+   "runs": 5,
+   "passes": [
+    8,
+    8,
+    9,
+    9,
+    10
+   ],
+   "pass_sd": 0.84,
+   "score_mean": 0.698,
+   "score_sd": 0.0106
+  },
+  {
+   "model": "Llama 3.3 70B (local)",
+   "runs": 5,
+   "passes": [
+    13,
+    14,
+    15,
+    16,
+    16
+   ],
+   "pass_sd": 1.3,
+   "score_mean": 0.785,
+   "score_sd": 0.0102
+  },
+  {
+   "model": "Phi-4 14B",
+   "runs": 5,
+   "passes": [
+    10,
+    10,
+    11,
+    11,
+    12
+   ],
+   "pass_sd": 0.84,
+   "score_mean": 0.714,
+   "score_sd": 0.0079
+  },
+  {
+   "model": "Qwen2.5-Coder 14B",
+   "runs": 5,
+   "passes": [
+    10,
+    10,
+    10,
+    10,
+    11
+   ],
+   "pass_sd": 0.45,
+   "score_mean": 0.727,
+   "score_sd": 0.0098
+  },
+  {
+   "model": "Qwen2.5-Coder 7B",
+   "runs": 5,
+   "passes": [
+    5,
+    6,
+    6,
+    7,
+    8
+   ],
+   "pass_sd": 1.14,
+   "score_mean": 0.658,
+   "score_sd": 0.01
+  },
+  {
+   "model": "Qwen3-Coder-Next",
+   "runs": 5,
+   "passes": [
+    11,
+    14,
+    14,
+    14,
+    14
+   ],
+   "pass_sd": 1.34,
+   "score_mean": 0.783,
+   "score_sd": 0.0078
+  },
+  {
+   "model": "Qwen3.5 27B",
+   "runs": 5,
+   "passes": [
+    11,
+    12,
+    12,
+    13,
+    14
+   ],
+   "pass_sd": 1.14,
+   "score_mean": 0.783,
+   "score_sd": 0.0134
+  },
+  {
+   "model": "Qwen3 8B",
+   "runs": 5,
+   "passes": [
+    10,
+    11,
+    12,
+    12,
+    12
+   ],
+   "pass_sd": 0.89,
+   "score_mean": 0.759,
+   "score_sd": 0.0197
+  }
+ ],
+ "rep_n_models": 10,
+ "rep_mean_pass_sd": 0.94,
+ "rep_mean_score_sd": 0.0126,
+ "rep_max_spread": 3,
+ "tight_tasks": [
+  "delphes_objects_011",
+  "mg_basic_001",
+  "mg_debug_002",
+  "mg_runcard_004",
+  "mg_parse_009",
+  "lhe_sanity_012",
+  "mg_workflow_structured_005",
+  "param_card_patch_015",
+  "mg_structured_003",
+  "scan_recovery_017",
+  "mg_parse_008",
+  "mg_parse_006",
+  "mg_structured_002",
+  "mg_runcard_structured_004"
+ ],
+ "n_tight": 14,
+ "max_failing_score": 0.96,
+ "min_passing_score": 0.79,
+ "structured_markdown_fence_n": 253,
+ "structured_markdown_fence_pass": 116,
+ "inverted_tasks": [],
+ "n_inverted": 0
+}

@@ -1,0 +1,94 @@
+{
+  "lineages": 12,
+  "W": 78.0,
+  "p": 0.000244140625,
+  "max_W": 78.0,
+  "smallest_gain": 0.18766666666666676,
+  "smallest_gain_family": "OpenAI GPT-4.1",
+  "per_family": [
+    {
+      "family": "OpenAI GPT-4.1",
+      "deployments": 3,
+      "native_mean": 0.8083333333333332,
+      "structured_mean": 0.996,
+      "gain": 0.18766666666666676
+    },
+    {
+      "family": "OpenAI gpt-oss",
+      "deployments": 2,
+      "native_mean": 0.7735,
+      "structured_mean": 0.991,
+      "gain": 0.21750000000000003
+    },
+    {
+      "family": "Google Gemini",
+      "deployments": 2,
+      "native_mean": 0.7495,
+      "structured_mean": 0.99,
+      "gain": 0.24049999999999994
+    },
+    {
+      "family": "Microsoft Phi",
+      "deployments": 3,
+      "native_mean": 0.26033333333333336,
+      "structured_mean": 0.5950000000000001,
+      "gain": 0.3346666666666667
+    },
+    {
+      "family": "Mistral",
+      "deployments": 8,
+      "native_mean": 0.457625,
+      "structured_mean": 0.9477499999999999,
+      "gain": 0.49012499999999987
+    },
+    {
+      "family": "Alibaba Qwen",
+      "deployments": 8,
+      "native_mean": 0.42362500000000003,
+      "structured_mean": 0.94025,
+      "gain": 0.516625
+    },
+    {
+      "family": "Sarvam",
+      "deployments": 1,
+      "native_mean": 0.38599999999999995,
+      "structured_mean": 0.952,
+      "gain": 0.5660000000000001
+    },
+    {
+      "family": "Meta Llama",
+      "deployments": 4,
+      "native_mean": 0.36300000000000004,
+      "structured_mean": 0.9442499999999999,
+      "gain": 0.5812499999999998
+    },
+    {
+      "family": "Google Gemma",
+      "deployments": 8,
+      "native_mean": 0.222875,
+      "structured_mean": 0.8083750000000001,
+      "gain": 0.5855000000000001
+    },
+    {
+      "family": "DeepSeek",
+      "deployments": 1,
+      "native_mean": 0.258,
+      "structured_mean": 0.962,
+      "gain": 0.704
+    },
+    {
+      "family": "IBM Granite",
+      "deployments": 1,
+      "native_mean": 0.227,
+      "structured_mean": 0.9720000000000001,
+      "gain": 0.7450000000000001
+    },
+    {
+      "family": "TII Falcon",
+      "deployments": 1,
+      "native_mean": 0.15699999999999997,
+      "structured_mean": 0.9039999999999999,
+      "gain": 0.7469999999999999
+    }
+  ]
+}
