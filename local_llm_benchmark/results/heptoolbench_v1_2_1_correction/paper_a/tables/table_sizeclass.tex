@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering\small
+\caption{Interface and debugging results by size class. The 50\,B threshold is a
+presentational convention (Sec.~\ref{sec:cohort}); Fig.~\ref{fig:scale} shows the underlying
+continuous relationship so that no conclusion depends on the cut.}
+\label{tab:sizeclass}
+\begin{tabular}{lrrrrccc}
+\toprule
+& & \multicolumn{3}{c}{Paired mean score} & \multicolumn{2}{c}{Paired passes} & Debug \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}\cmidrule(lr){8-8}
+Class & $N$ & Free & Struct. & $\Delta$ & Free & Struct. & passes \\
+\midrule
+Disclosed $<$50\,B & 25 & 0.292 & 0.853 & $+0.561$ & 2/125 & 81/125 & 30/75 \\
+Disclosed $\geq$50\,B & 9 & 0.536 & 0.967 & $+0.431$ & 7/45 & 40/45 & 24/27 \\
+Size undisclosed & 8 & 0.680 & 0.980 & $+0.300$ & 12/40 & 38/40 & 19/24 \\
+\bottomrule
+\end{tabular}
+\end{table}

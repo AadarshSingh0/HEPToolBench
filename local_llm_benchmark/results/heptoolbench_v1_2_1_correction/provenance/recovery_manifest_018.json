@@ -1,0 +1,56 @@
+{
+  "both_recovered": true,
+  "configuration": {
+    "endpoint": "https://api.sarvam.ai/v1/chat/completions",
+    "max_tokens": 4096,
+    "model": "sarvam-105b",
+    "reasoning_effort": "low",
+    "system_prompt": "Return only the requested output file content. Do not include explanations or markdown fences.",
+    "temperature": 0,
+    "timeout_seconds": 600
+  },
+  "created_utc": "2026-08-28T07:02:38.466819+00:00",
+  "policy": {
+    "canonical_dataset_modified": false,
+    "max_attempts_per_task": 3,
+    "reasoning_content_substituted_for_answer": false,
+    "stop_rule": "first usable message.content"
+  },
+  "purpose": "Recover mg_basic_002 and mg_runcard_004 with the original valid Sarvam configuration.",
+  "tasks": {
+    "benchmark_recommendation_018": {
+      "artifact_file": "<RECOVERY>/benchmark_recommendation_018/attempt_01/recommendation.json",
+      "artifact_sha256": "0f1a69aab5821f2c4aaa2ea87e1ba539c8d33a885131f44b4da79450a133f328",
+      "attempts": [
+        {
+          "artifact_file": "<RECOVERY>/benchmark_recommendation_018/attempt_01/recommendation.json",
+          "artifact_sha256": "0f1a69aab5821f2c4aaa2ea87e1ba539c8d33a885131f44b4da79450a133f328",
+          "attempt": 1,
+          "finish_reason": "stop",
+          "finished_utc": "2026-08-28T07:03:29.236814+00:00",
+          "has_reasoning_content": true,
+          "http_status": 200,
+          "passed": true,
+          "provider_error": null,
+          "response_body_sha256": "5b89cc4c6c862fc08d7f1b603c2b8c6f08412eb59875a09992281a4843492c75",
+          "score": 0.95,
+          "started_utc": "2026-08-28T07:02:38.467247+00:00",
+          "usable_content": true,
+          "usage": {
+            "completion_tokens": 3286,
+            "completion_tokens_details": null,
+            "prompt_tokens": 584,
+            "prompt_tokens_details": null,
+            "total_tokens": 3870
+          }
+        }
+      ],
+      "attempts_used": 1,
+      "passed": true,
+      "prompt_bytes": 1984,
+      "prompt_sha256": "703bca2f34322125aad14a93209a85091f2764a208a839af413c7da75cbeda1e",
+      "recovered": true,
+      "score": 0.95
+    }
+  }
+}

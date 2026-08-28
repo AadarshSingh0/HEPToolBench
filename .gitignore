@@ -82,3 +82,8 @@ local_llm_benchmark/results/*
 !local_llm_benchmark/results/stability_httpclean_modern_final_10models_1550rows.csv
 !local_llm_benchmark/results/stability_httpclean_modern_final_run_index.csv
 !local_llm_benchmark/results/stability_httpclean_modern_final_audit.json
+# Curated HEPToolBench v1.2.1 correction candidate.
+!local_llm_benchmark/results/heptoolbench_v1_2_1_correction/
+!local_llm_benchmark/results/heptoolbench_v1_2_1_correction/**
+# Keep generated Python caches excluded inside the curated package.
+local_llm_benchmark/results/heptoolbench_v1_2_1_correction/**/__pycache__/

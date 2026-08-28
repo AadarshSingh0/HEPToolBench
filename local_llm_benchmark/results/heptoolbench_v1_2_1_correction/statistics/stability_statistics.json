@@ -1,0 +1,149 @@
+{
+  "rep_n_models": 10,
+  "rep_mean_pass_sd": 0.94,
+  "rep_mean_score_sd": 0.0126,
+  "rep_max_spread": 3,
+  "replicates": [
+    {
+      "model": "Gemma 3 4B",
+      "runs": 5,
+      "passes": [
+        3,
+        4,
+        4,
+        4,
+        5
+      ],
+      "pass_sd": 0.71,
+      "score_mean": 0.61,
+      "score_sd": 0.0093
+    },
+    {
+      "model": "Gemma 4 26B",
+      "runs": 5,
+      "passes": [
+        14,
+        15,
+        15,
+        15,
+        16
+      ],
+      "pass_sd": 0.71,
+      "score_mean": 0.741,
+      "score_sd": 0.0276
+    },
+    {
+      "model": "Granite 4 32B-A9B",
+      "runs": 5,
+      "passes": [
+        8,
+        8,
+        9,
+        9,
+        10
+      ],
+      "pass_sd": 0.84,
+      "score_mean": 0.698,
+      "score_sd": 0.0106
+    },
+    {
+      "model": "Llama 3.3 70B (local)",
+      "runs": 5,
+      "passes": [
+        13,
+        14,
+        15,
+        16,
+        16
+      ],
+      "pass_sd": 1.3,
+      "score_mean": 0.785,
+      "score_sd": 0.0102
+    },
+    {
+      "model": "Phi-4 14B",
+      "runs": 5,
+      "passes": [
+        10,
+        10,
+        11,
+        11,
+        12
+      ],
+      "pass_sd": 0.84,
+      "score_mean": 0.714,
+      "score_sd": 0.0079
+    },
+    {
+      "model": "Qwen2.5-Coder 14B",
+      "runs": 5,
+      "passes": [
+        10,
+        10,
+        10,
+        10,
+        11
+      ],
+      "pass_sd": 0.45,
+      "score_mean": 0.727,
+      "score_sd": 0.0098
+    },
+    {
+      "model": "Qwen2.5-Coder 7B",
+      "runs": 5,
+      "passes": [
+        5,
+        6,
+        6,
+        7,
+        8
+      ],
+      "pass_sd": 1.14,
+      "score_mean": 0.658,
+      "score_sd": 0.01
+    },
+    {
+      "model": "Qwen3-Coder-Next",
+      "runs": 5,
+      "passes": [
+        11,
+        14,
+        14,
+        14,
+        14
+      ],
+      "pass_sd": 1.34,
+      "score_mean": 0.783,
+      "score_sd": 0.0078
+    },
+    {
+      "model": "Qwen3.5 27B",
+      "runs": 5,
+      "passes": [
+        11,
+        12,
+        12,
+        13,
+        14
+      ],
+      "pass_sd": 1.14,
+      "score_mean": 0.783,
+      "score_sd": 0.0134
+    },
+    {
+      "model": "Qwen3 8B",
+      "runs": 5,
+      "passes": [
+        10,
+        11,
+        12,
+        12,
+        12
+      ],
+      "pass_sd": 0.89,
+      "score_mean": 0.759,
+      "score_sd": 0.0197
+    }
+  ],
+  "note": "Stability is UNCHANGED by B1_W1_S1R. Sarvam-105B is not among the ten repeat deployments, and neither B1 nor W1 alters any repeat record. Source: data/HEPToolBench_stability_v1_2_1_10models_x5.csv (1550 rows, 10 models x 5 repeats x 31 tasks)."
+}

@@ -1,6 +1,9 @@
 # HEPToolBench benchmark implementation
 
-This directory contains the frozen HEPToolBench v1.2 benchmark.
+This directory contains the HEPToolBench task suite and the v1.2.1
+prompt-contract scoring correction prepared from preserved v1.2 outputs plus
+four documented Sarvam-105B recovery attempts. v1.2 remains preserved for
+historical reproducibility; v1.2.1 supersedes it for scientific use.
 
 The suite contains 31 deterministic tasks:
 

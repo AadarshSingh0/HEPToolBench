@@ -23,6 +23,19 @@ def has_line(pattern: str, text: str) -> bool:
     return re.search(pattern, text, flags=re.IGNORECASE | re.MULTILINE) is not None
 
 
+def has_valid_output_directory(text: str) -> bool:
+    """Accept any syntactically valid user-selected MG5 output directory.
+
+    The task prompt requests a complete process card but does not prescribe a
+    particular directory name. Requiring the reference answer's ``TTbar`` name
+    would therefore impose an unstated convention.
+    """
+    return has_line(
+        r"^output\s+(?!-f(?:\s|$))/?[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?:\s+-f)?$",
+        text,
+    )
+
+
 def parse_beam_energy(name: str, text: str) -> float | None:
     match = re.search(rf"^\s*(?:set\s+)?{name}\s*(?:=)?\s*([0-9.eE+-]+)", text, re.IGNORECASE | re.MULTILINE)
     if not match:
@@ -33,17 +46,22 @@ def parse_beam_energy(name: str, text: str) -> float | None:
         return None
 
 
-def score_submission(path: Path) -> dict:
+def score_submission(path: Path, *, require_reference_output_name: bool = False) -> dict:
     raw = path.read_text()
     text = normalize(raw)
     failures = []
+    output_key = "has_output_ttbar" if require_reference_output_name else "has_valid_output_directory"
+    output_valid = (
+        has_line(r"^output TTbar$", text)
+        if require_reference_output_name
+        else has_valid_output_directory(text)
+    )
 
     checks = {
         "imports_sm": has_line(r"^import model sm$", text),
         "defines_proton": has_line(r"^define p = .*", text),
         "correct_proton_definition": has_line(r"^define p = g u c d s u~ c~ d~ s~$", text),
         "correct_process": has_line(r"^generate p p > t t~$", text),
-        "has_output_ttbar": has_line(r"^output TTbar$", text),
         "has_launch": has_line(r"^launch$", text),
         "no_markdown_fence": "```" not in raw,
         "no_reasoning_tags": not re.search(r"</?think>|<\|im_start\|>|<\|endoftext\|>", raw, re.IGNORECASE),
@@ -54,6 +72,8 @@ def score_submission(path: Path) -> dict:
             re.IGNORECASE,
         ),
     }
+
+    checks[output_key] = output_valid
 
     ebeam1 = parse_beam_energy("ebeam1", text)
     ebeam2 = parse_beam_energy("ebeam2", text)
@@ -88,7 +108,7 @@ def score_submission(path: Path) -> dict:
         failures.append("includes_explanation_not_file_only")
     if not checks["correct_process"]:
         failures.append("missing_or_wrong_process")
-    if not checks["has_output_ttbar"]:
+    if not checks[output_key]:
         failures.append("missing_or_wrong_output")
     if not checks["ebeam1_6500"] or not checks["ebeam2_6500"]:
         failures.append("wrong_or_missing_beam_energy")
@@ -98,7 +118,7 @@ def score_submission(path: Path) -> dict:
         "defines_proton": 0.10,
         "correct_proton_definition": 0.025,
         "correct_process": 0.30,
-        "has_output_ttbar": 0.075,
+        output_key: 0.075,
         "has_launch": 0.05,
         "no_markdown_fence": 0.025,
         "no_reasoning_tags": 0.025,
@@ -143,7 +163,7 @@ def score_submission(path: Path) -> dict:
     }
     passed = (
         checks["correct_process"]
-        and checks["has_output_ttbar"]
+        and checks[output_key]
         and checks["ebeam1_6500"]
         and checks["ebeam2_6500"]
         and not hard_failures.intersection(failure_set)

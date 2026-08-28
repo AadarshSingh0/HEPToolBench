@@ -1,0 +1,14 @@
+{
+  "build_date": "2026-08-28",
+  "corrected_canonical_sha256": "65029053e4c40ded9adb5cac7d3f30d6b6e60b884d98aed75c31343386054d45",
+  "deployments": 42,
+  "non_sarvam_rows_from_approved_candidate": 1271,
+  "policy_id": "B1_W1_S1R",
+  "records": 1302,
+  "sarvam_recovered_records": 4,
+  "sarvam_rows_retained": 31,
+  "sarvam_w1_rescores": 1,
+  "source_v121_sha256": "3184bbbce470c6e32ecac953829b96ce676a4b7070f79553573f29504d7f7ee9",
+  "source_v12_sha256": "b94731667e1afcf589a3bf20eba436b53a4b18c345e6793a7162d49aa1b959a0",
+  "tasks": 31
+}

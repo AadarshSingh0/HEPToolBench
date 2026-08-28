@@ -3,6 +3,17 @@
 This directory contains selected, curated result artifacts distributed with
 HEPToolBench for reproducibility.
 
+## HEPToolBench v1.2.1 correction candidate (B1_W1_S1R)
+
+[`heptoolbench_v1_2_1_correction/`](heptoolbench_v1_2_1_correction/) contains the
+42-deployment x 31-task corrected dataset (1,302 records), prompt-faithful
+scorer corrections for `mg_basic_002` and `mg_workflow_005`, recovered Sarvam
+outputs with complete provenance, corrected Paper A assets, and validation
+evidence. Three Sarvam records are regenerated and one is a preserved output;
+the prompts, configuration, and scorers are identical, with a documented
+temperature-zero nondeterminism caveat. The candidate supersedes the earlier
+41 x 31 S2 candidate; v1.2 remains below for historical reproducibility.
+
 ## HEPToolBench v1.2 consolidated result snapshot
 
 The consolidated result dataset is:

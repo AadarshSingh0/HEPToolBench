@@ -24,7 +24,7 @@ def load_basic_scorer():
 
 def score_submission(path: Path) -> dict:
     module = load_basic_scorer()
-    result = module.score_submission(path)
+    result = module.score_submission(path, require_reference_output_name=True)
     result["task_id"] = "mg_debug_002"
     result["repair_target"] = "broken top-pair proc_card.dat"
     return result
